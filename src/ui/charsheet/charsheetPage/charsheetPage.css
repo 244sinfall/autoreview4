@@ -1,0 +1,69 @@
+.charsheetPage {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.rateCounter {
+    width: 30%;
+    max-width: 350px;
+    min-width: 300px;
+    /*max-width: 300px;*/
+}
+
+.reviewGenerator {
+    flex-grow: 1;
+    margin-left: 20px;
+
+
+    min-width: 550px;
+    /*max-width: 1400px;*/
+}
+.reviewGenerator .actionButton__container {
+    display: flex;
+    justify-content: center;
+}
+.reviewGenerator .inputField {
+    width: 50%;
+}
+@media screen and (max-width: 1095px) {
+    .charsheetPage {
+        display: block;
+    }
+    .rateCounter {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .reviewGenerator {
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .charsheetPage {
+        display: block;
+    }
+    .rateCounter {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .reviewGenerator .mainInput {
+        flex-direction: column;
+    }
+    .reviewGenerator .inputField {
+        width: 100%;
+    }
+    .reviewGenerator .actionButton__container {
+        display: flex;
+        justify-content: center;
+    }
+    /*.reviewGenerator .actionButton {*/
+    /*    width: 45%;*/
+    /*}*/
+
+}

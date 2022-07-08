@@ -1,0 +1,16 @@
+
+.content-block__title {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    height: 20px;
+    color: rgba(244, 244, 244, 0.95);
+    background-color: rgb(91, 62, 93);
+    border: 1px solid black;
+}
+
+.content-block__container {
+    background-color: rgb(244, 244, 244, 0.95);
+    padding: 1pt;
+    border: 1px solid black;
+}
