@@ -2,15 +2,15 @@ import React, {useEffect, useState} from 'react';
 import ContentTitle from "../../../components/static/contentTitle/contentTitle";
 import TextInput from "../../../components/dynamic/textInput/textInput";
 import {useAppDispatch, useAppSelector} from "../../../model/hooks";
-import {updateFields} from "../../../model/charsheets/charsheetReview";
-import TextArea from "../../../components/dynamic/textArea/textArea";
+import TextAreaReadOnly from "../../../components/dynamic/textAreaReadOnly/textAreaReadOnly";
 import GenerateReviewButtons from "../generateReviewButtons/generateReviewButtons";
+import {setCharName, setReviewerDiscord, setReviewerProfile} from "../../../model/charsheets/charsheetReview";
 
 
 enum usingFields {
-    char_name = "Ник проверяемого персонажа",
-    reviewer_profile = "Ссылка на профиль",
-    reviewer_discord = "Discord"
+    charName = "Ник проверяемого персонажа",
+    reviewerProfile = "Ссылка на профиль",
+    reviewerDiscord = "Discord"
 }
 
 export enum ReviewButtonTypes {
@@ -24,6 +24,9 @@ const ReviewGenerator = () => {
     const [review, setReview] = useState('Заполните все поля и нажмите "Создать вердикт" для получения кода.')
     const [reviewExist, setReviewExistence] = useState(false)
     const dispatch = useAppDispatch();
+    useEffect(() => {
+        dispatch(setCharName(""))
+    }, [])
     useEffect(() => {
         if(reviewExist) {
             setReviewExistence(false)
@@ -39,17 +42,16 @@ const ReviewGenerator = () => {
     //     'отсылками к тексту анкеты.<br>';
     function manageReviewFields(fieldName: string, fieldValue: string) {
         switch(fieldName) {
-            case usingFields.char_name:
-                dispatch(updateFields({ fieldName: "char_name", fieldValue: fieldValue}));
+            case usingFields.charName:
+                dispatch(setCharName(fieldValue));
                 break;
-            case usingFields.reviewer_profile:
-                dispatch(updateFields({ fieldName: "reviewer_profile", fieldValue: fieldValue}));
+            case usingFields.reviewerProfile:
+                dispatch(setReviewerProfile(fieldValue));
                 break;
-            case usingFields.reviewer_discord:
-                dispatch(updateFields({ fieldName: "reviewer_discord", fieldValue: fieldValue}));
+            case usingFields.reviewerDiscord:
+                dispatch(setReviewerDiscord(fieldValue));
                 break;
             default:
-                dispatch(updateFields({ fieldName: fieldName, fieldValue: fieldValue}));
                 break;
         }
     }
@@ -70,12 +72,12 @@ const ReviewGenerator = () => {
     }
     return (
         <div className="reviewGenerator">
-            <ContentTitle title="Генерация вердикта:">
-                <TextInput title={usingFields.reviewer_profile} placeholder="https://rp-wow.ru/users/1018" cacheKey="profileLink" handler={manageReviewFields}/>
-                <TextInput title={usingFields.reviewer_discord} placeholder="rolevik dima#4300" cacheKey="discordProfile" handler={manageReviewFields}/>
-                <TextInput title={usingFields.char_name} placeholder="Васян" handler={manageReviewFields}/>
+            <ContentTitle title="Генерация вердикта">
+                <TextInput title={usingFields.reviewerProfile} maxLength={128} placeholder="https://rp-wow.ru/users/1018" cacheKey="profileLink" handler={manageReviewFields}/>
+                <TextInput title={usingFields.reviewerDiscord} maxLength={128} placeholder="rolevik dima#4300" cacheKey="discordProfile" handler={manageReviewFields}/>
+                <TextInput title={usingFields.charName} maxLength={32} placeholder="Васян" handler={manageReviewFields}/>
                 <GenerateReviewButtons reviewExist={reviewExist} handler={updateReview}/>
-                <TextArea review={review}></TextArea>
+                <TextAreaReadOnly review={review}></TextAreaReadOnly>
             </ContentTitle>
         </div>
     );

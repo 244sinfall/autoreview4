@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import {charsheetReviewSLice} from "./charsheets/charsheetReview";
+import {eventReviewSLice} from "./events/eventReview";
 // ...
 
 
 
 export const store = configureStore({
     reducer: {
-        charsheet: charsheetReviewSLice.reducer
+        charsheet: charsheetReviewSLice.reducer,
+        event: eventReviewSLice.reducer
         // comments: commentsReducer,
         // users: usersReducer,
     },

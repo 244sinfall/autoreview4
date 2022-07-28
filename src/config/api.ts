@@ -1,2 +1,5 @@
-export const APIAddress = 'http://localhost:8000'
-export const getCharsheetEndPoint = '/generate_review'
+// export const APIAddress = 'https://dm.rolevik.site:8443'
+export const APIAddress = 'http://127.0.0.1:8000'
+export const getCharsheetEndPoint = '/generate_charsheet_review'
+export const cleanLogEndPoint = '/clean_log'
+export const cleanParticipantsTextEndPoint = "/events/clean_participants_text"

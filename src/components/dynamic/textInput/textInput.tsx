@@ -4,6 +4,7 @@ import '../../commonCss/input.css'
 const TextInput = (props: { 
     title: string, 
     placeholder: string,
+    maxLength: number
     cacheKey?: string,
     handler?: (reducerFieldName: string, reducerFieldValue: string) => void}) => {
     let [content, setContent] = useState("");
@@ -22,6 +23,9 @@ const TextInput = (props: {
 
     function setTextValue(event: React.ChangeEvent<HTMLInputElement>) {
         let newContent = event.target.value;
+        if(newContent.length > props.maxLength) {
+            return content;
+        }
         setContent((prevState) => {
             if (typeof props.cacheKey !== 'undefined') {
                 if (prevState !== newContent) {

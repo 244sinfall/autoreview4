@@ -10,7 +10,9 @@
     min-width: 300px;
     /*max-width: 300px;*/
 }
-
+.reviewGenerator .textArea {
+    margin-top: 10px;
+}
 .reviewGenerator {
     flex-grow: 1;
     margin-left: 20px;
@@ -25,6 +27,9 @@
 }
 .reviewGenerator .inputField {
     width: 50%;
+}
+.textArea {
+    margin-top: 10px;
 }
 @media screen and (max-width: 1095px) {
     .charsheetPage {

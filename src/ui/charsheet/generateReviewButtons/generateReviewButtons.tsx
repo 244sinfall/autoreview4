@@ -5,14 +5,9 @@ import {useAppSelector} from "../../../model/hooks";
 import {CharsheetReviewState, getReview} from "../../../model/charsheets/charsheetReview";
 import {ReviewButtonTypes} from "../reviewGenerator/reviewGenerator";
 
-function checkFields(charsheetScheme: CharsheetReviewState) {
-    let fieldsOK = true
-    charsheetScheme.fields.forEach((value) => {
-        if(value.fieldValue === "") {
-            fieldsOK = false
-        }
-    })
-    return fieldsOK
+function areFieldsFilled(charsheetScheme: CharsheetReviewState) {
+    return charsheetScheme.charName !== "" && charsheetScheme.reviewerDiscord !== "" &&
+        charsheetScheme.reviewerProfile !== ""
 }
 
 
@@ -22,7 +17,7 @@ const GenerateReviewButtons = (props: { reviewExist: boolean, handler: (buttonTi
     const [fieldsCorrect, setFieldsCorrect] = useState(true)
 
     async function generateEvent() {
-        if(checkFields(state.charsheet)) {
+        if(areFieldsFilled(state.charsheet)) {
             props.handler(ReviewButtonTypes.createReviewTitle, await getReview(state.charsheet))
         }
         else {

@@ -3,7 +3,6 @@ import './header.css';
 import logo from './dm_logo.png'
 import {HeaderMenuElement} from "./headerMenuElement";
 import {Link, NavLink} from "react-router-dom";
-import 'react-pro-sidebar/dist/css/styles.css';
 import sidebarIcon from'./sidebar.png'
 
 const Header = (props: { menuElements: HeaderMenuElement[] }) => {

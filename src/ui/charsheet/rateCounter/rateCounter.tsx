@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import ContentTitle from "../../../components/static/contentTitle/contentTitle";
 import NumberInput from "../../../components/dynamic/numberInput/numberInput";
-import {updateRates, setRates, Rate} from "../../../model/charsheets/charsheetReview";
+import {updateRates, Rate} from "../../../model/charsheets/charsheetReview";
 import {useAppDispatch, useAppSelector} from "../../../model/hooks";
 
 const RateCounter = (props: { rateNames: string[], rateMin: number, rateMax: number }) => {
@@ -9,14 +9,10 @@ const RateCounter = (props: { rateNames: string[], rateMin: number, rateMax: num
     const dispatch = useAppDispatch();
     let rateInputs: React.ReactNode[] = [];
     useEffect(() => {
-        if(state.rates.length !== props.rateNames.length) {
-            let initialRates: Rate[] = []
             props.rateNames.forEach(value => {
-                initialRates.push({rateName: value, rateValue: 0})
-            })
-            dispatch(setRates(initialRates))
-        }
-    }, [props, dispatch, state.rates.length])
+                dispatch(updateRates({rateName: value, rateValue: 0}))
+            }
+        )}, [])
     props.rateNames.forEach((value) => {
         rateInputs.push(<NumberInput key={value} title={value} handler={updateStateWithNewValues} minValue={props.rateMin} maxValue={props.rateMax} disabled={false}/>);
     })
@@ -28,7 +24,7 @@ const RateCounter = (props: { rateNames: string[], rateMin: number, rateMax: num
 
     return (
         <div className="rateCounter">
-            <ContentTitle title="Критерии оценки:">
+            <ContentTitle title="Критерии оценки">
                 {rateInputs}
                 <NumberInput title={"Общая оценка"} minValue={0} maxValue={10} disabled={true} disabledValue={state.totalRate}/>
             </ContentTitle>

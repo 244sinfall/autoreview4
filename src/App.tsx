@@ -5,6 +5,10 @@ import {Route, Routes} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from "./model/store";
 import CharsheetPage from "./ui/charsheet/charsheetPage/charsheetPage";
+import MainPage from "./ui/mainPage";
+import EventsPage from "./ui/events/eventsPage/eventsPage";
+import OtherPage from "./ui/other/otherPage/otherPage";
+
 
 function App() {
   return (
@@ -26,13 +30,19 @@ function App() {
                 {
                     menuName: 'Экономика(WIP)',
                     menuRoute: '/economics'
+                },
+                {
+                    menuName: 'Другое',
+                    menuRoute: '/other'
                 }
 
 
             ]}/>
             <Routes>
                 <Route path='/charsheets' element={<CharsheetPage/>}/>
-                <Route path='/' element={<div></div>}/>
+                <Route path='/events' element={<EventsPage/>}/>
+                <Route path='/other' element={<OtherPage/>}/>
+                <Route path='/' element={<MainPage/>}/>
             </Routes>
 
         </div>

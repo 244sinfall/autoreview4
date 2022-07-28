@@ -6,25 +6,20 @@ export interface Rate {
     rateValue: number
 }
 
-interface Field {
-    fieldName: string,
-    fieldValue: string
-}
-
 export interface CharsheetReviewState {
     rates: Rate[],
     totalRate: number,
-    fields: Field[]
+    charName: string,
+    reviewerProfile: string,
+    reviewerDiscord: string
 }
 
 const initialState: CharsheetReviewState = {
     rates: [],
-    fields: [
-        { fieldName: "char_name", fieldValue: "" },
-        { fieldName: "reviewer_profile", fieldValue: "" },
-        { fieldName: "reviewer_discord", fieldValue: "" }
-    ],
-    totalRate: 0
+    totalRate: 0,
+    charName: "",
+    reviewerProfile: "",
+    reviewerDiscord: ""
 }
 
 export const charsheetReviewSLice = createSlice({
@@ -38,18 +33,14 @@ export const charsheetReviewSLice = createSlice({
                         state.rates[foundRate] = action.payload
             state.totalRate = getTotalRate(state.rates)
         },
-        setRates: (state, action: PayloadAction<Rate[]>) => {
-            state.rates = action.payload
-            state.totalRate = getTotalRate(action.payload)
+        setCharName: (state, action: PayloadAction<string>) => {
+            state.charName = action.payload
         },
-        updateFields: (state, action: PayloadAction<Field>) => {
-            let foundField = state.fields.findIndex((field) => field.fieldName === action.payload.fieldName);
-
-            foundField === -1 ? state.fields.push({
-                fieldName: action.payload.fieldName,
-                fieldValue: action.payload.fieldValue
-            }) : state.fields[foundField].fieldValue = action.payload.fieldValue;
-
+        setReviewerProfile: (state, action: PayloadAction<string>) => {
+            state.reviewerProfile = action.payload
+        },
+        setReviewerDiscord: (state, action: PayloadAction<string>) => {
+            state.reviewerDiscord = action.payload
         }
     }
 });
@@ -61,33 +52,6 @@ function getTotalRate(rates: Rate[]) {
 }
 
 
-function getRequestBody(charsheetState: CharsheetReviewState) {
-    let ratesAPIFormat: Object[] = []
-    let char_name, reviewer_profile, reviewer_discord = ''
-    charsheetState.rates.forEach((rate) => ratesAPIFormat.push({'rate_name': rate.rateName, 'rate_value': rate.rateValue}))
-    charsheetState.fields.forEach((field) => {
-        if(field.fieldName === 'char_name') {
-            char_name = field.fieldValue
-        }
-        if(field.fieldName === 'reviewer_profile') {
-            reviewer_profile = field.fieldValue
-        }
-        if(field.fieldName === 'reviewer_discord') {
-            reviewer_discord = field.fieldValue
-        }
-
-    })
-    const returnObject = {
-        "rates": ratesAPIFormat,
-        "total_rate": charsheetState.totalRate,
-        "char_name": char_name,
-        "reviewer_profile": reviewer_profile,
-        "reviewer_discord": reviewer_discord
-    }
-    return returnObject
-}
-
-
 export async function getReview(charsheetState: CharsheetReviewState): Promise<string> {
     return await fetch(APIAddress + getCharsheetEndPoint, {
         method: "POST",
@@ -95,21 +59,22 @@ export async function getReview(charsheetState: CharsheetReviewState): Promise<s
             "Accept": "application/json",
             "Content-Type": 'application/json',
         },
-        body: JSON.stringify(getRequestBody(charsheetState))
+        body: JSON.stringify(charsheetState)
     })
         .then((response) => response.json())
         .then((data) => {
             if ('review' in data) {
                 return data['review'];
             }
+            else {
+                throw Error('Сервер вернул неверные данные.')
+            }
+
         })
         .catch(() => {
             return 'Не удалось получить вердикт';
         })
-        .finally(() => {
-            return 'Не удалось получить вердикт';
-        });
 }
 
-export const { updateRates, setRates, updateFields } = charsheetReviewSLice.actions;
+export const { updateRates, setCharName, setReviewerProfile, setReviewerDiscord } = charsheetReviewSLice.actions;
 
