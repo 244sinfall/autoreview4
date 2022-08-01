@@ -12,6 +12,14 @@ function areFieldsFilled(charsheetScheme: CharsheetReviewState) {
 
 
 const GenerateReviewButtons = (props: { reviewExist: boolean, handler: (buttonTitle: string, reviewResponse: string) => Promise<void> | undefined }) => {
+    const rules =
+        "Вам нужно будет отредактировать вердикт, приводя<br/>" +
+        'примеры и доводы, отсылаясь к содержанию анкеты.<br/>' +
+        'В случае генерации вердикта на одобрение вам <br/>' +
+        'необходимо будет оставить коментарии в/после <br/>' +
+        'фрагментов, выделенных жирным шрифтом. В случае <br/>' +
+        'генерации вердикта на отказ, жирным будут выделены <br/>' +
+        'причины. Вам нужно дополнить их отсылками к тексту анкеты.';
     const state = useAppSelector((state) => state)
     const [copied, setCopied] = useState(false)
     const [fieldsCorrect, setFieldsCorrect] = useState(true)
@@ -36,8 +44,8 @@ const GenerateReviewButtons = (props: { reviewExist: boolean, handler: (buttonTi
 
     return (
         <div className='generateReviewButtons'>
-            <ActionButton title={fieldsCorrect ? "Создать вердикт" : "Поля не заполнены"} show={!props.reviewExist} action={generateEvent} tooltip={'s'} requiresLoading={true}/>
-            <ActionButton title={copied ? 'Вердикт скопирован' : 'Скопировать вердикт'} show={props.reviewExist} action={copyReviewEvent} tooltip={'s'} requiresLoading={false}/>
+            <ActionButton title={fieldsCorrect ? "Создать вердикт" : "Поля не заполнены"} show={!props.reviewExist} action={generateEvent} tooltip={rules} requiresLoading={true}/>
+            <ActionButton title={copied ? 'Вердикт скопирован' : 'Скопировать вердикт'} show={props.reviewExist} action={copyReviewEvent} requiresLoading={false}/>
         </div>
     );
 };

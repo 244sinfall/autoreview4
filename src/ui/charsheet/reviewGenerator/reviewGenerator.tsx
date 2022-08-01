@@ -32,14 +32,6 @@ const ReviewGenerator = () => {
             setReviewExistence(false)
         }
             }, [state])
-    // const rules = 'Вам нужно будет отредактировать вердикт,<br/>' +
-    //     'приведя примеры и доводы, отсылаясь к анкете.<br>\n' +
-    //     'В случае генерации вердикта <strong>на одобрение</strong>,<br/>' +
-    //     'вам необходимо будет оставить коментарии в/после фрагментов,<br/>' +
-    //     'выделенных жирным шрифтом.<br>' +
-    //     'В случае генерации вердикта <strong>на отказ</strong>,</br>' +
-    //     'жирным будут выделены причины. Вам нужно дополнить их<br/>' +
-    //     'отсылками к тексту анкеты.<br>';
     function manageReviewFields(fieldName: string, fieldValue: string) {
         switch(fieldName) {
             case usingFields.charName:

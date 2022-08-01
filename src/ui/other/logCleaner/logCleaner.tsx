@@ -58,6 +58,11 @@ const LogCleaner = () => {
                 })
         }
     }
+    const rules =
+        'Максимальный размер файла - 100 мегабайт.<br/><br/>' +
+        'Очистка логов может занять до минуты в зависимости от скорости<br/>' +
+        'вашего интернета. Если после очистки в файле все еще есть<br/>' +
+        'нежелательные технические строки - обратитесь в ЛС'
     return (
         <div className="logCleaner">
             <ContentTitle title='Очистка логов'>
@@ -76,10 +81,8 @@ const LogCleaner = () => {
                             }
                         }}/>
                     </label>
-                    <ActionButton title={'Очистить логи'} show={uploadedFile !== null} action={cleanLog} tooltip={""} requiresLoading={true}/>
+                    <ActionButton title={'Очистить логи'} show={uploadedFile !== null} action={cleanLog} tooltip={rules} requiresLoading={true}/>
                 </div>
-
-                <p className="logCleaner__cleanerContainer">Максимальный размер файла - 100 мб</p>
             </ContentTitle>
         </div>
     );

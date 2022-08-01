@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import ContentTitle from "../../../components/static/contentTitle/contentTitle";
-import TextAreaReadOnly from "../../../components/dynamic/textAreaReadOnly/textAreaReadOnly";
 import './textCleaner.css'
 import TextAreaWritable from "../../../components/dynamic/textAreaWritable/textAreaWritable";
 import ActionButton from "../../../components/static/actionButton/actionButton";
@@ -39,15 +38,26 @@ const TextCleaner = () => {
             setRawText(changedText)
         }
     }
+    function handleCleanedTextChange(changedText: string) {
+        if(cleanedText !== changedText) {
+            setCleanedText(changedText)
+        }
+    }
+    const rules =
+        'Сервис удаляет из ников латинские буквы, спецсимволы, пробелы.<br/>' +
+        'Если игрок поставил модификаторы правильно (W, D и.т.д.), они<br/>' +
+        'не удалятся. В этом случае, вы должны удостоверится, что <br/>' +
+        'модификаторы проставлены корректно. Вы сможете редактировать<br/>' +
+        'очищенный список в окне справа.'
     return (
 
         <ContentTitle title='Очистка текста'>
             <div className='text-cleaner'>
                 <div className='text-cleaner__raw'>
                     <TextAreaWritable height={300} recorder={handleRawTextChange}></TextAreaWritable>
-                    <ActionButton title='Очистить текст' show={true} action={cleanParticipantsText} tooltip={'asdasd'} requiresLoading={true}/>
+                    <ActionButton title='Очистить текст' show={true} action={cleanParticipantsText} tooltip={rules} requiresLoading={true}/>
                 </div>
-                <TextAreaReadOnly review={cleanedText}></TextAreaReadOnly>
+                <TextAreaWritable height={400} value={cleanedText} recorder={handleCleanedTextChange}></TextAreaWritable>
             </div>
         </ContentTitle>
 
