@@ -8,6 +8,7 @@ import CharsheetPage from "./ui/charsheet/charsheetPage/charsheetPage";
 import MainPage from "./ui/mainPage";
 import EventsPage from "./ui/events/eventsPage/eventsPage";
 import OtherPage from "./ui/other/otherPage/otherPage";
+import ArbitersPage from "./ui/arbiters/arbitersPage/arbitersPage";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
                 <Route path='/charsheets' element={<CharsheetPage/>}/>
                 <Route path='/events' element={<EventsPage/>}/>
                 <Route path='/other' element={<OtherPage/>}/>
+                <Route path='/arbitration' element={<ArbitersPage/>}/>
                 <Route path='/' element={<MainPage/>}/>
             </Routes>
 

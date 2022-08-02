@@ -1,0 +1,47 @@
+.rewardWorker__container {
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+}
+.rewardWorker__result {
+    flex-grow: 1;
+}
+.rewardWorker__options {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.rewardWorker__options .mainInput {
+    flex-direction: column;
+
+}
+.rewardWorker__options .inputField {
+    width: 100%;
+}
+.rewardWorker__options .actionButton__container {
+    display: flex;
+    justify-content: center;
+}
+.rewardWorker__options .buttonGroup {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1095px) {
+    .rewardWorker__container {
+        flex-direction: column;
+    }
+    .rewardWorker__options .buttonGroup__container {
+        justify-content: center;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 420px) {
+    .buttonGroup__buttonLabel {
+        font-size: 85%;
+    }
+    .rewardWorker .content-block__title {
+        font-size: 90%;
+    }
+}

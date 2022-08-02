@@ -6,9 +6,9 @@ const RadioButtonGroup = (props: { title: string, options: string[], groupName: 
         const className = index === 0 ? ' buttonGroup__buttonBorderedLeft' :
             index === props.options.length-1 ? ' buttonGroup__buttonBorderedRight' : ''
         return (
-        <div className={'buttonGroup__buttonContainer'}>
-            <input className={'buttonGroup__buttonInput'} key={option} type="radio" id={option} name={props.groupName} value={option} onChange={(event) => props.handler !== undefined && props.handler(event.target.value)}/>
-            <label className={'buttonGroup__buttonLabel' + className} htmlFor={option}>{option}</label>
+        <div className={'buttonGroup__buttonContainer'} key={option+"container"}>
+            <input className={'buttonGroup__buttonInput'} key={option+"input"} type="radio" id={option} name={props.groupName} value={option} onChange={(event) => props.handler !== undefined && props.handler(event.target.value)}/>
+            <label className={'buttonGroup__buttonLabel' + className} key={option+"label"} htmlFor={option}>{option}</label>
         </div>)
     })
     return (
