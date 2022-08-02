@@ -51,7 +51,7 @@ const TextCleaner = () => {
         'очищенный список в окне справа.'
     return (
 
-        <ContentTitle title='Очистка текста'>
+        <ContentTitle title='Очистка списка участников'>
             <div className='text-cleaner'>
                 <div className='text-cleaner__raw'>
                     <TextAreaWritable height={300} recorder={handleRawTextChange}></TextAreaWritable>
