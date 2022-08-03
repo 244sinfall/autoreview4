@@ -81,9 +81,11 @@ const RewardWorkerComponent = () => {
                     return json as RewardWorkerResponse
                 })
                 .then((parsedResponse) => {
-                    setRewardWorkerResponse("Команды для выполнения в игре:\n"
-                        + parsedResponse.commands + "\n\nОшибки и внесенные изменения:\n"
-                        + parsedResponse.participantsModified)
+                    let result = parsedResponse.commands
+                    if (parsedResponse.participantsModified) {
+                        result += "\n\nОшибки и внесенные изменения:\n" + parsedResponse.participantsModified
+                    }
+                    setRewardWorkerResponse(result)
                     setTextParted(false)
 
                 } )
@@ -138,6 +140,7 @@ const RewardWorkerComponent = () => {
                         <ActionButton title={errMsg ? errMsg : "Обработать"} show={true} action={runRewardWork} requiresLoading={true} tooltip={rules}/>
                     </div>
                     <div className="rewardWorker__result">
+                        <p>Команды для выполнения в игре:</p>
                         <TextAreaReadOnly review={rewardWorkerResponse} height={700}/>
                         <ActionButton title="Разбить команды на макросы" show={!textParted && rewardWorkerResponse !== ""} action={splitCommandsToFitMacros} requiresLoading={false} tooltip={rulesMacro}/>
                     </div>
