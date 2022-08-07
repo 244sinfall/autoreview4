@@ -1,0 +1,15 @@
+.charsheet-page {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+
+}
+.charsheet-page .review-generator {
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 1180px) {
+    .charsheet-page {
+        flex-direction: column;
+    }
+}

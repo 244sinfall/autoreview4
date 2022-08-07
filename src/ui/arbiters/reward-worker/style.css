@@ -1,0 +1,40 @@
+.reward-worker__container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.reward-worker__result {
+    flex-grow: 1;
+}
+.reward-worker__options .input__field[type="tel"] {
+    width: 20%;
+}
+.reward-worker__options .action-button__container {
+    display: flex;
+    justify-content: center;
+}
+.reward-worker__options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.reward-worker__options .button-group {
+    text-align: center;
+}
+
+@media screen and (max-width: 1095px) {
+    .reward-worker__container {
+        flex-direction: column;
+    }
+    .reward-worker__options .button-group__container {
+        justify-content: center;
+        text-align: center;
+
+    }
+}
+@media screen and (max-width: 420px) {
+    .reward-worker__options .input__container {
+        flex-direction: column;
+    }
+}

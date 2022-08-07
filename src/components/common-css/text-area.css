@@ -1,0 +1,23 @@
+.text-area__frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.text-area {
+    min-height: 30px;
+    resize: vertical;
+    background-color: transparent;
+    color: rgb(87, 59, 89);
+    border: 2px solid rgba(87, 59, 89, 35%);
+    padding: 5px;
+    border-radius: 5pt;
+    transition: all 0.5s, height 0s;
+}
+
+.text-area:focus {
+    border: 2px solid rgba(87, 59, 89, 100%);
+    outline: none;
+    background-color: white;
+}

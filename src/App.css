@@ -1,26 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 
+:root {
+    --header-margin: 20px;
+    --footer-margin: 20px;
+}
+
 * {
     margin: 0;
     padding: 0;
-
-
 }
 
 html, body  {
     background: url("/public/bgdarkmoon.png") no-repeat fixed;
     background-size: cover;
     overflow-x: hidden;
-    width: 100%
-;
+    width: 100%;
 }
 .App {
-
     margin-left: 10vw;
     margin-right: 10vw;
     box-sizing: border-box;
-
     font-family: 'Arimo', sans-serif;
+    margin-bottom: var(--footer-margin);
+}
+.App .header__container {
+    margin-bottom: 20px;
+    margin-top: var(--header-margin);
+
 }
 
 @media screen and (max-width: 1095px) {

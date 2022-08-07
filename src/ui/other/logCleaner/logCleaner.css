@@ -4,7 +4,7 @@
     text-align: center;
 }
 
-.logCleaner__cleanerContainer .actionButton__container {
+.logCleaner__cleanerContainer .action-button__container {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;

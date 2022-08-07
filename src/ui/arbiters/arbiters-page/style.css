@@ -1,0 +1,16 @@
+.arbiters-page__contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.arbiters-page .reward-worker {
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 1300px) {
+    .arbiters-page__contents {
+        flex-direction: column;
+
+    }
+}

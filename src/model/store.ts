@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import {charsheetReviewSLice} from "./charsheets/charsheetReview";
-import {eventReviewSLice} from "./events/eventReview";
+import {charsheetReviewSLice} from "./charsheets/charsheet-review";
+import {eventReviewSLice} from "./events/event-review";
 // ...
 
 

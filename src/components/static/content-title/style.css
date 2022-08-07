@@ -1,0 +1,12 @@
+.content-block__title {
+    padding: 10px;
+    height: auto;
+    color: rgba(244, 244, 244, 0.95);
+    background-color: rgb(91, 62, 93);
+}
+
+.content-block__container {
+    background-color: rgb(244, 244, 244, 0.95);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}

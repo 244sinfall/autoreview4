@@ -1,0 +1,8 @@
+.rate-counter .input__field {
+    width: 20%;
+}
+.rate-counter .content-block__container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

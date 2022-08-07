@@ -1,0 +1,46 @@
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+}
+.button-group__container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.button-group__button-label {
+    color: rgba(91, 62, 93, 0.95);
+    background-color: transparent;
+    border: 2px solid rgba(91, 62, 93, 0.95);
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    transition: all 250ms, visibility 0.5s;
+    box-shadow: 1px 1px 0 black;
+}
+.button-group__button-label:hover {
+    color: rgba(244, 244, 244, 0.95);
+    background-color: rgb(91, 62, 93);
+    border: 2px solid transparent;
+}
+.button-group__button-bordered-right {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.button-group__button-bordered-left {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.button-group__button-input[type="radio"] {
+    display:none;
+}
+
+.button-group__button-input[type="radio"]:checked + label p {
+    box-shadow: none;
+    border: 2px solid rgba(65, 46, 68, 0.95);
+    color: rgba(235, 235, 235, 0.95);
+    background-color: rgb(65, 46, 68);
+}

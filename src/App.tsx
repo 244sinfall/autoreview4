@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/static/header/header";
+import Header from "./components/static/header";
 import {Route, Routes} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from "./model/store";
-import CharsheetPage from "./ui/charsheet/charsheetPage/charsheetPage";
-import MainPage from "./ui/mainPage";
-import EventsPage from "./ui/events/eventsPage/eventsPage";
+import CharsheetPage from "./ui/charsheet/charsheet-page";
+import MainPage from "./ui/main-page";
+import EventsPage from "./ui/events/events-page";
 import OtherPage from "./ui/other/otherPage/otherPage";
-import ArbitersPage from "./ui/arbiters/arbitersPage/arbitersPage";
+import ArbitersPage from "./ui/arbiters/arbiters-page";
 
 
 function App() {
@@ -21,11 +21,11 @@ function App() {
                     menuRoute: '/charsheets'
                 },
                 {
-                    menuName: 'Отчеты(WIP)',
+                    menuName: 'Отчеты',
                     menuRoute: '/events'
                 },
                 {
-                    menuName: 'Арбитры(WIP)',
+                    menuName: 'Арбитры',
                     menuRoute: '/arbitration'
                 },
                 {

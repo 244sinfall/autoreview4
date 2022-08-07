@@ -1,0 +1,19 @@
+.review-generator .action-button__container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.review-generator .input__field {
+    width: 50%;
+}
+
+@media screen and (max-width: 1095px) {
+    .review-generator .input__container {
+        flex-direction: column;
+    }
+    .review-generator .input__field {
+        width: 100%;
+    }
+}
