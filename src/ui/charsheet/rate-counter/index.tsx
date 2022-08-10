@@ -12,7 +12,7 @@ const CharsheetReviewRateCounter = (props: { rateNames: string[], rateMin: numbe
         let ratesArray: Rate[] = []
         props.rateNames.forEach(rate => ratesArray.push({rateName: rate, rateValue: 0}))
         dispatch(setRates(ratesArray))
-    }, [])
+    }, [dispatch, props.rateNames])
     function updateStateWithNewValues(rateName: string, rateValue: number) {
         if(state.rates.filter(value => value.rateName === rateName && value.rateValue === rateValue).length === 0) {
             dispatch(updateRates({rateName: rateName, rateValue: rateValue}))
