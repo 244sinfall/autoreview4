@@ -63,6 +63,7 @@
         align-items: center;
     }
     .header__sidebar__menu {
+        z-index: 9999;
         position: absolute;
         top: calc(var(--header-margin) + 50px);
         width: 300px;

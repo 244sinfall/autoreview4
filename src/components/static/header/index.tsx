@@ -4,41 +4,49 @@ import logo from './assets/dm_logo.png'
 import {HeaderMenuElement} from "../../../model/header-menu-element";
 import {Link, NavLink} from "react-router-dom";
 import sidebarIcon from './assets/sidebar.png'
+import {useAuth} from "../../../model/auth";
 
 const Header = (props: { menuElements: HeaderMenuElement[] }) => {
     const [menuCollapsed, setMenuCollapsed] = useState(true)
     const [menuCollapsing, setMenuCollapsing] = useState(false)
-
+    const {currentUser, isLoading} = useAuth()
     const buildHeaderElements = useMemo(() => {
-        if(props.menuElements)
-        return props.menuElements.map((menuElement) => {
-            return <NavLink
-                key={menuElement.menuName}
-                className='nav_link'
-                to={menuElement.menuRoute}>
-                <li key={menuElement.menuName}
-                    className="header__menu__element">
-                    {menuElement.menuName}
-                </li></NavLink>})
-    }, [props.menuElements])
+        if(!isLoading) {
+            return props.menuElements
+                .filter((el) => el.accessLevel === 0 || currentUser?.canAccess(el.accessLevel))
+                .map((menuElement) => {
+                    return <NavLink
+                        key={menuElement.menuName}
+                        className='nav_link'
+                        to={menuElement.menuRoute}>
+                        <li key={menuElement.menuName}
+                            className="header__menu__element">
+                            {menuElement.menuName}
+                        </li></NavLink>
+            })
+        }
+
+    }, [isLoading, props.menuElements, currentUser])
 
     const buildHeaderSidebarElements = useMemo(() => {
-        if (props.menuElements && (!menuCollapsed || menuCollapsing))
-        return props.menuElements.map((menuElement) => {
-            return <NavLink
-                key={menuElement.menuName}
-                className='nav_link'
-                to={menuElement.menuRoute}>
-                <li className='header__sidebar__element'
-                    key={menuElement.menuName} onClick={() => {
-                    if (menuCollapsing) {
-                        setMenuCollapsed(!menuCollapsed)
-                    } else {
-                        setMenuCollapsing(true)
-                    }}
-                }>{menuElement.menuName}</li></NavLink>
+        if (props.menuElements && (!menuCollapsed || menuCollapsing) && !isLoading)
+            return props.menuElements
+                .filter((el) => el.accessLevel === 0 || currentUser?.canAccess(el.accessLevel))
+                .map((menuElement) => {
+                    return <NavLink
+                        key={menuElement.menuName}
+                        className='nav_link'
+                        to={menuElement.menuRoute}>
+                        <li className='header__sidebar__element'
+                            key={menuElement.menuName} onClick={() => {
+                            if (menuCollapsing) {
+                                setMenuCollapsed(!menuCollapsed)
+                            } else {
+                                setMenuCollapsing(true)
+                            }}
+                        }>{menuElement.menuName}</li></NavLink>
         })
-    }, [menuCollapsed, menuCollapsing, props.menuElements])
+    }, [props.menuElements, menuCollapsed, menuCollapsing, isLoading, currentUser])
 
     const getMenuClass = () => {
         if((menuCollapsing && menuCollapsed) || (!menuCollapsing && !menuCollapsed)) {

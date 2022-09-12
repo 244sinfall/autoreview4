@@ -1,13 +1,12 @@
 .button-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+
     box-sizing: border-box;
 }
 .button-group__container {
     display: flex;
     flex-direction: row;
-    margin-bottom: 10px;
 }
 .button-group__button-label {
     color: rgba(91, 62, 93, 0.95);

@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import '../../common-css/input.css'
 
 const TextInput = (props: { title: string, placeholder: string, maxLength: number
-    cacheKey?: string, handler?: (fieldName: string, fieldValue: string) => void}) => {
+    cacheKey?: string, handler?: (fieldName: string, fieldValue: string) => void, password?:boolean}) => {
     let [content, setContent] = useState(() => {
-        let initialContent: string | null = null
-        if(props.cacheKey) initialContent = localStorage.getItem(props.cacheKey)
-        let content = initialContent ?? ""
-        props.handler?.(props.title, content)
-        return content
+        if(props.cacheKey && localStorage.getItem(props.cacheKey)) {
+            let initialContent = localStorage.getItem(props.cacheKey) as string
+            props.handler?.(props.title, initialContent)
+            return initialContent
+        }
+        return ""
 
     });
     const completeSetContent = (newContent: string) => {
@@ -24,7 +25,7 @@ const TextInput = (props: { title: string, placeholder: string, maxLength: numbe
         <div className="input__container">
             {props.title}
             <input className="input__field"
-                   type="text"
+                   type={props.password ? "password" : "text"}
                    placeholder={props.placeholder}
                    value={content}
                    onChange={event => completeSetContent(event.target.value)}/>

@@ -9,6 +9,7 @@ import MainPage from "./ui/main-page";
 import EventsPage from "./ui/events/events-page";
 import OtherPage from "./ui/other/otherPage/otherPage";
 import ArbitersPage from "./ui/arbiters/arbiters-page";
+import AdminPage from "./ui/admin/admin-page";
 
 
 function App() {
@@ -18,23 +19,23 @@ function App() {
             <Header menuElements={[
                 {
                     menuName: 'Анкеты',
-                    menuRoute: '/charsheets'
+                    menuRoute: '/charsheets', accessLevel: 1
                 },
                 {
                     menuName: 'Отчеты',
-                    menuRoute: '/events'
+                    menuRoute: '/events', accessLevel: 1
                 },
                 {
                     menuName: 'Арбитры',
-                    menuRoute: '/arbitration'
+                    menuRoute: '/arbitration', accessLevel: 1
                 },
                 {
                     menuName: 'Экономика(WIP)',
-                    menuRoute: '/economics'
+                    menuRoute: '/economics', accessLevel: 1
                 },
                 {
                     menuName: 'Другое',
-                    menuRoute: '/other'
+                    menuRoute: '/other', accessLevel: 0
                 }
 
 
@@ -44,6 +45,7 @@ function App() {
                 <Route path='/events' element={<EventsPage/>}/>
                 <Route path='/other' element={<OtherPage/>}/>
                 <Route path='/arbitration' element={<ArbitersPage/>}/>
+                <Route path='/admin' element={<AdminPage/>}/>
                 <Route path='/' element={<MainPage/>}/>
             </Routes>
 

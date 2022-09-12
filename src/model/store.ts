@@ -1,6 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit'
+import {configureStore} from '@reduxjs/toolkit'
 import {charsheetReviewSLice} from "./charsheets/charsheet-review";
 import {eventReviewSLice} from "./events/event-review";
+import {userSlice} from "./auth";
 // ...
 
 
@@ -8,10 +9,16 @@ import {eventReviewSLice} from "./events/event-review";
 export const store = configureStore({
     reducer: {
         charsheet: charsheetReviewSLice.reducer,
-        event: eventReviewSLice.reducer
+        event: eventReviewSLice.reducer,
+        user: userSlice.reducer
         // comments: commentsReducer,
         // users: usersReducer,
-    },
+    }, middleware: getDefaultMiddleware => getDefaultMiddleware({
+        serializableCheck: {
+            ignoredActions:["user/setUser"],
+            ignoredPaths:['user.user']
+        }
+    })
 
 })
 
