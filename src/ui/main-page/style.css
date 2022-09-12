@@ -1,0 +1,14 @@
+.main-page {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+}
+.content-block__container {
+    padding: 10px;
+}
+
+@media screen and (max-width: 1095px) {
+    .main-page {
+        flex-direction: column;
+    }
+}

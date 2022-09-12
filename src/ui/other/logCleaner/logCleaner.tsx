@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
-import ContentTitle from "../../../components/static/contentTitle/contentTitle";
-import ActionButton from "../../../components/static/actionButton/actionButton";
+import ContentTitle from "../../../components/static/content-title";
+import ActionButton from "../../../components/static/action-button";
 import {APIAddress, cleanLogEndPoint } from "../../../config/api";
 import "./logCleaner.css"
 

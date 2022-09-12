@@ -1,0 +1,16 @@
+.protector {
+    display: flex;
+    justify-content: center;
+
+}
+
+.protector .content-block {
+    width: 500px;
+
+}
+
+.protector .content-block__container .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}

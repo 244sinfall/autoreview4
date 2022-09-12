@@ -1,0 +1,41 @@
+.spinner {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+.contents {
+    transition: opacity 250ms ease-in-out;
+}
+
+.active .contents {
+    opacity: 0.25;
+}
+
+.active {
+    pointer-events: none;
+}
+
+.loader {
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 10px solid #5b3e5d;
+    border-top: 10px solid #ffffff;
+    border-radius: 50%;
+    z-index: 99999;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+  }
