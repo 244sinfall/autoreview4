@@ -3,17 +3,7 @@
     top: 0;
     left: 0;
     background: transparent;
-}
-
-.contents {
-    transition: opacity 250ms ease-in-out;
-}
-
-.active .contents {
-    opacity: 0.25;
-}
-
-.active {
+    opacity: 0.5;
     pointer-events: none;
 }
 

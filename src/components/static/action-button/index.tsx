@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ReactTooltip from "react-tooltip";
 import './style.css'
+import LoadingSpinner from "../loading-spinner";
 
 
 
@@ -13,13 +14,15 @@ const ActionButton = (props: { title: string, show: boolean, action: () => any, 
         })
     }
     return (
-        <div className='action-button__container' style={props.show ? {opacity: 1, visibility: "visible"} : {opacity: 0, visibility: "collapse"}}>
-            <button className="action-button" type="button" data-tip={props.tooltip}
-                onClick={props.requiresLoading ? awaitAction : props.action}>
-                    {props.requiresLoading && loading  ? 'Загрузка...' : props.title}
-                {props.show && <ReactTooltip place={"top"} delayShow={500} multiline={true} html={false} backgroundColor={"#5B3E5DFF"} textColor={"white"}/>}
-            </button>
-        </div>
+        <LoadingSpinner spin={loading}>
+            <div className='action-button__container' style={props.show ? {opacity: 1, visibility: "visible"} : {opacity: 0, visibility: "collapse"}}>
+                <button className="action-button" type="button" data-tip={props.tooltip}
+                    onClick={props.requiresLoading ? awaitAction : props.action}>
+                        {props.requiresLoading && loading  ? 'Загрузка...' : props.title}
+                    {props.show && <ReactTooltip place={"top"} delayShow={500} multiline={true} html={false} backgroundColor={"#5B3E5DFF"} textColor={"white"}/>}
+                </button>
+            </div>
+        </LoadingSpinner>
     );
 };
 

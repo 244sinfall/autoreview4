@@ -1,16 +1,22 @@
-import React, {useMemo, useRef} from 'react';
+
 import './styles.css'
+import React, {useCallback, useState} from "react";
 
 const LoadingSpinner = (props: {spin: boolean, children: React.ReactNode | React.ReactNode[]}) => {
-    const cn = useMemo(() => {
-        return props.spin ? "spinner active" : "spinner"
-    }, [props.spin])
-    const container = useRef<HTMLDivElement>(null)
+    const [size, setSize] = useState(80)
+    const container = useCallback((container: HTMLDivElement) => {
+        let sizeNow = container?.offsetHeight / 2
+        if(isNaN(sizeNow) || !sizeNow) sizeNow = 80
+        setSize(sizeNow)
+    }, [])
     return (
-        <div className={cn} ref={container}>
-            {props.spin && <div className="loader" style={container.current ? {height: container.current.offsetHeight /2 , width: container.current.offsetHeight/2} : {height: 80, width: 80}}/> }
-            <div className="contents">{props.children}</div>
-        </div>
+        <>
+        {props.spin ?
+                <div className={"spinner active"} ref={container}>
+                    {props.spin && <div className="loader" style={{height: size, width: size}}/> }
+                    <div className="contents">{props.children}</div>
+                </div> : props.children}
+        </>
     );
 };
 
