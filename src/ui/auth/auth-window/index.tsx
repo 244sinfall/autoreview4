@@ -49,8 +49,9 @@ const AuthWindow = (props: {isLoading: boolean}) => {
         })
     }
     return (
+        <LoadingSpinner spin={props.isLoading}>
         <div className="auth-window">
-            <LoadingSpinner spin={props.isLoading}>
+
             {isRegistering && <TextInput title={AuthFields.name} placeholder={"rolevik dima"} maxLength={64} handler={handler}/>}
             <TextInput title={AuthFields.email} placeholder={"rolevikdima@gmail.com"} maxLength={128} handler={handler}/>
             <TextInput title={AuthFields.password} placeholder={"123456"} maxLength={64} password={true} handler={handler}/>
@@ -61,8 +62,9 @@ const AuthWindow = (props: {isLoading: boolean}) => {
                 {isRegistering && <ActionButton title={"Зарегистрироваться"} show={true} action={() => handleProcess(handleSignUp)} requiresLoading={true}/>}
                 <ActionButton title={isRegistering ? "К авторизации" : "К регистрации"} show={true} action={() => setIsRegistering(prevState => !prevState)} requiresLoading={false}/>
             </div>
-            </LoadingSpinner>
+
         </div>
+        </LoadingSpinner>
     )
 }
 

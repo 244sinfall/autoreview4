@@ -1,3 +1,21 @@
 .users-list {
     width: 50%;
 }
+
+@media screen and (max-width: 1095px) {
+    .users-list {
+        width: 100%;
+    }
+    .admin-page {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .users-list .user-data {
+        display: flex;
+        flex-direction: column;
+    }
+
+}

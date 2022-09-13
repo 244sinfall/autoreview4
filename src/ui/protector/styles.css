@@ -1,12 +1,17 @@
 .protector {
     display: flex;
     justify-content: center;
-
+    gap: 5px;
 }
 
 .protector .content-block {
     width: 500px;
 
+}
+.protector .content-block__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .protector .content-block__container .contents {

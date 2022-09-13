@@ -1,17 +1,13 @@
-.auth-window .contents {
+.auth-window {
     display: flex;
     flex-direction: column;
-    min-width: 400px;
-    gap: 10px;
+    gap: 5px;
 }
 .auth-window__controls {
     display: flex;
     justify-content: center;
     gap: 10px;
 
-}
-.auth-window .input__container {
-    gap:10px
 }
 
 .action-button__container {
