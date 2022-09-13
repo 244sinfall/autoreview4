@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.css'
 import ContentTitle from "../../components/static/content-title";
-import {getPermissionName, useAuth} from "../../model/auth";
 import LoadingSpinner from "../../components/static/loading-spinner";
 import WelcomeMessage from "./welcome-message";
 import AuthWindow from "./auth-window";
+import {useAuth} from "../../model/auth/firebase/auth";
+import {getPermissionName} from "../../model/auth/firebase/user/model";
 
 
 

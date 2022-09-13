@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
-import {AuthorizedUser, getPermissionName, getPermissionValue} from "../../../model/auth";
 import LoadingSpinner from "../../../components/static/loading-spinner";
 import './styles.css'
+import {AuthorizedUser} from "../../../model/auth/firebase/user";
+import {getPermissionName, getPermissionValue} from "../../../model/auth/firebase/user/model";
 
 const UserControl = (props: {user: AuthorizedUser, email: string, permission: number}) => {
     const [perm, setPerm] = useState(props.permission)

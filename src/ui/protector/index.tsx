@@ -1,10 +1,10 @@
 import React, {useMemo} from 'react';
 import ContentTitle from "../../components/static/content-title";
-import {useAuth} from "../../model/auth";
 import AuthWindow from "../auth/auth-window";
 import ActionButton from "../../components/static/action-button";
 import {useNavigate} from "react-router-dom";
 import './styles.css'
+import {useAuth} from "../../model/auth/firebase/auth";
 
 const Protector = (props: {children: React.ReactNode[] | React.ReactNode, accessLevel: number}) => {
     const {currentUser, isLoading} = useAuth()

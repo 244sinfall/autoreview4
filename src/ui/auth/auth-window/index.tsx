@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {AuthFields, handleLogin, handleSignUp, UserInfo} from "../../../model/auth";
+
 import TextInput from "../../../components/dynamic/text-input";
 import ActionButton from "../../../components/static/action-button";
 import LoadingSpinner from "../../../components/static/loading-spinner";
+import {AuthFields, UserInfo} from "../../../model/auth/firebase/user/model";
+import {handleLogin, handleSignUp} from "../../../model/auth/firebase/auth";
 
 const initialState: UserInfo = {
     name: "",

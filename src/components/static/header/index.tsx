@@ -4,7 +4,7 @@ import logo from './assets/dm_logo.png'
 import {HeaderMenuElement} from "../../../model/header-menu-element";
 import {Link, NavLink} from "react-router-dom";
 import sidebarIcon from './assets/sidebar.png'
-import {useAuth} from "../../../model/auth";
+import {useAuth} from "../../../model/auth/firebase/auth";
 
 const Header = (props: { menuElements: HeaderMenuElement[] }) => {
     const [menuCollapsed, setMenuCollapsed] = useState(true)

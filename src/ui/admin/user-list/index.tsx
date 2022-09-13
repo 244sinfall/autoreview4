@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {useAuth} from "../../../model/auth";
+
 import ContentTitle from "../../../components/static/content-title";
 import UserControl from "../user-control";
 import './styles.css'
 import LoadingSpinner from "../../../components/static/loading-spinner";
+import {useAuth} from "../../../model/auth/firebase/auth";
 
 const UsersList = () => {
     const {currentUser} = useAuth()
