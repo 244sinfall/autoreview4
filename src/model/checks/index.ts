@@ -1,3 +1,5 @@
+import {APIAddress, getChecksEndPoint} from "../../config/api";
+
 export interface Check {
     Id: number,
     Date: string,
@@ -85,7 +87,7 @@ function parseChecksParams(params: CheckTableSearchParams): string {
 export async function getChecks(params?: CheckTableSearchParams) {
 
     const paramsStr = params ? parseChecksParams(params) : ""
-    const response = await fetch(`http://127.0.0.1:8000/economics/get_checks${paramsStr}`)
+    const response = await fetch(`${APIAddress}${getChecksEndPoint}${paramsStr}`)
     const json = await response.json()
     if (json["error"]) throw json
     const checkResponse = await json as CheckResponse
