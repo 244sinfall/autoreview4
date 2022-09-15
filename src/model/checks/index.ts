@@ -85,7 +85,6 @@ function parseChecksParams(params: CheckTableSearchParams): string {
 }
 
 export async function getChecks(params?: CheckTableSearchParams) {
-
     const paramsStr = params ? parseChecksParams(params) : ""
     const response = await fetch(`${APIAddress}${getChecksEndPoint}${paramsStr}`)
     const json = await response.json()

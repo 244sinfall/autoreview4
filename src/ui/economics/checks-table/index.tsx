@@ -18,7 +18,7 @@ import {useAuth} from "../../../model/auth/firebase/auth";
 
 
 const ExecuteHelper = (props: {check: Check, closeHandler: () => void}) => {
-    const rejectCommand = `.check reject ${props.check.Id}`
+    const rejectCommand = `.check return ${props.check.Id}`
     const openCommand = `.check open ${props.check.Id}`
     const closeCommand = `.check close ${props.check.Id}`
     return (
