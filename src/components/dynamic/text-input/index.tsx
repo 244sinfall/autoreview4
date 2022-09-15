@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import '../../common-css/input.css'
 
-const TextInput = (props: { title: string, placeholder: string, maxLength: number
+const TextInput = (props: { title: string, placeholder: string, maxLength: number, defaultValue?: string
     cacheKey?: string, handler?: (fieldName: string, fieldValue: string) => void, password?:boolean}) => {
     let [content, setContent] = useState(() => {
         if(props.cacheKey && localStorage.getItem(props.cacheKey)) {
@@ -9,6 +9,7 @@ const TextInput = (props: { title: string, placeholder: string, maxLength: numbe
             props.handler?.(props.title, initialContent)
             return initialContent
         }
+        if(props.defaultValue) return props.defaultValue
         return ""
 
     });

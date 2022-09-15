@@ -13,7 +13,6 @@
 html, body  {
     background: url("/public/bgdarkmoon.png") no-repeat fixed;
     background-size: cover;
-    overflow-x: hidden;
     width: 100%;
 }
 .App {

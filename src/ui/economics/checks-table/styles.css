@@ -1,0 +1,75 @@
+.checks-table .content-block__container {
+    padding: 0;
+}
+
+.checks-info {
+    padding-right: 10px;
+    padding-top: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.checks-table-controls {
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.specifiers .input__container {
+    justify-content: center;
+}
+.specifiers {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+}
+.table-settings {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+.checks-info {
+    flex-direction: column;
+}
+
+.check-executor {
+    box-shadow: 2px 2px 5px black;
+}
+
+.check-executor .content-block__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+}
+
+.check-executor .executor-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.check-executor {
+    position: fixed;
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 780px) {
+    .checks-table-controls {
+        flex-direction: column-reverse;
+    }
+}
+@media screen and (max-width: 400px) {
+    .check-executor {
+        width: 100%;
+    }
+}

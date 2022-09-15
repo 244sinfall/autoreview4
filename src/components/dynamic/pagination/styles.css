@@ -1,0 +1,54 @@
+.pagination {
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.pagination-pages {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding-right: 100px;
+}
+
+.pagination-control {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.delimiter {
+    padding-top: 2px;
+    font-weight: 700;
+    color: rgba(91, 62, 93, 0.7);
+}
+
+.pagination-control .input__field {
+    width: 50px;
+}
+.page:hover {
+    background-color: rgba(91, 62, 93, 0.7);
+}
+.page {
+    min-width: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #5b3e5d;
+    color: rgba(244, 244, 244, 0.95);
+    text-align: center;
+}
+
+@media screen and (max-width: 485px){
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .pagination-pages {
+        padding: 0;
+    }
+    .pagination-control {
+        padding: 0;
+    }
+}

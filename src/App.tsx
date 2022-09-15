@@ -10,6 +10,7 @@ import EventsPage from "./ui/events/events-page";
 import OtherPage from "./ui/other/otherPage/otherPage";
 import ArbitersPage from "./ui/arbiters/arbiters-page";
 import AdminPage from "./ui/admin/admin-page";
+import EconomicsPage from "./ui/economics/economics-page";
 
 
 function App() {
@@ -30,8 +31,8 @@ function App() {
                     menuRoute: '/arbitration', accessLevel: 1
                 },
                 {
-                    menuName: 'Экономика(WIP)',
-                    menuRoute: '/economics', accessLevel: 1
+                    menuName: 'Экономика',
+                    menuRoute: '/economics', accessLevel: 0
                 },
                 {
                     menuName: 'Другое',
@@ -45,6 +46,7 @@ function App() {
                 <Route path='/events' element={<EventsPage/>}/>
                 <Route path='/other' element={<OtherPage/>}/>
                 <Route path='/arbitration' element={<ArbitersPage/>}/>
+                <Route path='/economics' element={<EconomicsPage/>}/>
                 <Route path='/admin' element={<AdminPage/>}/>
                 <Route path='/' element={<MainPage/>}/>
             </Routes>
