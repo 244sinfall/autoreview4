@@ -10,7 +10,6 @@ const Header = (props: { menuElements: HeaderMenuElement[] }) => {
     const [sidebarState, setSidebarState] = useState<"closed" | "opened">("closed")
     const {currentUser} = useAuth()
     const sidebarRef = useRef<HTMLDivElement>(null)
-    console.log(sidebarState)
     const buildHeaderElements = useMemo(() => {
         if(props.menuElements) {
             return props.menuElements
