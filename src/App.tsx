@@ -17,29 +17,11 @@ function App() {
   return (
     <Provider store={store}>
         <div className="App">
-            <Header menuElements={[
-                {
-                    menuName: 'Анкеты',
-                    menuRoute: '/charsheets', accessLevel: 1
-                },
-                {
-                    menuName: 'Отчеты',
-                    menuRoute: '/events', accessLevel: 1
-                },
-                {
-                    menuName: 'Арбитры',
-                    menuRoute: '/arbitration', accessLevel: 1
-                },
-                {
-                    menuName: 'Экономика',
-                    menuRoute: '/economics', accessLevel: 0
-                },
-                {
-                    menuName: 'Другое',
-                    menuRoute: '/other', accessLevel: 0
-                }
-
-
+            <Header menuElements={[{menuName: 'Анкеты',  menuRoute: '/charsheets', accessLevel: 1},
+                {menuName: 'Отчеты', menuRoute: '/events', accessLevel: 1},
+                {menuName: 'Арбитры', menuRoute: '/arbitration', accessLevel: 1},
+                {menuName: 'Экономика', menuRoute: '/economics', accessLevel: 0},
+                {menuName: 'Другое', menuRoute: '/other', accessLevel: 0}
             ]}/>
             <Routes>
                 <Route path='/charsheets' element={<CharsheetPage/>}/>
