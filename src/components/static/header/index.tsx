@@ -37,7 +37,7 @@ const Header = (props: { menuElements: HeaderMenuElement[] }) => {
                         className='nav_link'
                         to={menuElement.menuRoute}>
                         <li className='header__sidebar__element'
-                            key={menuElement.menuName} onClick={() => setShowSidebar(true)}>{menuElement.menuName}</li></NavLink>
+                            key={menuElement.menuName} onClick={() => setShowSidebar(false)}>{menuElement.menuName}</li></NavLink>
         })
     }, [props.menuElements, currentUser])
 
