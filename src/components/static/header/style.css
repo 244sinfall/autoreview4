@@ -72,10 +72,10 @@
         transition: 0.5s;
         background-color: rgb(91, 62, 93);
     }
-    .collapsed {
+    .header__sidebar__menu[data-state=closed] {
         transform: translateX(100%);
     }
-    .expanded {
+    .header__sidebar__menu[data-state=opened] {
         transform: translateX(0%);
     }
 }

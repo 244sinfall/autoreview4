@@ -11,8 +11,8 @@
 }
 
 html, body  {
-    background: url("/public/bgdarkmoon.png") no-repeat fixed;
     background-size: cover;
+    background: url("/public/bgdarkmoon.png") no-repeat fixed;
     overflow-x: clip;
     width: 100%;
 }
@@ -30,6 +30,9 @@ html, body  {
 }
 
 @media screen and (max-width: 1095px) {
+    html, body {
+        overflow-x: hidden;
+    }
     .App {
         margin-left: 0;
         margin-right: 0;
