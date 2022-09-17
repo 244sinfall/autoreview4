@@ -14,7 +14,7 @@ const UsersList = () => {
         currentUser?.getAllUsers().then(users => {
             if(users) {
                 setUsers(users.map((u) => {
-                    return <UserControl key={u.email} user={currentUser} email={u.email} permission={u.permission}/>
+                    return <UserControl key={u.email} user={currentUser} email={u.email} name={u.name} permission={u.permission}/>
                 }))
             }
             setIsLoading(false)

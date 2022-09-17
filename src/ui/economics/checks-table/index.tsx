@@ -17,19 +17,32 @@ import Pagination from "../../../components/dynamic/pagination";
 import {useAuth} from "../../../model/auth/firebase/auth";
 
 
+const ExecuteHelperOption = (props: {title: string, command: string}) => {
+    const [copied, setCopied] = useState(false)
+    return (<div className="executor-option">
+        <TextInput title={props.title} placeholder={""} maxLength={128} defaultValue={props.command}/>
+        <ActionButton title={copied ? "Скопировано" : "Скопировать команду"} show={true} action={() => {
+            navigator.clipboard.writeText(props.command).then(() => {
+                setCopied(true)
+                setTimeout(() => setCopied(false), 1000)
+            })
+        }} requiresLoading={false}/>
+    </div>)
+}
+
 const ExecuteHelper = (props: {check: Check, closeHandler: () => void}) => {
-    const rejectCommand = `.check return ${props.check.Id}`
-    const openCommand = `.check open ${props.check.Id}`
-    const closeCommand = `.check close ${props.check.Id}`
+    const rejectCommand = `.check return ${props.check.id}`
+    const openCommand = `.check open ${props.check.id}`
+    const closeCommand = `.check close ${props.check.id}`
     return (
         <div className="check-executor">
             <ContentTitle title={"Макросы для чека"}>
-                {props.check.Status === "Отказан" && <p>Этот чек отказан. Его невозможно изменить. Игроку необходимо отправить новый чек.</p>}
-                {props.check.Status === "Закрыт" && <TextInput title={"Переоткрыть чек"} placeholder={""} defaultValue={openCommand} maxLength={128}/>}
-                {props.check.Status === "Ожидает" &&
+                {props.check.status === "Отказан" && <p>Этот чек отказан. Его невозможно изменить. Игроку необходимо отправить новый чек.</p>}
+                {props.check.status === "Закрыт" && <ExecuteHelperOption title="Переоткрыть чек" command={openCommand}/>}
+                {props.check.status === "Ожидает" &&
                   <div className="executor-fields">
-                    <TextInput title={"Закрыть чек"} placeholder={""} defaultValue={closeCommand} maxLength={128}/>
-                    <TextInput title={"Отказать чек"} placeholder={""} defaultValue={rejectCommand} maxLength={128}/>
+                    <ExecuteHelperOption title={"Закрыть чек"} command={closeCommand}/>
+                    <ExecuteHelperOption title={"Отказать чек"} command={rejectCommand}/>
                   </div>
                 }
                 <ActionButton title={"Закрыть"} show={true} action={props.closeHandler} requiresLoading={false}/>
@@ -95,16 +108,16 @@ const ChecksTable = () => {
     const handleTableClick = (check: any[]) => {
         if(currentUser?.canAccess(1)) {
             const newCheck = defaultCheck
-            newCheck.Id = check[0]
-            newCheck.Date = check[1]
-            newCheck.Owner = check[2]
-            newCheck.Type = check[3]
-            newCheck.Money = check[4]
-            newCheck.Name = check[5]
-            newCheck.Description = check[6]
-            newCheck.Body = check[7]
-            newCheck.Status = check[8]
-            newCheck.Gm = check[9]
+            newCheck.id = check[0]
+            newCheck.date = check[1]
+            newCheck.sender = check[2]
+            newCheck.receiver = check[3]
+            newCheck.money = check[4]
+            newCheck.subject = check[5]
+            newCheck.body = check[6]
+            newCheck.items = check[7]
+            newCheck.status = check[8]
+            newCheck.gmName = check[9]
             setSelectedCheck(newCheck)
         }
     }
@@ -137,7 +150,7 @@ const ChecksTable = () => {
                 </div>
                 {selectedCheck && <ExecuteHelper check={selectedCheck} closeHandler={quitSelectedCheck}/>}
                 <LoadingSpinner spin={isLoading}>
-                    <Table columns={["ID","Дата и время", "Владелец", "Тип", "Деньги", "Название","Описание","Вложения","Статус","ГМ"]} content={checks?.checks ?? []} handleClick={handleTableClick}/>
+                    <Table columns={["ID","Дата и время", "Владелец", "Тип", "Название", "Описание","Деньги","ГМ","Статус","Вложения"]} content={checks?.checks ?? []} handleClick={handleTableClick}/>
                     <Pagination itemsAmount={checks.filteredCount} itemsPerPage={params.limit} currentPage={page} clickHandler={pageChangeHandler}/>
                 </LoadingSpinner>
             </ContentTitle>

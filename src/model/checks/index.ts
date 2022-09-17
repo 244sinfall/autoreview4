@@ -1,29 +1,48 @@
 import {APIAddress, getChecksEndPoint} from "../../config/api";
 
-export interface Check {
-    Id: number,
-    Date: string,
-    Owner: string,
-    Type: string,
-    Money: string,
-    Name: string,
-    Description: string,
-    Body: string[],
-    Status: string,
-    Gm: string
+interface CheckItem {
+    count: number
+    name: string
 }
 
-export const defaultCheck = {
-    Id: 0,
-    Date: "",
-    Owner: "",
-    Type: "",
-    Money: "",
-    Name: "",
-    Description: "",
-    Body: [],
-    Status: "",
-    Gm: ""
+
+export interface Check {
+    id: number,
+    date: string,
+    sender: string,
+    receiver: string,
+    subject: string, //name
+    body: string, //description
+    money: number | string,
+    gmName: string,
+    status: string,
+    items: CheckItem[] | string[] | null
+}
+
+// export interface Check {
+//     Id: number,
+//     Date: string,
+//     Owner: string,
+//     Type: string,
+//     Money: string,
+//     Name: string,
+//     Description: string,
+//     Body: string[],
+//     Status: string,
+//     Gm: string
+// }
+
+export const defaultCheck: Check= {
+    id: 0,
+    date: "",
+    sender: "",
+    receiver: "",
+    money: 0,
+    subject: "",
+    body: "",
+    items: [],
+    status: "",
+    gmName: ""
 }
 
 export interface CheckResponse {
@@ -91,9 +110,10 @@ export async function getChecks(params?: CheckTableSearchParams) {
     if (json["error"]) throw json
     const checkResponse = await json as CheckResponse
     for await(let check of checkResponse.checks) {
-        const money = parseInt(check.Money)
+        check.items ? check.items = (check.items as Array<CheckItem>).map(i => `[${i.name}]x${i.count}`) : check.items = []
+        const money = check.money as number
         if(isNaN(money) || money === 0) {
-            check.Money = "0 м."
+            check.money = "0 м."
             continue
         }
         const moneyInGold = money / 10000
@@ -105,7 +125,7 @@ export async function getChecks(params?: CheckTableSearchParams) {
         if(goldValue) moneyStr += `${goldValue} з. `
         if(silverValue) moneyStr += `${silverValue} с. `
         if(copperValue) moneyStr += `${copperValue} м.`
-        check.Money = moneyStr
+        check.money = moneyStr
     }
     checkResponse.updatedAt = new Date(checkResponse.updatedAt)
     return checkResponse

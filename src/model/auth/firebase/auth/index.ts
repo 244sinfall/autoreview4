@@ -27,6 +27,7 @@ export const handleSignUp = async(user: UserInfo) => {
     await updateProfile(result.user, {displayName: user.name})
     await setDoc(doc(db, 'permissions', result.user.uid), {
         email: result.user.email,
+        name: user.name,
         permission: 0
     })
 }

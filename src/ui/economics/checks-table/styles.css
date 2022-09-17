@@ -10,6 +10,11 @@
     flex-direction: column;
     gap: 5px;
 }
+.executor-option {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
 .checks-table-controls {
     padding-bottom: 5px;

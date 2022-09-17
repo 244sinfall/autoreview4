@@ -5,7 +5,7 @@ import './styles.css'
 import {AuthorizedUser} from "../../../model/auth/firebase/user";
 import {getPermissionName, getPermissionValue} from "../../../model/auth/firebase/user/model";
 
-const UserControl = (props: {user: AuthorizedUser, email: string, permission: number}) => {
+const UserControl = (props: {user: AuthorizedUser, email: string, name: string, permission: number}) => {
     const [perm, setPerm] = useState(props.permission)
     const [isLoading, setIsLoading] = useState(false)
     const handleSwitch = (newPermission: string) => {
@@ -18,7 +18,7 @@ const UserControl = (props: {user: AuthorizedUser, email: string, permission: nu
     }
     return (
         <div className="user-data">
-            {props.email}
+            {props.name} ({props.email})
             <LoadingSpinner spin={isLoading}>
                 <RadioButtonGroup title="" options={["Игрок","ГМ","Админ"]} defaultValue={getPermissionName(perm)}
                                   groupName={props.email} handler={handleSwitch}/>

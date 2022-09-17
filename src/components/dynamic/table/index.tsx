@@ -9,7 +9,7 @@ const Table = (props: {columns: string[], content: any[], handleClick: (clickedD
             <thead className="table-head">
             <tr className="table-row">{props.columns.map(c => <th key={c+"header"} className="table-content">{c}</th>)}</tr></thead>
             <tbody>{contentArr.map((v: any[]) => {
-            return <tr key={v[0]+"row"} className="table-row" onClick={() => props.handleClick(v)}>{v.map((str, idx) => <td key={props.columns[idx]+"content"+idx} className="table-content" data-label={props.columns[idx]+":"}>{String(str)}</td>)}</tr>
+            return <tr key={v[0]+"row"} className="table-row" onClick={() => props.handleClick(v)}>{v.map((str, idx) => <td key={props.columns[idx]+"content"+idx} className="table-content" data-label={props.columns[idx]+":"}>{str ? String(str) : ""}</td>)}</tr>
             })}</tbody>
         </table>
     );
