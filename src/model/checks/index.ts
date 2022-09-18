@@ -49,12 +49,14 @@ export interface CheckResponse {
     checks: Check[],
     count: number,
     filteredCount: number,
+    types: string[],
     updatedAt: Date
 }
 
 export const defaultCheckTableSearchParams: CheckTableSearchParams = {
     limit: 50,
     skip: 0,
+    category: "",
     search: "",
     status: "",
     sortMethod: "",
@@ -65,6 +67,7 @@ export const defaultCheckTableSearchParams: CheckTableSearchParams = {
 export interface CheckTableSearchParams {
     limit: number,//Количество чеков на одной странице
     skip: number,// Количество чеков, которые пропускаются (количество чеков на странице * номер страницы)
+    category: string,
     search: string,
     status: string,
     sortMethod: string,
@@ -109,6 +112,7 @@ export async function getChecks(params?: CheckTableSearchParams) {
     const json = await response.json()
     if (json["error"]) throw json
     const checkResponse = await json as CheckResponse
+    checkResponse.types = ["Все получатели", ...checkResponse.types.filter(t => t && t !== "-")]
     for await(let check of checkResponse.checks) {
         check.items ? check.items = (check.items as Array<CheckItem>).map(i => `[${i.name}]x${i.count}`) : check.items = []
         const money = check.money as number

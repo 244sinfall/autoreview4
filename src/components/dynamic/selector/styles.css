@@ -1,0 +1,9 @@
+.selector {
+    height: 30px;
+    background-color: transparent;
+}
+
+.selector:focus {
+    background-color: white;
+    outline-color: #5b3e5d;
+}

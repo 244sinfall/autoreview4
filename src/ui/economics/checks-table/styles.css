@@ -33,6 +33,9 @@
     gap: 5px;
     text-align: center;
 }
+.specifiers .button-group__container {
+    justify-content: center;
+}
 .table-settings {
     flex-direction: row;
     align-items: center;

@@ -15,6 +15,7 @@ import ActionButton from "../../../components/static/action-button";
 import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
 import Pagination from "../../../components/dynamic/pagination";
 import {useAuth} from "../../../model/auth/firebase/auth";
+import Selector from "../../../components/dynamic/selector";
 
 
 const ExecuteHelperOption = (props: {title: string, command: string}) => {
@@ -52,7 +53,7 @@ const ExecuteHelper = (props: {check: Check, closeHandler: () => void}) => {
 }
 
 const ChecksTable = () => {
-    const [checks, setChecks] = useState<CheckResponse>({checks: [], count: 0, filteredCount: 0, updatedAt: new Date()})
+    const [checks, setChecks] = useState<CheckResponse>({checks: [], count: 0, filteredCount: 0, updatedAt: new Date(), types: []})
     const [page, setPage] = useState(1)
     const [isLoading, setIsLoading] = useState(false)
     const [params, setParams] = useState<CheckTableSearchParams>(defaultCheckTableSearchParams)
@@ -121,6 +122,10 @@ const ChecksTable = () => {
             setSelectedCheck(newCheck)
         }
     }
+    const checkTypeChangeHandler = (newValue: string) => {
+        setParams({...params, category: newValue === "Все получатели" ? "" : newValue, skip: 0})
+        setPage(1)
+    }
     const quitSelectedCheck = () => {
         setSelectedCheck(null)
     }
@@ -139,7 +144,10 @@ const ChecksTable = () => {
                             <RadioButtonGroup title={""} options={["Все", "Ожидает", "Закрыт", "Отказан"]} groupName={"showOnly"} handler={showOnlyHandler} defaultValue={getCheckStatusName(params.status)}/>
                             <TextInput title="" placeholder={"Поиск"} maxLength={128} handler={searchHandler}/>
                         </div>
-                        <RadioButtonGroup title={"Показывать"} options={["20","50","100"]} groupName={"elementsPerPage"} handler={elementsPerPageHandler} defaultValue={String(params.limit)}/>
+                        <div className="specifiers">
+                            <Selector options={checks.types} selected={params.category ? params.category : "Все получатели"} changeHandler={checkTypeChangeHandler}/>
+                            <RadioButtonGroup title={"Показывать"} options={["20","50","100"]} groupName={"elementsPerPage"} handler={elementsPerPageHandler} defaultValue={String(params.limit)}/>
+                        </div>
                         <p style={{color: "red"}}>{errMsg}</p>
                     </div>
                     <div className="checks-table-controls checks-info">
@@ -154,7 +162,6 @@ const ChecksTable = () => {
                     <Pagination itemsAmount={checks.filteredCount} itemsPerPage={params.limit} currentPage={page} clickHandler={pageChangeHandler}/>
                 </LoadingSpinner>
             </ContentTitle>
-
         </div>
     );
 };
