@@ -2,9 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {
     Check,
     CheckResponse,
-    CheckTableSearchParams, defaultCheck,
+    CheckTableSearchParams,
+    defaultCheck,
     defaultCheckTableSearchParams,
-    getChecks, getCheckStatusName, getCheckStatusValue
+    getChecks,
+    getCheckStatusName,
+    getCheckStatusValue
 } from "../../../model/checks";
 import ContentTitle from "../../../components/static/content-title";
 import LoadingSpinner from "../../../components/static/loading-spinner";
@@ -16,6 +19,7 @@ import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
 import Pagination from "../../../components/dynamic/pagination";
 import {useAuth} from "../../../model/auth/firebase/auth";
 import Selector from "../../../components/dynamic/selector";
+import {Permission} from "../../../model/auth/firebase/user/model";
 
 
 const ExecuteHelperOption = (props: {title: string, command: string}) => {
@@ -74,9 +78,10 @@ const ChecksTable = () => {
         })
     },[params])
     const triggerCacheUpdate = async () => {
-        if(currentUser === null || !currentUser?.canAccess(1)) throw new Error("Недостаточно прав")
+        if(currentUser === null || !currentUser?.canAccess(Permission.gm)) throw new Error("Недостаточно прав")
         try {
-            const c = await getChecks({...params, force: true});
+            const token = await currentUser.getToken()
+            const c = await getChecks({...params, force: true}, token);
             setChecks(c);
         } catch(e: any) {
             if("error" in e) {
@@ -107,7 +112,7 @@ const ChecksTable = () => {
         setPage(newPage)
     }
     const handleTableClick = (check: any[]) => {
-        if(currentUser?.canAccess(1)) {
+        if(currentUser?.canAccess(Permission.arbiter)) {
             const newCheck = defaultCheck
             newCheck.id = check[0]
             newCheck.date = check[1]
@@ -153,7 +158,7 @@ const ChecksTable = () => {
                     <div className="checks-table-controls checks-info">
                         <p>Данные актуальны на: {checks.updatedAt.toLocaleString("ru")}</p>
                         <p>Чеков в БД: {checks.count}. Чеков с учетом фильтра: {checks.filteredCount}</p>
-                        <ActionButton title={"Обновить кэш"} show={currentUser ? currentUser.canAccess(1) : false} action={triggerCacheUpdate} requiresLoading={true} tooltip={cacheUpdateToolTip}/>
+                        <ActionButton title={"Обновить кэш"} show={currentUser ? currentUser.canAccess(Permission.gm) : false} action={triggerCacheUpdate} requiresLoading={true} tooltip={cacheUpdateToolTip}/>
                     </div>
                 </div>
                 {selectedCheck && <ExecuteHelper check={selectedCheck} closeHandler={quitSelectedCheck}/>}

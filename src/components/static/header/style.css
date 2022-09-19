@@ -13,7 +13,7 @@
 
 .header__menu__element {
     list-style: none;
-    width: 100px;
+    min-width: 100px;
     display: flex;
     justify-content: center;
     padding-right: 20px;

@@ -5,6 +5,7 @@ import {HeaderMenuElement} from "../../../model/header-menu-element";
 import {Link, NavLink} from "react-router-dom";
 import sidebarIcon from './assets/sidebar.png'
 import {useAuth} from "../../../model/auth/firebase/auth";
+import {Permission} from "../../../model/auth/firebase/user/model";
 
 const Header = (props: { menuElements: HeaderMenuElement[] }) => {
     const [sidebarState, setSidebarState] = useState<"closed" | "opened">("closed")
@@ -30,7 +31,7 @@ const Header = (props: { menuElements: HeaderMenuElement[] }) => {
     const buildHeaderSidebarElements = useMemo(() => {
         if (props.menuElements)
             return props.menuElements
-                .filter((el) => el.accessLevel === 0 || currentUser?.canAccess(el.accessLevel))
+                .filter((el) => el.accessLevel === Permission.player || currentUser?.canAccess(el.accessLevel))
                 .map((menuElement) => {
                     return <NavLink
                         key={menuElement.menuName}

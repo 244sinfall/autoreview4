@@ -20,7 +20,7 @@ const UserControl = (props: {user: AuthorizedUser, email: string, name: string, 
         <div className="user-data">
             {props.name} ({props.email})
             <LoadingSpinner spin={isLoading}>
-                <RadioButtonGroup title="" options={["Игрок","ГМ","Админ"]} defaultValue={getPermissionName(perm)}
+                <RadioButtonGroup title="" options={["Игрок","ГМ","Арбитр","Рецензент","Админ"]} defaultValue={getPermissionName(perm)}
                                   groupName={props.email} handler={handleSwitch}/>
 
             </LoadingSpinner>

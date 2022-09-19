@@ -106,9 +106,9 @@ function parseChecksParams(params: CheckTableSearchParams): string {
     return query
 }
 
-export async function getChecks(params?: CheckTableSearchParams) {
+export async function getChecks(params?: CheckTableSearchParams, token?:string) {
     const paramsStr = params ? parseChecksParams(params) : ""
-    const response = await fetch(`${APIAddress}${getChecksEndPoint}${paramsStr}`)
+    const response = await fetch(`${APIAddress}${getChecksEndPoint}${paramsStr}`, {method: "GET", headers:{"Authorization": token ? token : ""}})
     const json = await response.json()
     if (json["error"]) throw json
     const checkResponse = await json as CheckResponse

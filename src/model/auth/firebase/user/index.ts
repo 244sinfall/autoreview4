@@ -19,6 +19,9 @@ export class AuthorizedUser {
             return fetched.docs.map((d) => d.data())
         }
     }
+    async getToken() {
+        return this._user.getIdToken()
+    }
     async changeRole(forEmail: string, to: Permission) {
         if(this._permission && this._permission >= Permission.admin) {
             try {

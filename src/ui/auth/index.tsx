@@ -5,8 +5,7 @@ import LoadingSpinner from "../../components/static/loading-spinner";
 import WelcomeMessage from "./welcome-message";
 import AuthWindow from "./auth-window";
 import {useAuth} from "../../model/auth/firebase/auth";
-import {getPermissionName} from "../../model/auth/firebase/user/model";
-
+import {getPermissionName, Permission} from "../../model/auth/firebase/user/model";
 
 
 const AccountManager = () => {
@@ -15,7 +14,7 @@ const AccountManager = () => {
         <ContentTitle title={currentUser ? "Аккаунт" : "Авторизация"}>
             <LoadingSpinner spin={isLoading}>
             {currentUser ? <WelcomeMessage name={currentUser.displayName() ?? ""}
-                                           isAdmin={currentUser.canAccess(2)} permission={isLoading ? "Загрузка..." : getPermissionName(currentUser.permission())} logoutCallback={logout}/>
+                                           isAdmin={currentUser.canAccess(Permission.admin)} permission={isLoading ? "Загрузка..." : getPermissionName(currentUser.permission())} logoutCallback={logout}/>
             : <AuthWindow isLoading={isLoading}/>}
             </LoadingSpinner>
         </ContentTitle>
