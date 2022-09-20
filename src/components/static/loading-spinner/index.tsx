@@ -5,9 +5,11 @@ import React, {useCallback, useState} from "react";
 const LoadingSpinner = (props: {spin: boolean, children: React.ReactNode | React.ReactNode[]}) => {
     const [size, setSize] = useState(80)
     const container = useCallback((container: HTMLDivElement) => {
-        let sizeNow = container?.offsetHeight / 2
-        if(isNaN(sizeNow) || !sizeNow) sizeNow = 80
-        setSize(sizeNow)
+        if(container) {
+            let sizeNow = container?.offsetHeight / 2
+            if(isNaN(sizeNow) || !sizeNow || sizeNow > 160) sizeNow = 80
+            setSize(sizeNow)
+        }
     }, [])
     return (
         <>

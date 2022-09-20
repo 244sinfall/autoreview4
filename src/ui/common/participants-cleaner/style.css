@@ -20,13 +20,11 @@
 .text-cleaner__raw {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 .text-cleaner__raw .action-button__container {
     display: flex;
     justify-content: center;
-}
-.text-cleaner__raw .action-button {
-    margin-top: 10px;
 }
 
 @media screen and (max-width: 580px) {
