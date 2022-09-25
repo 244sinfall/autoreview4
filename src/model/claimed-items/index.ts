@@ -61,7 +61,24 @@ export const ClaimedItemRequests = {
     }
 }
 
+export interface ClaimedItemEditHandler {
+    close: () => void,
+    update: (id: string, changes: any) => Promise<void>,
+    accept: (id: string) => Promise<void>
+    del: (id: string) => Promise<void>,
+}
+export interface ClaimedItemAddHandler {
+    close: () => void,
+    add: (i: ClaimedItem) => Promise<void>
+}
 
+export enum ClaimedItemsTablesOrder {
+    legendary,
+    epic,
+    rare,
+    green,
+    other
+}
 
 export function getClaimedItemsTitle(propName: string): string {
     switch (propName) {

@@ -1,5 +1,13 @@
-.claimed-items-table .content-block__container {
-    padding: 0;
+.claimed-items .content-block__container {
+    padding: 0 0 10px;
+}
+
+
+.claimed-items__tables {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
 }
 
 @media screen and (max-width: 1095px) {
@@ -22,22 +30,12 @@
     }
 }
 
-.claimed-items-table .content-block__container {
-    padding-bottom: 10px;
-}
-
 .claimed-items__header {
     padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-}
-.claimed-items__controls {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .claimed-items-modal-wrapper {
