@@ -89,7 +89,7 @@ const LotteryCreator = () => {
                         <RadioButtonGroup title="Алгоритм розыгрыша" options={[QualityOverQuantityMode.moreItems, QualityOverQuantityMode.higherQuality]} groupName="qualityOverQuantitySelector" handler={updateMode}/>
                         <ActionButton title={errMsg ? errMsg : 'Разыграть'} show={true} action={handleCreateLottery} tooltip={rules} requiresLoading={true}/>
                     </div>
-                    <TextAreaReadOnly content={lotteryResponseText()} height={300}></TextAreaReadOnly>
+                    <TextAreaReadOnly content={lotteryResponseText()} height={250}></TextAreaReadOnly>
                 </div>
             </ContentTitle>
         </div>

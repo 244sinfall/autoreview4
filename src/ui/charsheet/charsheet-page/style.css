@@ -1,15 +1,11 @@
 .charsheet-page {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-
-}
-.charsheet-page .review-generator {
-    flex-grow: 1;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 0.5fr 1.5fr;
 }
 
 @media screen and (max-width: 1180px) {
     .charsheet-page {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 }

@@ -1,14 +1,11 @@
 .events-page {
-    display: flex;
-    gap: 20px;
-}
-.events-page .lottery-creator {
-    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    grid-gap: 20px;
 }
 
 @media screen and (max-width: 1250px) {
     .events-page {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
-
 }

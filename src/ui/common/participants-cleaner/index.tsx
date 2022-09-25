@@ -12,7 +12,7 @@ import TextAreaReadOnly from "../../../components/dynamic/text-area-read-only";
 
 const TextCleaner = () => {
     const [rawText, setRawText] = useState<ParticipantsCleanerRequest>({rawText: ""})
-    const [cleanedText, setCleanedText] = useState<ParticipantsCleanerResponse>({cleanedText: "", editedLines: ""})
+    const [cleanedText, setCleanedText] = useState<ParticipantsCleanerResponse>({cleanedText: "", editedLines: "", cleanedCount: 0})
     const [errMsg, setErrMsg] = useState("")
     const setError = (message: string) => {
         setErrMsg(message)
@@ -42,6 +42,7 @@ const TextCleaner = () => {
                     <p>Список для очистки:</p>
                     <TextAreaWritable height={300} handler={handleRawTextChange}/>
                     <ActionButton title={errMsg ? errMsg : 'Очистить текст'} show={true} action={handleClean} tooltip={rules} requiresLoading={true}/>
+                    <p>Участников: {cleanedText.cleanedCount}</p>
                 </div>
                 <div className='text-cleaner__results'>
                     <div className='text-cleaner__results__cleaned'>

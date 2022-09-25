@@ -6,7 +6,8 @@ export interface ParticipantsCleanerRequest {
 
 export interface ParticipantsCleanerResponse {
     cleanedText: string,
-    editedLines: string
+    editedLines: string,
+    cleanedCount: number
 }
 
 export async function cleanParticipantsText(request: ParticipantsCleanerRequest) {

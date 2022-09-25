@@ -1,16 +1,11 @@
 .arbiters-page__contents {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 20px;
-}
-.arbiters-page .reward-worker {
-    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    grid-gap: 20px;
 }
 
 @media screen and (max-width: 1300px) {
     .arbiters-page__contents {
-        flex-direction: column;
-
+        grid-template-columns: 1fr;
     }
 }
