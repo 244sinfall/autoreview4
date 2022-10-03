@@ -110,12 +110,18 @@ export class ClaimedItemsTablesImpl implements ClaimedItemsTables {
         return header
 
     }
+    getTable(name: string) {
+        if(this[name as keyof ClaimedItemsTables]) {
+            return this[name as keyof ClaimedItemsTables]
+        }
+    }
     generateTableHTML() {
         let html: string = ClaimedItemsHTMLTableHeadLine
         for(let key of Object.keys(ClaimedItemsTablesOrder).filter(v => isNaN(Number(v)))) {
-            if(this[key as keyof ClaimedItemsTables]) {
+            const table = this.getTable(key)
+            if(table) {
                 html += this.generateTableHTMLHeader(key) + ClaimedItemsHTMLTableHeader
-                for(let item of this[key as keyof ClaimedItemsTables]) {
+                for(let item of table) {
                     html += item.toHTMLTableRow()
                 }
                 html += ClaimedItemsHTMLTableFooter
