@@ -200,7 +200,7 @@ export class ClaimedItem implements ClaimedItemInterface {
     }
 }
 
-export interface ClaimedItemInterface {
+interface ClaimedItemInterface {
     id: string,
     quality: string,
     name: string,
