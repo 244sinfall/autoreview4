@@ -7,24 +7,28 @@ import {useAuth} from "../../model/auth/firebase/auth";
 import LoadingSpinner from "../../components/static/loading-spinner";
 import {Permission} from "../../model/auth/firebase/user/model";
 import {
-    ClaimedItem, ClaimedItemAddHandler, ClaimedItemEditHandler, ClaimedItemEditorChangeable, ClaimedItemRequests,
-    ClaimedItemsTablesClasses, ClaimedItemsTablesOrder, generateTableHTML,
+    ClaimedItem,
+    ClaimedItemAddHandler,
+    ClaimedItemEditHandler,
+    ClaimedItemEditorChangeable,
+    ClaimedItemRequests,
+    ClaimedItemsTables, ClaimedItemsTablesImpl,
+    ClaimedItemsTablesOrder,
     getClaimedItemQuality,
-    receiveItems
 } from "../../model/claimed-items";
 import ClaimedItemCategory from "./item-category";
 import ClaimedItemEditor from "./item-editor";
 import ClaimedItemAdder from "./item-adder";
 
 const ClaimedItemsPage = () => {
-    const [claimedItems, setClaimedItems] = useState<ClaimedItemsTablesClasses>()
+    const [claimedItems, setClaimedItems] = useState<ClaimedItemsTablesImpl>()
     const [isCreatingItem, setIsCreatingItem] = useState<string | null>(null)
     const [selectedItem, setSelectedItem] = useState<ClaimedItem | null>(null)
     const [requireUpdate, setRequireUpdate] = useState(true)
     const [errMsg, setErrMsg] = useState("")
     const {currentUser} = useAuth()
     const handleClick = useCallback((quality: string, v: any[], idx:number) => {
-        const item = claimedItems && claimedItems[quality as keyof ClaimedItemsTablesClasses][idx]
+        const item = claimedItems && claimedItems[quality as keyof ClaimedItemsTables][idx]
         if(item) {
             setSelectedItem(item)
             setIsCreatingItem(null)
@@ -70,7 +74,7 @@ const ClaimedItemsPage = () => {
     }
     useEffect(() => {
         if(requireUpdate) {
-            receiveItems().then(i => {
+            ClaimedItemRequests.get().then(i => {
                 setClaimedItems(i)
                 setRequireUpdate(false)
             })
@@ -114,7 +118,7 @@ const ClaimedItemsPage = () => {
                 </div>
             </LoadingSpinner>
             <ActionButton title="Сгенерировать HTML"
-                          action={() => claimedItems && navigator.clipboard.writeText(generateTableHTML(claimedItems))}
+                          action={() => claimedItems && navigator.clipboard.writeText(claimedItems.generateTableHTML())}
                           show={currentUser ? currentUser.canAccess(Permission.admin) : false} requiresLoading={true}/>
         </ContentTitle>
         </div>

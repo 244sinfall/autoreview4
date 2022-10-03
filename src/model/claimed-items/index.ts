@@ -7,14 +7,11 @@ import {
     claimedItemsGetEndPoint,
     claimedItemsUpdateEndPoint
 } from "../../config/api";
-
-export interface ClaimedItemsTablesClasses {
-    legendary: ClaimedItem[]
-    epic: ClaimedItem[]
-    rare: ClaimedItem[]
-    green: ClaimedItem[]
-    other: ClaimedItem[]
-}
+import {
+    ClaimedItemsHTMLTableFooter,
+    ClaimedItemsHTMLTableHeader,
+    ClaimedItemsHTMLTableHeadLine
+} from "./boilerplateMarkup";
 
 export interface ClaimedItemsTables {
     legendary: ClaimedItemInterface[]
@@ -58,6 +55,12 @@ export const ClaimedItemRequests = {
             return await fetch(`${APIAddress}${claimedItemsApproveEndPoint}/${id}`,
                 {method: "POST", headers: {"Authorization": token}})
         }
+    },
+    get: async() => {
+        const res = await fetch(`${APIAddress}${claimedItemsGetEndPoint}`)
+        const json = await res.json()
+        const rawItems = await json["result"] as ClaimedItemsTables
+        return new ClaimedItemsTablesImpl(rawItems.epic, rawItems.green, rawItems.legendary, rawItems.other, rawItems.rare)
     }
 }
 
@@ -77,7 +80,49 @@ export enum ClaimedItemsTablesOrder {
     epic,
     rare,
     green,
-    other
+    other,
+}
+
+export class ClaimedItemsTablesImpl implements ClaimedItemsTables {
+    epic: ClaimedItem[];
+    green: ClaimedItem[];
+    legendary: ClaimedItem[];
+    other: ClaimedItem[];
+    rare: ClaimedItem[];
+    constructor(epic: ClaimedItemInterface[], green: ClaimedItemInterface[], legendary: ClaimedItemInterface[],
+                other:ClaimedItemInterface[], rare: ClaimedItemInterface[]) {
+        this.epic = epic.map(i => new ClaimedItem(i))
+        this.green = green.map(i => new ClaimedItem(i))
+        this.legendary = legendary.map(i => new ClaimedItem(i))
+        this.other = other.map(i => new ClaimedItem(i))
+        this.rare = rare.map(i => new ClaimedItem(i))
+    }
+    private generateTableHTMLHeader(prop: string) {
+        let header = `<p style="text-align: center;"><span style="font-size: 14px;">Предметы `
+        switch(prop){
+            case "legendary": header += `<strong><span style="color: rgb(227, 108, 9);">легендарного </span></strong>`; break;
+            case "epic": header += `<strong><span style="color: #8064a2;">эпического </span></strong>`; break;
+            case "green": header += `<strong><span style="color: rgb(155, 187, 89);">необычного </span></strong>`; break;
+            case "other": header += `<strong><span style="color: rgb(49, 133, 155);">прочего </span></strong>`; break;
+            case "rare": header += `<strong><span style="color: rgb(31, 73, 125);">редкого </span></strong>`; break;
+        }
+        header += `качества<br></span></p>`
+        return header
+
+    }
+    generateTableHTML() {
+        let html: string = ClaimedItemsHTMLTableHeadLine
+        for(let key of Object.keys(ClaimedItemsTablesOrder).filter(v => isNaN(Number(v)))) {
+            if(this[key as keyof ClaimedItemsTables]) {
+                html += this.generateTableHTMLHeader(key) + ClaimedItemsHTMLTableHeader
+                for(let item of this[key as keyof ClaimedItemsTables]) {
+                    html += item.toHTMLTableRow()
+                }
+                html += ClaimedItemsHTMLTableFooter
+            }
+        }
+        return html
+    }
 }
 
 export function getClaimedItemsTitle(propName: string): string {
@@ -87,7 +132,7 @@ export function getClaimedItemsTitle(propName: string): string {
         case "rare": return "Предметы Редкого качества"
         case "green": return "Предметы Необычного качества"
         case "other": return "Предметы Прочего качества"
-        default: return "Предметы Прочьего качества"
+        default: return "Предметы Прочего качества"
     }
 }
 export function getClaimedItemQuality(propName: string): string {
@@ -101,7 +146,7 @@ export function getClaimedItemQuality(propName: string): string {
     }
 }
 
-export class ClaimedItem {
+export class ClaimedItem implements ClaimedItemInterface {
     id = ""
     quality = ""
     name = ""
@@ -119,14 +164,16 @@ export class ClaimedItem {
     constructor(obj?: ClaimedItemInterface, quality?: string, reviewer?: string) {
         if(obj) {
             Object.assign(this, obj)
-            this.addedAt = obj.addedAt !== "0001-01-01T00:00:00Z" ? new Date(obj.addedAt) : null
+            this.addedAt = obj.addedAt !== "0001-01-01T00:00:00Z" ? new Date(obj.addedAt as string) : null
             this.acceptedAt = new Date(obj.acceptedAt)
         }
         if(quality) this.quality = quality
         if(reviewer) this.reviewer = reviewer
     }
     toDisplay() {
-        return { name: this.name, owner: this.owner, ownerProof: this.ownerProofLink, reviewer: this.reviewer, addedAt: this.addedAt ? this.addedAt.toLocaleString(): "", acceptor: this.acceptor, acceptedAt: this.accepted ? this.acceptedAt.toLocaleString() : "" }
+        return { name: this.name, owner: this.owner, ownerProof: this.ownerProofLink, reviewer: this.reviewer, addedAt:
+                this.addedAt ? this.addedAt.toLocaleString(): "", acceptor: this.acceptor,
+            acceptedAt: this.accepted ? this.acceptedAt.toLocaleString() : "" }
     }
     toHTMLTableRow() {
         const ownerProof = this.ownerProofLink ? `<a href="${this.ownerProofLink}" target="_blank" rel="noreferrer"><span style="font-size: 14px;">${this.ownerProof}</span></a>` : `<p>-</p>`
@@ -159,93 +206,7 @@ export interface ClaimedItemInterface {
     reviewer: string,
     accepted: boolean,
     acceptor: string,
-    addedAt: string,
-    acceptedAt: string,
+    addedAt: string | Date | null,
+    acceptedAt: string | Date,
     additionalInfo: string
-}
-
-export function generateTableHTML(tables: ClaimedItemsTablesClasses) {
-    const tableFooter = `</tbody></table><br/>`
-    const tableHeader = `<table>
-<tbody>
-<tr>
-    <td><span style="font-size: 14px;"><strong>Наименование предмета,<br>ссылка</strong></span>
-</td>
-<td><span style="font-size: 14px;"><strong>Имя персонажа-владельца предмета, профиль</strong></span>
-</td>
-<td><span style="font-size: 14px;"><strong>Подтверждение владения предметом
-</strong></span>
-</td>
-<td><span style="font-size: 14px;"><strong>Подтверждения нет, начат сюжет получения предмета
-</strong></span>
-</td>
-<td><span style="font-size: 14px;"><strong>Кто и когда согласовал получение предмета</strong>
-</span>
-</td>
-</tr>`
-    let html: string = `<p style="text-align: center;" rel="text-align: center;"><span style="font-size: 14px;"><strong>Таблица именных предметов</strong>
-</span>
-</p>
-<hr>`
-    if(tables.legendary) {
-        html += `<p style="text-align: center;"><span style="font-size: 14px;">Предметы <strong><span style="color: rgb(227, 108, 9);">легендарного </span></strong>качества<br>
-</span>
-</p>`
-        html += tableHeader
-        tables.legendary.forEach(i => {
-            html += i.toHTMLTableRow()
-        })
-        html += tableFooter
-    }
-    if(tables.epic) {
-        html += `<p style="text-align: center;"><span style="font-size: 14px;">Предметы <strong><span style="color: #8064a2;">эпического </span></strong>качества<span style="color: #7f6000;"></span>
-</span>
-</p>`
-        html += tableHeader
-        tables.epic.forEach(i => {
-            html += i.toHTMLTableRow()
-        })
-        html += tableFooter
-    }
-    if(tables.rare) {
-        html += `<p style="text-align: center;"><span style="font-size: 14px;">Предметы <strong><span style="color: rgb(31, 73, 125);"></span><span style="color: rgb(31, 73, 125);">редкого</span> </strong>качества<span style="color: #7f6000;"></span>
-</span>
-</p>`
-        html += tableHeader
-        tables.rare.forEach(i => {
-            html += i.toHTMLTableRow()
-        })
-        html += tableFooter
-    }
-    if(tables.green) {
-        html += `<p style="text-align: center;"><span style="font-size: 14px;">Предметы <strong><span style="color: rgb(155, 187, 89);"></span><span style="color: rgb(155, 187, 89);">необычного</span> </strong>качества<span style="color: #7f6000;"></span>
-</span>
-</p>`
-        html += tableHeader
-        tables.green.forEach(i => {
-            html += i.toHTMLTableRow()
-        })
-        html += tableFooter
-    }
-    if(tables.other) {
-        html += `<p style="text-align: center;"><span style="font-size: 14px;">Предметы <strong><span style="color: rgb(49, 133, 155);">прочего </span></strong><strong><span style="color: #8064a2;"> </span></strong>качества<span style="color: #7f6000;"></span>
-</span>
-</p>`
-        html += tableHeader
-        tables.other.forEach(i => {
-            html += i.toHTMLTableRow()
-        })
-        html += tableFooter
-    }
-    return html
-}
-
-
-export const receiveItems = async() => {
-    const res = await fetch(`${APIAddress}${claimedItemsGetEndPoint}`)
-    const json = await res.json()
-    const rawItems = await json["result"] as ClaimedItemsTables
-    return Object.fromEntries(Object.entries(rawItems).map(v => {
-        return [v[0], (v[1] as ClaimedItemInterface[]).map(i => new ClaimedItem(i))]
-    })) as unknown as ClaimedItemsTablesClasses
 }
