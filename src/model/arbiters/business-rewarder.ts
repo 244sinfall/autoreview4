@@ -61,13 +61,13 @@ const secondLevelResourceProductivityByPOILevel = new Map([
 
 const goldResourceProductivityByPOILevel = new Map([
     [0, 0],
-    [1, 8000],
-    [2, 16000],
-    [3, 24000],
-    [4, 32000],
-    [5, 40000],
-    [6, 48000],
-    [7, 56000]
+    [1, 10000],
+    [2, 20000],
+    [3, 30000],
+    [4, 40000],
+    [5, 50000],
+    [6, 60000],
+    [7, 70000]
 ])
 
 export const getCommand = (info: BusinessRewardInfo) => {
