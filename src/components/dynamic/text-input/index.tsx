@@ -28,7 +28,7 @@ const TextInput = (props: { title: string, placeholder: string, maxLength: numbe
             <input className="input__field"
                    type={props.password ? "password" : "text"}
                    placeholder={props.placeholder}
-                   value={content}
+                   value={props.defaultValue || content}
                    disabled={props.disabled}
                    onChange={event => completeSetContent(event.target.value)}/>
         </div>

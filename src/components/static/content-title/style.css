@@ -1,8 +1,16 @@
 .content-block__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 10px;
     height: auto;
     color: rgba(244, 244, 244, 0.95);
     background-color: rgb(91, 62, 93);
+}
+
+.content-block__title-control {
+    cursor: pointer;
+    user-select: none;
 }
 
 .content-block__container {

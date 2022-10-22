@@ -3,6 +3,7 @@ import TextCleaner from "../../common/participants-cleaner";
 import RewardWorkerComponent from "../reward-worker";
 import './style.css';
 import Protector from "../../protector";
+import BusinessRewarder from "../business-rewarder";
 
 const ArbitersPage = () => {
     return (
@@ -11,6 +12,7 @@ const ArbitersPage = () => {
                     <div className="arbiters-page__contents">
                         <TextCleaner/>
                         <RewardWorkerComponent/>
+                        <BusinessRewarder/>
                     </div>
                 </div>
             </Protector>
