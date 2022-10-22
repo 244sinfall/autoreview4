@@ -14,8 +14,19 @@
 }
 .business-rewarder__result {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.business-rewarder__result > .input__container {
+    display: flex;
+    flex-grow: 1;
+    padding-right: 5px;
+}
+
+.business-rewarder__result > .input__container > .input__field {
+    display: flex;
+    flex-grow: 1;
 }
 
 @media screen and (max-width: 460px) {
