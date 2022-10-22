@@ -1,4 +1,4 @@
-export const APIAddress = 'https://dm.rolevik.site:8443'
+export const APIAddress = 'https://185.193.143.35:8443'
 // export const APIAddress = 'http://127.0.0.1:8000'
 export const getCharsheetEndPoint = '/generate_charsheet_review'
 export const cleanLogEndPoint = '/clean_log'
