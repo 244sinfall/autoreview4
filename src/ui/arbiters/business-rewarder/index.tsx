@@ -17,6 +17,7 @@ const BusinessRewarder = () => {
     const [currentCommand ,setCurrentCommand] = useState("")
     const [copied, setCopied] = useState(false)
     const callbacks = {
+        isDoubleReward: useCallback((e: any) => setBusinessInfo({...businessInfo, double: e.target.checked}), [businessInfo]),
         textFieldChange: useCallback((fieldName: string, fieldValue: string) => {
             switch (fieldName) {
                 case "Владелец": return setBusinessInfo({...businessInfo, owner: fieldValue})
@@ -46,7 +47,13 @@ const BusinessRewarder = () => {
                 <div className="business-rewarder__selectors">
                     <TextInput title="Владелец" placeholder="Васян" maxLength={64} handler={callbacks.textFieldChange}/>
                     <TextInput title="Номер POI" placeholder="8715" maxLength={8} handler={callbacks.textFieldChange}/>
-                    <Selector options={resources} changeHandler={callbacks.selectorValueChange} selected={"Выберите тип ресурса"}/>
+                    <span className="business-rewarder__checkbox-selector">
+                        <>
+                            <input id="double" type={"checkbox"} onChange={callbacks.isDoubleReward} checked={businessInfo.double}/>
+                            <label htmlFor="double">Удвоить награду?</label>
+                        </>
+                        <Selector options={resources} changeHandler={callbacks.selectorValueChange} selected={"Выберите тип ресурса"}/>
+                    </span>
                     <NumberInput title="Уровень POI" minValue={0} maxValue={7} disabled={false} handler={callbacks.numericFieldChange}/>
                     <NumberInput title="Количество рабочих" minValue={0} maxValue={9999} disabled={false} handler={callbacks.numericFieldChange}/>
                 </div>
@@ -54,7 +61,7 @@ const BusinessRewarder = () => {
                     <ActionButton title="Создать команду" show={true} action={callbacks.createCommand} requiresLoading={false}/>
                 </div>
                 <div className="business-rewarder__result">
-                    <TextInput title="Вывод" placeholder="Здесь будет вывод" maxLength={1024} disabled={true} defaultValue={currentCommand}/>
+                    <TextInput title="Вывод" placeholder="Здесь будет вывод" maxLength={1024} defaultValue={currentCommand}/>
                     <ActionButton title={copied ? "Скопировано": "Скопировать"} show={true} action={callbacks.copy} requiresLoading={false}/>
                 </div>
             </ContentTitle>

@@ -4,6 +4,7 @@ export interface BusinessRewardInfo {
     resource: number,
     poiLevel: number,
     labors: number,
+    double: boolean
 }
 
 export const defaultBusinessInfo: BusinessRewardInfo = {
@@ -11,7 +12,8 @@ export const defaultBusinessInfo: BusinessRewardInfo = {
     poi: "",
     resource: 0,
     poiLevel: 0,
-    labors: 0
+    labors: 0,
+    double: false
 }
 
 export const getResourceId = (resource: string) => {
@@ -73,10 +75,12 @@ const goldResourceProductivityByPOILevel = new Map([
 ])
 
 export const getCommand = (info: BusinessRewardInfo) => {
-    if(info.labors === 0 || info.poiLevel === 0 || info.resource === 0 || !info.poi || !info.owner) return ""
+    if(info.labors === 0 || info.poiLevel === 0 || info.resource === 0) return ""
+    const multiplier = info.double ? 2 : 1
+    const finalMod = multiplier * info.labors
     switch(info.resource) {
-        case -1: return `.send mo ${info.owner} "Предприятие" "${info.poi}" ${info.labors * (goldResourceProductivityByPOILevel.get(info.poiLevel) as number)}`//Золотые монеты
-        case 1000069: return `.send it ${info.owner} "Предприятие" "${info.poi}" ${info.resource}:${Math.ceil(info.labors * (secondLevelResourceProductivityByPOILevel.get(info.poiLevel) as number))}`
-        default: return `.send it ${info.owner} "Предприятие" "${info.poi}" ${info.resource}:${Math.ceil(info.labors * (firstLevelResourceProductivityByPOILevel.get(info.poiLevel) as number))}` // Ресурсы первого уровня
+        case -1: return `.send mo ${info.owner} "Предприятие" "${info.poi}" ${finalMod * (goldResourceProductivityByPOILevel.get(info.poiLevel) as number)}`//Золотые монеты
+        case 1000069: return `.send it ${info.owner} "Предприятие" "${info.poi}" ${info.resource}:${Math.ceil(finalMod * (secondLevelResourceProductivityByPOILevel.get(info.poiLevel) as number))}`
+        default: return `.send it ${info.owner} "Предприятие" "${info.poi}" ${info.resource}:${Math.ceil(finalMod * (firstLevelResourceProductivityByPOILevel.get(info.poiLevel) as number))}` // Ресурсы первого уровня
     }
 }
