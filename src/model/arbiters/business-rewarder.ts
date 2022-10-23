@@ -19,6 +19,7 @@ export const getResourceId = (resource: string) => {
         case "Руда": return 1000072
         case "Камень": return 1000073
         case "Провиант": return 1000074
+        case "Трава": return 1000071
         case "Древесина": return 1000076
         case "Рем. изделия": return 1000069
         case "Золото": return -1
@@ -32,6 +33,7 @@ export const resources = [
     "Руда",
     "Камень",
     "Провиант",
+    "Трава",
     "Древесина",
     "Рем. изделия",
     "Золото"
