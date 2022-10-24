@@ -114,7 +114,15 @@ export async function getChecks(params?: CheckTableSearchParams, token?:string) 
     const checkResponse = await json as CheckResponse
     checkResponse.types = ["Все получатели", ...checkResponse.types.filter(t => t && t !== "-")]
     for await(let check of checkResponse.checks) {
-        check.items ? check.items = (check.items as Array<CheckItem>).map(i => `[${i.name}]x${i.count}`) : check.items = []
+        if(check.items === null) check.items = []
+        const items = (check.items as Array<CheckItem>).map(item => item.name)
+        const uniqueItems = [...new Set(items)]
+        const uniqueItemsWithAmount = uniqueItems.map(itemName => {
+            let count = 0;
+            (check.items as Array<CheckItem>).filter(check => check.name === itemName).forEach(check => count += check.count)
+            return [itemName, count]
+        })
+        check.items = uniqueItemsWithAmount.map(item => `[${item[0]}]x${item[1]}`)
         const money = check.money as number
         if(isNaN(money) || money === 0) {
             check.money = "0 м."
