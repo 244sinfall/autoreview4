@@ -17,9 +17,10 @@ import TextInput from "../../../components/dynamic/text-input";
 import ActionButton from "../../../components/static/action-button";
 import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
 import Pagination from "../../../components/dynamic/pagination";
-import {useAuth} from "../../../model/auth/firebase/auth";
+import {useAuth} from "../../../model/auth/use-auth";
 import Selector from "../../../components/dynamic/selector";
-import {Permission} from "../../../model/auth/firebase/user/model";
+import {Permission} from "../../../model/auth/user";
+import AuthorizedUser from "../../../model/auth/user/authorized-user";
 
 
 const ExecuteHelperOption = (props: {title: string, command: string}) => {
@@ -78,7 +79,7 @@ const ChecksTable = () => {
         })
     },[params])
     const triggerCacheUpdate = async () => {
-        if(currentUser === null || !currentUser?.canAccess(Permission.gm)) throw new Error("Недостаточно прав")
+        if(!(currentUser instanceof AuthorizedUser) || !currentUser.canAccess(Permission.gm)) throw new Error("Недостаточно прав")
         try {
             const token = await currentUser.getToken()
             const c = await getChecks({...params, force: true}, token);

@@ -1,12 +1,11 @@
 import {ClaimedItem, ClaimedItemEditHandler, ClaimedItemEditorChangeable} from "../../../model/claimed-items";
-import {AuthorizedUser} from "../../../model/auth/firebase/user";
+import Visitor, {Permission} from "../../../model/auth/user";
 import React, {useState} from "react";
 import ContentTitle from "../../../components/static/content-title";
 import TextInput from "../../../components/dynamic/text-input";
 import ActionButton from "../../../components/static/action-button";
-import {Permission} from "../../../model/auth/firebase/user/model";
 
-const ClaimedItemEditor = (props:{item: ClaimedItem, user: AuthorizedUser | null, callbacks: ClaimedItemEditHandler}) => {
+const ClaimedItemEditor = (props:{item: ClaimedItem, user: Visitor, callbacks: ClaimedItemEditHandler}) => {
     const [changeable, setChangeable] = useState<ClaimedItemEditorChangeable>({ owner: props.item.owner,
         ownerProfile: props.item.ownerProfile.trimStart(), ownerProofLink: props.item.ownerProofLink })
     const handleChange = (fieldName: string, newValue: string) => {

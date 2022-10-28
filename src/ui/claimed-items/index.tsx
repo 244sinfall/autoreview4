@@ -3,9 +3,9 @@ import ContentTitle from "../../components/static/content-title";
 import Table from "../../components/dynamic/table";
 import './styles.css'
 import ActionButton from "../../components/static/action-button";
-import {useAuth} from "../../model/auth/firebase/auth";
+import {useAuth} from "../../model/auth/use-auth";
 import LoadingSpinner from "../../components/static/loading-spinner";
-import {Permission} from "../../model/auth/firebase/user/model";
+import {Permission} from "../../model/auth/user";
 import {
     ClaimedItem,
     ClaimedItemAddHandler,
@@ -19,6 +19,7 @@ import {
 import ClaimedItemCategory from "./item-category";
 import ClaimedItemEditor from "./item-editor";
 import ClaimedItemAdder from "./item-adder";
+import AuthorizedUser from "../../model/auth/user/authorized-user";
 
 const ClaimedItemsPage = () => {
     const [claimedItems, setClaimedItems] = useState<ClaimedItemsTablesImpl>()
@@ -41,14 +42,17 @@ const ClaimedItemsPage = () => {
     const editHandlers: ClaimedItemEditHandler = {
         close: () => setSelectedItem(null),
         accept: async(id: string) => {
+            if(!(currentUser instanceof AuthorizedUser)) throw new Error("Пользователь не авторизован")
             const res = await ClaimedItemRequests.accept(id, currentUser)
             if(res) return analyzeResponse(res)
         },
         update: async(id, changes: ClaimedItemEditorChangeable) => {
+            if(!(currentUser instanceof AuthorizedUser)) throw new Error("Пользователь не авторизован")
             const res = await ClaimedItemRequests.update(id, changes, currentUser)
             if(res) return analyzeResponse(res)
         },
         del: async(id: string) => {
+            if(!(currentUser instanceof AuthorizedUser)) throw new Error("Пользователь не авторизован")
             const res = await ClaimedItemRequests.del(id, currentUser)
             if(res) return analyzeResponse(res)
         }
@@ -68,6 +72,7 @@ const ClaimedItemsPage = () => {
     const addHandlers: ClaimedItemAddHandler = {
         close: () => setIsCreatingItem(null),
         add: async(i: ClaimedItem) => {
+            if(!(currentUser instanceof AuthorizedUser)) throw new Error("Пользователь не авторизован")
             const res = await ClaimedItemRequests.add(i, currentUser)
             if(res) return analyzeResponse(res)
         }
@@ -109,7 +114,7 @@ const ClaimedItemsPage = () => {
             {selectedItem && !isCreatingItem && <ClaimedItemEditor
               item={selectedItem} user={currentUser} callbacks={editHandlers}/>}
             {!selectedItem && isCreatingItem && <ClaimedItemAdder
-              quality={getClaimedItemQuality(isCreatingItem)} reviewerName={currentUser?.displayName() ?? "Ошибка"}
+              quality={getClaimedItemQuality(isCreatingItem)} reviewerName={currentUser.name}
               callbacks={addHandlers}/>}
             <LoadingSpinner spin={requireUpdate}>
                 <p style={{color: "red", textAlign: "center"}}>{errMsg && errMsg}</p>

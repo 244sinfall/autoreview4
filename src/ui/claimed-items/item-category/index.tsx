@@ -1,10 +1,9 @@
-import {AuthorizedUser} from "../../../model/auth/firebase/user";
+import Visitor, {Permission} from "../../../model/auth/user";
 import React, {useState} from "react";
 import ActionButton from "../../../components/static/action-button";
-import {Permission} from "../../../model/auth/firebase/user/model";
 import {getClaimedItemsTitle} from "../../../model/claimed-items";
 
-const ClaimedItemCategory = (props:{t: JSX.Element, user: AuthorizedUser | null, addButtonHandler: (quality: string) => void}) => {
+const ClaimedItemCategory = (props:{t: JSX.Element, user: Visitor, addButtonHandler: (quality: string) => void}) => {
     const [isShowing, setIsShowing] = useState(true)
     return (
         <>

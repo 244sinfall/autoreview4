@@ -4,7 +4,7 @@ import AuthWindow from "../auth/auth-window";
 import ActionButton from "../../components/static/action-button";
 import {useNavigate} from "react-router-dom";
 import './styles.css'
-import {useAuth} from "../../model/auth/firebase/auth";
+import {useAuth} from "../../model/auth/use-auth";
 
 const Protector = (props: {children: React.ReactNode[] | React.ReactNode, accessLevel: number}) => {
     const {currentUser, isLoading} = useAuth()
@@ -21,11 +21,8 @@ const Protector = (props: {children: React.ReactNode[] | React.ReactNode, access
                 <AuthWindow isLoading={isLoading}/>
             </ContentTitle>
         )
-        if(isLoading || !currentUser) return authCheck
-        if(currentUser) {
-            if (!currentUser.canAccess(props.accessLevel)) return errMsg
-            return null
-        }
+        if(isLoading || !currentUser.authorized) return authCheck
+        if(!currentUser.canAccess(props.accessLevel)) return errMsg
     }, [currentUser, isLoading, nav, props.accessLevel])
     return (
         <>

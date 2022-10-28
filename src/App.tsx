@@ -12,7 +12,7 @@ import ArbitersPage from "./ui/arbiters/arbiters-page";
 import AdminPage from "./ui/admin/admin-page";
 import EconomicsPage from "./ui/economics/economics-page";
 import ClaimedItemsPage from "./ui/claimed-items";
-import {Permission} from "./model/auth/firebase/user/model";
+import {Permission} from "./model/auth/user";
 
 
 function App() {

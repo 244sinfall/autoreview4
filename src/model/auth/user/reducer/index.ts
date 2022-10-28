@@ -1,12 +1,13 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {AuthorizedUser} from "../index";
+import Visitor from "../index";
+import AuthorizedUser from "../authorized-user";
 
 interface UserState {
-    user: AuthorizedUser | null
+    user: Visitor
 }
 
 const userInitialState: UserState = {
-    user: null
+    user: new Visitor()
 }
 
 export const userSlice = createSlice({name: "user", initialState: userInitialState, reducers: {
@@ -14,7 +15,8 @@ export const userSlice = createSlice({name: "user", initialState: userInitialSta
             if(action.payload) state.user = action.payload
         },
         removeUser: (state) => {
-            state.user = null
+            state.user = new Visitor()
         }
     }})
 
+export const { setUser, removeUser } = userSlice.actions;

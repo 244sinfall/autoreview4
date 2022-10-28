@@ -4,8 +4,8 @@ import logo from './assets/dm_logo.png'
 import {HeaderMenuElement} from "../../../model/header-menu-element";
 import {Link, NavLink} from "react-router-dom";
 import sidebarIcon from './assets/sidebar.png'
-import {useAuth} from "../../../model/auth/firebase/auth";
-import {Permission} from "../../../model/auth/firebase/user/model";
+import {useAuth} from "../../../model/auth/use-auth";
+import {Permission} from "../../../model/auth/user";
 
 const Header = (props: { menuElements: HeaderMenuElement[] }) => {
     const [sidebarState, setSidebarState] = useState<"closed" | "opened">("closed")

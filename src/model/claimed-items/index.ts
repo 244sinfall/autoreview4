@@ -1,4 +1,3 @@
-import {AuthorizedUser} from "../auth/firebase/user";
 import {
     APIAddress,
     claimedItemsApproveEndPoint,
@@ -12,6 +11,7 @@ import {
     ClaimedItemsHTMLTableHeader,
     ClaimedItemsHTMLTableHeadLine
 } from "./boilerplateMarkup";
+import AuthorizedUser from "../auth/user/authorized-user";
 
 export interface ClaimedItemsTables {
     legendary: ClaimedItemInterface[]
@@ -28,29 +28,29 @@ export interface ClaimedItemEditorChangeable {
 }
 
 export const ClaimedItemRequests = {
-    add: async(i: ClaimedItem, currentUser: AuthorizedUser | null) => {
-        const token = await currentUser?.getToken()
+    add: async(i: ClaimedItem, currentUser: AuthorizedUser) => {
+        const token = await currentUser.getToken()
         if (token) {
             return await fetch(`${APIAddress}${claimedItemsCreateEndPoint}`,
                 {method: "POST", headers: {"Authorization": token}, body: JSON.stringify(i)})
         }
     },
-    del: async(id: string, currentUser: AuthorizedUser | null) => {
-        const token = await currentUser?.getToken()
+    del: async(id: string, currentUser: AuthorizedUser) => {
+        const token = await currentUser.getToken()
         if(token) {
             return await fetch(`${APIAddress}${claimedItemsDeleteEndPoint}/${id}`,
                 {method: "DELETE", headers: {"Authorization": token}})
         }
     },
-    update: async(id: string, changes: ClaimedItemEditorChangeable, currentUser: AuthorizedUser | null) => {
-        const token = await currentUser?.getToken()
+    update: async(id: string, changes: ClaimedItemEditorChangeable, currentUser: AuthorizedUser) => {
+        const token = await currentUser.getToken()
         if(token) {
             return await fetch(`${APIAddress}${claimedItemsUpdateEndPoint}/${id}`,
                 {method: "POST", headers: {"Authorization": token}, body: JSON.stringify(changes)})
         }
     },
-    accept: async(id: string, currentUser: AuthorizedUser | null) => {
-        const token = await currentUser?.getToken()
+    accept: async(id: string, currentUser: AuthorizedUser) => {
+        const token = await currentUser.getToken()
         if(token) {
             return await fetch(`${APIAddress}${claimedItemsApproveEndPoint}/${id}`,
                 {method: "POST", headers: {"Authorization": token}})
