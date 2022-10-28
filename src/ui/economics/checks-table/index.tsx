@@ -41,7 +41,7 @@ const ExecuteHelper = (props: {check: Check, closeHandler: () => void}) => {
     const closeCommand = `.check close ${props.check.id}`
     return (
         <div className="check-executor">
-            <ContentTitle title={"Макросы для чека"}>
+            <ContentTitle title={"Макросы для чека"} controllable={false}>
                 {props.check.status === "Отказан" && <p>Этот чек отказан. Его невозможно изменить. Игроку необходимо отправить новый чек.</p>}
                 {props.check.status === "Закрыт" && <ExecuteHelperOption title="Переоткрыть чек" command={openCommand}/>}
                 {props.check.status === "Ожидает" &&
@@ -142,7 +142,7 @@ const ChecksTable = () => {
         'Обновлять кэш вручную могут только пользователи с группой доступа "ГМ"'
     return (
         <div className="checks-table">
-            <ContentTitle title={"Экономические чеки"}>
+            <ContentTitle title={"Экономические чеки"} controllable={false}>
                 <div className="checks-table-controls">
                     <div className="checks-table-controls table-settings">
                         <div className="specifiers">

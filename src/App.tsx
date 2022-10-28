@@ -36,10 +36,9 @@ function App() {
                 <Route path='/admin' element={<AdminPage/>}/>
                 <Route path='/' element={<MainPage/>}/>
             </Routes>
-
         </div>
     </Provider>
   );
 }
 
-export default App;
+export default React.memo(App);

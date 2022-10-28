@@ -65,7 +65,7 @@ const LogCleaner = () => {
         'нежелательные технические строки - обратитесь в ЛС'
     return (
         <div className="logCleaner">
-            <ContentTitle title='Очистка логов'>
+            <ContentTitle title='Очистка логов' controllable={true}>
                 <p className="logCleaner__cleanerContainer">Загрузите файл с логами (txt) для очистки от технических сообщений</p>
                 <div className="logCleaner__cleanerContainer">
                     <label className="logCleaner__cleanerLabel" htmlFor="log">

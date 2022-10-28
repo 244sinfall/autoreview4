@@ -23,7 +23,7 @@ const UsersList = () => {
     return (
         <div className="users-list">
             <LoadingSpinner spin={isLoading}>
-                <ContentTitle title={"Управление пользователями"}>
+                <ContentTitle title={"Управление пользователями"} controllable={true}>
                     <div className="user-list">
                         {users}
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import TextCleaner from "../../common/participants-cleaner";
-import RewardWorkerComponent from "../reward-worker";
+import EventRewardGiver from "../event-reward-distributor";
 import './style.css';
 import Protector from "../../protector";
 import BusinessRewarder from "../business-rewarder";
@@ -11,7 +11,7 @@ const ArbitersPage = () => {
                 <div className="arbiters-page">
                     <div className="arbiters-page__contents">
                         <TextCleaner/>
-                        <RewardWorkerComponent/>
+                        <EventRewardGiver/>
                         <BusinessRewarder/>
                     </div>
                 </div>

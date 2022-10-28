@@ -81,7 +81,7 @@ const LotteryCreator = () => {
 
     return (
         <div className='lottery-creator'>
-            <ContentTitle title='Подсчет розыгрыша предметов'>
+            <ContentTitle title='Подсчет розыгрыша предметов' controllable={true}>
                 <div className='lottery-creator__container'>
                     <div className='lottery-creator__options'>
                         <NumberInput title={LotteryCreatorFields.rate} minValue={0} maxValue={15} disabled={false} handler={updateField}/>

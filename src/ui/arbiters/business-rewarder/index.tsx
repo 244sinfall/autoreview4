@@ -4,17 +4,12 @@ import TextInput from "../../../components/dynamic/text-input";
 import NumberInput from "../../../components/dynamic/number-input";
 import ActionButton from "../../../components/static/action-button";
 import Selector from "../../../components/dynamic/selector";
-import {
-    BusinessRewardInfo,
-    defaultBusinessInfo, getCommand,
-    getResourceId,
-    resources
-} from "../../../model/arbiters/business-rewarder";
 import './style.css'
+import {BusinessActivityAggregator, BusinessRewardInfo} from "../../../model/arbiters/business-activity-aggregator";
 
 const BusinessRewarder = () => {
-    const [businessInfo, setBusinessInfo] = useState<BusinessRewardInfo>(defaultBusinessInfo)
-    const [currentCommand ,setCurrentCommand] = useState("")
+    const [businessInfo, setBusinessInfo] = useState<BusinessRewardInfo>(BusinessActivityAggregator.defaultState)
+    const [currentCommand, setCurrentCommand] = useState("")
     const [copied, setCopied] = useState(false)
     const callbacks = {
         isDoubleReward: useCallback((e: any) => setBusinessInfo({...businessInfo, double: e.target.checked}), [businessInfo]),
@@ -24,26 +19,34 @@ const BusinessRewarder = () => {
                 case "Номер POI": return setBusinessInfo({...businessInfo, poi: fieldValue})
             }
         }, [businessInfo]),
+
         selectorValueChange: useCallback((newValue: string) => setBusinessInfo({...businessInfo, 
-            resource: getResourceId(newValue)}), [businessInfo]),
+            resource: BusinessActivityAggregator.getResourceId(newValue)}), [businessInfo]),
+
         numericFieldChange: useCallback((fieldName: string, fieldValue: number) => {
             switch (fieldName) {
                 case "Уровень POI": return setBusinessInfo({...businessInfo, poiLevel: fieldValue})
                 case "Количество рабочих": return setBusinessInfo({...businessInfo, labors: fieldValue})
             }
         }, [businessInfo]),
-        createCommand: useCallback(() => setCurrentCommand(getCommand(businessInfo)), [businessInfo]),
+
+        createCommand: useCallback(() => {
+            const aggregator = new BusinessActivityAggregator()
+            aggregator.setInfo(businessInfo)
+            setCurrentCommand(aggregator.getCommand())
+        }, [businessInfo]),
+
         copy: useCallback(() => {
             setCopied(true)
             navigator.clipboard.writeText(currentCommand)
                 .then(() => {
-                    setTimeout(() => setCopied(false), 500)
+                    setTimeout(() => setCopied(false), 1000)
                 })
         }, [currentCommand])
     }
     return (
         <div className="business-rewarder">
-            <ContentTitle title="Активность предприятий">
+            <ContentTitle title="Активность предприятий" controllable={true}>
                 <div className="business-rewarder__selectors">
                     <TextInput title="Владелец" placeholder="Васян" maxLength={64} handler={callbacks.textFieldChange}/>
                     <TextInput title="Номер POI" placeholder="8715" maxLength={8} handler={callbacks.textFieldChange}/>
@@ -52,7 +55,7 @@ const BusinessRewarder = () => {
                             <input id="double" type={"checkbox"} onChange={callbacks.isDoubleReward} checked={businessInfo.double}/>
                             <label htmlFor="double">Удвоить награду?</label>
                         </>
-                        <Selector options={resources} changeHandler={callbacks.selectorValueChange} selected={"Выберите тип ресурса"}/>
+                        <Selector options={BusinessActivityAggregator.resourcesList()} changeHandler={callbacks.selectorValueChange} selected={"Выберите тип ресурса"}/>
                     </span>
                     <NumberInput title="Уровень POI" minValue={0} maxValue={7} disabled={false} handler={callbacks.numericFieldChange}/>
                     <NumberInput title="Количество рабочих" minValue={0} maxValue={9999} disabled={false} handler={callbacks.numericFieldChange}/>

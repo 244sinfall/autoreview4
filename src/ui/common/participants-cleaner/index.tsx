@@ -36,7 +36,7 @@ const TextCleaner = () => {
         'модификаторы проставлены корректно. Вы сможете редактировать<br/>' +
         'очищенный список в окне справа.'
     return (
-        <ContentTitle title='Очистка списка участников'>
+        <ContentTitle title='Очистка списка участников' controllable={true}>
             <div className='text-cleaner'>
                 <div className='text-cleaner__raw'>
                     <p>Список для очистки:</p>

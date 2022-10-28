@@ -21,7 +21,7 @@ const CharsheetReviewRateCounter = (props: { rateNames: string[], rateMin: numbe
 
     return (
         <div className="rate-counter">
-            <ContentTitle title="Критерии оценки">
+            <ContentTitle title="Критерии оценки" controllable={false}>
                 {props.rateNames.map((rate) => {
                     return <NumberInput key={rate} title={rate} handler={updateStateWithNewValues}
                                         minValue={props.rateMin} maxValue={props.rateMax} disabled={false}/>})}

@@ -105,7 +105,7 @@ const ClaimedItemsPage = () => {
     }, [currentUser, tables])
     return (
         <div className="claimed-items">
-        <ContentTitle title="Таблица именных предметов">
+        <ContentTitle title="Таблица именных предметов" controllable={false}>
             {selectedItem && !isCreatingItem && <ClaimedItemEditor
               item={selectedItem} user={currentUser} callbacks={editHandlers}/>}
             {!selectedItem && isCreatingItem && <ClaimedItemAdder

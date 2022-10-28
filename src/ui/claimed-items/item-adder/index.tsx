@@ -17,7 +17,7 @@ const ClaimedItemAdder = (props: {quality: string, reviewerName: string, callbac
     return (
         <div className="claimed-items-modal-wrapper">
             <div className="claimed-items-modal">
-                <ContentTitle title="Добавить предмет">
+                <ContentTitle title="Добавить предмет" controllable={false}>
                     <TextInput title="Качество" placeholder={""} maxLength={128} disabled={true} defaultValue={props.quality}/>
                     <TextInput title="Название" placeholder={""} maxLength={256} disabled={false} defaultValue={item.name} handler={handleChange}/>
                     <TextInput title="Ссылка на предмет" placeholder={""} maxLength={256} disabled={false} defaultValue={item.link} handler={handleChange}/>

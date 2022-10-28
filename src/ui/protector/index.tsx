@@ -12,12 +12,12 @@ const Protector = (props: {children: React.ReactNode[] | React.ReactNode, access
 
     const msg = useMemo(() => {
         const errMsg = (
-            <ContentTitle title={"Ошибка"}>
+            <ContentTitle title={"Ошибка"} controllable={false}>
                 У вас нет доступа к этому разделу.
                 <ActionButton title={"Вернуться на главную"} show={true} action={() => nav('/')} requiresLoading={false}/>
             </ContentTitle>)
         const authCheck = (
-            <ContentTitle title={"Проверка авторизации"}>
+            <ContentTitle title={"Проверка авторизации"} controllable={false}>
                 <AuthWindow isLoading={isLoading}/>
             </ContentTitle>
         )

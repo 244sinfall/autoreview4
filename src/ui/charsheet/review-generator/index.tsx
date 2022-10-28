@@ -59,7 +59,7 @@ const CharsheetReviewGenerator = () => {
         'причины. Вам нужно дополнить их отсылками к тексту анкеты.';
     return (
         <div className="review-generator">
-            <ContentTitle title="Генерация вердикта">
+            <ContentTitle title="Генерация вердикта" controllable={false}>
                 <TextInput title={ReviewFields.reviewerProfile} maxLength={128} placeholder="https://rp-wow.ru/users/1018" cacheKey="profileLink" handler={manageReviewFields}/>
                 <TextInput title={ReviewFields.reviewerDiscord} maxLength={128} placeholder="rolevik dima#4300" cacheKey="discordProfile" handler={manageReviewFields}/>
                 <TextInput title={ReviewFields.charName} maxLength={32} placeholder="Васян" handler={manageReviewFields}/>

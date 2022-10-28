@@ -19,7 +19,7 @@ const ClaimedItemEditor = (props:{item: ClaimedItem, user: AuthorizedUser | null
     return (
         <div className="claimed-items-modal-wrapper">
         <div className="claimed-items-modal">
-        <ContentTitle title="Редактировать предмет">
+        <ContentTitle title="Редактировать предмет" controllable={false}>
         <TextInput title="Качество" placeholder={""} maxLength={128} disabled={true} defaultValue={props.item.quality}/>
     <TextInput title="Название" placeholder={""} maxLength={256} disabled={true} defaultValue={props.item.name}/>
     <TextInput title="Ссылка на предмет" placeholder={""} maxLength={256} disabled={true} defaultValue={props.item.link}/>

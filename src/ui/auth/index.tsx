@@ -11,7 +11,7 @@ import {getPermissionName, Permission} from "../../model/auth/firebase/user/mode
 const AccountManager = () => {
     const {isLoading, currentUser, logout} = useAuth()
     return (
-        <ContentTitle title={currentUser ? "Аккаунт" : "Авторизация"}>
+        <ContentTitle title={currentUser ? "Аккаунт" : "Авторизация"} controllable={false}>
             <LoadingSpinner spin={isLoading}>
             {currentUser ? <WelcomeMessage name={currentUser.displayName() ?? ""}
                                            isAdmin={currentUser.canAccess(Permission.admin)} permission={isLoading ? "Загрузка..." : getPermissionName(currentUser.permission())} logoutCallback={logout}/>
