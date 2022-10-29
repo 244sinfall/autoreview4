@@ -9,13 +9,17 @@
     flex-direction: column;
     gap: 10px;
 }
-.business-rewarder__checkbox-selector {
+.business-rewarder__multiplier-resource {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 10px;
     align-items: center;
 
+}
+
+.business-rewarder__multiplier-resource .input__field {
+    width: 40px;
 }
 .business-rewarder__selectors .selector__container {
     text-align: end;
@@ -39,6 +43,10 @@
 
 @media screen and (max-width: 460px) {
     .business-rewarder__selectors > .input__container{
+        display: flex;
+        flex-direction: column;
+    }
+    .business-rewarder__multiplier-resource  > .input__container{
         display: flex;
         flex-direction: column;
     }

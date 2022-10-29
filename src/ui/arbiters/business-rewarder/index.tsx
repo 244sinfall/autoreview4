@@ -52,7 +52,7 @@ const BusinessRewarder = () => {
                 <div className="business-rewarder__selectors">
                     <TextInput title="Владелец" placeholder="Васян" maxLength={64} handler={callbacks.textFieldChange}/>
                     <TextInput title="Номер POI" placeholder="8715" maxLength={8} handler={callbacks.textFieldChange}/>
-                    <span className="business-rewarder__checkbox-selector">
+                    <span className="business-rewarder__multiplier-resource">
                         <NumberInput title="Множитель награды" minValue={0} maxValue={100} disabled={false}
                                      handler={callbacks.handleMultiplier} floatable={true}/>
                         <Selector options={BusinessActivityAggregator.resourcesList()} changeHandler={callbacks.selectorValueChange} selected={"Выберите тип ресурса"}/>
