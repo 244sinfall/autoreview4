@@ -42,17 +42,14 @@ const ClaimedItemsPage = () => {
     const editHandlers: ClaimedItemEditHandler = {
         close: () => setSelectedItem(null),
         accept: async(id: string) => {
-            if(!(currentUser instanceof AuthorizedUser)) throw new Error("Пользователь не авторизован")
             const res = await ClaimedItemRequests.accept(id, currentUser)
             if(res) return analyzeResponse(res)
         },
         update: async(id, changes: ClaimedItemEditorChangeable) => {
-            if(!(currentUser instanceof AuthorizedUser)) throw new Error("Пользователь не авторизован")
             const res = await ClaimedItemRequests.update(id, changes, currentUser)
             if(res) return analyzeResponse(res)
         },
         del: async(id: string) => {
-            if(!(currentUser instanceof AuthorizedUser)) throw new Error("Пользователь не авторизован")
             const res = await ClaimedItemRequests.del(id, currentUser)
             if(res) return analyzeResponse(res)
         }

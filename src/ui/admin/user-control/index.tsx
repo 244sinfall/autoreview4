@@ -2,11 +2,10 @@ import React, {useState} from 'react';
 import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
 import LoadingSpinner from "../../../components/static/loading-spinner";
 import './styles.css'
-import AuthorizedUser from "../../../model/auth/user/authorized-user";
 import Visitor from "../../../model/auth/user";
 import {AdminController} from "../../../model/auth/controllers/admin-controller";
 
-const UserControl = (props: {user: AuthorizedUser, email: string, name: string, permission: number}) => {
+const UserControl = (props: {user: Visitor, email: string, name: string, permission: number}) => {
     const [perm, setPerm] = useState(props.permission)
     const [isLoading, setIsLoading] = useState(false)
     const handleSwitch = (newPermission: string) => {

@@ -2,7 +2,6 @@ import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfil
 import {auth, db} from "./global";
 import {doc, setDoc} from "firebase/firestore";
 import Visitor from "./user";
-import AuthorizedUser from "./user/authorized-user";
 
 export interface UserInfo {
     name: string,
@@ -21,7 +20,7 @@ export default class Authorizer {
     private _user: Visitor
     private readonly _info: UserInfo
     constructor(user: Visitor, info: UserInfo) {
-        if(user instanceof AuthorizedUser) throw Error("Пользователь уже авторизован")
+        if(user.authorized) throw Error("Пользователь уже авторизован")
         this._user = user
         this._info = info
     }

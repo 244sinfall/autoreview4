@@ -19,19 +19,6 @@ export interface Check {
     items: CheckItem[] | string[] | null
 }
 
-// export interface Check {
-//     Id: number,
-//     Date: string,
-//     Owner: string,
-//     Type: string,
-//     Money: string,
-//     Name: string,
-//     Description: string,
-//     Body: string[],
-//     Status: string,
-//     Gm: string
-// }
-
 export const defaultCheck: Check= {
     id: 0,
     date: "",

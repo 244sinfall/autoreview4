@@ -20,8 +20,6 @@ import Pagination from "../../../components/dynamic/pagination";
 import {useAuth} from "../../../model/auth/use-auth";
 import Selector from "../../../components/dynamic/selector";
 import {Permission} from "../../../model/auth/user";
-import AuthorizedUser from "../../../model/auth/user/authorized-user";
-
 
 const ExecuteHelperOption = (props: {title: string, command: string}) => {
     const [copied, setCopied] = useState(false)
@@ -79,7 +77,7 @@ const ChecksTable = () => {
         })
     },[params])
     const triggerCacheUpdate = async () => {
-        if(!(currentUser instanceof AuthorizedUser) || !currentUser.canAccess(Permission.gm)) throw new Error("Недостаточно прав")
+        if(!currentUser.canAccess(Permission.gm)) throw new Error("Недостаточно прав")
         try {
             const token = await currentUser.getToken()
             const c = await getChecks({...params, force: true}, token);

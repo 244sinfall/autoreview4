@@ -1,11 +1,10 @@
 import {collection, getDocs, query, setDoc, where} from "firebase/firestore";
 import {db} from "../../global";
-import {Permission} from "../../user";
-import AuthorizedUser from "../../user/authorized-user";
+import Visitor, {Permission} from "../../user";
 
 export class AdminController {
-    _user: AuthorizedUser
-    constructor(user: AuthorizedUser) {
+    _user: Visitor
+    constructor(user: Visitor) {
         if(!user.canAccess(Permission.admin)) throw new Error("Недостаточно прав")
         this._user = user
     }

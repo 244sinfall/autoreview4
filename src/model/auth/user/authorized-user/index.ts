@@ -16,9 +16,6 @@ export default class AuthorizedUser extends Visitor {
     async getToken() {
         return this._user.getIdToken()
     }
-    get permission() {
-        return this._permission
-    }
     canAccess(permission: Permission) {
         if(this._permission === null) {
             this.fetchPermission()

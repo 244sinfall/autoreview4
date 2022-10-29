@@ -24,6 +24,9 @@ export default class Visitor {
     }
     protected _name = "Гость"
     protected _permission: Permission = Permission.player
+    async getToken() {
+        return ""
+    }
     get name() {
         return this._name
     }

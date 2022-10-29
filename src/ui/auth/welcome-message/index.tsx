@@ -18,4 +18,4 @@ const WelcomeMessage = (props: {name: string, permission: string, isAdmin: boole
     )
 }
 
-export default WelcomeMessage;
+export default React.memo(WelcomeMessage);
