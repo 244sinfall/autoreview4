@@ -4,7 +4,7 @@ import  '../../common-css/input.css'
 const NumberInput = (props: { title: string, minValue: number, maxValue: number, floatable?: boolean,
                              handler?: (fieldName: string, fieldValue: number) => void,
                              disabled: boolean, defaultValue?: number }) => {
-    const [number, setNumber] = useState<string | number>(props.minValue)
+    const [number, setNumber] = useState<string | number>(props.defaultValue ?? props.minValue)
     const setNumberValue = (newNumberString: string) => {
         let newNumber
         if(props.floatable) {
