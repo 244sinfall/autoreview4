@@ -32,7 +32,7 @@ const CharsheetReviewRateCounter = (props: { rateNames: string[], rateMin: numbe
                     return <NumberInput key={rate} title={rate} handler={callbacks.updateRate}
                                         minValue={props.rateMin} maxValue={props.rateMax} disabled={false}/>})}
                 <NumberInput title={"Общая оценка"} minValue={0} maxValue={10}
-                             disabled={true} disabledValue={totalRate}/>
+                             disabled={true} defaultValue={totalRate}/>
             </ContentTitle>
         </div>
     );

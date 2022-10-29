@@ -4,7 +4,7 @@ export interface BusinessRewardInfo {
     resource: number,
     poiLevel: number,
     labors: number,
-    double: boolean
+    multiplier: number
 }
 
 enum ResourceType {
@@ -63,7 +63,7 @@ interface Resource {
 }
 
 export class BusinessActivityAggregator implements BusinessRewardInfo {
-    double: boolean;
+    multiplier: number;
     labors: number;
     owner: string;
     poi: string;
@@ -78,7 +78,7 @@ export class BusinessActivityAggregator implements BusinessRewardInfo {
         resource: 0,
         poiLevel: 0,
         labors: 0,
-        double: false
+        multiplier: 1
     }
     private static resources: Resource[] = [
         {name: "Выберите тип ресурса", type: ResourceType.UNDEFINED, id: 0},
@@ -111,12 +111,11 @@ export class BusinessActivityAggregator implements BusinessRewardInfo {
         this.resource = 0
         this.poiLevel = 0
         this.labors = 0
-        this.double = false
+        this.multiplier = 1
     }
     getCommand() {
         if(this.labors === 0 || this.poiLevel === 0 || this.resource === 0) return ""
-        const multiplier = this.double ? 2 : 1
-        const finalMod = multiplier * this.labors
+        const finalMod = this.multiplier * this.labors
         const resource = this.resourceObj()
         const distributor = new BusinessRewardDistributor(resource.type)
         switch(resource.type) {
@@ -135,6 +134,6 @@ export class BusinessActivityAggregator implements BusinessRewardInfo {
         this.resource = info.resource
         this.labors = info.labors
         this.poiLevel = info.poiLevel
-        this.double = info.double
+        this.multiplier = info.multiplier
     }
 }

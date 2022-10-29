@@ -12,7 +12,9 @@ const BusinessRewarder = () => {
     const [currentCommand, setCurrentCommand] = useState("")
     const [copied, setCopied] = useState(false)
     const callbacks = {
-        isDoubleReward: useCallback((e: any) => setBusinessInfo({...businessInfo, double: e.target.checked}), [businessInfo]),
+        handleMultiplier: useCallback((fieldName: string, fieldValue: number) => {
+            setBusinessInfo({...businessInfo, multiplier: fieldValue})
+        }, [businessInfo]),
         textFieldChange: useCallback((fieldName: string, fieldValue: string) => {
             switch (fieldName) {
                 case "Владелец": return setBusinessInfo({...businessInfo, owner: fieldValue})
@@ -51,10 +53,8 @@ const BusinessRewarder = () => {
                     <TextInput title="Владелец" placeholder="Васян" maxLength={64} handler={callbacks.textFieldChange}/>
                     <TextInput title="Номер POI" placeholder="8715" maxLength={8} handler={callbacks.textFieldChange}/>
                     <span className="business-rewarder__checkbox-selector">
-                        <>
-                            <input id="double" type={"checkbox"} onChange={callbacks.isDoubleReward} checked={businessInfo.double}/>
-                            <label htmlFor="double">Удвоить награду?</label>
-                        </>
+                        <NumberInput title="Множитель награды" minValue={0} maxValue={100} disabled={false}
+                                     handler={callbacks.handleMultiplier} floatable={true}/>
                         <Selector options={BusinessActivityAggregator.resourcesList()} changeHandler={callbacks.selectorValueChange} selected={"Выберите тип ресурса"}/>
                     </span>
                     <NumberInput title="Уровень POI" minValue={0} maxValue={7} disabled={false} handler={callbacks.numericFieldChange}/>
