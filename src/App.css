@@ -11,7 +11,7 @@
 }
 
 html, body  {
-    background: url("/public/bgdarkmoon.png") no-repeat fixed;
+    background: url("/src/assets/bgdarkmoon.png") no-repeat fixed;
     background-size: cover;
     overflow-x: clip;
     width: 100%;

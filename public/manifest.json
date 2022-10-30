@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Darkmoon RP Web API",
+  "name": "Сервис для автоматизации процессов Darkmoon RP",
+  "version": "4.0",
   "icons": [
     {
       "src": "favicon.ico",
