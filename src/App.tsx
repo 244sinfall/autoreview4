@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/static/header";
+import Header from "./ui/header";
 import {Route, Routes} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from "./model/store";

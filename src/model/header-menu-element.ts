@@ -1,5 +1,6 @@
 export interface HeaderMenuElement {
     menuName: string,
-    menuRoute: string,
+    menuRoute?: string,
     accessLevel: number
+    action?: () => any
 }
