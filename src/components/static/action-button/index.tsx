@@ -19,7 +19,7 @@ const ActionButton = (props: { title: string, show: boolean, action: () => any, 
                  <button className="action-button" type="button" data-tip={props.tooltip}
                      onClick={props.requiresLoading ? awaitAction : props.action}>
                          {props.requiresLoading && loading  ? 'Загрузка...' : props.title}
-                     {props.show && <ReactTooltip place={"top"} delayShow={500} multiline={true} html={false} backgroundColor={"#5B3E5DFF"} textColor={"white"}/>}
+                     {props.show && <ReactTooltip place={"top"} delayShow={500} multiline={true} html={false} backgroundColor={"var(--accent-background)"} textColor={"var(--accent-color)"}/>}
                  </button>
              </LoadingSpinner>
          </div>

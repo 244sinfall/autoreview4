@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Header from "./ui/header";
 import {Route, Routes} from "react-router-dom";
@@ -13,19 +13,26 @@ import AdminPage from "./ui/admin/admin-page";
 import EconomicsPage from "./ui/economics/economics-page";
 import ClaimedItemsPage from "./ui/claimed-items";
 import {Permission} from "./model/auth/user";
+import {HeaderMenuElement} from "./model/header-menu-element";
+import {createThemes} from "./themes";
+
 
 
 function App() {
+    const defaultMenuElements = [
+        {menuName: 'Анкеты',  menuRoute: '/charsheets', accessLevel: Permission.reviewer},
+        {menuName: 'Отчеты', menuRoute: '/events', accessLevel: Permission.reviewer},
+        {menuName: "Таблица именных предметов", menuRoute: '/claimed_items', accessLevel: Permission.player},
+        {menuName: 'Арбитры', menuRoute: '/arbitration', accessLevel: Permission.arbiter},
+        {menuName: 'Экономика', menuRoute: '/economics', accessLevel: Permission.player},
+        {menuName: 'Другое', menuRoute: '/other', accessLevel: Permission.player},
+        {menuName: 'Тема', accessLevel: Permission.player, action: () => setMenuElements(createThemes(() => setMenuElements(defaultMenuElements))) }
+    ]
+    const [menuElements, setMenuElements] = useState<HeaderMenuElement[]>(defaultMenuElements)
   return (
     <Provider store={store}>
         <div className="App">
-            <Header menuElements={[{menuName: 'Анкеты',  menuRoute: '/charsheets', accessLevel: Permission.reviewer},
-                {menuName: 'Отчеты', menuRoute: '/events', accessLevel: Permission.reviewer},
-                {menuName: "Таблица именных предметов", menuRoute: '/claimed_items', accessLevel: Permission.player},
-                {menuName: 'Арбитры', menuRoute: '/arbitration', accessLevel: Permission.arbiter},
-                {menuName: 'Экономика', menuRoute: '/economics', accessLevel: Permission.player},
-                {menuName: 'Другое', menuRoute: '/other', accessLevel: Permission.player}
-            ]}/>
+            <Header menuElements={menuElements}/>
             <Routes>
                 <Route path='/charsheets' element={<CharsheetPage/>}/>
                 <Route path='/events' element={<EventsPage/>}/>

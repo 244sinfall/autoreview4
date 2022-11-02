@@ -20,7 +20,9 @@ const Header = (props: { menuElements: HeaderMenuElement[] }) => {
             if (sidebarState === "opened") setSidebarState("closed")
         }, [sidebarState]),
         onSidebarTransitionEnd: useCallback(() => {
-            if(sidebarState === "closed" && sidebarRef.current) sidebarRef.current.style.display = "none"
+            if(sidebarState === "closed" && sidebarRef.current && window.innerWidth < 750) {
+                sidebarRef.current.style.display = "none"
+            }
         }, [sidebarState]),
         onResize: useCallback((event: any) => {
             if(sidebarRef.current && event.target.innerWidth > 750) {
@@ -33,8 +35,9 @@ const Header = (props: { menuElements: HeaderMenuElement[] }) => {
     const onSidebarOptionClicked = useCallback((menuElement: HeaderMenuElement) => {
         if(menuElement.action) {
             menuElement.action()
+        } else {
+            setSidebarState("closed")
         }
-        setSidebarState("closed")
     }, [])
 
     useEffect(() => {

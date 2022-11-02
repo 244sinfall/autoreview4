@@ -4,14 +4,85 @@
     --header-margin: 20px;
     --footer-margin: 20px;
 }
+/** Themes */
+.darkmoon {
+    --accent-background: rgb(91, 62, 93);
+    --accent-color: rgb(255, 255, 255);
+    --accent-hover: rgba(166, 159, 166, 0.5);
+    --content-background: rgba(244, 244, 244, 0.95);
+    --content-color: rgb(0,0,0);
+    --focus: rgb(255, 255, 255);
+    --input-border: rgba(87, 59, 89, 0.31);
+    --input-border-focus: rgb(91, 62, 93);
+    --placeholder: rgba(87, 59, 89, 25%);
+    --button-group-color: rgb(0,0,0);
+    --button-group-border: rgb(91, 62, 93);
+    --button-group-hover-color: rgba(244, 244, 244, 0.95);
+    --button-group-hover-background: rgb(91, 62, 93);
+    --button-group-selected: rgb(65, 46, 68);
+    --button-content: rgb(91, 62, 93);
+    --button-border: rgb(91, 62, 93);
+    --button-content-hover: rgb(255, 255, 255);
+    --button-background-hover: rgb(91, 62, 93);
+    --input-text: rgb(87, 59, 89);
+    --background-darken: 0%;
+}
 
+.light {
+    --accent-background: rgb(213, 213, 213);
+    --accent-color: rgb(26, 26, 26);
+    --accent-hover: rgba(166, 159, 166, 0.25);
+    --content-background: rgba(244, 244, 244, 0.95);
+    --content-color: rgb(45, 45, 45);
+    --focus: rgb(255, 255, 255);
+    --input-border: rgba(37, 31, 37, 50%);
+    --input-border-focus: rgb(37, 29, 37);
+    --placeholder: rgba(87, 59, 89, 50%);
+    --button-group-color: rgb(26, 26, 26);
+    --button-group-border: rgba(37, 31, 37, 100%);
+    --button-group-hover-color: rgba(244, 244, 244, 0.95);
+    --button-group-hover-background: rgb(26, 26, 26);
+    --button-group-selected: rgb(14, 14, 14);
+    --button-content: rgb(26, 26, 26);
+    --button-border: rgb(26, 26, 26);
+    --button-content-hover: rgb(255, 255, 255);
+    --button-background-hover: rgb(26, 26, 26);
+    --input-text: rgb(14, 14, 14);
+    --background-darken: 0%;
+}
+
+.dark {
+    --accent-background: rgb(30, 30, 30);
+    --accent-color: rgb(213, 203, 203);
+    --accent-hover: rgba(87, 81, 87, 0.25);
+    --content-background: rgba(61, 61, 61, 0.95);
+    --content-color: rgb(180, 162, 162);
+    --focus: rgb(50, 50, 50);
+    --input-border: rgba(37, 31, 37, 50%);
+    --input-border-focus: rgb(26, 21, 26);
+    --placeholder: rgba(115, 112, 115, 0.35);
+    --button-group-color: rgb(176, 164, 164);
+    --button-group-border: rgb(26, 26, 26);
+    --button-group-hover-color: rgba(244, 244, 244, 0.95);
+    --button-group-hover-background: rgb(26, 26, 26);
+    --button-group-selected: rgb(14, 14, 14);
+    --button-content: rgb(162, 153, 153);
+    --button-border: rgb(26, 26, 26);
+    --button-content-hover: rgb(255, 255, 255);
+    --button-background-hover: rgb(26, 26, 26);
+    --input-text: rgb(220, 214, 214);
+    --background-darken: 75%;
+}
+* hr {
+    border: 1px solid var(--accent-background);
+}
 * {
     margin: 0;
     padding: 0;
+    transition: background 500ms ease-in-out, color 500ms ease-in-out;
 }
-
 html, body  {
-    background: url("/src/assets/bgdarkmoon.png") no-repeat fixed;
+    background: linear-gradient(rgba(0, 0, 0, var(--background-darken)), rgba(0, 0, 0, var(--background-darken))), url("/src/assets/bgdarkmoon.png") no-repeat fixed;
     background-size: cover;
     overflow-x: clip;
     width: 100%;

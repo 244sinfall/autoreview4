@@ -22,21 +22,21 @@
 .delimiter {
     padding-top: 2px;
     font-weight: 700;
-    color: rgba(91, 62, 93, 0.7);
+    color: var(--accent-background)
 }
 
 .pagination-control .input__field {
     width: 50px;
 }
 .page:hover {
-    background-color: rgba(91, 62, 93, 0.7);
+    background: var(--button-group-selected);
 }
 .page {
     min-width: 20px;
     font-size: 18px;
     cursor: pointer;
-    background-color: #5b3e5d;
-    color: rgba(244, 244, 244, 0.95);
+    background: var(--accent-background);
+    color: var(--accent-color);
     text-align: center;
 }
 

@@ -15,8 +15,8 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    border: 10px solid #5b3e5d;
-    border-top: 10px solid #ffffff;
+    border: 10px solid var(--accent-background);
+    border-top: 10px solid var(--accent-color);
     border-radius: 50%;
     z-index: 99999;
     animation: spin 1s linear infinite;

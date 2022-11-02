@@ -4,8 +4,8 @@
     justify-content: space-between;
     padding: 10px;
     height: auto;
-    color: rgba(244, 244, 244, 0.95);
-    background-color: rgb(91, 62, 93);
+    color: var(--accent-color);
+    background: var(--accent-background);
 }
 
 .content-block__title-control {
@@ -14,7 +14,8 @@
 }
 
 .content-block__container {
-    background-color: rgb(244, 244, 244, 0.95);
+    color: var(--content-color);
+    background: var(--content-background);
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }

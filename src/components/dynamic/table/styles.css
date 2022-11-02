@@ -14,21 +14,20 @@ table .table-head {
 
 }
 .table-row {
-    border-bottom: 1px solid #5b3e5d;
+    border-bottom: 1px solid var(--accent-background);
 }
 tbody .table-row {
     transition: all 200ms;
 }
 tbody .table-row:hover {
     cursor: pointer;
-    box-shadow: 2px 5px 10px #5b3e5d;
-    background-color: white;
+    box-shadow: 2px 5px 10px var(--content-color);
 
 }
 th {
     padding: 5px;
-    background-color: #5b3e5d;
-    color: rgba(244, 244, 244, 0.95);
+    background: var(--accent-background);
+    color: var(--accent-color);
     position: sticky;
     top: 0;
     border-collapse: collapse;
@@ -55,9 +54,9 @@ th {
         display: none;
     }
     td:first-child {
-        background-color: #5b3e5d;
+        background: var(--accent-background);
         text-align: center;
-        color: rgba(244, 244, 244, 0.95);
+        color: var(--accent-color);
     }
     tr {
         border: 1px solid black;

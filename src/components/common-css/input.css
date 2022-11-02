@@ -9,21 +9,21 @@
     height: 20pt;
     font-size: 18px;
     transition: 0.5s;
-    color: rgb(87, 59, 89);
-    border: 2px solid rgba(87, 59, 89, 35%);
+    color: var(--input-text);
+    border: 2px solid var(--input-border);
     border-radius: 5pt;
     padding-left: 5pt;
-    background-color: transparent;
+    background: transparent;
 }
 
 .input__field:focus {
-    border: 2px solid rgba(87, 59, 89, 100%);
+    border: 2px solid var(--input-border-focus);
     outline: none;
-    background-color: white;
+    background: var(--focus);
 }
 
 .input__field::placeholder {
-    color: rgba(87, 59, 89, 25%)
+    color: var(--placeholder);
 }
 .input__field:disabled {
     font-weight: bold;

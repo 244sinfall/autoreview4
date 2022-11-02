@@ -1,7 +1,6 @@
 .button-group {
     display: flex;
     flex-direction: column;
-
     box-sizing: border-box;
 }
 .button-group__container {
@@ -9,9 +8,9 @@
     flex-direction: row;
 }
 .button-group__button-label {
-    color: rgba(91, 62, 93, 0.95);
-    background-color: transparent;
-    border: 2px solid rgba(91, 62, 93, 0.95);
+    color: var(--button-group-color);
+    background: transparent;
+    border: 2px solid var(--button-group-border);
     padding: 5px;
     justify-content: center;
     align-items: center;
@@ -19,8 +18,8 @@
     box-shadow: 1px 1px 0 black;
 }
 .button-group__button-label:hover {
-    color: rgba(244, 244, 244, 0.95);
-    background-color: rgb(91, 62, 93);
+    color: var(--button-group-hover-color);
+    background: var(--button-group-hover-background);
     border: 2px solid transparent;
 }
 .button-group__button-bordered-right {
@@ -39,7 +38,7 @@
 
 .button-group__button-input[type="radio"]:checked + label p {
     box-shadow: none;
-    border: 2px solid rgba(65, 46, 68, 0.95);
-    color: rgba(235, 235, 235, 0.95);
-    background-color: rgb(65, 46, 68);
+    border: 2px solid var(--button-group-selected);
+    color: var(--button-group-hover-color);
+    background: var(--button-group-selected)
 }

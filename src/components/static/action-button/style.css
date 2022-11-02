@@ -1,7 +1,7 @@
 .action-button {
-    color: rgba(91, 62, 93, 0.95);
-    background-color: transparent;
-    border: 2px solid rgba(91, 62, 93, 0.95);
+    color: var(--button-content);
+    background: transparent;
+    border: 2px solid var(--button-border);
     padding: 10px;
     border-radius: 0.25rem;
     font-weight: bolder;
@@ -16,7 +16,7 @@
 }
 
 .action-button:hover {
-    color: rgba(244, 244, 244, 0.95);
-    background-color: rgb(91, 62, 93);
+    color: var(--button-content-hover);
+    background: var(--button-background-hover);
     border: 2px solid transparent;
 }
