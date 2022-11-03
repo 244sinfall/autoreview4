@@ -176,11 +176,6 @@ export class ClaimedItem implements ClaimedItemInterface {
         if(quality) this.quality = quality
         if(reviewer) this.reviewer = reviewer
     }
-    toDisplay() {
-        return { name: this.name, owner: this.owner, ownerProof: this.ownerProofLink, reviewer: this.reviewer, addedAt:
-                this.addedAt ? this.addedAt.toLocaleString(): "", acceptor: this.acceptor,
-            acceptedAt: this.accepted ? this.acceptedAt.toLocaleString() : "" }
-    }
     toHTMLTableRow() {
         const ownerProof = this.ownerProofLink ? `<a href="${this.ownerProofLink}" target="_blank" rel="noreferrer"><span style="font-size: 14px;">${this.ownerProof}</span></a>` : `<p>-</p>`
         return `<tr>

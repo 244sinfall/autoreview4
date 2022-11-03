@@ -5,35 +5,21 @@ interface CheckItem {
     name: string
 }
 
-
-export interface Check {
+export interface ICheck {
     id: number,
     date: string,
     sender: string,
     receiver: string,
-    subject: string, //name
-    body: string, //description
-    money: number | string,
+    subject: string,
+    body: string,
+    money: number,
     gmName: string,
     status: string,
-    items: CheckItem[] | string[] | null
-}
-
-export const defaultCheck: Check= {
-    id: 0,
-    date: "",
-    sender: "",
-    receiver: "",
-    money: 0,
-    subject: "",
-    body: "",
-    items: [],
-    status: "",
-    gmName: ""
+    items: CheckItem[] | null
 }
 
 export interface CheckResponse {
-    checks: Check[],
+    checks: ICheck[],
     count: number,
     filteredCount: number,
     types: string[],
@@ -62,6 +48,60 @@ export interface CheckTableSearchParams {
     force: boolean
 }
 
+export class Check implements ICheck {
+    body: string;
+    date: string;
+    gmName: string;
+    id: number;
+    items: CheckItem[] | null;
+    money: number;
+    receiver: string;
+    sender: string;
+    status: string;
+    subject: string;
+    constructor(check: ICheck) {
+        this.body = check.body
+        this.date = check.date
+        this.gmName = check.gmName
+        this.id = check.id
+        this.items = check.items
+        this.money = check.money
+        this.receiver = check.receiver
+        this.sender = check.sender
+        this.status = check.status
+        this.subject = check.subject
+    }
+    get itemsString() {
+        if(!this.items) return ""
+        const itemNames = this.items.map(item => item.name)
+        const uniqueItems = [...new Set(itemNames)]
+        const uniqueItemsWithAmount = uniqueItems.map(itemName => {
+            let count = 0;
+            this.items!.forEach((item) => {
+                if(item.name === itemName) {
+                    count += item.count
+                }
+            })
+            return [itemName, count]
+        })
+        return uniqueItemsWithAmount.map(item => `[${item[0]}]x${item[1]}\n`)
+    }
+    get moneyString() {
+        if(isNaN(this.money) || this.money === 0) return "0 м."
+        const moneyInGold = this.money / 10000
+        const goldValue = Math.floor(moneyInGold)
+        const moneyInSilver = (moneyInGold - goldValue) * 100
+        const silverValue = Math.floor(moneyInSilver)
+        const copperValue = Math.floor((moneyInSilver - silverValue) * 100)
+        let moneyStr = ""
+        if(goldValue) moneyStr += `${goldValue} з. `
+        if(silverValue) moneyStr += `${silverValue} с. `
+        if(copperValue) moneyStr += `${copperValue} м.`
+        return moneyStr
+    }
+}
+
+
 export function getCheckStatusValue(status: string) {
     switch (status) {
         case "Ожидает": return "open"
@@ -88,7 +128,6 @@ function parseChecksParams(params: CheckTableSearchParams): string {
             if(!query.endsWith("?")) query += delimiter
             query += `${prop}=${String(params[prop as keyof typeof params])}`
         }
-
     }
     return query
 }
@@ -100,32 +139,7 @@ export async function getChecks(params?: CheckTableSearchParams, token?:string) 
     if (json["error"]) throw json
     const checkResponse = await json as CheckResponse
     checkResponse.types = ["Все получатели", ...checkResponse.types.filter(t => t && t !== "-")]
-    for await(let check of checkResponse.checks) {
-        if(check.items === null) check.items = []
-        const items = (check.items as Array<CheckItem>).map(item => item.name)
-        const uniqueItems = [...new Set(items)]
-        const uniqueItemsWithAmount = uniqueItems.map(itemName => {
-            let count = 0;
-            (check.items as Array<CheckItem>).filter(check => check.name === itemName).forEach(check => count += check.count)
-            return [itemName, count]
-        })
-        check.items = uniqueItemsWithAmount.map(item => `[${item[0]}]x${item[1]}`)
-        const money = check.money as number
-        if(isNaN(money) || money === 0) {
-            check.money = "0 м."
-            continue
-        }
-        const moneyInGold = money / 10000
-        const goldValue = Math.floor(moneyInGold)
-        const moneyInSilver = (moneyInGold - goldValue) * 100
-        const silverValue = Math.floor(moneyInSilver)
-        const copperValue = Math.floor((moneyInSilver - silverValue) * 100)
-        let moneyStr = ""
-        if(goldValue) moneyStr += `${goldValue} з. `
-        if(silverValue) moneyStr += `${silverValue} с. `
-        if(copperValue) moneyStr += `${copperValue} м.`
-        check.money = moneyStr
-    }
+    checkResponse.checks = checkResponse.checks.map(check => new Check(check))
     checkResponse.updatedAt = new Date(checkResponse.updatedAt)
     return checkResponse
 }

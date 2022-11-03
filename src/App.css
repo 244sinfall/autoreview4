@@ -73,6 +73,14 @@
     --input-text: rgb(220, 214, 214);
     --background-darken: 75%;
 }
+.generated-link {
+    text-decoration: var(--content-color) underline;
+}
+
+.generated-link:hover {
+    text-decoration: var(--content-color) underline;
+}
+
 * hr {
     border: 1px solid var(--accent-background);
 }

@@ -12,7 +12,7 @@ import {
     ClaimedItemEditHandler,
     ClaimedItemEditorChangeable,
     ClaimedItemRequests,
-    ClaimedItemsTables, ClaimedItemsTablesImpl,
+    ClaimedItemsTablesImpl,
     ClaimedItemsTablesOrder,
     getClaimedItemQuality,
 } from "../../model/claimed-items";
@@ -20,6 +20,7 @@ import ClaimedItemCategory from "./item-category";
 import ClaimedItemEditor from "./item-editor";
 import ClaimedItemAdder from "./item-adder";
 import AuthorizedUser from "../../model/auth/user/authorized-user";
+import ItemRow from "./item-row";
 
 const ClaimedItemsPage = () => {
     const [claimedItems, setClaimedItems] = useState<ClaimedItemsTablesImpl>()
@@ -28,13 +29,10 @@ const ClaimedItemsPage = () => {
     const [requireUpdate, setRequireUpdate] = useState(true)
     const [errMsg, setErrMsg] = useState("")
     const {currentUser} = useAuth()
-    const handleClick = useCallback((quality: string, v: any[], idx:number) => {
-        const item = claimedItems && claimedItems[quality as keyof ClaimedItemsTables][idx]
-        if(item) {
-            setSelectedItem(item)
-            setIsCreatingItem(null)
-        }
-    }, [claimedItems])
+    const handleClick = useCallback((item: ClaimedItem) => {
+        setSelectedItem(item)
+        setIsCreatingItem(null)
+    }, [])
     const addItemButtonHandler = (quality: string) => {
         setIsCreatingItem(quality)
         setSelectedItem(null)
@@ -82,22 +80,22 @@ const ClaimedItemsPage = () => {
             })
         }
     },[requireUpdate])
+    const renderFunction = useCallback((item: ClaimedItem) => {
+        return <ItemRow key={item.id} item={item} onClick={() => handleClick(item)}/>
+    }, [handleClick])
     const tables = useMemo(() => {
         if(claimedItems) {
             return Object.entries(claimedItems).map((k: [string, ClaimedItem[]]) => {
-                return <Table key={k[0]} columns={["Название", "Владелец", "Доказательство владения", "Согласовавший",
-                    "Дата добавления", "Утвердивший", "Дата утверждения"]}
-                              content={k[1].map(i => i.toDisplay())}
-                              handleClick={(v, idx) => {
-                                  if (idx !== undefined) handleClick(k[0], v, idx)
-                              }}/>
+                return <Table<ClaimedItem> key={k[0]} columns={["Название", "Владелец", "Доказательство владения", "Согласовавший",
+                    "Дата добавления", "Утвердивший", "Дата утверждения", "Доп. инфо"]}
+                              content={k[1]} renderFunction={renderFunction}/>
             }).sort((a, b) => {
                 const numA = ClaimedItemsTablesOrder[(a.key as string) as keyof typeof ClaimedItemsTablesOrder]
                 const numB = ClaimedItemsTablesOrder[(b.key as string) as keyof typeof ClaimedItemsTablesOrder]
                 return numA < numB ? -1 : 1
             })
         }
-    }, [claimedItems, handleClick])
+    }, [claimedItems, renderFunction])
     const tablesWithControls = useMemo(() => {
         if(tables) {
             return tables.map((t) => {
