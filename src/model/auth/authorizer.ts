@@ -27,7 +27,8 @@ export default class Authorizer {
     async login() {
         if(!this._info.password || !this._info.email || !this._info.email.includes("@")) throw Error("Не все поля заполнены")
         const { email, password } = this._info
-        return await signInWithEmailAndPassword(auth, email, password)
+        const result = await signInWithEmailAndPassword(auth, email, password)
+        return result.user
     }
     async signup() {
         if (this._info.password !== this._info.passwordCheck) throw Error("Пароли не совпадают")
@@ -40,5 +41,6 @@ export default class Authorizer {
             name: this._info.name,
             permission: 0
         })
+        return result.user
     }
 }
