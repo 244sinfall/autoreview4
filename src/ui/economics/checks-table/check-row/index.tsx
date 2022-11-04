@@ -20,7 +20,7 @@ const CheckRow = (props: {check: Check, onClick: (check: Check) => any}) => {
             onMouseDown={callbacks.recordMousePos}
             onMouseUp={callbacks.compareMousePos}>
             <td className="table-content" data-label="ID:">{props.check.id}</td>
-            <td className="table-content" data-label="Дата и время:">{moment(props.check.date+"+04:00",
+            <td className="table-content" data-label="Дата и время:">{moment(props.check.date+"+03:00",
                 "DD.MM.YYYY hh:mmZ").toDate().toLocaleString("ru", { dateStyle: "medium", timeStyle: "short" })}</td>
             <td className="table-content" data-label="Владелец:">{props.check.sender}</td>
             <td className="table-content" data-label="Тип:">{props.check.receiver}</td>
