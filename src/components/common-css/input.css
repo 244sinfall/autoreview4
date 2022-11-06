@@ -26,5 +26,7 @@
     color: var(--placeholder);
 }
 .input__field:disabled {
-    font-weight: bold;
+    background: var(--focus);
+    -webkit-text-fill-color: var(--input-text);
+    -webkit-opacity: 1;
 }

@@ -1,0 +1,24 @@
+.ItemModal-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+.ItemModal-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.ItemModal-controls {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+@media screen and (max-width: 500px) {
+    .input__container {
+        flex-direction: column;
+    }
+}

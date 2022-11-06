@@ -19,9 +19,11 @@ const NumberInput = (props: { title: string, minValue: number, maxValue: number,
         setNumber(newNumber)
         props.handler?.(props.title, Number(newNumber))
     }
+
     const currentValue = useMemo(() => {
-        return props.defaultValue === number ? props.defaultValue : number
-    }, [number, props.defaultValue])
+        if(props.disabled) return props.defaultValue ?? number
+        return number
+    }, [number, props.defaultValue, props.disabled])
     return (
         <div className="input__container">
             {props.disabled ? <strong>{props.title}:</strong> : props.title}
@@ -35,4 +37,4 @@ const NumberInput = (props: { title: string, minValue: number, maxValue: number,
 
 
 
-export default NumberInput;
+export default React.memo(NumberInput);

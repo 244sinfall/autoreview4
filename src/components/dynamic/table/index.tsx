@@ -7,7 +7,7 @@ interface TableProps<T> {
     renderFunction?: (item: T) => React.ReactNode | React.ReactNode[],
 }
 
-function Table<T extends object>(props: React.PropsWithChildren<TableProps<T>>): JSX.Element {
+function Table<T extends object>(props: TableProps<T>): JSX.Element {
     const renderContent = useMemo(() => {
         if(props.renderFunction) {
             return props.content.map(item => props.renderFunction!(item))

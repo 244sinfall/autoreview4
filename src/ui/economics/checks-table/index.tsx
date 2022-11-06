@@ -73,7 +73,7 @@ const ChecksTable = () => {
             setPage(newPage)
         }, [params]),
         onTableItemClick: useCallback((check: ICheck) => {
-            if(currentUser.canAccess(Permission.arbiter) || selectedCheck === null) {
+            if(currentUser.canAccess(Permission.arbiter) && selectedCheck === null) {
                 setSelectedCheck(check)
             }
         }, [currentUser, selectedCheck]),

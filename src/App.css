@@ -87,7 +87,7 @@
 * {
     margin: 0;
     padding: 0;
-    transition: background 500ms ease-in-out, color 500ms ease-in-out;
+    transition: background 250ms ease-in-out, color 100ms linear;
 }
 html, body  {
     background: linear-gradient(rgba(0, 0, 0, var(--background-darken)), rgba(0, 0, 0, var(--background-darken))), url("/src/assets/bgdarkmoon.png") no-repeat fixed;
@@ -95,6 +95,7 @@ html, body  {
     overflow-x: clip;
     width: 100%;
 }
+
 .App {
     margin-left: 10vw;
     margin-right: 10vw;

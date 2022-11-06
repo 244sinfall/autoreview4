@@ -30,9 +30,11 @@ const ClaimedItemsPage = () => {
     const [errMsg, setErrMsg] = useState("")
     const {currentUser} = useAuth()
     const handleClick = useCallback((item: ClaimedItem) => {
-        setSelectedItem(item)
-        setIsCreatingItem(null)
-    }, [])
+        if(currentUser.canAccess(Permission.reviewer)) {
+            setSelectedItem(item)
+            setIsCreatingItem(null)
+        }
+    }, [currentUser])
     const addItemButtonHandler = (quality: string) => {
         setIsCreatingItem(quality)
         setSelectedItem(null)

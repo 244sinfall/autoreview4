@@ -1,0 +1,19 @@
+.CheckExecutor-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.CheckExecutor-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.CheckExecutor-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}

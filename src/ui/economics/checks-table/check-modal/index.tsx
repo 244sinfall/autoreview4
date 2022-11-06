@@ -1,27 +1,28 @@
 import {ICheck} from "../../../../model/checks";
-import ContentTitle from "../../../../components/static/content-title";
 import ActionButton from "../../../../components/static/action-button";
 import React from "react";
 import ExecuteHelperOption from "./option";
+import ModalTitle from "../../../../components/static/modal-title";
+import './style.css'
 
 function ExecuteHelper(props: {check: ICheck, closeHandler: () => void}) {
     const rejectCommand = `.check return ${props.check.id}`
     const openCommand = `.check open ${props.check.id}`
     const closeCommand = `.check close ${props.check.id}`
     return (
-        <div className="check-executor">
-            <ContentTitle title={"Макросы для чека"} controllable={false}>
+        <ModalTitle title={"Макросы для чека"}>
+            <div className="CheckExecutor-content">
                 {props.check.status === "Отказан" && <p>Этот чек отказан. Его невозможно изменить. Игроку необходимо отправить новый чек.</p>}
                 {props.check.status === "Закрыт" && <ExecuteHelperOption title="Переоткрыть чек" command={openCommand}/>}
                 {props.check.status === "Ожидает" &&
-                  <div className="executor-fields">
+                  <div className="CheckExecutor-fields">
                     <ExecuteHelperOption title={"Закрыть чек"} command={closeCommand}/>
                     <ExecuteHelperOption title={"Отказать чек"} command={rejectCommand}/>
                   </div>
                 }
                 <ActionButton title={"Закрыть"} show={true} action={props.closeHandler} requiresLoading={false}/>
-            </ContentTitle>
-        </div>
+            </div>
+        </ModalTitle>
     )
 }
 
