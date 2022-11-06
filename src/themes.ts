@@ -5,6 +5,7 @@ const changeTheme = (theme: string) => {
     const currentTheme = localStorage.getItem("theme")
     currentTheme === null ? document.body.classList.add(theme) : document.body.classList.replace(currentTheme, theme)
     localStorage.setItem("theme", theme)
+    switchThemeColor()
 }
 
 export const createThemes = (onBack: () => void): HeaderMenuElement[] => {
@@ -27,4 +28,10 @@ export const initTheme = () => {
         localStorage.setItem("theme", "darkmoon")
     }
     document.body.classList.add(theme)
+    switchThemeColor()
+}
+
+const switchThemeColor = () => {
+    const color = window.getComputedStyle(document.body).getPropertyValue("--accent-background")
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color)
 }

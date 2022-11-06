@@ -6,7 +6,7 @@
 }
 /** Themes */
 .darkmoon {
-    --accent-background: rgb(91, 62, 93);
+    --accent-background: #5B3E5D;
     --accent-color: rgb(255, 255, 255);
     --accent-hover: rgba(166, 159, 166, 0.5);
     --content-background: rgba(244, 244, 244, 0.95);
@@ -29,7 +29,7 @@
 }
 
 .light {
-    --accent-background: rgb(213, 213, 213);
+    --accent-background: #D5D5D5;
     --accent-color: rgb(26, 26, 26);
     --accent-hover: rgba(166, 159, 166, 0.25);
     --content-background: rgba(244, 244, 244, 0.95);
@@ -52,7 +52,7 @@
 }
 
 .dark {
-    --accent-background: rgb(30, 30, 30);
+    --accent-background: #1E1E1E;
     --accent-color: rgb(213, 203, 203);
     --accent-hover: rgba(87, 81, 87, 0.25);
     --content-background: rgba(61, 61, 61, 0.95);
