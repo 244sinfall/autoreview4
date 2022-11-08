@@ -118,3 +118,11 @@ html, body  {
         margin-right: 0;
     }
 }
+
+@media screen and (max-width: 750px) {
+    :root {
+        --header-margin: 0px;
+        --footer-margin: 0px;
+    }
+
+}
