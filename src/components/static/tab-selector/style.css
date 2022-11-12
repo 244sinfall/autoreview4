@@ -1,0 +1,14 @@
+.tab-selector {
+    background: var(--accent-background);
+    color: var(--accent-color);
+    outline: 0;
+    border: 0;
+    height: 50px;
+}
+
+.tab-selector_selected {
+    background: var(--button-group-selected);
+    color: var(--button-group-hover-color);
+    outline: 0;
+    border: 0;
+}

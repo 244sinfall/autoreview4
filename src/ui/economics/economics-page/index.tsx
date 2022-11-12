@@ -1,12 +1,15 @@
 import React from 'react';
 import ChecksTable from "../checks-table";
+import UpgradeCalculator from "../upgrade-calculator";
+import LayoutBlock from "../../../components/layouts/block";
 
 const EconomicsPage = () => {
     return (
-        <div>
+        <LayoutBlock>
+            <UpgradeCalculator/>
             <ChecksTable/>
-        </div>
+        </LayoutBlock>
     );
 };
 
-export default EconomicsPage;
+export default React.memo(EconomicsPage);

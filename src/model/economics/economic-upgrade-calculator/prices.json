@@ -1,0 +1,152 @@
+{
+  "buildings": {
+    "buy": {
+      "0": {
+        "resources": {
+          "gold": 5,
+          "stone": 10,
+          "wood": 10
+        },
+        "progress": 15,
+        "tools": 15
+      },
+      "1": {
+        "resources": {
+          "gold": 5,
+          "stone": 15,
+          "wood": 15
+        },
+        "progress": 20,
+        "tools": 20
+      },
+      "2": {
+        "resources": {
+          "gold": 10,
+          "stone": 15,
+          "wood": 15,
+          "ore": 10
+        },
+        "progress": 30,
+        "tools": 30
+      },
+      "3": {
+        "resources": {
+          "gold": 15,
+          "stone": 25,
+          "wood": 25,
+          "ore": 20
+        },
+        "progress": 50,
+        "tools": 50
+      },
+      "4": {
+        "resources": {
+          "gold": 25,
+          "stone": 40,
+          "wood": 40,
+          "ore": 30
+        },
+        "progress": 80,
+        "tools": 80
+      },
+      "5": {
+        "resources": {
+          "gold": 100,
+          "stone": 60,
+          "wood": 60,
+          "ore": 40
+        },
+        "progress": 180,
+        "tools": 180
+      },
+      "6": {
+        "resources": {
+          "gold": 200,
+          "stone": 110,
+          "wood": 110,
+          "ore": 80
+        },
+        "progress": 350,
+        "tools": 350
+      },
+      "7": {
+        "resources": {
+          "gold": 400,
+          "stone": 140,
+          "wood": 140,
+          "ore": 120
+        },
+        "progress": 600,
+        "tools": 600
+      }
+    },
+    "upgrade": {
+      "1": {
+        "resources": {
+          "wood": 5,
+          "stone": 5
+        },
+        "progress": 5,
+        "tools": 5
+      },
+      "2": {
+        "resources": {
+          "ore": 10,
+          "gold": 5
+        },
+        "progress": 10,
+        "tools": 10
+      },
+      "3": {
+        "resources": {
+          "wood": 10,
+          "stone": 10,
+          "ore": 10,
+          "gold": 5
+        },
+        "progress": 20,
+        "tools": 20
+      },
+      "4": {
+        "resources": {
+          "wood": 15,
+          "stone": 15,
+          "ore": 10,
+          "gold": 10
+        },
+        "progress": 30,
+        "tools": 30
+      },
+      "5": {
+        "resources": {
+          "wood": 20,
+          "stone": 20,
+          "ore": 10,
+          "gold": 75
+        },
+        "progress": 100,
+        "tools": 100
+      },
+      "6": {
+        "resources": {
+          "wood": 50,
+          "stone": 50,
+          "ore": 40,
+          "gold": 100
+        },
+        "progress": 170,
+        "tools": 170
+      },
+      "7": {
+        "resources": {
+          "wood": 30,
+          "stone": 30,
+          "ore": 40,
+          "gold": 200
+        },
+        "progress": 250,
+        "tools": 250
+      }
+    }
+  }
+}

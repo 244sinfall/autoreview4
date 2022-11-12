@@ -1,0 +1,11 @@
+.BuildBuyer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
+}
+
+.BuildBuyer > .button-group > .button-group__container{
+    justify-content: center;
+}

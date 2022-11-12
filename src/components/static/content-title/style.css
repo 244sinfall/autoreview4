@@ -14,8 +14,13 @@
 }
 
 .content-block__container {
+    padding: 10px;
     color: var(--content-color);
     background: var(--content-background);
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
+}
+
+.no-padding {
+    padding: 0;
 }

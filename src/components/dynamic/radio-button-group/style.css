@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 .button-group__container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-auto-flow: column;
 }
 .button-group__button-label {
     color: var(--button-group-color);
@@ -22,6 +22,7 @@
     background: var(--button-group-hover-background);
     border: 2px solid transparent;
 }
+
 .button-group__button-bordered-right {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
