@@ -11,9 +11,12 @@ const ArbitersPage = () => {
             <Protector accessLevel={Permission.arbiter}>
                 <div className="arbiters-page">
                     <div className="arbiters-page__contents">
-                        <TextCleaner/>
+                        <div className="arbiters-page__contents-left">
+                            <TextCleaner/>
+                            <BusinessRewarder/>
+                        </div>
                         <EventRewardGiver/>
-                        <BusinessRewarder/>
+
                     </div>
                 </div>
             </Protector>
