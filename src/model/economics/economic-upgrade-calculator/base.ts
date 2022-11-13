@@ -66,18 +66,12 @@ export class UpgradeBuildingCalculator extends BuyBuildingCalculator {
                     }
                     break;
                 case "Прогресс":
-                    if(result.progress) {
-                        result.progress += prices.buildings.upgrade[nextLevelStr].progress
-                        break;
-                    }
-                    result.progress = prices.buildings.upgrade[nextLevelStr].progress
+                    if(result.progress === undefined) result.progress = 0
+                    result.progress += prices.buildings.upgrade[nextLevelStr].progress
                     break;
                 case "Ремесленные изделия":
-                    if(result.tools) {
-                        result.tools += prices.buildings.upgrade[nextLevelStr].tools
-                        break;
-                    }
-                    result.tools = prices.buildings.upgrade[nextLevelStr].tools
+                    if(result.tools === undefined) result.tools = 0
+                    result.tools += prices.buildings.upgrade[nextLevelStr].tools
                     break;
             }
             this.level++;

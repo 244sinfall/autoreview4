@@ -120,7 +120,7 @@ export class BusinessActivityAggregator implements BusinessRewardInfo {
         const distributor = new BusinessRewardDistributor(resource.type)
         switch(resource.type) {
             case ResourceType.GOLD: return `.send mo ${this.owner} "Предприятие" ` +
-            `"${this.poi}" ${finalMod * distributor.getReward(this.poiLevel)}`
+            `"${this.poi}" ${Math.round(finalMod * distributor.getReward(this.poiLevel))}`
 
             case ResourceType.SECOND:
             case ResourceType.FIRST: return `.send it ${this.owner} "Предприятие" ` +
