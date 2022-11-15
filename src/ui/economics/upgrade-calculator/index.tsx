@@ -1,11 +1,11 @@
 import React, {useMemo, useState} from 'react';
 import ContentTitle from "../../../components/static/content-title";
 import TabController from "../../../components/static/tab-controller";
-import BuildBuyer from "./build-buyer";
-import {CalculationResult} from "../../../model/economics/economic-upgrade-calculator/base";
 import TextAreaReadOnly from "../../../components/dynamic/text-area-read-only";
 import ActionButton from "../../../components/static/action-button";
 import './style.css'
+import EconomicPurchaseCalculator from "./economic-purchase-calculator";
+import {CalculationResult} from "../../../model/economics/economic-upgrade-calculator";
 
 const UpgradeCalculator = () => {
     const [titles, setTitles] = useState<string[]>([])
@@ -50,8 +50,10 @@ const UpgradeCalculator = () => {
     return (
         <ContentTitle title="Калькулятор строительства и улучшений" controllable={true} padding={"no-padding"}>
             <TabController items={{
-                "Купить здание": <BuildBuyer upgradable={false} onSubmit={callbacks.onSubmit}/>,
-                "Улучшить здание": <BuildBuyer upgradable={true} onSubmit={callbacks.onSubmit}/>,
+                "Купить здание": <EconomicPurchaseCalculator subject={"building"} upgradable={false} onSubmit={callbacks.onSubmit}/>,
+                "Улучшить здание": <EconomicPurchaseCalculator subject={"building"} upgradable={true} onSubmit={callbacks.onSubmit}/>,
+                "Купить НИП": <EconomicPurchaseCalculator subject={"npc"} upgradable={false} onSubmit={callbacks.onSubmit}/>,
+                "Улучшить НИП": <EconomicPurchaseCalculator subject={"npc"} upgradable={true} onSubmit={callbacks.onSubmit}/>,
             }}/>
             <div className="UpgradeCalculator-controls">
                 <TextAreaReadOnly content={content} height={100}/>

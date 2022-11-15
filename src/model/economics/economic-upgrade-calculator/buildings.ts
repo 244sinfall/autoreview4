@@ -1,14 +1,5 @@
 import prices from './prices.json'
-
-export interface CalculationResult {
-    gold?: number,
-    wood?: number,
-    stone?: number,
-    ore?: number,
-    food?: number,
-    tools?: number,
-    progress?: number
-}
+import {CalculationResult} from "./index";
 
 export type BuyBuildingMethods = "Ресурсы и золото" | "Ремесленные изделия" | "Прогресс"
 

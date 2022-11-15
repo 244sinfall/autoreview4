@@ -1,0 +1,83 @@
+import React, {useMemo, useState} from 'react';
+import {
+    BuyBuildingCalculator,
+    BuyBuildingMethods,
+    UpgradeBuildingCalculator
+} from "../../../../model/economics/economic-upgrade-calculator/buildings";
+import NumberInput from "../../../../components/dynamic/number-input";
+import ActionButton from "../../../../components/static/action-button";
+import RadioButtonGroup from "../../../../components/dynamic/radio-button-group";
+import './style.css'
+import {CalculationResult} from "../../../../model/economics/economic-upgrade-calculator";
+import {
+    BuyNPCCalculator,
+    BuyNPCMethods,
+    UpgradeNPCCalculator
+} from "../../../../model/economics/economic-upgrade-calculator/npcs";
+
+const EconomicPurchaseCalculator = (props: { subject: "building" | "npc", upgradable: boolean, onSubmit: (title: string, result: CalculationResult) => void }) => {
+    const [level, setLevel] = useState(0)
+    const [upgradeTo, setUpgradeTo] = useState(0)
+    const [amount, setAmount] = useState(0)
+    const [payMethod, setPayMethod] = useState<BuyBuildingMethods | BuyNPCMethods | null>(null)
+    const callbacks = {
+        onLevelChange: (fieldName: string, fieldValue: number) => setLevel(fieldValue),
+        onUpgradeToChange: (fieldName: string, fieldValue: number) => setUpgradeTo(fieldValue),
+        onPayMethodChange: (value: string) => {
+            const payMethod = value as BuyBuildingMethods
+            setPayMethod(payMethod)
+        },
+        onNPCAmountChange: (fieldName: string, fieldValue: number) => setAmount(fieldValue),
+        onAdd: () => {
+            if(props.subject === "building") {
+                if(props.upgradable) {
+                    const result = new UpgradeBuildingCalculator(level, payMethod as BuyBuildingMethods, upgradeTo).calculate()
+                    props.onSubmit(`Улучшение здания с ${level} ур. до ${upgradeTo} ур.`, result)
+                } else {
+                    const result = new BuyBuildingCalculator(level, payMethod as BuyBuildingMethods).calculate()
+                    props.onSubmit(`Покупка здания ${level} ур.`, result)
+                }
+            } else {
+                if(props.upgradable) {
+                    const result = new UpgradeNPCCalculator(level, amount, payMethod as BuyNPCMethods, upgradeTo).calculate()
+                    props.onSubmit(`Улучшение ${amount} НИП с ${level} до ${upgradeTo} ур.`, result)
+                } else {
+                    const result = new BuyNPCCalculator(level, amount, payMethod as BuyNPCMethods).calculate()
+                    props.onSubmit(`Покупка ${amount} НИП ${level} ур.`, result)
+                }
+
+            }
+        }
+    }
+    const showCountButton = useMemo(() => {
+        if(payMethod === null) return false
+        if(!props.upgradable) return true
+        return upgradeTo > level
+    }, [level, payMethod, props.upgradable, upgradeTo])
+    const maxLevel = useMemo(() => {
+        if(props.subject === "building") return 7
+        return 6
+    }, [props.subject])
+    const options = useMemo(() => {
+        if(props.subject === "building") {
+            return ["Ресурсы и золото", "Прогресс", "Ремесленные изделия"]
+        }
+        return ["Золото", "Прогресс", "Рем. изделия", "Провиант"]
+    }, [props.subject])
+    return (
+        <div className="BuildBuyer">
+            <NumberInput title={"Введите уровень " + (props.subject === "building" ? "здания": "НИП")}
+                         disabled={false} minValue={0} maxValue={maxLevel}
+                         handler={callbacks.onLevelChange} floatable={false}/>
+            {props.subject === "npc" && <NumberInput title="Введите количество NPC" minValue={0} maxValue={9999}
+                                                     handler={callbacks.onNPCAmountChange} floatable={false} disabled={false}/>}
+            {props.upgradable && <NumberInput title="Введите желаемый уровень" disabled={false} minValue={0}
+                                              maxValue={maxLevel}
+                                                          handler={callbacks.onUpgradeToChange} floatable={false}/>}
+            <RadioButtonGroup title="Выберите способ оплаты" options={options} groupName="build-buy-group" handler={callbacks.onPayMethodChange}/>
+            <ActionButton title="Посчитать" show={showCountButton} action={callbacks.onAdd} requiresLoading={false}/>
+        </div>
+    );
+};
+
+export default React.memo(EconomicPurchaseCalculator);
