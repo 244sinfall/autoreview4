@@ -66,11 +66,11 @@ const EconomicPurchaseCalculator = (props: { subject: "building" | "npc", upgrad
     }, [props.subject])
     return (
         <div className="BuildBuyer">
+            {props.subject === "npc" && <NumberInput title="Введите количество НИП" minValue={0} maxValue={9999}
+                                                     handler={callbacks.onNPCAmountChange} floatable={false} disabled={false}/>}
             <NumberInput title={"Введите уровень " + (props.subject === "building" ? "здания": "НИП")}
                          disabled={false} minValue={0} maxValue={maxLevel}
                          handler={callbacks.onLevelChange} floatable={false}/>
-            {props.subject === "npc" && <NumberInput title="Введите количество НИП" minValue={0} maxValue={9999}
-                                                     handler={callbacks.onNPCAmountChange} floatable={false} disabled={false}/>}
             {props.upgradable && <NumberInput title="Введите желаемый уровень" disabled={false} minValue={0}
                                               maxValue={maxLevel}
                                                           handler={callbacks.onUpgradeToChange} floatable={false}/>}
