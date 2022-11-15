@@ -51,9 +51,15 @@ const EconomicPurchaseCalculator = (props: { subject: "building" | "npc", upgrad
     }
     const showCountButton = useMemo(() => {
         if(payMethod === null) return false
-        if(!props.upgradable) return true
-        return upgradeTo > level
-    }, [level, payMethod, props.upgradable, upgradeTo])
+        if(props.subject === "npc") {
+            if(level < 1 || amount < 1) return false
+            if(props.upgradable && upgradeTo <= level) return false
+        }
+        if(props.subject === "building") {
+            if(props.upgradable && upgradeTo <= level) return false
+        }
+        return true
+    }, [amount, level, payMethod, props.subject, props.upgradable, upgradeTo])
     const maxLevel = useMemo(() => {
         if(props.subject === "building") return 7
         return 6
