@@ -6,10 +6,12 @@ export type BuyBuildingMethods = "Ресурсы и золото" | "Ремес�
 export class BuyBuildingCalculator {
     protected level: number
     protected readonly payMethod: BuyBuildingMethods
-    constructor(level: number, payMethod: BuyBuildingMethods) {
+    protected modifier: number
+    constructor(level: number, modifier: number, payMethod: BuyBuildingMethods) {
         if(level > 7) level = 7
         this.level = level;
         this.payMethod = payMethod;
+        this.modifier = modifier;
     }
     calculate(): CalculationResult {
         const level = String(this.level)
@@ -17,15 +19,17 @@ export class BuyBuildingCalculator {
         switch (this.payMethod) {
             case "Ремесленные изделия":
                 return ({
-                    tools: prices.buildings.buy[levelStr].tools
+                    tools: Math.round(prices.buildings.buy[levelStr].tools * this.modifier)
                 })
             case "Ресурсы и золото":
+                const obj = {...prices.buildings.buy[levelStr].resources}
+                Object.keys(obj).forEach(key => obj[key as keyof typeof obj] = Math.round(obj[key as keyof typeof obj] * this.modifier))
                 return ({
-                    ...prices.buildings.buy[levelStr].resources
+                    ...obj
                 })
             case "Прогресс":
                 return ({
-                    progress: prices.buildings.buy[levelStr].progress
+                    progress: Math.round(prices.buildings.buy[levelStr].progress * this.modifier)
                 })
         }
     }
@@ -33,9 +37,9 @@ export class BuyBuildingCalculator {
 
 export class UpgradeBuildingCalculator extends BuyBuildingCalculator {
     private readonly upgradeTo: number
-    constructor(level: number, payMethod: BuyBuildingMethods, upgradeTo: number) {
+    constructor(level: number, modifier: number, payMethod: BuyBuildingMethods, upgradeTo: number) {
         if(upgradeTo <= level || upgradeTo < 1) throw new Error("Невозможное вычисление")
-        super(level, payMethod);
+        super(level, modifier, payMethod);
         this.upgradeTo = upgradeTo
     }
     calculate(): CalculationResult {
@@ -50,19 +54,19 @@ export class UpgradeBuildingCalculator extends BuyBuildingCalculator {
                         // @todo Разобраться, почему здесь не работает
                         const newValue = toUpgrade[prop as keyof typeof toUpgrade] as number
                         if(prop in result) {
-                            result[prop as keyof CalculationResult]! += newValue
+                            result[prop as keyof CalculationResult]! += Math.round(newValue * this.modifier)
                         } else {
-                            result[prop as keyof CalculationResult] = newValue
+                            result[prop as keyof CalculationResult] = Math.round(newValue * this.modifier)
                         }
                     }
                     break;
                 case "Прогресс":
                     if(result.progress === undefined) result.progress = 0
-                    result.progress += prices.buildings.upgrade[nextLevelStr].progress
+                    result.progress += Math.round(prices.buildings.upgrade[nextLevelStr].progress * this.modifier)
                     break;
                 case "Ремесленные изделия":
                     if(result.tools === undefined) result.tools = 0
-                    result.tools += prices.buildings.upgrade[nextLevelStr].tools
+                    result.tools += Math.round(prices.buildings.upgrade[nextLevelStr].tools * this.modifier)
                     break;
             }
             this.level++;

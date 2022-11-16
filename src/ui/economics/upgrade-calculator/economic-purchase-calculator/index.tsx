@@ -19,6 +19,7 @@ const EconomicPurchaseCalculator = (props: { subject: "building" | "npc", upgrad
     const [level, setLevel] = useState(0)
     const [upgradeTo, setUpgradeTo] = useState(0)
     const [amount, setAmount] = useState(0)
+    const [modifier, setModifier] = useState(1)
     const [payMethod, setPayMethod] = useState<BuyBuildingMethods | BuyNPCMethods | null>(null)
     const callbacks = {
         onLevelChange: (fieldName: string, fieldValue: number) => setLevel(fieldValue),
@@ -28,14 +29,16 @@ const EconomicPurchaseCalculator = (props: { subject: "building" | "npc", upgrad
             setPayMethod(payMethod)
         },
         onNPCAmountChange: (fieldName: string, fieldValue: number) => setAmount(fieldValue),
+        onModifierChange: (fieldName: string, fieldValue: number) => setModifier(fieldValue),
         onAdd: () => {
             if(props.subject === "building") {
+                const modifierStr = modifier !== 1 ? `(Модификатор ${modifier})` : ""
                 if(props.upgradable) {
-                    const result = new UpgradeBuildingCalculator(level, payMethod as BuyBuildingMethods, upgradeTo).calculate()
-                    props.onSubmit(`Улучшение здания с ${level} ур. до ${upgradeTo} ур.`, result)
+                    const result = new UpgradeBuildingCalculator(level, modifier, payMethod as BuyBuildingMethods, upgradeTo).calculate()
+                    props.onSubmit(`Улучшение здания с ${level} ур. до ${upgradeTo} ур.${modifierStr}`, result)
                 } else {
-                    const result = new BuyBuildingCalculator(level, payMethod as BuyBuildingMethods).calculate()
-                    props.onSubmit(`Покупка здания ${level} ур.`, result)
+                    const result = new BuyBuildingCalculator(level, modifier, payMethod as BuyBuildingMethods).calculate()
+                    props.onSubmit(`Покупка здания ${level} ур.${modifierStr}`, result)
                 }
             } else {
                 if(props.upgradable) {
@@ -80,6 +83,10 @@ const EconomicPurchaseCalculator = (props: { subject: "building" | "npc", upgrad
             {props.upgradable && <NumberInput title="Введите желаемый уровень" disabled={false} minValue={0}
                                               maxValue={maxLevel}
                                                           handler={callbacks.onUpgradeToChange} floatable={false}/>}
+            {props.subject === "building" && <NumberInput title="Модификатор (т.е 0.8 для скидки 20%)"
+                                                          handler={callbacks.onModifierChange} disabled={false}
+                                                          floatable={true} maxValue={100}
+                                                          minValue={0} defaultValue={modifier}/>}
             <RadioButtonGroup title="Выберите способ оплаты" options={options} groupName="build-buy-group" handler={callbacks.onPayMethodChange}/>
             <ActionButton title="Посчитать" show={showCountButton} action={callbacks.onAdd} requiresLoading={false}/>
         </div>
