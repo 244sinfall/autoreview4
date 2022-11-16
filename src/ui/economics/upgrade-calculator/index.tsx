@@ -50,7 +50,7 @@ const UpgradeCalculator = () => {
     return (
         <ContentTitle title="Калькулятор строительства и улучшений" controllable={true} padding={"no-padding"}>
             <TabController items={{
-                "Купить здание": <EconomicPurchaseCalculator subject={"building"} upgradable={false} onSubmit={callbacks.onSubmit}/>,
+                "Построить здание": <EconomicPurchaseCalculator subject={"building"} upgradable={false} onSubmit={callbacks.onSubmit}/>,
                 "Улучшить здание": <EconomicPurchaseCalculator subject={"building"} upgradable={true} onSubmit={callbacks.onSubmit}/>,
                 "Купить НИП": <EconomicPurchaseCalculator subject={"npc"} upgradable={false} onSubmit={callbacks.onSubmit}/>,
                 "Улучшить НИП": <EconomicPurchaseCalculator subject={"npc"} upgradable={true} onSubmit={callbacks.onSubmit}/>,
