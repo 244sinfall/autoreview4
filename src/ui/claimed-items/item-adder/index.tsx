@@ -13,6 +13,7 @@ const ClaimedItemAdder = (props: {quality: string, reviewerName: string, callbac
             case "Ссылка на предмет": item.link = newValue; break;
             case "Владелец": item.owner = newValue; break;
             case "Профиль владельца": item.ownerProfile = newValue; break;
+            case "Доп. инфо": item.additionalInfo = newValue; break;
         }
     }
     return (
@@ -25,6 +26,7 @@ const ClaimedItemAdder = (props: {quality: string, reviewerName: string, callbac
                     <TextInput title="Владелец" placeholder={""} maxLength={256} disabled={false} defaultValue={item.owner} handler={handleChange}/>
                     <TextInput title="Профиль владельца" placeholder={""} maxLength={256} disabled={false} defaultValue={item.ownerProfile} handler={handleChange}/>
                     <TextInput title="Согласовавший рецензент" placeholder={""} maxLength={256} disabled={true} defaultValue={props.reviewerName}/>
+                    <TextInput title="Доп. инфо" placeholder={""} maxLength={256} disabled={false} handler={handleChange}/>
                 </div>
                 <div className="ItemModal-controls">
                     <ActionButton title="Закрыть" show={true} action={props.callbacks.close} requiresLoading={false}/>

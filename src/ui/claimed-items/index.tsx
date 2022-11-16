@@ -10,7 +10,7 @@ import {
     ClaimedItem,
     ClaimedItemAddHandler,
     ClaimedItemEditHandler,
-    ClaimedItemEditorChangeable,
+    ClaimedItemInterface,
     ClaimedItemRequests,
     ClaimedItemsTablesImpl,
     ClaimedItemsTablesOrder,
@@ -45,8 +45,8 @@ const ClaimedItemsPage = () => {
             const res = await ClaimedItemRequests.accept(id, currentUser)
             if(res) return analyzeResponse(res)
         },
-        update: async(id, changes: ClaimedItemEditorChangeable) => {
-            const res = await ClaimedItemRequests.update(id, changes, currentUser)
+        update: async(id, newInfo: ClaimedItemInterface) => {
+            const res = await ClaimedItemRequests.update(id, newInfo, currentUser)
             if(res) return analyzeResponse(res)
         },
         del: async(id: string) => {

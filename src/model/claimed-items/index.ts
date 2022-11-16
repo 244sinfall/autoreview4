@@ -21,12 +21,6 @@ export interface ClaimedItemsTables {
     other: ClaimedItemInterface[]
 }
 
-export interface ClaimedItemEditorChangeable {
-    owner: string,
-    ownerProfile: string,
-    ownerProofLink: string,
-}
-
 export const ClaimedItemRequests = {
     add: async(i: ClaimedItem, currentUser: Visitor) => {
         const token = await currentUser.getToken()
@@ -42,18 +36,18 @@ export const ClaimedItemRequests = {
                 {method: "DELETE", headers: {"Authorization": token}})
         }
     },
-    update: async(id: string, changes: ClaimedItemEditorChangeable, currentUser: Visitor) => {
+    update: async(id: string, newInfo: ClaimedItemInterface, currentUser: Visitor) => {
         const token = await currentUser.getToken()
         if(token) {
             return await fetch(`${APIAddress}${claimedItemsUpdateEndPoint}/${id}`,
-                {method: "POST", headers: {"Authorization": token}, body: JSON.stringify(changes)})
+                {method: "PUT", headers: {"Authorization": token}, body: JSON.stringify(newInfo)})
         }
     },
     accept: async(id: string, currentUser: Visitor) => {
         const token = await currentUser.getToken()
         if(token) {
             return await fetch(`${APIAddress}${claimedItemsApproveEndPoint}/${id}`,
-                {method: "POST", headers: {"Authorization": token}})
+                {method: "PATCH", headers: {"Authorization": token}})
         }
     },
     get: async() => {
@@ -66,7 +60,7 @@ export const ClaimedItemRequests = {
 
 export interface ClaimedItemEditHandler {
     close: () => void,
-    update: (id: string, changes: any) => Promise<void>,
+    update: (id: string, changes: ClaimedItemInterface) => Promise<void>,
     accept: (id: string) => Promise<void>
     del: (id: string) => Promise<void>,
 }
@@ -195,7 +189,7 @@ export class ClaimedItem implements ClaimedItemInterface {
     }
 }
 
-interface ClaimedItemInterface {
+export interface ClaimedItemInterface {
     id: string,
     quality: string,
     name: string,
