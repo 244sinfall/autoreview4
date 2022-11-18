@@ -2,11 +2,16 @@ import React from 'react';
 import ChecksTable from "../checks-table";
 import UpgradeCalculator from "../upgrade-calculator";
 import LayoutBlock from "../../../components/layouts/block";
+import LayoutGrid from "../../../components/layouts/grid";
+import MoneyConverter from "../money-converter";
 
 const EconomicsPage = () => {
     return (
         <LayoutBlock>
-            <UpgradeCalculator/>
+            <LayoutGrid templateColumns={"repeat(auto-fit, minmax(350px, 1fr))"}>
+                <UpgradeCalculator/>
+                <MoneyConverter/>
+            </LayoutGrid>
             <ChecksTable/>
         </LayoutBlock>
     );

@@ -3,8 +3,8 @@ import  '../../common-css/input.css'
 
 const NumberInput = (props: { title: string, minValue: number, maxValue: number, floatable?: boolean,
                              handler?: (fieldName: string, fieldValue: number) => void,
-                             disabled: boolean, defaultValue?: number }) => {
-    const [number, setNumber] = useState<string | number>(props.defaultValue ?? props.minValue)
+                             disabled: boolean, defaultValue?: number, value?: number }) => {
+    const [number, setNumber] = useState<string | number>(props.value ?? props.defaultValue ?? props.minValue)
     const setNumberValue = (newNumberString: string) => {
         let newNumber
         if(props.floatable) {
@@ -19,11 +19,11 @@ const NumberInput = (props: { title: string, minValue: number, maxValue: number,
         setNumber(newNumber)
         props.handler?.(props.title, Number(newNumber))
     }
-
     const currentValue = useMemo(() => {
+        if(props.value !== undefined) return props.value
         if(props.disabled) return props.defaultValue ?? number
         return number
-    }, [number, props.defaultValue, props.disabled])
+    }, [number, props.defaultValue, props.disabled, props.value])
     return (
         <div className="input__container">
             {props.disabled ? <strong>{props.title}:</strong> : props.title}
