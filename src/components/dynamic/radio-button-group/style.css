@@ -1,23 +1,28 @@
 .button-group {
     display: flex;
     flex-direction: column;
+    gap: 5px;
     box-sizing: border-box;
 }
 .button-group__container {
     display: grid;
     grid-auto-flow: column;
 }
-.button-group__button-label {
+
+.button-group__button-container {
+    display: flex;
     color: var(--button-group-color);
     background: transparent;
     border: 2px solid var(--button-group-border);
-    padding: 5px;
     justify-content: center;
     align-items: center;
     transition: all 250ms, visibility 0.5s;
     box-shadow: 1px 1px 0 black;
 }
-.button-group__button-label:hover {
+.button-group__button-label {
+    padding: 5px;
+}
+.button-group__button-container:hover {
     color: var(--button-group-hover-color);
     background: var(--button-group-hover-background);
     border: 2px solid transparent;
@@ -37,7 +42,7 @@
     display:none;
 }
 
-.button-group__button-input[type="radio"]:checked + label p {
+.button-group__button-container:has(.button-group__button-input[type="radio"]:checked) {
     box-shadow: none;
     border: 2px solid var(--button-group-selected);
     color: var(--button-group-hover-color);

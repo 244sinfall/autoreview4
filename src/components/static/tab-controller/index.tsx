@@ -18,7 +18,8 @@ const TabController = (props: {items: TabControllerProps}) => {
     return (
         <div className="TabController-container">
             <div className="TabController-controls">
-                {Object.keys(props.items).map(item => <TabSelector selected={item === selectedTab} title={item} onClick={() => callbacks.onTabClick(item)}/>)}
+                {Object.keys(props.items).map(item => <TabSelector key={item} selected={item === selectedTab}
+                                                                   title={item} onClick={() => callbacks.onTabClick(item)}/>)}
             </div>
             <div className="TabController-content">
                 {selectedTab && props.items[selectedTab]}
