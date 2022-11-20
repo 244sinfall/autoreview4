@@ -17,7 +17,7 @@ const ClaimedItemAdder = (props: {quality: string, reviewerName: string, callbac
         }
     }
     return (
-        <ModalTitle title="Добавить предмет">
+        <ModalTitle title="Добавить предмет" closeCallback={props.callbacks.close}>
             <div className='ItemModal-content'>
                 <div className="ItemModal-fields">
                     <TextInput title="Качество" placeholder={""} maxLength={128} disabled={true} defaultValue={props.quality}/>

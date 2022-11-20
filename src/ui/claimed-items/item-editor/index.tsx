@@ -20,7 +20,7 @@ const ClaimedItemEditor = (props:{item: ClaimedItem, user: Visitor, callbacks: C
     }
     return (
 
-        <ModalTitle title="Редактировать предмет">
+        <ModalTitle title="Редактировать предмет" closeCallback={props.callbacks.close}>
             <div className="ItemModal-content">
                 <div className="ItemModal-fields">
                     <TextInput title="Качество" placeholder={""} maxLength={128} disabled={true} defaultValue={props.item.quality}/>

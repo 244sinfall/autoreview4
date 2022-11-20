@@ -1,8 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './style.css';
 
 
-const ModalTitle = (props: { title: string, children: React.ReactNode[] | React.ReactNode }) => {
+const ModalTitle = (props: { title: string, closeCallback?: () => void, children: React.ReactNode[] | React.ReactNode }) => {
+    useEffect(() => {
+        const onClose = (e: KeyboardEvent) => {
+            if(e.code === "Escape" && props.closeCallback) {
+                props.closeCallback()
+            }
+        }
+        document.addEventListener("keydown", onClose)
+        return () => document.removeEventListener("keydown", onClose)
+    }, [props])
     return (
         <div className="modal-background">
             <div className="modal-wrapper">

@@ -10,7 +10,7 @@ function ExecuteHelper(props: {check: ICheck, closeHandler: () => void}) {
     const openCommand = `.check open ${props.check.id}`
     const closeCommand = `.check close ${props.check.id}`
     return (
-        <ModalTitle title={"Макросы для чека"}>
+        <ModalTitle title="Макросы для чека" closeCallback={props.closeHandler}>
             <div className="CheckExecutor-content">
                 {props.check.status === "Отказан" && <p>Этот чек отказан. Его невозможно изменить. Игроку необходимо отправить новый чек.</p>}
                 {props.check.status === "Закрыт" && <ExecuteHelperOption title="Переоткрыть чек" command={openCommand}/>}
