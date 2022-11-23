@@ -2,10 +2,20 @@
     display: flex;
     flex-direction: column;
 }
+
+.modal-block__cross {
+    height: 18px;
+    width: 18px;
+    fill: var(--accent-color);
+}
+.modal-block__cross:hover {
+    cursor: pointer;
+}
 .modal-block__title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
     height: auto;
     color: var(--accent-color);

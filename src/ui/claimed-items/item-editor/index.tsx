@@ -36,7 +36,6 @@ const ClaimedItemEditor = (props:{item: ClaimedItem, user: Visitor, callbacks: C
                     <TextInput title="Доп. инфо" placeholder={""} maxLength={256} disabled={false} handler={handleChange} defaultValue={changeable.additionalInfo}/>
                 </div>
                 <div className="ItemModal-controls">
-                    <ActionButton title="Закрыть" show={true} action={props.callbacks.close} requiresLoading={false}/>
                     <ActionButton title="Изменить" show={props.user ? props.user.canAccess(Permission.reviewer) : false} action={() => props.callbacks.update(props.item.id, changeable)} requiresLoading={true}/>
                     <ActionButton title="Утвердить" show={props.user ? props.user.canAccess(Permission.admin) : false} action={() => props.callbacks.accept(props.item.id)} requiresLoading={true}/>
                     <ActionButton title="Удалить" show={props.user ? props.user.canAccess(Permission.admin) : false} action={() => props.callbacks.del(props.item.id)} requiresLoading={true}/>

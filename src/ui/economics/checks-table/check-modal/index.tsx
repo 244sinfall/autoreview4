@@ -1,5 +1,4 @@
 import {ICheck} from "../../../../model/checks";
-import ActionButton from "../../../../components/static/action-button";
 import React from "react";
 import ExecuteHelperOption from "./option";
 import ModalTitle from "../../../../components/static/modal-title";
@@ -20,7 +19,6 @@ function ExecuteHelper(props: {check: ICheck, closeHandler: () => void}) {
                     <ExecuteHelperOption title={"Отказать чек"} command={rejectCommand}/>
                   </div>
                 }
-                <ActionButton title={"Закрыть"} show={true} action={props.closeHandler} requiresLoading={false}/>
             </div>
         </ModalTitle>
     )

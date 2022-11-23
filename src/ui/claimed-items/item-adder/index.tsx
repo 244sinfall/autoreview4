@@ -29,7 +29,6 @@ const ClaimedItemAdder = (props: {quality: string, reviewerName: string, callbac
                     <TextInput title="Доп. инфо" placeholder={""} maxLength={256} disabled={false} handler={handleChange}/>
                 </div>
                 <div className="ItemModal-controls">
-                    <ActionButton title="Закрыть" show={true} action={props.callbacks.close} requiresLoading={false}/>
                     <ActionButton title="Добавить" show={true} action={() => props.callbacks.add(item)} requiresLoading={true}/>
                 </div>
             </div>
