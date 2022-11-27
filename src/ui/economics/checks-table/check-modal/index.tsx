@@ -1,5 +1,5 @@
-import {ICheck} from "../../../../model/checks";
-import React from "react";
+import {Check, ICheck} from "../../../../model/checks";
+import React, {useMemo} from "react";
 import ExecuteHelperOption from "./option";
 import ModalTitle from "../../../../components/static/modal-title";
 import './style.css'
@@ -8,6 +8,12 @@ function ExecuteHelper(props: {check: ICheck, closeHandler: () => void}) {
     const rejectCommand = `.check return ${props.check.id}`
     const openCommand = `.check open ${props.check.id}`
     const closeCommand = `.check close ${props.check.id}`
+    let reforge = useMemo(() => {
+        if(props.check instanceof Check) {
+            if(props.check.reforge() !== null) return props.check.reforge()
+            return ""
+        }
+    }, [props.check])
     return (
         <ModalTitle title="Макросы для чека" closeCallback={props.closeHandler}>
             <div className="CheckExecutor-content">
@@ -19,6 +25,7 @@ function ExecuteHelper(props: {check: ICheck, closeHandler: () => void}) {
                     <ExecuteHelperOption title={"Отказать чек"} command={rejectCommand}/>
                   </div>
                 }
+                {reforge && <ExecuteHelperOption title={"Перековка"} command={reforge}/>}
             </div>
         </ModalTitle>
     )

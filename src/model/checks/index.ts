@@ -1,9 +1,20 @@
 import {APIAddress, getChecksEndPoint} from "../../config/api";
+import * as QualitiesObj from './qualities.json'
+import * as RandomItems from './randomItems.json'
 
 interface CheckItem {
     count: number
-    name: string
+    name: ItemName
 }
+
+type ItemName = string
+
+type ItemQuality = "low" | "usual" | "unusual" | "rare" | "epic"
+
+type RandomItemsDescription = {
+    [K in ItemQuality]: { name: string, id: number }
+}
+
 
 export interface ICheck {
     id: number,
@@ -98,6 +109,35 @@ export class Check implements ICheck {
         if(silverValue) moneyStr += `${silverValue} с. `
         if(copperValue) moneyStr += `${copperValue} м.`
         return moneyStr
+    }
+    private getNextQuality(quality: ItemQuality): ItemQuality | null {
+        switch (quality) {
+            case "low":
+                return "usual"
+            case "usual":
+                return "unusual"
+            case "unusual":
+                return "rare"
+            case "rare":
+                return "epic"
+            default:
+                return null
+        }
+    }
+    reforge(): string | null {
+        if(!this.items) return null
+        const qualified = this.items.filter(item => item.name in QualitiesObj)
+        if(qualified.length === 0) return null
+        const count = qualified.reduce((prev, curr) => curr.count + prev, 0)
+        if(count !== 4) return null
+        const baseQuality = QualitiesObj[qualified[0].name as keyof typeof QualitiesObj] as ItemQuality
+        if(qualified.every(item => QualitiesObj[item.name as keyof typeof QualitiesObj] === baseQuality)
+            && this.getNextQuality(baseQuality)) {
+            const quality = this.getNextQuality(baseQuality)!
+            const items = RandomItems as RandomItemsDescription
+            return `.send it ${this.sender} "Перековка" "${items[quality].name}" ${items[quality].id}`
+        }
+        return null
     }
 }
 
