@@ -7,9 +7,9 @@ const RadioButtonGroup = (props: { title: string, options: string[], groupName: 
         const className = index === 0 ? ' button-group__button-bordered-left' :
             index === props.options.length-1 ? ' button-group__button-bordered-right' : ''
         return (
-        <div className={'button-group__button-container' + className} key={option+"container"} onClick={() => props.handler?.(option)}>
+        <div className={'button-group__button-container' + className} key={option+"container"}>
             <input className={'button-group__button-input'} key={option+"input"} type="radio" id={option+props.groupName}
-                   name={props.groupName} value={option} checked={props.defaultValue ? option === props.defaultValue : undefined}/>
+                   name={props.groupName} value={option} onChange={() => props.handler?.(option)} checked={props.defaultValue ? option === props.defaultValue : undefined}/>
             <label className={"button-group__button-label"} key={option+"label"} htmlFor={option+props.groupName}>
                 {option}
             </label>
