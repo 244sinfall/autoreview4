@@ -99,15 +99,21 @@ export class Check implements ICheck {
     }
     get moneyString() {
         if(isNaN(this.money) || this.money === 0) return "0 м."
-        const moneyInGold = this.money / 10000
-        const goldValue = Math.floor(moneyInGold)
-        const moneyInSilver = (moneyInGold - goldValue) * 100
-        const silverValue = Math.floor(moneyInSilver)
-        const copperValue = Math.floor((moneyInSilver - silverValue) * 100)
+        const money = {gold: 0, silver: 0, copper: 0}
+        let moneyRemain = this.money
+        if(moneyRemain > 10000) {
+            money.gold = Math.floor(moneyRemain / 10000)
+            moneyRemain = moneyRemain % 10000
+        }
+        if(moneyRemain > 100) {
+            money.silver = Math.floor(moneyRemain / 100)
+            moneyRemain = moneyRemain % 100
+        }
+        money.copper = moneyRemain
         let moneyStr = ""
-        if(goldValue) moneyStr += `${goldValue} з. `
-        if(silverValue) moneyStr += `${silverValue} с. `
-        if(copperValue) moneyStr += `${copperValue} м.`
+        if(money.gold) moneyStr += `${money.gold} з. `
+        if(money.silver) moneyStr += `${money.silver} с. `
+        if(money.copper) moneyStr += `${money.copper} м.`
         return moneyStr
     }
     private getNextQuality(quality: ItemQuality): ItemQuality | null {
