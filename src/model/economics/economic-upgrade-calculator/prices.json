@@ -154,37 +154,31 @@
       "1": {
         "gold": 4,
         "progress": 4,
-        "tools": 4,
         "food": 8
       },
       "2": {
         "gold": 6,
         "progress": 6,
-        "tools": 6,
         "food": 12
       },
       "3": {
         "gold": 12,
         "progress": 12,
-        "tools": 12,
         "food": 24
       },
       "4": {
         "gold": 25,
         "progress": 25,
-        "tools": 25,
         "food": 50
       },
       "5": {
         "gold": 45,
         "progress": 45,
-        "tools": 45,
         "food": 90
       },
       "6": {
         "gold": 80,
         "progress": 80,
-        "tools": 80,
         "food": 160
       }
     },
@@ -192,31 +186,26 @@
       "2": {
         "gold":2,
         "progress": 2,
-        "tools": 2,
         "food": 4
       },
       "3": {
         "gold":6,
         "progress": 6,
-        "tools": 6,
         "food": 12
       },
       "4": {
         "gold":13,
         "progress": 13,
-        "tools": 13,
         "food": 26
       },
       "5": {
         "gold":20,
         "progress": 20,
-        "tools": 20,
         "food": 40
       },
       "6": {
         "gold":35,
         "progress": 35,
-        "tools": 35,
         "food": 70
       }
     }

@@ -1,7 +1,7 @@
 import prices from './prices.json'
 import {CalculationResult} from "./index";
 
-export type BuyNPCMethods = "Золото" | "Прогресс" | "Рем. изделия" | "Провиант"
+export type BuyNPCMethods = "Золото" | "Прогресс" | "Провиант"
 
 export class BuyNPCCalculator {
     protected level: number
@@ -25,10 +25,6 @@ export class BuyNPCCalculator {
             case "Прогресс":
                 return ({
                     progress: prices.npcs.buy[levelStr].progress * this.amount
-                })
-            case "Рем. изделия":
-                return ({
-                    tools: prices.npcs.buy[levelStr].tools * this.amount
                 })
             case "Провиант":
                 return ({
@@ -58,10 +54,6 @@ export class UpgradeNPCCalculator extends BuyNPCCalculator {
                 case "Провиант":
                     if(result.food === undefined) result.food = 0
                     result.food += prices.npcs.upgrade[nextLevelStr].food * this.amount
-                    break;
-                case "Рем. изделия":
-                    if(result.tools === undefined) result.tools = 0
-                    result.tools += prices.npcs.upgrade[nextLevelStr].tools * this.amount
                     break;
                 case "Прогресс":
                     if(result.progress === undefined) result.progress = 0

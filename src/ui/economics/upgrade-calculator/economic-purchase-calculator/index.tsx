@@ -71,7 +71,7 @@ const EconomicPurchaseCalculator = (props: { subject: "building" | "npc", upgrad
         if(props.subject === "building") {
             return ["Ресурсы и золото", "Прогресс", "Ремесленные изделия"]
         }
-        return ["Золото", "Прогресс", "Рем. изделия", "Провиант"]
+        return ["Золото", "Прогресс", "Провиант"]
     }, [props.subject])
     return (
         <div className="BuildBuyer">
