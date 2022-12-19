@@ -14,6 +14,8 @@ export default class Visitor {
         [Permission.gm]: "ГМ",
         [Permission.player]: "Игрок"
     }
+
+    static permissions = ["Админ", "Рецензент", "Арбитр", "ГМ", "Игрок"]
     static getPermissionName(permission: Permission) {
         return Visitor.permissionNames[permission]
     }

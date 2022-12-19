@@ -2,6 +2,12 @@ import {collection, getDocs, query, setDoc, where} from "firebase/firestore";
 import {db} from "../../global";
 import Visitor, {Permission} from "../../user";
 
+export type AdminUserData = {
+    name: string,
+    permission: Permission,
+    email: string
+}
+
 export class AdminController {
     _user: Visitor
     constructor(user: Visitor) {
@@ -21,6 +27,6 @@ export class AdminController {
     }
     async getAllUsers() {
         const fetched = await getDocs(query(collection(db, 'permissions')))
-        return fetched.docs.map((d) => d.data())
+        return fetched.docs.map((d) => d.data()) as AdminUserData[]
     }
 }
