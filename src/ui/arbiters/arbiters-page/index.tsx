@@ -4,11 +4,11 @@ import EventRewardGiver from "../event-reward-distributor";
 import './style.css';
 import Protector from "../../protector";
 import BusinessRewarder from "../business-rewarder";
-import {Permission} from "../../../model/auth/user";
+import {PERMISSION} from "../../../model/auth/user";
 
 const ArbitersPage = () => {
     return (
-            <Protector accessLevel={Permission.arbiter}>
+            <Protector accessLevel={PERMISSION.Arbiter}>
                 <div className="arbiters-page">
                     <div className="arbiters-page__contents">
                         <div className="arbiters-page__contents-left">

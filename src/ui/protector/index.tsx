@@ -5,8 +5,9 @@ import ActionButton from "../../components/static/action-button";
 import {useNavigate} from "react-router-dom";
 import './styles.css'
 import {useAuth} from "../../model/auth/use-auth";
+import {PermissionValue} from "../../model/auth/user";
 
-const Protector = (props: {children: React.ReactNode[] | React.ReactNode, accessLevel: number}) => {
+const Protector = (props: {children: React.ReactNode[] | React.ReactNode, accessLevel: PermissionValue}) => {
     const {currentUser, isLoading} = useAuth()
     const nav = useNavigate()
 

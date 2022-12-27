@@ -5,7 +5,7 @@ import './styles.css'
 import ActionButton from "../../components/static/action-button";
 import {useAuth} from "../../model/auth/use-auth";
 import LoadingSpinner from "../../components/static/loading-spinner";
-import {Permission} from "../../model/auth/user";
+import {PERMISSION} from "../../model/auth/user";
 import {
     ClaimedItem,
     ClaimedItemAddHandler,
@@ -30,7 +30,7 @@ const ClaimedItemsPage = () => {
     const [errMsg, setErrMsg] = useState("")
     const {currentUser} = useAuth()
     const handleClick = useCallback((item: ClaimedItem) => {
-        if(currentUser.canAccess(Permission.reviewer)) {
+        if(currentUser.canAccess(PERMISSION.Reviewer)) {
             setSelectedItem(item)
             setIsCreatingItem(null)
         }
@@ -121,7 +121,7 @@ const ClaimedItemsPage = () => {
             </LoadingSpinner>
             <ActionButton title="Сгенерировать HTML"
                           action={() => claimedItems && navigator.clipboard.writeText(claimedItems.generateTableHTML())}
-                          show={currentUser ? currentUser.canAccess(Permission.admin) : false} requiresLoading={true}/>
+                          show={currentUser ? currentUser.canAccess(PERMISSION.Admin) : false} requiresLoading={true}/>
         </ContentTitle>
         </div>
     );

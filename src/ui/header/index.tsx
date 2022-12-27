@@ -48,7 +48,7 @@ const Header = (props: { menuElements: HeaderMenuElement[] }) => {
     const buildHeaderElements = useMemo(() => {
         if(props.menuElements) {
             const availableElements = props.menuElements.filter((element) => {
-                return element.accessLevel === 0 || currentUser.canAccess(element.accessLevel)
+                return !element.accessLevel || currentUser.canAccess(element.accessLevel)
             })
             return availableElements.map((menuElement) => {
                 const LiComponent = () => <li key={menuElement.menuName} className="header__menu__element">

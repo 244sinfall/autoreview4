@@ -1,6 +1,8 @@
+import {PermissionValue} from "./auth/user";
+
 export interface HeaderMenuElement {
     menuName: string,
     menuRoute?: string,
-    accessLevel: number
-    action?: () => any
+    accessLevel?: PermissionValue
+    action?: () => void
 }

@@ -2,16 +2,15 @@ import {configureStore} from '@reduxjs/toolkit'
 import {eventReviewSLice} from "./events/event-review";
 import {userSlice} from "./auth/user/reducer";
 import {charsheetReviewSLice} from "./charsheets/reducer";
-
-// ...
-
+import {themeSlice} from "./theme/slice";
 
 
 export const store = configureStore({
     reducer: {
         charsheet: charsheetReviewSLice.reducer,
         event: eventReviewSLice.reducer,
-        user: userSlice.reducer
+        user: userSlice.reducer,
+        theme: themeSlice.reducer
         // comments: commentsReducer,
         // users: usersReducer,
     }, middleware: getDefaultMiddleware => getDefaultMiddleware({

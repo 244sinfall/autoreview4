@@ -5,7 +5,7 @@ import LoadingSpinner from "../../components/static/loading-spinner";
 import WelcomeMessage from "./welcome-message";
 import AuthWindow from "./auth-window";
 import {useAuth} from "../../model/auth/use-auth";
-import {Permission} from "../../model/auth/user";
+import {PERMISSION} from "../../model/auth/user";
 
 
 const AccountManager = () => {
@@ -14,7 +14,7 @@ const AccountManager = () => {
         <ContentTitle title={currentUser ? "Аккаунт" : "Авторизация"} controllable={false}>
             <LoadingSpinner spin={isLoading}>
             {currentUser.authorized ? <WelcomeMessage name={currentUser.name ?? ""}
-                                           isAdmin={currentUser.canAccess(Permission.admin)} permission={isLoading ? "Загрузка..." : currentUser.permissionName} logoutCallback={logout}/>
+                                                      isAdmin={currentUser.canAccess(PERMISSION.Admin)} permission={isLoading ? "Загрузка..." : currentUser.permissionName} logoutCallback={logout}/>
             : <AuthWindow isLoading={isLoading}/>}
             </LoadingSpinner>
         </ContentTitle>

@@ -1,31 +1,38 @@
-export enum Permission {
-    player ,
-    gm,
-    arbiter,
-    reviewer,
-    admin,
-}
+export const PERMISSION = {
+    Player: 0,
+    GM: 1,
+    Arbiter: 2,
+    Reviewer: 3,
+    Admin: 4
+} as const
+
+export type PermissionTitle = keyof typeof PERMISSION
+
+export type PermissionValue = typeof PERMISSION[PermissionTitle]
+
+export type PermissionName = "Админ" | "Рецензент" | "Арбитр" | "ГМ" | "Игрок"
+export const PermissionNames: PermissionName[] = ["Админ", "Рецензент", "Арбитр", "ГМ", "Игрок"]
 
 export default class Visitor {
     static permissionNames = {
-        [Permission.admin]: "Админ",
-        [Permission.reviewer]: "Рецензент",
-        [Permission.arbiter]: "Арбитр",
-        [Permission.gm]: "ГМ",
-        [Permission.player]: "Игрок"
-    }
+        [PERMISSION.Admin]: "Админ",
+        [PERMISSION.Reviewer]: "Рецензент",
+        [PERMISSION.Arbiter]: "Арбитр",
+        [PERMISSION.GM]: "ГМ",
+        [PERMISSION.Player]: "Игрок"
+    } as {[K in PermissionValue]: PermissionName}
 
     static permissions = ["Админ", "Рецензент", "Арбитр", "ГМ", "Игрок"]
-    static getPermissionName(permission: Permission) {
+    static getPermissionName(permission: PermissionValue) {
         return Visitor.permissionNames[permission]
     }
-    static getPermissionValue(name: string) {
+    static getPermissionValueByName(name: PermissionName): PermissionValue {
         const element = Object.entries(Visitor.permissionNames).find(match => match[1] === name)
         const key = element ? element[0] : "0"
-        return Number(key)
+        return Number(key) as PermissionValue
     }
     protected _name = "Гость"
-    protected _permission: Permission = Permission.player
+    protected _permission: PermissionValue = PERMISSION.Player
     async getToken() {
         return ""
     }
@@ -41,7 +48,7 @@ export default class Visitor {
     get permissionName() {
         return Visitor.getPermissionName(this._permission)
     }
-    canAccess(permission: Permission) {
+    canAccess(permission: PermissionValue) {
         return this._permission >= permission
     }
     isLoaded() {

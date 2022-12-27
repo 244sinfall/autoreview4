@@ -19,7 +19,7 @@ import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
 import Pagination from "../../../components/dynamic/pagination";
 import {useAuth} from "../../../model/auth/use-auth";
 import Selector from "../../../components/dynamic/selector";
-import {Permission} from "../../../model/auth/user";
+import {PERMISSION} from "../../../model/auth/user";
 import ExecuteHelper from "./check-modal";
 import CheckRow from "./check-row";
 
@@ -55,7 +55,7 @@ const ChecksTable = () => {
     const callbacks = {
         onCacheUpdate: useCallback(async() => {
             setIsLoading(true)
-            if(!currentUser.canAccess(Permission.gm)) throw new Error("Недостаточно прав")
+            if(!currentUser.canAccess(PERMISSION.GM)) throw new Error("Недостаточно прав")
             const token = await currentUser.getToken()
             await receiveChecks({...params, force: true}, token)
             await setIsLoading(false)
@@ -73,7 +73,7 @@ const ChecksTable = () => {
             setPage(newPage)
         }, [params]),
         onTableItemClick: useCallback((check: ICheck) => {
-            if(currentUser.canAccess(Permission.arbiter) && selectedCheck === null) {
+            if(currentUser.canAccess(PERMISSION.Arbiter) && selectedCheck === null) {
                 setSelectedCheck(check)
             }
         }, [currentUser, selectedCheck]),
@@ -125,7 +125,7 @@ const ChecksTable = () => {
                         <p>Данные актуальны на: {checks.updatedAt.toLocaleString("ru")}</p>
                         <p>Чеков в БД: {checks.count}. Чеков с учетом фильтра: {checks.filteredCount}</p>
                         <ActionButton title={"Обновить кэш"}
-                                      show={currentUser.canAccess(Permission.gm)}
+                                      show={currentUser.canAccess(PERMISSION.GM)}
                                       action={callbacks.onCacheUpdate}
                                       requiresLoading={true} tooltip={cacheUpdateToolTip}/>
                     </div>

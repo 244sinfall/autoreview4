@@ -3,12 +3,13 @@ import TextCleaner from "../../common/participants-cleaner";
 import LotteryCreator from "../lottery-creator";
 import './style.css'
 import Protector from "../../protector";
-import {Permission} from "../../../model/auth/user";
+import {PERMISSION} from "../../../model/auth/user";
+
 
 
 const EventsPage = () => {
     return (
-        <Protector accessLevel={Permission.reviewer}>
+        <Protector accessLevel={PERMISSION.Reviewer}>
             <div className='events-page'>
                 <TextCleaner/>
                 <LotteryCreator/>

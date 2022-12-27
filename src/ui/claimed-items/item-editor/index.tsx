@@ -1,5 +1,5 @@
 import {ClaimedItem, ClaimedItemEditHandler, ClaimedItemInterface} from "../../../model/claimed-items";
-import Visitor, {Permission} from "../../../model/auth/user";
+import Visitor, {PERMISSION} from "../../../model/auth/user";
 import React, {useState} from "react";
 import TextInput from "../../../components/dynamic/text-input";
 import ActionButton from "../../../components/static/action-button";
@@ -24,21 +24,21 @@ const ClaimedItemEditor = (props:{item: ClaimedItem, user: Visitor, callbacks: C
             <div className="ItemModal-content">
                 <div className="ItemModal-fields">
                     <TextInput title="Качество" placeholder={""} maxLength={128} disabled={true} defaultValue={props.item.quality}/>
-                    <TextInput title="Название" placeholder={""} maxLength={256} disabled={!props.user.canAccess(Permission.admin)} handler={handleChange} defaultValue={changeable.name}/>
-                    <TextInput title="Ссылка на предмет" placeholder={""} maxLength={256} disabled={!props.user.canAccess(Permission.admin)} handler={handleChange} defaultValue={changeable.link}/>
+                    <TextInput title="Название" placeholder={""} maxLength={256} disabled={!props.user.canAccess(PERMISSION.Admin)} handler={handleChange} defaultValue={changeable.name}/>
+                    <TextInput title="Ссылка на предмет" placeholder={""} maxLength={256} disabled={!props.user.canAccess(PERMISSION.Admin)} handler={handleChange} defaultValue={changeable.link}/>
                     <TextInput title="Владелец" placeholder={""} maxLength={256} disabled={false} defaultValue={changeable.owner} handler={handleChange}/>
                     <TextInput title="Профиль владельца" placeholder={""} maxLength={256} disabled={false} defaultValue={changeable.ownerProfile} handler={handleChange}/>
                     <TextInput title="Доказательство отыгрыша" placeholder={""} maxLength={256} disabled={false} defaultValue={changeable.ownerProofLink} handler={handleChange}/>
-                    <TextInput title="Согласовавший рецензент" placeholder={""} maxLength={256} disabled={!props.user.canAccess(Permission.admin)} handler={handleChange} defaultValue={changeable.reviewer}/>
+                    <TextInput title="Согласовавший рецензент" placeholder={""} maxLength={256} disabled={!props.user.canAccess(PERMISSION.Admin)} handler={handleChange} defaultValue={changeable.reviewer}/>
                     <TextInput title="Утвержден" placeholder={""} maxLength={256} disabled={true} defaultValue={props.item.accepted ? props.item.acceptor : "Не утвержден"}/>
                     <TextInput title="Дата добавления" placeholder={""} maxLength={256} disabled={true} defaultValue={props.item.addedAt?.toLocaleString() ?? "Неизвестно"}/>
                     {props.item.accepted && <TextInput title="Дата утверждения" placeholder={""} maxLength={256} disabled={true} defaultValue={props.item.acceptedAt.toLocaleString()}/>}
                     <TextInput title="Доп. инфо" placeholder={""} maxLength={256} disabled={false} handler={handleChange} defaultValue={changeable.additionalInfo}/>
                 </div>
                 <div className="ItemModal-controls">
-                    <ActionButton title="Изменить" show={props.user ? props.user.canAccess(Permission.reviewer) : false} action={() => props.callbacks.update(props.item.id, changeable)} requiresLoading={true}/>
-                    <ActionButton title="Утвердить" show={props.user ? props.user.canAccess(Permission.admin) : false} action={() => props.callbacks.accept(props.item.id)} requiresLoading={true}/>
-                    <ActionButton title="Удалить" show={props.user ? props.user.canAccess(Permission.admin) : false} action={() => props.callbacks.del(props.item.id)} requiresLoading={true}/>
+                    <ActionButton title="Изменить" show={props.user ? props.user.canAccess(PERMISSION.Reviewer) : false} action={() => props.callbacks.update(props.item.id, changeable)} requiresLoading={true}/>
+                    <ActionButton title="Утвердить" show={props.user ? props.user.canAccess(PERMISSION.Admin) : false} action={() => props.callbacks.accept(props.item.id)} requiresLoading={true}/>
+                    <ActionButton title="Удалить" show={props.user ? props.user.canAccess(PERMISSION.Admin) : false} action={() => props.callbacks.del(props.item.id)} requiresLoading={true}/>
                 </div>
             </div>
         </ModalTitle>

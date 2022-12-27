@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import './App.css';
 import Header from "./ui/header";
 import {Route, Routes} from "react-router-dom";
-import {Provider} from "react-redux";
-import {store} from "./model/store";
 import CharsheetPage from "./ui/charsheet/charsheet-page";
 import MainPage from "./ui/main-page";
 import EventsPage from "./ui/events/events-page";
@@ -12,25 +10,47 @@ import ArbitersPage from "./ui/arbiters/arbiters-page";
 import AdminPage from "./ui/admin/admin-page";
 import EconomicsPage from "./ui/economics/economics-page";
 import ClaimedItemsPage from "./ui/claimed-items";
-import {Permission} from "./model/auth/user";
+import {PERMISSION} from "./model/auth/user";
 import {HeaderMenuElement} from "./model/header-menu-element";
-import {createThemes} from "./themes";
+import {useAppDispatch, useAppSelector} from "./model/hooks";
+import {changeTheme} from "./model/theme/slice";
+import {Theme} from "./model/theme/types";
 
 
 
 function App() {
-    const defaultMenuElements = [
-        {menuName: 'Анкеты',  menuRoute: '/charsheets', accessLevel: Permission.reviewer},
-        {menuName: 'Отчеты', menuRoute: '/events', accessLevel: Permission.reviewer},
-        {menuName: "Таблица именных предметов", menuRoute: '/claimed_items', accessLevel: Permission.player},
-        {menuName: 'Арбитры', menuRoute: '/arbitration', accessLevel: Permission.arbiter},
-        {menuName: 'Экономика', menuRoute: '/economics', accessLevel: Permission.player},
-        {menuName: 'Другое', menuRoute: '/other', accessLevel: Permission.player},
-        {menuName: 'Тема', accessLevel: Permission.player, action: () => setMenuElements(createThemes(() => setMenuElements(defaultMenuElements))) }
-    ]
+    const dispatch = useAppDispatch();
+
+    const currentTheme = useAppSelector(state => state.theme.selected);
+
+    const defaultMenuElements = useMemo(() => {
+        const switchTheme = (theme: Theme) => {
+            dispatch(changeTheme(theme));
+            setMenuElements(defaultMenuElements);
+        }
+        return [
+            {menuName: 'Анкеты',  menuRoute: '/charsheets', accessLevel: PERMISSION.Reviewer},
+            {menuName: 'Отчеты', menuRoute: '/events', accessLevel: PERMISSION.Reviewer},
+            {menuName: "Таблица именных предметов", menuRoute: '/claimed_items'},
+            {menuName: 'Арбитры', menuRoute: '/arbitration', accessLevel: PERMISSION.Arbiter},
+            {menuName: 'Экономика', menuRoute: '/economics'},
+            {menuName: 'Другое', menuRoute: '/other'},
+            {menuName: 'Тема', action: () => setMenuElements(
+                    [{menuName: "Darkmoon", action: () => switchTheme("darkmoon")},
+                        {menuName: "Светлая", action: () => switchTheme("light")},
+                        {menuName: "Темная", action: () => switchTheme("dark")},
+                        {menuName: "Назад", action: () => setMenuElements(defaultMenuElements)}])}]
+    }, [dispatch])
     const [menuElements, setMenuElements] = useState<HeaderMenuElement[]>(defaultMenuElements)
+    useEffect(() => {
+        document.body.className = '';
+        document.body.classList.add(currentTheme);
+        const color = window.getComputedStyle(document.body).getPropertyValue("--accent-background")
+        document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
+    }, [currentTheme])
+
   return (
-    <Provider store={store}>
+
         <div className="App">
             <Header menuElements={menuElements}/>
             <Routes>
@@ -44,7 +64,6 @@ function App() {
                 <Route path='/' element={<MainPage/>}/>
             </Routes>
         </div>
-    </Provider>
   );
 }
 

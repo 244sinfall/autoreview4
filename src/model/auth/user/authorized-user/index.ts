@@ -1,7 +1,7 @@
 import {User} from "firebase/auth";
 import {doc, getDoc} from "firebase/firestore";
 import {db} from "../../global";
-import Visitor, {Permission} from "../index";
+import Visitor, {PermissionValue} from "../index";
 
 export default class AuthorizedUser extends Visitor {
     private _user: User
@@ -16,7 +16,7 @@ export default class AuthorizedUser extends Visitor {
     async getToken() {
         return this._user.getIdToken()
     }
-    canAccess(permission: Permission) {
+    canAccess(permission: PermissionValue) {
         if(this._permission === null) {
             this.fetchPermission()
         }
@@ -28,7 +28,7 @@ export default class AuthorizedUser extends Visitor {
     async fetchPermission() {
         const document = await getDoc(doc(db, 'permissions', this._user.uid))
         const data = await document.data()
-        this._permission = await data?.permission as Permission ?? Permission.player
+        this._permission = await data?.permission as PermissionValue ?? 0
         return this._permission
     }
 }
