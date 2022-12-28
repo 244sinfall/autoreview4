@@ -1,9 +1,9 @@
 import React, {useCallback, useState} from 'react';
-import ContentTitle from "../../../components/static/content-title";
-import TextInput from "../../../components/dynamic/text-input";
-import NumberInput from "../../../components/dynamic/number-input";
-import ActionButton from "../../../components/static/action-button";
-import Selector from "../../../components/dynamic/selector";
+import ContentTitle from "../../../components/common/static/content-title";
+import TextInput from "../../../components/common/dynamic/text-input";
+import NumberInput from "../../../components/common/dynamic/number-input";
+import ActionButton from "../../../components/common/static/action-button";
+import Selector from "../../../components/common/dynamic/selector";
 import './style.css'
 import {BusinessActivityAggregator, BusinessRewardInfo} from "../../../model/arbiters/business-activity-aggregator";
 

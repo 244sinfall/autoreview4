@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import TextInput from "../../../components/dynamic/text-input";
-import ActionButton from "../../../components/static/action-button";
-import LoadingSpinner from "../../../components/static/loading-spinner";
+import TextInput from "../../../components/common/dynamic/text-input";
+import ActionButton from "../../../components/common/static/action-button";
+import LoadingSpinner from "../../../components/common/static/loading-spinner";
 import {useAuth} from "../../../model/auth/use-auth";
 import Authorizer, {UserInfo} from "../../../model/auth/authorizer";
 import AuthorizedUser from "../../../model/auth/user/authorized-user";

@@ -9,16 +9,16 @@ import {
     getCheckStatusValue,
     ICheck
 } from "../../../model/checks";
-import ContentTitle from "../../../components/static/content-title";
-import LoadingSpinner from "../../../components/static/loading-spinner";
-import Table from "../../../components/dynamic/table";
+import ContentTitle from "../../../components/common/static/content-title";
+import LoadingSpinner from "../../../components/common/static/loading-spinner";
+import Table from "../../../components/common/dynamic/table";
 import './styles.css'
-import TextInput from "../../../components/dynamic/text-input";
-import ActionButton from "../../../components/static/action-button";
-import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
-import Pagination from "../../../components/dynamic/pagination";
+import TextInput from "../../../components/common/dynamic/text-input";
+import ActionButton from "../../../components/common/static/action-button";
+import RadioButtonGroup from "../../../components/common/dynamic/radio-button-group";
+import Pagination from "../../../components/common/dynamic/pagination";
 import {useAuth} from "../../../model/auth/use-auth";
-import Selector from "../../../components/dynamic/selector";
+import Selector from "../../../components/common/dynamic/selector";
 import {PERMISSION} from "../../../model/auth/user";
 import ExecuteHelper from "./check-modal";
 import CheckRow from "./check-row";

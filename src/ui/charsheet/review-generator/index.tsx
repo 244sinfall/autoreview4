@@ -1,9 +1,9 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import ContentTitle from "../../../components/static/content-title";
-import TextInput from "../../../components/dynamic/text-input";
+import ContentTitle from "../../../components/common/static/content-title";
+import TextInput from "../../../components/common/dynamic/text-input";
 import {useAppDispatch, useAppSelector} from "../../../model/hooks";
-import TextAreaReadOnly from "../../../components/dynamic/text-area-read-only";
-import ActionButton from "../../../components/static/action-button";
+import TextAreaReadOnly from "../../../components/common/dynamic/text-area-read-only";
+import ActionButton from "../../../components/common/static/action-button";
 import './style.css'
 import {setCharName, setReviewerDiscord, setReviewerProfile} from "../../../model/charsheets/reducer";
 import CharsheetReviewTemplate from "../../../model/charsheets";

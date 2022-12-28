@@ -4,9 +4,9 @@ import {
     BuyBuildingMethods,
     UpgradeBuildingCalculator
 } from "../../../../model/economics/economic-upgrade-calculator/buildings";
-import NumberInput from "../../../../components/dynamic/number-input";
-import ActionButton from "../../../../components/static/action-button";
-import RadioButtonGroup from "../../../../components/dynamic/radio-button-group";
+import NumberInput from "../../../../components/common/dynamic/number-input";
+import ActionButton from "../../../../components/common/static/action-button";
+import RadioButtonGroup from "../../../../components/common/dynamic/radio-button-group";
 import './style.css'
 import {CalculationResult} from "../../../../model/economics/economic-upgrade-calculator";
 import {

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import TextInput from "../../../../../components/dynamic/text-input";
-import ActionButton from "../../../../../components/static/action-button";
+import TextInput from "../../../../../components/common/dynamic/text-input";
+import ActionButton from "../../../../../components/common/static/action-button";
 import '../style.css'
 
 function ExecuteHelperOption(props: {title: string, command: string}) {

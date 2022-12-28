@@ -1,7 +1,7 @@
 import React from 'react';
-import ContentTitle from "../../components/static/content-title";
+import ContentTitle from "../../components/common/static/content-title";
 import AccountManager from "../auth";
-import LayoutGrid from "../../components/layouts/grid";
+import LayoutGrid from "../../components/common/layouts/grid";
 
 const MainPage = () => {
     return (

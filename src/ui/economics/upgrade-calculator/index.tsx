@@ -1,8 +1,8 @@
 import React, {useMemo, useState} from 'react';
-import ContentTitle from "../../../components/static/content-title";
-import TabController from "../../../components/static/tab-controller";
-import TextAreaReadOnly from "../../../components/dynamic/text-area-read-only";
-import ActionButton from "../../../components/static/action-button";
+import ContentTitle from "../../../components/common/static/content-title";
+import TabController from "../../../components/common/static/tab-controller";
+import TextAreaReadOnly from "../../../components/common/dynamic/text-area-read-only";
+import ActionButton from "../../../components/common/static/action-button";
 import './style.css'
 import EconomicPurchaseCalculator from "./economic-purchase-calculator";
 import {CalculationResult} from "../../../model/economics/economic-upgrade-calculator";

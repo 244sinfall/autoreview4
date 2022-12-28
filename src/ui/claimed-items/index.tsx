@@ -1,10 +1,10 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import ContentTitle from "../../components/static/content-title";
-import Table from "../../components/dynamic/table";
+import ContentTitle from "../../components/common/static/content-title";
+import Table from "../../components/common/dynamic/table";
 import './styles.css'
-import ActionButton from "../../components/static/action-button";
+import ActionButton from "../../components/common/static/action-button";
 import {useAuth} from "../../model/auth/use-auth";
-import LoadingSpinner from "../../components/static/loading-spinner";
+import LoadingSpinner from "../../components/common/static/loading-spinner";
 import {PERMISSION} from "../../model/auth/user";
 import {
     ClaimedItem,

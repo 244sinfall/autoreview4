@@ -1,9 +1,9 @@
 import {ClaimedItem, ClaimedItemAddHandler} from "../../../model/claimed-items";
-import TextInput from "../../../components/dynamic/text-input";
-import ActionButton from "../../../components/static/action-button";
+import TextInput from "../../../components/common/dynamic/text-input";
+import ActionButton from "../../../components/common/static/action-button";
 import React from "react";
 import '../item-modal-css/style.css'
-import ModalTitle from "../../../components/static/modal-title";
+import ModalTitle from "../../../components/common/static/modal-title";
 
 const ClaimedItemAdder = (props: {quality: string, reviewerName: string, callbacks: ClaimedItemAddHandler}) => {
     const item = new ClaimedItem(undefined,props.quality, props.reviewerName)

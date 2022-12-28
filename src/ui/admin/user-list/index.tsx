@@ -1,11 +1,11 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import ContentTitle from "../../../components/static/content-title";
+import ContentTitle from "../../../components/common/static/content-title";
 import UserControl from "../user-control";
 import './styles.css'
-import LoadingSpinner from "../../../components/static/loading-spinner";
+import LoadingSpinner from "../../../components/common/static/loading-spinner";
 import {useAuth} from "../../../model/auth/use-auth";
 import {AdminController, AdminUserData} from "../../../model/auth/controllers/admin-controller";
-import Selector from "../../../components/dynamic/selector";
+import Selector from "../../../components/common/dynamic/selector";
 import Visitor, {PermissionNames} from "../../../model/auth/user";
 
 const UsersList = () => {

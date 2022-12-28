@@ -1,5 +1,5 @@
 import React from 'react';
-import ActionButton from "../../../components/static/action-button";
+import ActionButton from "../../../components/common/static/action-button";
 import './styles.css'
 import {useNavigate} from "react-router-dom";
 

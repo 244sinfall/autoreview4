@@ -1,9 +1,9 @@
 import {ClaimedItem, ClaimedItemEditHandler, ClaimedItemInterface} from "../../../model/claimed-items";
 import Visitor, {PERMISSION} from "../../../model/auth/user";
 import React, {useState} from "react";
-import TextInput from "../../../components/dynamic/text-input";
-import ActionButton from "../../../components/static/action-button";
-import ModalTitle from "../../../components/static/modal-title";
+import TextInput from "../../../components/common/dynamic/text-input";
+import ActionButton from "../../../components/common/static/action-button";
+import ModalTitle from "../../../components/common/static/modal-title";
 
 const ClaimedItemEditor = (props:{item: ClaimedItem, user: Visitor, callbacks: ClaimedItemEditHandler}) => {
     const [changeable, setChangeable] = useState<ClaimedItemInterface>({...props.item})

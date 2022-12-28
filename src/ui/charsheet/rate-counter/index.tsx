@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useMemo} from 'react';
-import ContentTitle from "../../../components/static/content-title";
-import NumberInput from "../../../components/dynamic/number-input";
+import ContentTitle from "../../../components/common/static/content-title";
+import NumberInput from "../../../components/common/dynamic/number-input";
 import {useAppDispatch, useAppSelector} from "../../../model/hooks";
 import './style.css'
 import {Rate} from "../../../model/charsheets";

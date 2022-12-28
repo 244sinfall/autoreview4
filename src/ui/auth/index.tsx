@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'
-import ContentTitle from "../../components/static/content-title";
-import LoadingSpinner from "../../components/static/loading-spinner";
+import ContentTitle from "../../components/common/static/content-title";
+import LoadingSpinner from "../../components/common/static/loading-spinner";
 import WelcomeMessage from "./welcome-message";
 import AuthWindow from "./auth-window";
 import {useAuth} from "../../model/auth/use-auth";

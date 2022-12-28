@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react';
-import ContentTitle from "../../components/static/content-title";
+import ContentTitle from "../../components/common/static/content-title";
 import AuthWindow from "../auth/auth-window";
-import ActionButton from "../../components/static/action-button";
+import ActionButton from "../../components/common/static/action-button";
 import {useNavigate} from "react-router-dom";
 import './styles.css'
 import {useAuth} from "../../model/auth/use-auth";

@@ -1,7 +1,7 @@
 import React, {useCallback,useState} from 'react';
-import ContentTitle from "../../../components/static/content-title";
-import NumberInput from "../../../components/dynamic/number-input";
-import LayoutGrid from "../../../components/layouts/grid";
+import ContentTitle from "../../../components/common/static/content-title";
+import NumberInput from "../../../components/common/dynamic/number-input";
+import LayoutGrid from "../../../components/common/layouts/grid";
 
 type DarkmoonMoney = {
     gold: number,

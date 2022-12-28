@@ -1,7 +1,7 @@
 import {Check, ICheck} from "../../../../model/checks";
 import React, {useMemo} from "react";
 import ExecuteHelperOption from "./option";
-import ModalTitle from "../../../../components/static/modal-title";
+import ModalTitle from "../../../../components/common/static/modal-title";
 import './style.css'
 
 function ExecuteHelper(props: {check: ICheck, closeHandler: () => void}) {

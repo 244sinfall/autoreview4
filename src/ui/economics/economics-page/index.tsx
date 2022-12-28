@@ -1,8 +1,8 @@
 import React from 'react';
 import ChecksTable from "../checks-table";
 import UpgradeCalculator from "../upgrade-calculator";
-import LayoutBlock from "../../../components/layouts/block";
-import LayoutGrid from "../../../components/layouts/grid";
+import LayoutBlock from "../../../components/common/layouts/block";
+import LayoutGrid from "../../../components/common/layouts/grid";
 import MoneyConverter from "../money-converter";
 
 const EconomicsPage = () => {

@@ -1,14 +1,14 @@
 import React, {useCallback, useState} from 'react';
-import ContentTitle from "../../../components/static/content-title";
+import ContentTitle from "../../../components/common/static/content-title";
 import './style.css'
-import TextAreaWritable from "../../../components/dynamic/text-area-writable";
-import ActionButton from "../../../components/static/action-button";
+import TextAreaWritable from "../../../components/common/dynamic/text-area-writable";
+import ActionButton from "../../../components/common/static/action-button";
 import {
     cleanParticipantsText,
     ParticipantsCleanerRequest,
     ParticipantsCleanerResponse
 } from "../../../model/common/participants-cleaner";
-import TextAreaReadOnly from "../../../components/dynamic/text-area-read-only";
+import TextAreaReadOnly from "../../../components/common/dynamic/text-area-read-only";
 
 const TextCleaner = () => {
     const [rawText, setRawText] = useState<ParticipantsCleanerRequest>({rawText: ""})

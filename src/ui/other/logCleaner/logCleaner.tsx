@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
-import ContentTitle from "../../../components/static/content-title";
-import ActionButton from "../../../components/static/action-button";
+import ContentTitle from "../../../components/common/static/content-title";
+import ActionButton from "../../../components/common/static/action-button";
 import "./logCleaner.css"
 import {APIConfig} from "../../../config/api";
 

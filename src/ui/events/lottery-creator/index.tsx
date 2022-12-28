@@ -1,9 +1,9 @@
 import React, {useCallback, useState} from 'react';
-import ContentTitle from "../../../components/static/content-title";
-import ActionButton from "../../../components/static/action-button";
-import TextAreaReadOnly from "../../../components/dynamic/text-area-read-only";
-import NumberInput from "../../../components/dynamic/number-input";
-import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
+import ContentTitle from "../../../components/common/static/content-title";
+import ActionButton from "../../../components/common/static/action-button";
+import TextAreaReadOnly from "../../../components/common/dynamic/text-area-read-only";
+import NumberInput from "../../../components/common/dynamic/number-input";
+import RadioButtonGroup from "../../../components/common/dynamic/radio-button-group";
 import {
     createLottery,
     getLotteryItemCategoryName,

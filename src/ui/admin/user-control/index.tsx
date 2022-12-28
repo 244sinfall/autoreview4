@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
-import LoadingSpinner from "../../../components/static/loading-spinner";
+import RadioButtonGroup from "../../../components/common/dynamic/radio-button-group";
+import LoadingSpinner from "../../../components/common/static/loading-spinner";
 import './styles.css'
 import Visitor, {PermissionName, PermissionNames, PermissionValue} from "../../../model/auth/user";
 import {AdminController} from "../../../model/auth/controllers/admin-controller";

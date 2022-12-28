@@ -1,13 +1,13 @@
 import React, {useCallback, useState} from 'react';
-import ContentTitle from "../../../components/static/content-title";
-import TextAreaWritable from "../../../components/dynamic/text-area-writable";
-import TextInput from "../../../components/dynamic/text-input";
-import NumberInput from "../../../components/dynamic/number-input";
-import RadioButtonGroup from "../../../components/dynamic/radio-button-group";
+import ContentTitle from "../../../components/common/static/content-title";
+import TextAreaWritable from "../../../components/common/dynamic/text-area-writable";
+import TextInput from "../../../components/common/dynamic/text-input";
+import NumberInput from "../../../components/common/dynamic/number-input";
+import RadioButtonGroup from "../../../components/common/dynamic/radio-button-group";
 import {EventRewardDistributor, EventRewardDistributorImpl}
     from "../../../model/arbiters/event-reward-distributor";
-import ActionButton from "../../../components/static/action-button";
-import TextAreaReadOnly from "../../../components/dynamic/text-area-read-only";
+import ActionButton from "../../../components/common/static/action-button";
+import TextAreaReadOnly from "../../../components/common/dynamic/text-area-read-only";
 import './style.css'
 
 const EventRewardGiver = () => {

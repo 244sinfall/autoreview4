@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import {ReactComponent as CloseButton} from '../../../assets/close_cross.svg'
+import {ReactComponent as CloseButton} from '../../../../assets/close_cross.svg'
 import './style.css';
 
 
