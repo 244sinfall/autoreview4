@@ -14,7 +14,7 @@ export const colorThemeColors = {
     "darkmoon": "#5B3E5D",
     "light": "#D5D5D5",
     "dark": "#1E1E1E"
-} as {[K in Theme]: string}
+} as Record<Theme, string>
 
 const switchColorTheme = (theme: Theme) => {
     document.body.classList.add(theme);
