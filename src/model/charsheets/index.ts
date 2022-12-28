@@ -1,4 +1,4 @@
-import {APIAddress, getCharsheetEndPoint} from "../../config/api";
+import {APIConfig} from "../../config/api";
 
 export interface Rate {
     rateName: string,
@@ -40,7 +40,7 @@ export default class CharsheetReviewTemplate implements CharsheetReviewRequest{
     }
     async getReview() {
         if(!this.charName || !this.reviewerDiscord || !this.reviewerProfile) throw new Error("Поля не заполнены")
-        const response = await fetch(APIAddress + getCharsheetEndPoint, {
+        const response = await fetch(APIConfig.address + (APIConfig.endpoints.charsheets.generate ?? ""), {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",

@@ -1,12 +1,12 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import './style.css';
 import logo from '../../assets/dm_logo.png'
-import {HeaderMenuElement} from "../../model/header-menu-element";
+import {Types} from "../../model/header/types";
 import {Link, NavLink} from "react-router-dom";
 import {ReactComponent as Sidebar} from '../../assets/sidebar.svg'
 import {useAuth} from "../../model/auth/use-auth";
 
-const Header = (props: { menuElements: HeaderMenuElement[] }) => {
+const Header = (props: { menuElements: Types[] }) => {
     const [sidebarState, setSidebarState] = useState<"closed" | "opened">("closed")
     const {currentUser} = useAuth()
     const sidebarRef = useRef<HTMLDivElement>(null)
@@ -32,7 +32,7 @@ const Header = (props: { menuElements: HeaderMenuElement[] }) => {
             }
         }, [])
     }
-    const onSidebarOptionClicked = useCallback((menuElement: HeaderMenuElement) => {
+    const onSidebarOptionClicked = useCallback((menuElement: Types) => {
         if(menuElement.action) {
             menuElement.action()
         } else {

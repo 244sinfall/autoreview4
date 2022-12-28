@@ -1,13 +1,26 @@
-export const APIAddress = 'https://dm.rolevik.site:8443'
-// export const APIAddress = 'http://127.0.0.1:8000'
-export const getCharsheetEndPoint = '/generate_charsheet_review'
-export const cleanLogEndPoint = '/clean_log'
-export const cleanParticipantsTextEndPoint = "/events/clean_participants_text"
-export const createLotteryEndPoint = "/events/create_lottery"
-export const rewardsWorkEndPoint = "/arbiters/rewards_work"
-export const getChecksEndPoint = "/economics/get_checks"
-export const claimedItemsGetEndPoint = "/claimed_items/get_items"
-export const claimedItemsCreateEndPoint = "/claimed_items/create"
-export const claimedItemsDeleteEndPoint = "/claimed_items/delete"
-export const claimedItemsUpdateEndPoint = "/claimed_items/update"
-export const claimedItemsApproveEndPoint = "/claimed_items/approve"
+export const APIConfig = {
+    address: process.env["REACT_APP_API_ADDRESS"],
+    endpoints: {
+        charsheets: {
+            generate: process.env["REACT_APP_GEN_CHARSHEET_END_POINT"]
+        },
+        cleanLog: process.env["REACT_APP_CLEAN_LOG_END_POINT"],
+        events: {
+            cleanParticipants: process.env["REACT_APP_CLEAR_PARTICIPANTS_END_POINT"],
+            createLottery: process.env["REACT_APP_CREATE_LOTTERY_END_POINT"],
+        },
+        arbiters: {
+            rewardWork: process.env["REACT_APP_REWARDS_WORK_END_POINT"],
+        },
+        economics: {
+            getChecks: process.env["REACT_APP_GET_CHECKS_END_POINT"],
+        },
+        claimedItems: {
+            get: process.env["REACT_APP_GET_CLAIMED_ITEMS_END_POINT"],
+            create: process.env["REACT_APP_CREATE_CLAIMED_ITEM_END_POINT"],
+            delete: process.env["REACT_APP_DELETE_CLAIMED_ITEM_END_POINT"],
+            update: process.env["REACT_APP_UPDATE_CLAIMED_ITEM_END_POINT"],
+            approve: process.env["REACT_APP_APPROVE_CLAIMED_ITEM_END_POINT"]
+        }
+    }
+} as const

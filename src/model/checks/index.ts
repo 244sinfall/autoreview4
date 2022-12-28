@@ -1,4 +1,4 @@
-import {APIAddress, getChecksEndPoint} from "../../config/api";
+import {APIConfig} from "../../config/api";
 import * as QualitiesObj from './qualities.json'
 import * as RandomItems from './randomItems.json'
 
@@ -180,7 +180,7 @@ function parseChecksParams(params: CheckTableSearchParams): string {
 
 export async function getChecks(params?: CheckTableSearchParams, token?:string) {
     const paramsStr = params ? parseChecksParams(params) : ""
-    const response = await fetch(`${APIAddress}${getChecksEndPoint}${paramsStr}`, {method: "GET", headers:{"Authorization": token ? token : ""}})
+    const response = await fetch(`${APIConfig.address}${APIConfig.endpoints.economics.getChecks}${paramsStr}`, {method: "GET", headers:{"Authorization": token ? token : ""}})
     const json = await response.json()
     if (json["error"]) throw json
     const checkResponse = await json as CheckResponse

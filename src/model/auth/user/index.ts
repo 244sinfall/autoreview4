@@ -6,23 +6,22 @@ export const PERMISSION = {
     Admin: 4
 } as const
 
-export type PermissionTitle = keyof typeof PERMISSION
+type PermissionTitle = keyof typeof PERMISSION;
 
 export type PermissionValue = typeof PERMISSION[PermissionTitle]
 
-export type PermissionName = "Админ" | "Рецензент" | "Арбитр" | "ГМ" | "Игрок"
-export const PermissionNames: PermissionName[] = ["Админ", "Рецензент", "Арбитр", "ГМ", "Игрок"]
+export type PermissionName = "Игрок" | "ГМ" | "Арбитр" | "Рецензент" | "Админ"
+export const PermissionNames: PermissionName[] = ["Игрок", "ГМ", "Арбитр", "Рецензент", "Админ"]
 
 export default class Visitor {
-    static permissionNames = {
+    static permissionNames: Record<PermissionValue, PermissionName> = {
         [PERMISSION.Admin]: "Админ",
         [PERMISSION.Reviewer]: "Рецензент",
         [PERMISSION.Arbiter]: "Арбитр",
         [PERMISSION.GM]: "ГМ",
         [PERMISSION.Player]: "Игрок"
-    } as {[K in PermissionValue]: PermissionName}
+    }
 
-    static permissions = ["Админ", "Рецензент", "Арбитр", "ГМ", "Игрок"]
     static getPermissionName(permission: PermissionValue) {
         return Visitor.permissionNames[permission]
     }

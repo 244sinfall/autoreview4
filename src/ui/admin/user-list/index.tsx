@@ -6,7 +6,7 @@ import LoadingSpinner from "../../../components/static/loading-spinner";
 import {useAuth} from "../../../model/auth/use-auth";
 import {AdminController, AdminUserData} from "../../../model/auth/controllers/admin-controller";
 import Selector from "../../../components/dynamic/selector";
-import Visitor from "../../../model/auth/user";
+import Visitor, {PermissionNames} from "../../../model/auth/user";
 
 const UsersList = () => {
     const {currentUser} = useAuth()
@@ -41,7 +41,7 @@ const UsersList = () => {
                     <div className="user-list-container">
                         <div className="user-list-filter">
                             Фильтровать по уровню доступа
-                            <Selector options={["Все", ...Visitor.permissions]} selected={filter} changeHandler={callbacks.setFilter}/>
+                            <Selector options={["Все", ...PermissionNames]} selected={filter} changeHandler={callbacks.setFilter}/>
                         </div>
                         <div className="user-list">
                             {renderUsers}

@@ -11,7 +11,7 @@ import AdminPage from "./ui/admin/admin-page";
 import EconomicsPage from "./ui/economics/economics-page";
 import ClaimedItemsPage from "./ui/claimed-items";
 import {PERMISSION} from "./model/auth/user";
-import {HeaderMenuElement} from "./model/header-menu-element";
+import {Types} from "./model/header/types";
 import {useAppDispatch, useAppSelector} from "./model/hooks";
 import {changeTheme} from "./model/theme/slice";
 import {Theme} from "./model/theme/types";
@@ -41,7 +41,7 @@ function App() {
                         {menuName: "Темная", action: () => switchTheme("dark")},
                         {menuName: "Назад", action: () => setMenuElements(defaultMenuElements)}])}]
     }, [dispatch])
-    const [menuElements, setMenuElements] = useState<HeaderMenuElement[]>(defaultMenuElements)
+    const [menuElements, setMenuElements] = useState<Types[]>(defaultMenuElements)
     useEffect(() => {
         document.body.className = '';
         document.body.classList.add(currentTheme);

@@ -1,4 +1,4 @@
-import {APIAddress, cleanParticipantsTextEndPoint} from "../../config/api";
+import {APIConfig} from "../../config/api";
 
 export interface ParticipantsCleanerRequest {
     rawText: string
@@ -12,7 +12,7 @@ export interface ParticipantsCleanerResponse {
 
 export async function cleanParticipantsText(request: ParticipantsCleanerRequest) {
     if(!request.rawText) throw Error("Пустой запрос")
-    return await fetch(APIAddress + cleanParticipantsTextEndPoint, {
+    return await fetch(APIConfig.address + (APIConfig.endpoints.events.cleanParticipants ?? ""), {
             method: "POST",
             headers: {
                 "Accept": "application/octet-stream"

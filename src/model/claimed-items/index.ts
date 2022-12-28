@@ -1,11 +1,4 @@
-import {
-    APIAddress,
-    claimedItemsApproveEndPoint,
-    claimedItemsCreateEndPoint,
-    claimedItemsDeleteEndPoint,
-    claimedItemsGetEndPoint,
-    claimedItemsUpdateEndPoint
-} from "../../config/api";
+import {APIConfig} from "../../config/api";
 import {
     ClaimedItemsHTMLTableFooter,
     ClaimedItemsHTMLTableHeader,
@@ -25,33 +18,33 @@ export const ClaimedItemRequests = {
     add: async(i: ClaimedItem, currentUser: Visitor) => {
         const token = await currentUser.getToken()
         if (token) {
-            return await fetch(`${APIAddress}${claimedItemsCreateEndPoint}`,
+            return await fetch(`${APIConfig.address}${APIConfig.endpoints.claimedItems.create}`,
                 {method: "POST", headers: {"Authorization": token}, body: JSON.stringify(i)})
         }
     },
     del: async(id: string, currentUser: Visitor) => {
         const token = await currentUser.getToken()
         if(token) {
-            return await fetch(`${APIAddress}${claimedItemsDeleteEndPoint}/${id}`,
+            return await fetch(`${APIConfig.address}${APIConfig.endpoints.claimedItems.delete}/${id}`,
                 {method: "DELETE", headers: {"Authorization": token}})
         }
     },
     update: async(id: string, newInfo: ClaimedItemInterface, currentUser: Visitor) => {
         const token = await currentUser.getToken()
         if(token) {
-            return await fetch(`${APIAddress}${claimedItemsUpdateEndPoint}/${id}`,
+            return await fetch(`${APIConfig.address}${APIConfig.endpoints.claimedItems.update}/${id}`,
                 {method: "PUT", headers: {"Authorization": token}, body: JSON.stringify(newInfo)})
         }
     },
     accept: async(id: string, currentUser: Visitor) => {
         const token = await currentUser.getToken()
         if(token) {
-            return await fetch(`${APIAddress}${claimedItemsApproveEndPoint}/${id}`,
+            return await fetch(`${APIConfig.address}${APIConfig.endpoints.claimedItems.approve}/${id}`,
                 {method: "PATCH", headers: {"Authorization": token}})
         }
     },
     get: async() => {
-        const res = await fetch(`${APIAddress}${claimedItemsGetEndPoint}`)
+        const res = await fetch(`${APIConfig.address}${APIConfig.endpoints.claimedItems.get}`)
         const json = await res.json()
         const rawItems = await json["result"] as ClaimedItemsTables
         return new ClaimedItemsTablesImpl(rawItems.epic, rawItems.green, rawItems.legendary, rawItems.other, rawItems.rare)

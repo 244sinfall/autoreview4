@@ -1,4 +1,4 @@
-import {APIAddress, createLotteryEndPoint} from "../../config/api";
+import {APIConfig} from "../../config/api";
 
 export interface LotteryRequest {
     participantsCount: number,
@@ -62,7 +62,7 @@ export function getLotteryItemCategoryName(s: string): string {
 export async function createLottery(request: LotteryRequest) {
     if(request.qualityOverQuantityMode !== null &&
         request.rate >= 7 && request.participantsCount >= 10) {
-        return await fetch(APIAddress + createLotteryEndPoint, {
+        return await fetch(APIConfig.address + (APIConfig.endpoints.events.createLottery ?? ""), {
             method: "POST",
             headers: {
                 "Accept": "application/json"

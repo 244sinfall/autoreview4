@@ -1,8 +1,8 @@
 import React, { useState} from 'react';
 import ContentTitle from "../../../components/static/content-title";
 import ActionButton from "../../../components/static/action-button";
-import {APIAddress, cleanLogEndPoint } from "../../../config/api";
 import "./logCleaner.css"
+import {APIConfig} from "../../../config/api";
 
 function isFileOK(checkFile: File): string | null {
     if(!checkFile.name.endsWith(".txt")) {
@@ -27,7 +27,7 @@ const LogCleaner = () => {
             }
             let formData = new FormData()
             formData.append("input", uploadedFile)
-            return await fetch(APIAddress + cleanLogEndPoint, {
+            return await fetch(APIConfig.address + (APIConfig.endpoints.cleanLog ?? ""), {
                 method: "POST",
                 headers: {
                     "Accept": "application/octet-stream"

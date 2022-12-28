@@ -1,6 +1,6 @@
-import {PermissionValue} from "./auth/user";
+import {PermissionValue} from "../auth/user";
 
-export interface HeaderMenuElement {
+export interface Types {
     menuName: string,
     menuRoute?: string,
     accessLevel?: PermissionValue
