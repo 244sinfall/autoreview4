@@ -1,17 +1,17 @@
 import React from 'react';
 import Protector from "../../protector";
 import UsersList from "../user-list";
-import './styles.css'
 import {PERMISSION} from "../../../model/auth/user";
+import {LayoutResponsiveGrid} from "../../../components/common/layouts/responsive-grid";
 
 const AdminPage = () => {
     return (
         <Protector accessLevel={PERMISSION.Admin}>
-            <div className="admin-page">
+            <LayoutResponsiveGrid gap={10} columns={[{}, {}]}>
                 <UsersList/>
-            </div>
+            </LayoutResponsiveGrid>
         </Protector>
     );
 };
 
-export default AdminPage;
+export default React.memo(AdminPage);

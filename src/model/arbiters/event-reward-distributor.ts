@@ -51,7 +51,7 @@ export class EventRewardDistributorImpl implements EventRewardDistributor {
         if (this.mode === null) throw Error("Не выбран режим")
         if (this.rate <= 0) throw Error("Награда не положена")
         if (!this.eventLink || !this.participantsCleanedText) throw Error("Поля не заполнены")
-        const response = await fetch(APIConfig.address + (APIConfig.endpoints.arbiters.rewardWork ?? ""), {
+        const response = await fetch(`${APIConfig.address}${APIConfig.endpoints.arbiters.rewardWork}`, {
             method: "POST",
             headers: {
                 "Accept": "application/json"

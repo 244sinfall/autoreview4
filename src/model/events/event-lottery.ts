@@ -62,7 +62,7 @@ export function getLotteryItemCategoryName(s: string): string {
 export async function createLottery(request: LotteryRequest) {
     if(request.qualityOverQuantityMode !== null &&
         request.rate >= 7 && request.participantsCount >= 10) {
-        return await fetch(APIConfig.address + (APIConfig.endpoints.events.createLottery ?? ""), {
+        return await fetch(`${APIConfig.address}${APIConfig.endpoints.events.createLottery}`, {
             method: "POST",
             headers: {
                 "Accept": "application/json"

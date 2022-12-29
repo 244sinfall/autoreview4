@@ -12,7 +12,7 @@ export interface ParticipantsCleanerResponse {
 
 export async function cleanParticipantsText(request: ParticipantsCleanerRequest) {
     if(!request.rawText) throw Error("Пустой запрос")
-    return await fetch(APIConfig.address + (APIConfig.endpoints.events.cleanParticipants ?? ""), {
+    return await fetch(`${APIConfig.address}${APIConfig.endpoints.events.cleanParticipants}`, {
             method: "POST",
             headers: {
                 "Accept": "application/octet-stream"

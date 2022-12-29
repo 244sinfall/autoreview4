@@ -40,7 +40,7 @@ export default class CharsheetReviewTemplate implements CharsheetReviewRequest{
     }
     async getReview() {
         if(!this.charName || !this.reviewerDiscord || !this.reviewerProfile) throw new Error("Поля не заполнены")
-        const response = await fetch(APIConfig.address + (APIConfig.endpoints.charsheets.generate ?? ""), {
+        const response = await fetch(`${APIConfig.address}${APIConfig.endpoints.charsheets.generate}`, {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",

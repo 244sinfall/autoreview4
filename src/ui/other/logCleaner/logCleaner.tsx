@@ -27,7 +27,7 @@ const LogCleaner = () => {
             }
             let formData = new FormData()
             formData.append("input", uploadedFile)
-            return await fetch(APIConfig.address + (APIConfig.endpoints.cleanLog ?? ""), {
+            return await fetch(`${APIConfig.address}${APIConfig.endpoints.cleanLog}`, {
                 method: "POST",
                 headers: {
                     "Accept": "application/octet-stream"
