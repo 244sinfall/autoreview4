@@ -1,27 +1,27 @@
 import React from 'react';
 import TextCleaner from "../../common/participants-cleaner";
 import EventRewardGiver from "../event-reward-distributor";
-import './style.css';
 import Protector from "../../protector";
 import BusinessRewarder from "../business-rewarder";
 import {PERMISSION} from "../../../model/auth/user";
+import {LayoutResponsiveGrid} from "../../../components/common/layouts/responsive-grid";
+import {LayoutReponsiveFlex} from "../../../components/common/layouts/responsive-flex";
 
 const ArbitersPage = () => {
     return (
             <Protector accessLevel={PERMISSION.Arbiter}>
-                <div className="arbiters-page">
-                    <div className="arbiters-page__contents">
-                        <div className="arbiters-page__contents-left">
-                            <TextCleaner/>
-                            <BusinessRewarder/>
-                        </div>
+                <LayoutResponsiveGrid gap={10} columns={[{minWidth: 620}, {minWidth: 350}]}>
+                    <LayoutReponsiveFlex direction={"column"} gap={10}>
+                        <TextCleaner/>
+                        <BusinessRewarder/>
+                    </LayoutReponsiveFlex>
+                    <LayoutResponsiveGrid gap={10} columns={[{}]}>
                         <EventRewardGiver/>
-
-                    </div>
-                </div>
+                    </LayoutResponsiveGrid>
+                </LayoutResponsiveGrid>
             </Protector>
 
     );
 };
 
-export default ArbitersPage;
+export default React.memo(ArbitersPage);

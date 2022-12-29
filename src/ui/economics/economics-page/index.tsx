@@ -2,16 +2,16 @@ import React from 'react';
 import ChecksTable from "../checks-table";
 import UpgradeCalculator from "../upgrade-calculator";
 import LayoutBlock from "../../../components/common/layouts/block";
-import LayoutGrid from "../../../components/common/layouts/grid";
 import MoneyConverter from "../money-converter";
+import {LayoutResponsiveGrid} from "../../../components/common/layouts/responsive-grid";
 
 const EconomicsPage = () => {
     return (
         <LayoutBlock>
-            <LayoutGrid templateColumns={"repeat(auto-fit, minmax(350px, 1fr))"}>
+            <LayoutResponsiveGrid gap={10} columns={[{minWidth: 480}, {maxWidth: 370}]}>
                 <UpgradeCalculator/>
                 <MoneyConverter/>
-            </LayoutGrid>
+            </LayoutResponsiveGrid>
             <ChecksTable/>
         </LayoutBlock>
     );

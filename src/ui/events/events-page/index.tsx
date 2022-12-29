@@ -1,21 +1,21 @@
 import React from 'react';
 import TextCleaner from "../../common/participants-cleaner";
 import LotteryCreator from "../lottery-creator";
-import './style.css'
 import Protector from "../../protector";
 import {PERMISSION} from "../../../model/auth/user";
+import {LayoutResponsiveGrid} from "../../../components/common/layouts/responsive-grid";
 
 
 
 const EventsPage = () => {
     return (
         <Protector accessLevel={PERMISSION.Reviewer}>
-            <div className='events-page'>
+            <LayoutResponsiveGrid gap={10} columns={[{minWidth: 620}, {minWidth: 330}]}>
                 <TextCleaner/>
                 <LotteryCreator/>
-            </div>
+            </LayoutResponsiveGrid>
         </Protector>
     );
 };
 
-export default EventsPage;
+export default React.memo(EventsPage);

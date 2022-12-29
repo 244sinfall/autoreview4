@@ -1,21 +1,21 @@
 import React from 'react';
 import CharsheetReviewRateCounter from "../rate-counter";
 import CharsheetReviewGenerator from "../review-generator";
-import './style.css'
 import Protector from "../../protector";
 import {PERMISSION} from "../../../model/auth/user";
+import {LayoutResponsiveGrid} from "../../../components/common/layouts/responsive-grid";
 
 const CharsheetPage = () => {
     return (
         <Protector accessLevel={PERMISSION.Reviewer}>
-            <div className="charsheet-page">
+            <LayoutResponsiveGrid gap={10} columns={[{maxWidth: 350}, {}]}>
                 <CharsheetReviewRateCounter
                     rateNames={['Содержательность', 'Грамотность', 'Логичность', 'Каноничность']}
                     rateMin={0} rateMax={10}/>
                 <CharsheetReviewGenerator/>
-           </div>
+           </LayoutResponsiveGrid>
         </Protector>
     );
 };
 
-export default CharsheetPage;
+export default React.memo(CharsheetPage);
