@@ -55,7 +55,7 @@ const BusinessRewarder = () => {
                     <span className="business-rewarder__multiplier-resource">
                         <NumberInput title="Множитель награды" minValue={0} maxValue={100} disabled={false}
                                      handler={callbacks.handleMultiplier} defaultValue={businessInfo.multiplier} floatable={true}/>
-                        <Selector options={BusinessActivityAggregator.resourcesList()} changeHandler={callbacks.selectorValueChange} selected={"Выберите тип ресурса"}/>
+                        <Selector options={BusinessActivityAggregator.resourcesList()} changeHandler={callbacks.selectorValueChange}/>
                     </span>
                     <NumberInput title="Уровень POI" minValue={0} maxValue={7} disabled={false} handler={callbacks.numericFieldChange}/>
                     <NumberInput title="Количество рабочих" minValue={0} maxValue={9999} disabled={false} handler={callbacks.numericFieldChange}/>

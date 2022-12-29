@@ -25,6 +25,9 @@ export default class AuthorizedUser extends Visitor {
     isLoaded() {
         return this._permission !== null
     }
+    get email() {
+        return this._user.email ?? ""
+    }
     async fetchPermission() {
         const document = await getDoc(doc(db, 'permissions', this._user.uid))
         const data = await document.data()

@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'
 
-const RadioButtonGroup = <T extends string>(props: { title: string, options: T[], groupName: string, defaultValue?: string,
+const RadioButtonGroup = <T extends string>(props: { title: string, options: T[], groupName: string, defaultValue?: T,
     handler?: (value: T) => void }) => {
     const buttons = props.options && props.options.map((option, index)=> {
         const className = index === 0 ? ' button-group__button-bordered-left' :

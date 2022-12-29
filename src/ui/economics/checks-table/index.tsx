@@ -113,7 +113,6 @@ const ChecksTable = () => {
                         </div>
                         <div className="specifiers">
                             <Selector options={checks.types}
-                                      selected={params.category ? params.category : "Все получатели"}
                                       changeHandler={callbacks.onCheckTypeChange}/>
                             <RadioButtonGroup title={"Показывать"} options={["20","50","100"]}
                                               groupName={"elementsPerPage"} handler={callbacks.onElementPerPageChange}

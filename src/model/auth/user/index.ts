@@ -38,6 +38,9 @@ export default class Visitor {
     get name() {
         return this._name
     }
+    get email() {
+        return ""
+    }
     get authorized() {
         return false
     }

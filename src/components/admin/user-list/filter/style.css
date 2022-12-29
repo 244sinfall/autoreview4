@@ -1,0 +1,9 @@
+.user-list-filter {
+    margin-bottom: 10px;
+}
+
+.user-list-filter-choice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

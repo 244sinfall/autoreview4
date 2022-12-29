@@ -1,55 +1,45 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import ContentTitle from "../../../components/common/static/content-title";
-import UserControl from "../user-control";
-import './styles.css'
-import LoadingSpinner from "../../../components/common/static/loading-spinner";
 import {useAuth} from "../../../model/auth/use-auth";
 import {AdminController, AdminUserData} from "../../../model/auth/controllers/admin-controller";
-import Selector from "../../../components/common/dynamic/selector";
 import Visitor, {PermissionNames} from "../../../model/auth/user";
+import AdminUserListFilter, {PermissionFilterOptions} from "../../../components/admin/user-list/filter";
+import AdminUserList from "../../../components/admin/user-list";
+import AdminUserInfo from "../../../components/admin/user-list/user";
+import LoadingSpinner from "../../../components/common/static/loading-spinner";
 
 const UsersList = () => {
     const {currentUser} = useAuth()
     const [users, setUsers] = useState<AdminUserData[]>([]);
-    const [filter, setFilter] = useState<string>("Все");
+    const [isLoading, setIsLoading] = useState(true);
+    const [filter, setFilter] = useState<PermissionFilterOptions>("Все");
     const controller = useRef<AdminController>(new AdminController(currentUser));
-    const [isLoading, setIsLoading] = useState(true)
-    const fetch = async () => {
-        return await controller.current.getAllUsers();
-    }
     const callbacks = {
-        setFilter: useCallback((permissionName: string) => {
-            setFilter(permissionName);
-        }, []),
+        shouldRender: useCallback((user: AdminUserData) =>
+            currentUser.email !== user.email && (filter === "Все" || filter === Visitor.getPermissionName(user.permission)),
+            [currentUser.email, filter]),
+        renderUser: useCallback((user: AdminUserData) =>
+            <AdminUserInfo key={user.email}
+                           user={user}
+                           onPermissionChange={(v) => controller.current.changeRole(user.email, v)}/>,
+            []),
+        setFilter: useCallback((permissionName: PermissionFilterOptions) => setFilter(permissionName), []),
     }
+
     useEffect(() => {
-        fetch().then(users => {
+        controller.current.getAllUsers().then(users => {
             setUsers(users)
             setIsLoading(false);
         })
     },[currentUser])
-
-    const renderUsers = useMemo(() => {
-        const currentList = filter === "Все" ? users : users.filter(u => Visitor.getPermissionName(u.permission) === filter)
-        return currentList.map(u => <UserControl key={u.email} user={currentUser} email={u.email} name={u.name} permission={u.permission}/>)
-    }, [users, filter, currentUser])
     
     return (
-        <div className="users-list">
-            <LoadingSpinner spin={isLoading}>
-                <ContentTitle title={"Управление пользователями"} controllable={true}>
-                    <div className="user-list-container">
-                        <div className="user-list-filter">
-                            Фильтровать по уровню доступа
-                            <Selector options={["Все", ...PermissionNames]} selected={filter} changeHandler={callbacks.setFilter}/>
-                        </div>
-                        <div className="user-list">
-                            {renderUsers}
-                        </div>
-                    </div>
-                </ContentTitle>
-            </LoadingSpinner>
-        </div>
+        <LoadingSpinner spin={isLoading}>
+            <ContentTitle title="Управление пользователями" controllable={false}>
+                <AdminUserListFilter onPermissionChange={callbacks.setFilter} possiblePermissions={["Все", ...PermissionNames]}/>
+                <AdminUserList users={users} shouldRender={callbacks.shouldRender} render={callbacks.renderUser}/>
+            </ContentTitle>
+        </LoadingSpinner>
     );
 };
 
