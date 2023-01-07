@@ -8,7 +8,7 @@ name: Deploy to Firebase Hosting on merge
       - master
 
 env:
-  REMOTE_API_ADDRESS: ${{ secrets.REMOTE_API_ADDRESS }}
+  REACT_APP_API_ADDRESS: ${{ secrets.REMOTE_API_ADDRESS }}
 
 jobs:
   build_and_deploy:
