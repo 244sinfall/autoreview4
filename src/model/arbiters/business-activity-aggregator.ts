@@ -1,6 +1,6 @@
 export interface BusinessRewardInfo {
     owner: string,
-    poi: string,
+    poi: number,
     resource: number,
     poiLevel: number,
     labors: number,
@@ -66,7 +66,7 @@ export class BusinessActivityAggregator implements BusinessRewardInfo {
     multiplier: number;
     labors: number;
     owner: string;
-    poi: string;
+    poi: number;
     poiLevel: number;
     resource: number;
     resourceObj() {
@@ -74,7 +74,7 @@ export class BusinessActivityAggregator implements BusinessRewardInfo {
     }
     static defaultState = {
         owner: "",
-        poi: "",
+        poi: 0,
         resource: 0,
         poiLevel: 0,
         labors: 0,
@@ -107,14 +107,15 @@ export class BusinessActivityAggregator implements BusinessRewardInfo {
     }
     constructor() {
         this.owner = ""
-        this.poi = ""
+        this.poi = 0
         this.resource = 0
         this.poiLevel = 0
         this.labors = 0
         this.multiplier = 1
     }
     getCommand() {
-        if(this.labors === 0 || this.poiLevel === 0 || this.resource === 0) return ""
+        if(!this.labors || !this.poiLevel || !this.resource || !this.owner || !this.multiplier)
+            throw new Error("Поля не заполнены")
         const finalMod = this.multiplier * this.labors
         const resource = this.resourceObj()
         const distributor = new BusinessRewardDistributor(resource.type)
@@ -125,7 +126,7 @@ export class BusinessActivityAggregator implements BusinessRewardInfo {
             case ResourceType.SECOND:
             case ResourceType.FIRST: return `.send it ${this.owner} "Предприятие" ` +
             `"${this.poi}" ${this.resource}:${Math.ceil(finalMod * distributor.getReward(this.poiLevel))}`
-            default: return ""
+            default: throw new Error("Неизвестный тип ресурса")
         }
     }
     setInfo(info: BusinessRewardInfo) {

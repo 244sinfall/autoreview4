@@ -1,0 +1,21 @@
+.claimed-items-wrapper {
+    padding: 0 !important;
+}
+
+.claimed-items-options {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.claimed-items-error {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: 700;
+}
+.claimed-items-html-button {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}

@@ -5,7 +5,7 @@ import {Route, Routes} from "react-router-dom";
 import CharsheetPage from "./ui/charsheet/charsheet-page";
 import MainPage from "./ui/main-page";
 import EventsPage from "./ui/events/events-page";
-import OtherPage from "./ui/other/otherPage/otherPage";
+import OtherPage from "./ui/other/other-page";
 import ArbitersPage from "./ui/arbiters/arbiters-page";
 import AdminPage from "./ui/admin/admin-page";
 import EconomicsPage from "./ui/economics/economics-page";

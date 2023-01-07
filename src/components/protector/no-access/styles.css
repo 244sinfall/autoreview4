@@ -1,0 +1,7 @@
+.protector-no-access {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}

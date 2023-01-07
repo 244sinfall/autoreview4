@@ -4,6 +4,13 @@
     --header-margin: 20px;
     --footer-margin: 20px;
 }
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 /** Themes */
 .darkmoon {
     --accent-background: #5B3E5D;
@@ -99,7 +106,6 @@ html, body  {
 .App {
     margin-left: 10vw;
     margin-right: 10vw;
-    box-sizing: border-box;
     font-family: 'Arimo', sans-serif;
     margin-bottom: var(--footer-margin);
 }

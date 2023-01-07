@@ -1,0 +1,34 @@
+.business-reward {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.business-reward__multiplier {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.business-reward__multiplier-input {
+    width: 40px;
+}
+
+.business-reward__output-field  > .field__content {
+    width: 100%;
+}
+
+.business-reward__output-input {
+    width: 100%;
+}
+
+@media screen and (max-width: 350px) {
+    .business-reward__multiplier {
+        flex-direction: column;
+    }
+}
+
+.business-reward__button {
+    align-self: center;
+    text-align: center;
+}

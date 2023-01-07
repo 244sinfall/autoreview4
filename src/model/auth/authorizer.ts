@@ -3,42 +3,39 @@ import {auth, db} from "./global";
 import {doc, setDoc} from "firebase/firestore";
 import Visitor from "./user";
 
-export interface UserInfo {
-    name: string,
-    password: string,
-    passwordCheck: string,
+
+export type UserLoginCredentials = {
     email: string,
+    password: string
 }
 
+export type UserRegOnlyCredentials = {
+    passwordCheck: string,
+    login: string
+}
+
+export type UserRegisterCredentials = UserLoginCredentials & UserRegOnlyCredentials
+
 export default class Authorizer {
-    static defaultState: UserInfo = {
-        name: "",
-        password: "",
-        passwordCheck: "",
-        email: "",
-    }
     private _user: Visitor
-    private readonly _info: UserInfo
-    constructor(user: Visitor, info: UserInfo) {
+    constructor(user: Visitor) {
         if(user.authorized) throw Error("Пользователь уже авторизован")
         this._user = user
-        this._info = info
     }
-    async login() {
-        if(!this._info.password || !this._info.email || !this._info.email.includes("@")) throw Error("Не все поля заполнены")
-        const { email, password } = this._info
-        const result = await signInWithEmailAndPassword(auth, email, password)
+    async login(credentials: UserLoginCredentials) {
+        if(!credentials.password || !credentials.email || !credentials.email.includes("@")) throw Error("Не все поля заполнены")
+        const result = await signInWithEmailAndPassword(auth, credentials.email, credentials.password)
         return result.user
     }
-    async signup() {
-        if (this._info.password !== this._info.passwordCheck) throw Error("Пароли не совпадают")
-        if (!this._info.password || !this._info.email || !this._info.name) throw Error("Не все поля заполнены")
-        const {email, password} = this._info
+    async signup(credentials: UserRegisterCredentials) {
+        if (credentials.password !== credentials.passwordCheck) throw Error("Пароли не совпадают")
+        if (!credentials.password || !credentials.email || !credentials.login) throw Error("Не все поля заполнены")
+        const {email, password} = credentials
         const result = await createUserWithEmailAndPassword(auth, email, password)
-        await updateProfile(result.user, {displayName: this._info.name})
+        await updateProfile(result.user, {displayName: credentials.login})
         await setDoc(doc(db, 'permissions', result.user.uid), {
             email: result.user.email,
-            name: this._info.name,
+            name: credentials.login,
             permission: 0
         })
         return result.user

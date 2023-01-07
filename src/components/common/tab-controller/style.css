@@ -1,0 +1,37 @@
+.TabController-container {
+    display: grid;
+    grid-template-columns: 20% auto;
+}
+
+.TabController-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+@media screen and (max-width: 750px) {
+    .TabController-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .TabController-controls {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 0;
+    }
+}
+
+.tab-selector {
+    background: var(--accent-background);
+    color: var(--accent-color);
+    outline: 0;
+    border: 0;
+    height: 50px;
+}
+
+.tab-selector_selected {
+    background: var(--button-group-selected);
+    color: var(--button-group-hover-color);
+    outline: 0;
+    border: 0;
+}

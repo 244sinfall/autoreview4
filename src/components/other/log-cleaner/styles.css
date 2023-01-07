@@ -1,0 +1,24 @@
+.log-cleaner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.log-cleaner__drop-container-label {
+    border: 3px dashed var(--accent-background);
+    border-radius: 5px;
+    height: 60px;
+    color: var(--content-color);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+
+.log-cleaner__input[type="file"] {
+    display: none;
+}

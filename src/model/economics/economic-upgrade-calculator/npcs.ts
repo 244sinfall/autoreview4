@@ -1,67 +1,93 @@
 import prices from './prices.json'
-import {CalculationResult} from "./index";
+import {
+    CalculationResult,
+    EconomicalCalculator, NpcPurchaseArguments,
+    NPCPurchaseMethod, PurchaseMethod,
+    WithUpgradeArgument
+} from "./types";
+import * as fields from "../../../components/economics/purchase-calculator/fields";
 
-export type BuyNPCMethods = "Золото" | "Прогресс" | "Провиант"
+const NPCPurchaseMethods: NPCPurchaseMethod[] = ["Золото", "Прогресс", "Провиант"]
 
-export class BuyNPCCalculator {
-    protected level: number
-    protected amount: number
-    protected readonly payMethod: BuyNPCMethods
-    constructor(level: number, amount: number, payMethod: BuyNPCMethods) {
-        if(level > 6) level = 6
-        if(level < 1) level = 1
-        this.level = level;
-        this.payMethod = payMethod;
-        this.amount = amount;
+export class BuyNPCCalculator implements EconomicalCalculator<NpcPurchaseArguments, NPCPurchaseMethod> {
+    protected isNPCPurchaseMethod(method: PurchaseMethod): method is NPCPurchaseMethod {
+        return this.getPayMethods().includes(method as NPCPurchaseMethod);
     }
-    calculate(): CalculationResult {
-        const level = String(this.level)
+    calculate(data: NpcPurchaseArguments, payMethod: PurchaseMethod): CalculationResult {
+        if(!this.isNPCPurchaseMethod(payMethod)) throw new Error("Недопустимый способ оплаты")
+        if(data.level > 6 || data.level < 1) throw new Error("Недопустимый уровень")
+        if(data.amount < 0) throw new Error("Нельзя купить 0")
+        const level = String(data.level)
         const levelStr = level as keyof typeof prices.npcs.buy
-        switch (this.payMethod) {
+        switch (payMethod) {
             case "Золото":
                 return ({
-                    gold: prices.npcs.buy[levelStr].gold * this.amount
+                    gold: prices.npcs.buy[levelStr].gold * data.amount
                 })
             case "Прогресс":
                 return ({
-                    progress: prices.npcs.buy[levelStr].progress * this.amount
+                    progress: prices.npcs.buy[levelStr].progress * data.amount
                 })
             case "Провиант":
                 return ({
-                    food: prices.npcs.buy[levelStr].food * this.amount
+                    food: prices.npcs.buy[levelStr].food * data.amount
                 })
         }
     }
+    getPayMethods(): NPCPurchaseMethod[] {
+        return NPCPurchaseMethods
+    }
+    getCalculationTitle(data: NpcPurchaseArguments): string {
+        return `Покупка ${data.amount} НИП ${data.level} ур.`
+    }
+    getRelativeComponent() {
+        return fields.BuyNPCCalculator
+    }
+    defaults(): NpcPurchaseArguments {
+        return {level: 1, amount: 1}
+    }
 }
 
-export class UpgradeNPCCalculator extends BuyNPCCalculator {
-    private readonly upgradeTo: number
-    constructor(level: number, amount: number, payMethod: BuyNPCMethods, upgradeTo: number) {
-        super(level, amount, payMethod);
-        if(upgradeTo <= this.level || upgradeTo < 2) throw new Error("Невозможное вычисление")
-        this.upgradeTo = upgradeTo
+export class UpgradeNPCCalculator
+    implements EconomicalCalculator<WithUpgradeArgument<NpcPurchaseArguments>, NPCPurchaseMethod>{
+    getPayMethods(): NPCPurchaseMethod[] {
+        return NPCPurchaseMethods
     }
-    calculate(): CalculationResult {
+    calculate(data: WithUpgradeArgument<NpcPurchaseArguments>, payMethod: PurchaseMethod): CalculationResult {
+
+        if(data.level >= data.upgradeTo) throw new Error("Неверные значения уровней")
+        if(data.level < 1 || data.level > 6 || data.upgradeTo < 2 || data.upgradeTo > 6) throw new Error("Недопустимые значения уровней")
+        if(data.amount < 0) throw new Error("Невозможно купить 0")
         let result: CalculationResult = {}
-        while(this.level !== this.upgradeTo && this.level !== 6) {
-            const nextLevel = String(this.level + 1)
+        let level = data.level
+        while(level !== data.upgradeTo && level !== 6) {
+            const nextLevel = String(level + 1)
             const nextLevelStr = nextLevel as keyof typeof prices.npcs.upgrade
-            switch (this.payMethod) {
+            switch (payMethod) {
                 case "Золото":
                     if(result.gold === undefined) result.gold = 0
-                    result.gold += prices.npcs.upgrade[nextLevelStr].gold * this.amount
+                    result.gold += prices.npcs.upgrade[nextLevelStr].gold * data.amount
                     break;
                 case "Провиант":
                     if(result.food === undefined) result.food = 0
-                    result.food += prices.npcs.upgrade[nextLevelStr].food * this.amount
+                    result.food += prices.npcs.upgrade[nextLevelStr].food * data.amount
                     break;
                 case "Прогресс":
                     if(result.progress === undefined) result.progress = 0
-                    result.progress += prices.npcs.upgrade[nextLevelStr].progress * this.amount
+                    result.progress += prices.npcs.upgrade[nextLevelStr].progress * data.amount
                     break;
             }
-            this.level++;
+            level++;
         }
         return result
+    }
+    getCalculationTitle(data: WithUpgradeArgument<NpcPurchaseArguments>): string {
+        return `Улучшение ${data.amount} НИП с ${data.level} ур. до ${data.upgradeTo} ур.`
+    }
+    getRelativeComponent() {
+        return fields.UpgradeNPCCalculator
+    }
+    defaults(): WithUpgradeArgument<NpcPurchaseArguments> {
+        return {level: 1, amount: 1, upgradeTo: 2};
     }
 }

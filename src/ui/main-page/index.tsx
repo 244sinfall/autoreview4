@@ -1,5 +1,5 @@
 import React from 'react';
-import ContentTitle from "../../components/common/static/content-title";
+import ContentTitle from "../../components/common/content-title";
 import AccountManager from "../auth";
 import {LayoutResponsiveGrid} from "../../components/common/layouts/responsive-grid";
 
@@ -7,7 +7,7 @@ const MainPage = () => {
     return (
         <LayoutResponsiveGrid gap={10} columns={[{maxWidth: 350}, {}]}>
             <AccountManager/>
-            <ContentTitle title={'Добро пожаловать'} controllable={false}>
+            <ContentTitle title={'Добро пожаловать'} collapsable={false}>
                 <p>Привет! Этот сайт предназначен для того, чтобы облегчить жизнь команде и игрокам Darkmoon.<br/><br/>
                 Я занимаюсь этим проектом в свободное время, в учебных целях. Регистрация необходима только членам команды проекта,
                 поскольку принадлежность к команде открывает дополнительные, полезные инструменты. В данный момент для игроков

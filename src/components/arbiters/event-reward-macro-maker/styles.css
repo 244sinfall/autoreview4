@@ -1,0 +1,41 @@
+.event-reward-macro-maker {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+.event-reward-macro-maker__options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.event-reward-macro-maker__participants-input {
+    height: 400px;
+}
+.event-reward-macro-maker__output {
+    height: 700px;
+    width: 100%;
+}
+
+.event-reward-macro-maker__event-link > .field__content {
+    width: 100%;
+}
+.event-reward-macro-maker__event-link-input {
+    width: 100%;
+}
+
+.reward-worker__result {
+    text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+    .event-reward-macro-maker {
+        grid-template-columns: 1fr;
+    }
+}
+
+.event-reward-macro-maker__button {
+    align-self: center;
+    text-align: center;
+    width: 200px;
+}

@@ -1,0 +1,16 @@
+.review-field {
+    margin-bottom: 5px;
+}
+.review-field > .field__content {
+    width: 50%;
+    margin-right: 10px;
+}
+.review-input {
+    width: 100%;
+}
+
+@media screen and (max-width: 450px) {
+    .review-field > .field__content {
+        width: 100%;
+    }
+}

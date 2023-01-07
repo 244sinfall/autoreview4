@@ -1,0 +1,12 @@
+.claimed-items-table-edit {
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+    justify-content: flex-start;
+}
+.claimed-item-editor-controls {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+}

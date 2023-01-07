@@ -1,0 +1,49 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pagination-number {
+    width: 60px;
+}
+
+.pagination-pages {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.pagination-control {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.delimiter {
+    padding-top: 2px;
+    font-weight: 700;
+    color: var(--accent-background)
+}
+
+.pagination-control .input__field {
+    width: 50px;
+}
+.page:hover {
+    background: var(--button-group-selected);
+}
+.page {
+    min-width: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background: var(--accent-background);
+    color: var(--accent-color);
+    text-align: center;
+}
+
+@media screen and (max-width: 485px){
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

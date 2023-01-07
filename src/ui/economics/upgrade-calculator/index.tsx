@@ -1,11 +1,6 @@
 import React, {useMemo, useState} from 'react';
-import ContentTitle from "../../../components/common/static/content-title";
-import TabController from "../../../components/common/static/tab-controller";
-import TextAreaReadOnly from "../../../components/common/dynamic/text-area-read-only";
-import ActionButton from "../../../components/common/static/action-button";
-import './style.css'
-import EconomicPurchaseCalculator from "./economic-purchase-calculator";
-import {CalculationResult} from "../../../model/economics/economic-upgrade-calculator";
+import {CalculationPropName, CalculationResult} from "../../../model/economics/economic-upgrade-calculator/types";
+import EconomicCalculatorWrapper from "../../../components/economics/purchase-calculator/wrapper";
 
 const UpgradeCalculator = () => {
     const [titles, setTitles] = useState<string[]>([])
@@ -28,38 +23,16 @@ const UpgradeCalculator = () => {
             setTotalResult({})
         }
     }
-    const calculationPropName = (key: keyof CalculationResult) => {
-        switch (key) {
-            case "food": return "Поставки 'Провиант'"
-            case "progress": return "Прогресс"
-            case "gold": return "Золото"
-            case "ore": return "Поставки 'Руда'"
-            case "stone": return "Поставки 'Камень'"
-            case "tools": return "Ремесленные изделия"
-            case "wood": return "Поставки 'Дерево'"
-        }
-    }
     const content = useMemo(() => {
         if(titles.length === 0) return ""
-        let result = titles.join(', ') + ": "
-        for(let prop in totalResult) {
-            result += `${calculationPropName(prop as keyof CalculationResult)}: ${totalResult[prop as keyof CalculationResult]}. `
-        }
-        return result
+        return `${titles.join(', ')}: ${Object.entries(totalResult).map((k) => {
+            const key = k[0] as keyof CalculationResult
+            const value = k[1] as number
+            return `${CalculationPropName[key]}: ${value}`
+        }).join(', ')}`
     }, [titles, totalResult])
     return (
-        <ContentTitle title="Калькулятор строительства и улучшений" controllable={true} padding={"no-padding"}>
-            <TabController items={{
-                "Построить здание": <EconomicPurchaseCalculator subject={"building"} upgradable={false} onSubmit={callbacks.onSubmit}/>,
-                "Улучшить здание": <EconomicPurchaseCalculator subject={"building"} upgradable={true} onSubmit={callbacks.onSubmit}/>,
-                "Купить НИП": <EconomicPurchaseCalculator subject={"npc"} upgradable={false} onSubmit={callbacks.onSubmit}/>,
-                "Улучшить НИП": <EconomicPurchaseCalculator subject={"npc"} upgradable={true} onSubmit={callbacks.onSubmit}/>,
-            }}/>
-            <div className="UpgradeCalculator-controls">
-                <TextAreaReadOnly content={content} height={100}/>
-                <ActionButton title="Очистить" show={true} action={callbacks.onClean} requiresLoading={false}/>
-            </div>
-        </ContentTitle>
+        <EconomicCalculatorWrapper content={content} onClean={callbacks.onClean} onCalculationSubmit={callbacks.onSubmit}/>
     );
 };
 

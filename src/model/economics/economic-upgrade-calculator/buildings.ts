@@ -1,76 +1,102 @@
 import prices from './prices.json'
-import {CalculationResult} from "./index";
+import {
+    BuildingPurchaseArguments,
+    BuildingPurchaseMethod,
+    CalculationResult,
+    EconomicalCalculator,
+    WithUpgradeArgument
+} from "./types";
+import * as fields from '../../../components/economics/purchase-calculator/fields'
 
-export type BuyBuildingMethods = "Ресурсы и золото" | "Ремесленные изделия" | "Прогресс"
+const BuildingPurchaseMethods: BuildingPurchaseMethod[] = ["Ремесленные изделия", "Ресурсы и золото", "Прогресс"]
 
-export class BuyBuildingCalculator {
-    protected level: number
-    protected readonly payMethod: BuyBuildingMethods
-    protected modifier: number
-    constructor(level: number, modifier: number, payMethod: BuyBuildingMethods) {
-        if(level > 7) level = 7
-        this.level = level;
-        this.payMethod = payMethod;
-        this.modifier = modifier;
-    }
-    calculate(): CalculationResult {
-        const level = String(this.level)
+export class BuyBuildingCalculator implements EconomicalCalculator<BuildingPurchaseArguments, BuildingPurchaseMethod> {
+    calculate(data: BuildingPurchaseArguments, payMethod: BuildingPurchaseMethod): CalculationResult {
+        if(data.level < 0 || data.level > 7) throw new Error("Недопустимый уровень")
+        if(data.modifier <= 0) throw new Error("Недопустимый модификатор")
+        const level = String(data.level)
         const levelStr = level as keyof typeof prices.buildings.buy
-        switch (this.payMethod) {
+        switch (payMethod) {
             case "Ремесленные изделия":
                 return ({
-                    tools: Math.round(prices.buildings.buy[levelStr].tools * this.modifier)
+                    tools: Math.round(prices.buildings.buy[levelStr].tools * data.modifier)
                 })
             case "Ресурсы и золото":
                 const obj = {...prices.buildings.buy[levelStr].resources}
-                Object.keys(obj).forEach(key => obj[key as keyof typeof obj] = Math.round(obj[key as keyof typeof obj] * this.modifier))
+                Object.keys(obj).forEach(key => obj[key as keyof typeof obj] = Math.round(obj[key as keyof typeof obj] * data.modifier))
                 return ({
                     ...obj
                 })
             case "Прогресс":
                 return ({
-                    progress: Math.round(prices.buildings.buy[levelStr].progress * this.modifier)
+                    progress: Math.round(prices.buildings.buy[levelStr].progress * data.modifier)
                 })
         }
     }
+    getCalculationTitle(data: BuildingPurchaseArguments): string {
+        return `Постройка здания ${data.level} уровня`
+    }
+
+    getPayMethods(): BuildingPurchaseMethod[] {
+        return BuildingPurchaseMethods
+    }
+    getRelativeComponent() {
+        return fields.BuyBuildingCalculator
+    }
+    defaults(): BuildingPurchaseArguments {
+        return {level: 0, modifier: 1}
+    }
 }
 
-export class UpgradeBuildingCalculator extends BuyBuildingCalculator {
-    private readonly upgradeTo: number
-    constructor(level: number, modifier: number, payMethod: BuyBuildingMethods, upgradeTo: number) {
-        if(upgradeTo <= level || upgradeTo < 1) throw new Error("Невозможное вычисление")
-        super(level, modifier, payMethod);
-        this.upgradeTo = upgradeTo
-    }
-    calculate(): CalculationResult {
+export class UpgradeBuildingCalculator
+    implements EconomicalCalculator<WithUpgradeArgument<BuildingPurchaseArguments>, BuildingPurchaseMethod>{
+
+    calculate(data: WithUpgradeArgument<BuildingPurchaseArguments>, payMethod: BuildingPurchaseMethod): CalculationResult {
         let result: CalculationResult = {}
-        while(this.level !== this.upgradeTo && this.level !== 7) {
-            const nextLevel = String(this.level + 1)
+        if(data.level < 0 || data.level > 7) throw new Error("Недопустимый уровень")
+        if(data.modifier <= 0) throw new Error("Недопустимый модификатор")
+        if(data.upgradeTo <= data.level || data.upgradeTo === 0 || data.upgradeTo > 7) throw new Error("Недопустимый уровень обновления")
+        let level = data.level
+        while(level !== data.upgradeTo && level !== 7) {
+            const nextLevel = String(level + 1)
             const nextLevelStr = nextLevel as keyof typeof prices.buildings.upgrade
-            switch (this.payMethod) {
+            switch (payMethod) {
                 case "Ресурсы и золото":
                     const toUpgrade = prices.buildings.upgrade[nextLevelStr].resources
                     for(const prop in toUpgrade) {
                         // @todo Разобраться, почему здесь не работает
                         const newValue = toUpgrade[prop as keyof typeof toUpgrade] as number
                         if(prop in result) {
-                            result[prop as keyof CalculationResult]! += Math.round(newValue * this.modifier)
+                            result[prop as keyof CalculationResult]! += Math.round(newValue * data.modifier)
                         } else {
-                            result[prop as keyof CalculationResult] = Math.round(newValue * this.modifier)
+                            result[prop as keyof CalculationResult] = Math.round(newValue * data.modifier)
                         }
                     }
                     break;
                 case "Прогресс":
                     if(result.progress === undefined) result.progress = 0
-                    result.progress += Math.round(prices.buildings.upgrade[nextLevelStr].progress * this.modifier)
+                    result.progress += Math.round(prices.buildings.upgrade[nextLevelStr].progress * data.modifier)
                     break;
                 case "Ремесленные изделия":
                     if(result.tools === undefined) result.tools = 0
-                    result.tools += Math.round(prices.buildings.upgrade[nextLevelStr].tools * this.modifier)
+                    result.tools += Math.round(prices.buildings.upgrade[nextLevelStr].tools * data.modifier)
                     break;
             }
-            this.level++;
+            level++;
         }
         return result
+    }
+    getCalculationTitle(data: WithUpgradeArgument<BuildingPurchaseArguments>): string {
+        return `Улучшение здания с ${data.level} ур. до ${data.upgradeTo} ур`
+    }
+    getRelativeComponent() {
+        return fields.UpgradeBuildingCalculator
+    }
+    defaults(): WithUpgradeArgument<BuildingPurchaseArguments> {
+        return {level: 0, modifier: 1, upgradeTo: 1}
+    }
+
+    getPayMethods(): BuildingPurchaseMethod[] {
+        return BuildingPurchaseMethods
     }
 }

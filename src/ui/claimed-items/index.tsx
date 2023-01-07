@@ -1,130 +1,49 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import ContentTitle from "../../components/common/static/content-title";
-import Table from "../../components/common/dynamic/table";
-import './styles.css'
-import ActionButton from "../../components/common/static/action-button";
-import {useAuth} from "../../model/auth/use-auth";
-import LoadingSpinner from "../../components/common/static/loading-spinner";
+import React, {useCallback, useEffect} from 'react';
+import ClaimedItemsWrapper from "../../components/claimed-items";
+import ClaimedItemTable from "./wrapper";
+import { setSearch, updateClaimedItemsContent} from "../../model/claimed-items/reducer";
+import {useAppDispatch, useAppSelector} from "../../model/hooks";
+import ClaimedItemModal from "./modal";
+import {ClaimedItemsHTMLGenerator} from "../../model/claimed-items";
 import {PERMISSION} from "../../model/auth/user";
-import {
-    ClaimedItem,
-    ClaimedItemAddHandler,
-    ClaimedItemEditHandler,
-    ClaimedItemInterface,
-    ClaimedItemRequests,
-    ClaimedItemsTablesImpl,
-    ClaimedItemsTablesOrder,
-    getClaimedItemQuality,
-} from "../../model/claimed-items";
-import ClaimedItemCategory from "./item-category";
-import ClaimedItemEditor from "./item-editor";
-import ClaimedItemAdder from "./item-adder";
-import AuthorizedUser from "../../model/auth/user/authorized-user";
-import ItemRow from "./item-row";
+import {useAuth} from "../../model/auth/use-auth";
+
 
 const ClaimedItemsPage = () => {
-    const [claimedItems, setClaimedItems] = useState<ClaimedItemsTablesImpl>()
-    const [isCreatingItem, setIsCreatingItem] = useState<string | null>(null)
-    const [selectedItem, setSelectedItem] = useState<ClaimedItem | null>(null)
-    const [requireUpdate, setRequireUpdate] = useState(true)
-    const [errMsg, setErrMsg] = useState("")
-    const {currentUser} = useAuth()
-    const handleClick = useCallback((item: ClaimedItem) => {
-        if(currentUser.canAccess(PERMISSION.Reviewer)) {
-            setSelectedItem(item)
-            setIsCreatingItem(null)
-        }
-    }, [currentUser])
-    const addItemButtonHandler = (quality: string) => {
-        setIsCreatingItem(quality)
-        setSelectedItem(null)
-    }
-    const editHandlers: ClaimedItemEditHandler = {
-        close: () => setSelectedItem(null),
-        accept: async(id: string) => {
-            const res = await ClaimedItemRequests.accept(id, currentUser)
-            if(res) return analyzeResponse(res)
-        },
-        update: async(id, newInfo: ClaimedItemInterface) => {
-            const res = await ClaimedItemRequests.update(id, newInfo, currentUser)
-            if(res) return analyzeResponse(res)
-        },
-        del: async(id: string) => {
-            const res = await ClaimedItemRequests.del(id, currentUser)
-            if(res) return analyzeResponse(res)
-        }
-    }
-    const analyzeResponse = async(r: Response) => {
-        if(r.status === 200) {
-            selectedItem && setSelectedItem(null)
-            isCreatingItem && setIsCreatingItem(null)
-            return setRequireUpdate(true)
-        }
-        const json = await r.json()
-        const err = 'error' in json ? json['error'] : "Неизвестная ошибка"
-        selectedItem && setSelectedItem(null)
-        isCreatingItem && setIsCreatingItem(null)
-        return setErrMsg(err)
-    }
-    const addHandlers: ClaimedItemAddHandler = {
-        close: () => setIsCreatingItem(null),
-        add: async(i: ClaimedItem) => {
-            if(!(currentUser instanceof AuthorizedUser)) throw new Error("Пользователь не авторизован")
-            const res = await ClaimedItemRequests.add(i, currentUser)
-            if(res) return analyzeResponse(res)
-        }
-    }
+
+    const dispatch = useAppDispatch();
+
     useEffect(() => {
-        if(requireUpdate) {
-            ClaimedItemRequests.get().then(i => {
-                setClaimedItems(i)
-                setRequireUpdate(false)
-            })
-        }
-    },[requireUpdate])
-    const renderFunction = useCallback((item: ClaimedItem) => {
-        return <ItemRow key={item.id} item={item} onClick={() => handleClick(item)}/>
-    }, [handleClick])
-    const tables = useMemo(() => {
-        if(claimedItems) {
-            return Object.entries(claimedItems).map((k: [string, ClaimedItem[]]) => {
-                return <Table<ClaimedItem> key={k[0]} columns={["Название", "Владелец", "Доказательство владения", "Согласовавший",
-                    "Дата добавления", "Утвердивший", "Дата утверждения", "Доп. инфо"]}
-                              content={k[1]} renderFunction={renderFunction}/>
-            }).sort((a, b) => {
-                const numA = ClaimedItemsTablesOrder[(a.key as string) as keyof typeof ClaimedItemsTablesOrder]
-                const numB = ClaimedItemsTablesOrder[(b.key as string) as keyof typeof ClaimedItemsTablesOrder]
-                return numA < numB ? -1 : 1
-            })
-        }
-    }, [claimedItems, renderFunction])
-    const tablesWithControls = useMemo(() => {
-        if(tables) {
-            return tables.map((t) => {
-                return <ClaimedItemCategory key={t.key} t={t} addButtonHandler={addItemButtonHandler} user={currentUser}/>
-            })
-        }
-    }, [currentUser, tables])
+        dispatch(updateClaimedItemsContent())
+    }, [dispatch])
+
+    const state = useAppSelector(state => ({
+        search: state.claimedItems.search,
+        content: state.claimedItems.content,
+        error: state.claimedItems.error
+    }))
+    const {currentUser} = useAuth()
+    const callbacks = {
+        onHTMLGenerate: useCallback(async() => {
+            const provider = new ClaimedItemsHTMLGenerator(state.content)
+            return await navigator.clipboard.writeText(provider.generate())
+        }, [state.content])
+    }
+
     return (
-        <div className="claimed-items">
-        <ContentTitle title="Таблица именных предметов" controllable={false}>
-            {selectedItem && !isCreatingItem && <ClaimedItemEditor
-              item={selectedItem} user={currentUser} callbacks={editHandlers}/>}
-            {!selectedItem && isCreatingItem && <ClaimedItemAdder
-              quality={getClaimedItemQuality(isCreatingItem)} reviewerName={currentUser.name}
-              callbacks={addHandlers}/>}
-            <LoadingSpinner spin={requireUpdate}>
-                <p style={{color: "red", textAlign: "center"}}>{errMsg && errMsg}</p>
-                <div className="claimed-items__tables">
-                    {tablesWithControls}
-                </div>
-            </LoadingSpinner>
-            <ActionButton title="Сгенерировать HTML"
-                          action={() => claimedItems && navigator.clipboard.writeText(claimedItems.generateTableHTML())}
-                          show={currentUser ? currentUser.canAccess(PERMISSION.Admin) : false} requiresLoading={true}/>
-        </ContentTitle>
-        </div>
+        <ClaimedItemsWrapper currentSearch={state.search}
+                             canGenerateHTML={currentUser.canAccess(PERMISSION.Admin)}
+                             onHTMLGenerate={callbacks.onHTMLGenerate}
+                             onSearch={(newSearch) => dispatch(setSearch(newSearch))}
+                             error={state.error}>
+            <ClaimedItemTable quality={"legendary"}/>
+            <ClaimedItemTable quality={"epic"}/>
+            <ClaimedItemTable quality={"rare"}/>
+            <ClaimedItemTable quality={"green"}/>
+            <ClaimedItemTable quality={"other"}/>
+            <ClaimedItemModal />
+        </ClaimedItemsWrapper>
     );
 };
 
-export default ClaimedItemsPage;
+export default React.memo(ClaimedItemsPage);

@@ -1,5 +1,5 @@
 import React from 'react';
-import Selector from "../../../common/dynamic/selector";
+import Selector from "../../../common/selector";
 import {PermissionName} from "../../../../model/auth/user";
 import './style.css'
 export type PermissionFilterOptions = "Все" | PermissionName
@@ -14,7 +14,7 @@ const AdminUserListFilter = (props: AdminUserListFilterProps) => {
         <div className="user-list-filter">
             <span className="user-list-filter-choice">Фильтровать по уровню доступа
                 <Selector options={props.possiblePermissions}
-                          changeHandler={(v) => props.onPermissionChange(v)}/>
+                          onSelectionChange={(v) => props.onPermissionChange(v)}/>
             </span>
         </div>
     );

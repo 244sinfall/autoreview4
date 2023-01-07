@@ -2,14 +2,14 @@ import {APIConfig} from "../../config/api";
 
 export interface EventRewardDistributor {
     participantsCleanedText: string,
-    mode: EventRewardDistributionMode | null,
+    mode: string | null,
     rate: number,
     eventLink: string
 }
 
 export class EventRewardDistributorImpl implements EventRewardDistributor {
     eventLink: string;
-    mode: EventRewardDistributionMode | null;
+    mode: string | null;
     participantsCleanedText: string;
     rate: number;
     static defaultState = {
@@ -18,24 +18,30 @@ export class EventRewardDistributorImpl implements EventRewardDistributor {
         rate: 0,
         eventLink: ""
     }
-    static modes: EventRewardDistributionMode[] = [
-        {name: "Выдача опыта", command: "givexp"},
-        {name: "Изъятие опыта", command: "takexp"},
-        {name: "Выдача золота", command: "givegold"}
-    ]
-    static modesList() {
-        return EventRewardDistributorImpl.modes.map(mode => mode.name)
+    static modes: Record<EventRewardDistributionModeName, string> = {
+        "Выдача опыта": "givexp",
+        "Изъятие опыта": "takexp",
+        "Выдача золота": "givegold"
     }
-    constructor(fields: EventRewardDistributor) {
-        this.eventLink = fields.eventLink
-        this.mode = fields.mode
-        this.participantsCleanedText = fields.participantsCleanedText
-        this.rate = fields.rate
+    static modesList(): EventRewardDistributionModeName[] {
+        return ["Выдача опыта", "Изъятие опыта", "Выдача золота"]
+    }
+    constructor() {
+        this.eventLink = ""
+        this.mode = null
+        this.participantsCleanedText = ""
+        this.rate = 0
+    }
+    setInfo(info: EventRewardDistributor) {
+        this.eventLink = info.eventLink
+        this.mode = info.mode
+        this.participantsCleanedText = info.participantsCleanedText
+        this.rate = info.rate
     }
     private getBody() {
         return JSON.stringify({
             eventLink: this.eventLink,
-            mode: this.mode?.command ?? "",
+            mode: this.mode,
             participantsCleanedText: this.participantsCleanedText,
             rate: this.rate
         })
@@ -63,10 +69,7 @@ export class EventRewardDistributorImpl implements EventRewardDistributor {
     }
 }
 
-interface EventRewardDistributionMode {
-    name: string,
-    command: string,
-}
+type EventRewardDistributionModeName = "Выдача опыта" | "Изъятие опыта" | "Выдача золота"
 
 export interface EventRewardDistributorResponse {
     commands: string,

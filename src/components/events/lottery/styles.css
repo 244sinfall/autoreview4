@@ -1,0 +1,16 @@
+.lottery {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+
+.lottery-result {
+    height: 250px;
+}
+
+.lottery-trigger {
+    align-self: center;
+    width: 200px;
+    text-align: center;
+}

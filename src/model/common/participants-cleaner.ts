@@ -1,27 +1,25 @@
 import {APIConfig} from "../../config/api";
 
-export interface ParticipantsCleanerRequest {
-    rawText: string
-}
-
 export interface ParticipantsCleanerResponse {
     cleanedText: string,
     editedLines: string,
     cleanedCount: number
 }
 
-export async function cleanParticipantsText(request: ParticipantsCleanerRequest) {
-    if(!request.rawText) throw Error("Пустой запрос")
-    return await fetch(`${APIConfig.address}${APIConfig.endpoints.events.cleanParticipants}`, {
+function isResponse(json: unknown): json is ParticipantsCleanerResponse {
+    return typeof json === "object" && json != null && "cleanedText" in json && "editedLines" in json && "cleanedCount" in json;
+}
+
+export async function cleanParticipantsText(rawText: string) {
+    if(!rawText) throw Error("Пустой запрос")
+    const response = await fetch(`${APIConfig.address}${APIConfig.endpoints.events.cleanParticipants}`, {
             method: "POST",
             headers: {
                 "Accept": "application/octet-stream"
             },
-            body: JSON.stringify(request)
+            body: JSON.stringify({rawText: rawText})
             })
-            .then((response) => response.json())
-            .then((json) => {
-                if(json['error']) throw Error(json['error'])
-                return json as ParticipantsCleanerResponse
-            })
+    const json: unknown = await response.json()
+    if(isResponse(json)) return json;
+    throw new Error("Непонятный формат ответа");
 }

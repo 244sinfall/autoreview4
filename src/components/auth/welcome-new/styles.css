@@ -1,0 +1,19 @@
+.auth-window {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.auth-window__controls {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+.auth-window__error {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: red;
+    text-align: center;
+    font-weight: 700;
+}

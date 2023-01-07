@@ -9,7 +9,8 @@ export interface CharsheetReviewRequest {
     rates: Rate[],
     charName: string,
     reviewerProfile: string,
-    reviewerDiscord: string
+    reviewerDiscord: string,
+    totalRate: number,
 }
 
 interface CharsheetReviewResponse {
@@ -21,22 +22,31 @@ export default class CharsheetReviewTemplate implements CharsheetReviewRequest{
     rates: Rate[];
     reviewerDiscord: string;
     reviewerProfile: string;
+    totalRate: number;
     static defaultState: CharsheetReviewRequest = {
-        rates: [],
+        rates: [
+            {rateName: 'Содержательность', rateValue: 0},
+            {rateName: 'Грамотность', rateValue: 0},
+            {rateName: 'Логичность', rateValue: 0},
+            {rateName: 'Каноничность', rateValue: 0},
+        ],
         charName: "",
-        reviewerProfile: "",
-        reviewerDiscord: "",
+        reviewerProfile: localStorage.getItem("profileLink") ?? "",
+        reviewerDiscord: localStorage.getItem("discordProfile") ?? "",
+        totalRate: 0
     }
     constructor(info: CharsheetReviewRequest) {
         this.charName = info.charName
         this.rates = info.rates
         this.reviewerDiscord = info.reviewerDiscord
         this.reviewerProfile = info.reviewerProfile
+        this.totalRate = info.totalRate
     }
-    get totalRate() {
-        let totalRate = 0
-        this.rates.forEach((value) => totalRate += value.rateValue)
-        return Math.floor(totalRate/this.rates.length)
+    private isReview(response: unknown): response is CharsheetReviewResponse {
+        return typeof response === "object" && response != null && "review" in response;
+    }
+    private isError(response: unknown): response is { error: string } {
+        return typeof response === "object" && response != null && "error" in response;
     }
     async getReview() {
         if(!this.charName || !this.reviewerDiscord || !this.reviewerProfile) throw new Error("Поля не заполнены")
@@ -46,10 +56,13 @@ export default class CharsheetReviewTemplate implements CharsheetReviewRequest{
                     "Accept": "application/json",
                     "Content-Type": 'application/json',
                 },
-                body: JSON.stringify(Object.assign({}, this, {totalRate: this.totalRate}))
+                body: JSON.stringify(this)
             })
-        const json = await response.json()
-        if(json['error']) throw new Error(json['error'])
-        return (json as CharsheetReviewResponse).review
+        const json: unknown = await response.json()
+        if(this.isReview(json)) return json.review;
+        if(this.isError(json)) throw new Error(json.error)
+        return ""
     }
+
+
 }

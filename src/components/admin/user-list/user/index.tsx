@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {AdminUserData} from "../../../../model/auth/controllers/admin-controller";
-import RadioButtonGroup from "../../../common/dynamic/radio-button-group";
+import RadioButtonGroup from "../../../common/radio-button-group";
 import Visitor, {PermissionName, PermissionNames, PermissionValue} from "../../../../model/auth/user";
-import LoadingSpinner from "../../../common/static/loading-spinner";
+import LoadingSpinner from "../../../common/loading-spinner";
 import './style.css'
 
 interface AdminUserDataProps  {
@@ -26,11 +26,10 @@ const AdminUserInfo = (props: AdminUserDataProps) => {
                 {props.user.name} ({props.user.email})
             </span>
             <LoadingSpinner spin={isLoading}>
-                <RadioButtonGroup title=""
-                                  options={PermissionNames}
+                <RadioButtonGroup options={PermissionNames}
                                   groupName={props.user.email+"-role-selector"}
-                                  defaultValue={value}
-                                  handler={onChange}
+                                  value={value}
+                                  onSelectionChange={onChange}
                 />
             </LoadingSpinner>
         </div>

@@ -1,12 +1,8 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import ContentTitle from "../../../components/common/static/content-title";
-import TextInput from "../../../components/common/dynamic/text-input";
 import {useAppDispatch, useAppSelector} from "../../../model/hooks";
-import TextAreaReadOnly from "../../../components/common/dynamic/text-area-read-only";
-import ActionButton from "../../../components/common/static/action-button";
-import './style.css'
 import {setCharName, setReviewerDiscord, setReviewerProfile} from "../../../model/charsheets/reducer";
 import CharsheetReviewTemplate from "../../../model/charsheets";
+import ReviewGenerator from "../../../components/charsheet/review/review-generator";
 
 const CharsheetReviewGenerator = () => {
     const state = useAppSelector((state) => state.charsheet);
@@ -19,64 +15,57 @@ const CharsheetReviewGenerator = () => {
         setTimeout(() => setErrMsg(""), 1000)
     }
     const callbacks = {
-        handleFields: useCallback((fieldName: string, fieldValue: string) => {
-            switch(fieldName) {
-                case "Ссылка на профиль": return dispatch(setReviewerProfile(fieldValue))
-                case "Discord": return dispatch(setReviewerDiscord(fieldValue))
-                case "Ник проверяемого персонажа": return dispatch(setCharName(fieldValue))
-            }
-        }, [dispatch]),
-        handleButton: useCallback(async() => {
-            if(review) {
-                setCopied(true)
-                setTimeout(() => setCopied(false), 1500)
-                return navigator.clipboard.writeText(review)
-            } else {
-                try {
-                    const reviewer = new CharsheetReviewTemplate(state)
-                    const review = await reviewer.getReview()
-                    return setReview(review)
-                } catch (e: any) {
-                    setError(e.message)
-                }
-            }
-        }, [review, state]),
+        onProfileLinkChange: useCallback((newLink: string) => dispatch(setReviewerProfile(newLink)), [dispatch]),
+        onDiscordChange: useCallback((newDiscord: string) => dispatch(setReviewerDiscord(newDiscord)), [dispatch]),
+        onCharNameChange: useCallback((newCharName: string) => dispatch(setCharName(newCharName)), [dispatch]),
     }
+
+    const onGenerate = useCallback(async() => {
+        if(review) {
+            setCopied(true)
+            setTimeout(() => setCopied(false), 1500)
+            return navigator.clipboard.writeText(review)
+        }
+        try {
+            const reviewer = new CharsheetReviewTemplate(state)
+            const review = await reviewer.getReview()
+            return setReview(review)
+        } catch (e: unknown) {
+            if(e instanceof Error) return setError(e.message);
+        }
+    }, [review, state])
+
     const buttonMessage = useMemo(() => {
         if(errMsg) return errMsg
-        if(review) {
-            return copied ? "Вердикт скопирован" : "Скопировать вердикт"
-        }
-        return "Создать вердикт"
+        if(!review) return "Создать вердикт"
+        return copied ? "Вердикт скопирован" : "Скопировать вердикт"
     }, [copied, errMsg, review])
+
     useEffect(() => {
         setCopied(false)
         setReview("")
     }, [state])
-    const rules =
+
+    const rules = useMemo(() =>
         "Вам нужно будет отредактировать вердикт, приводя<br/>" +
         'примеры и доводы, отсылаясь к содержанию анкеты.<br/>' +
         'В случае генерации вердикта на одобрение вам <br/>' +
         'необходимо будет оставить коментарии в/после <br/>' +
         'фрагментов, выделенных жирным шрифтом. В случае <br/>' +
         'генерации вердикта на отказ, жирным будут выделены <br/>' +
-        'причины. Вам нужно дополнить их отсылками к тексту анкеты.';
+        'причины. Вам нужно дополнить их отсылками к тексту анкеты.',
+        [])
+
     return (
-        <div className="review-generator">
-            <ContentTitle title="Генерация вердикта" controllable={false}>
-                <TextInput title="Ссылка на профиль" maxLength={128} 
-                           placeholder="https://rp-wow.ru/users/1018" cacheKey="profileLink" 
-                           handler={callbacks.handleFields}/>
-                <TextInput title="Discord" maxLength={128} placeholder="rolevik dima#4300" 
-                           cacheKey="discordProfile" handler={callbacks.handleFields}/>
-                <TextInput title="Ник проверяемого персонажа" maxLength={32} placeholder="Васян" 
-                           handler={callbacks.handleFields}/>
-                <ActionButton title={buttonMessage} show={true} action={callbacks.handleButton}
-                              tooltip={rules} requiresLoading={true}/>
-                <TextAreaReadOnly content={review}></TextAreaReadOnly>
-            </ContentTitle>
-        </div>
+        <ReviewGenerator review={review}
+                         tooltip={rules}
+                         buttonMessage={buttonMessage}
+                         onButton={onGenerate}
+                         callbacks={callbacks}
+                         charName={state.charName}
+                         discord={state.reviewerDiscord}
+                         profileLink={state.reviewerProfile}/>
     );
 };
 
-export default CharsheetReviewGenerator;
+export default React.memo(CharsheetReviewGenerator);

@@ -3,6 +3,7 @@ import {eventReviewSLice} from "./events/event-review";
 import {userSlice} from "./auth/user/reducer";
 import {charsheetReviewSLice} from "./charsheets/reducer";
 import {themeSlice} from "./theme/slice";
+import {claimedItemsSlice} from "./claimed-items/reducer";
 
 
 export const store = configureStore({
@@ -10,7 +11,8 @@ export const store = configureStore({
         charsheet: charsheetReviewSLice.reducer,
         event: eventReviewSLice.reducer,
         user: userSlice.reducer,
-        theme: themeSlice.reducer
+        theme: themeSlice.reducer,
+        claimedItems: claimedItemsSlice.reducer
         // comments: commentsReducer,
         // users: usersReducer,
     }, middleware: getDefaultMiddleware => getDefaultMiddleware({

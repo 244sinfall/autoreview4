@@ -1,0 +1,25 @@
+.claimed-item-category-header {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.claimed-item-table-delimiter {
+    margin-top: 10px;
+}
+
+.claimed-item-category-pagination {
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 700px) {
+    .claimed-item-category-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

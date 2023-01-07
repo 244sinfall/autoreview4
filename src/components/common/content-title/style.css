@@ -1,0 +1,22 @@
+.content-block__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    height: auto;
+    color: var(--accent-color);
+    background: var(--accent-background);
+}
+
+.content-block__title-control {
+    cursor: pointer;
+    user-select: none;
+}
+
+.content-block__container {
+    padding: 10px;
+    color: var(--content-color);
+    background: var(--content-background);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}

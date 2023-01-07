@@ -1,0 +1,45 @@
+.button-group {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.button-group__button-container {
+    display: flex;
+    color: var(--button-group-color);
+    background: transparent;
+    border: 2px solid var(--button-group-border);
+    justify-content: center;
+    align-items: center;
+    transition: all 250ms, visibility 0.5s;
+    box-shadow: 1px 1px 0 black;
+    text-align: center;
+}
+.button-group__button-label {
+    padding: 5px;
+}
+.button-group__button-container:hover {
+    color: var(--button-group-hover-color);
+    background: var(--button-group-hover-background);
+    border: 2px solid transparent;
+}
+
+.button-group__button-bordered-right {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.button-group__button-bordered-left {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.button-group__button-input[type="radio"] {
+    display:none;
+}
+
+.button-group__button-container:has(.button-group__button-input[type="radio"]:checked) {
+    box-shadow: none;
+    border: 2px solid var(--button-group-selected);
+    color: var(--button-group-hover-color);
+    background: var(--button-group-selected)
+}

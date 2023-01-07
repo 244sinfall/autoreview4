@@ -1,6 +1,6 @@
 import React from 'react';
 import TextCleaner from "../../common/participants-cleaner";
-import EventRewardGiver from "../event-reward-distributor";
+import EventRewardGiver from "../event-reward-giver";
 import Protector from "../../protector";
 import BusinessRewarder from "../business-rewarder";
 import {PERMISSION} from "../../../model/auth/user";
@@ -9,18 +9,17 @@ import {LayoutReponsiveFlex} from "../../../components/common/layouts/responsive
 
 const ArbitersPage = () => {
     return (
-            <Protector accessLevel={PERMISSION.Arbiter}>
-                <LayoutResponsiveGrid gap={10} columns={[{minWidth: 620}, {minWidth: 350}]}>
-                    <LayoutReponsiveFlex direction={"column"} gap={10}>
-                        <TextCleaner/>
-                        <BusinessRewarder/>
-                    </LayoutReponsiveFlex>
-                    <LayoutResponsiveGrid gap={10} columns={[{}]}>
-                        <EventRewardGiver/>
-                    </LayoutResponsiveGrid>
+        <Protector accessLevel={PERMISSION.Arbiter}>
+            <LayoutResponsiveGrid gap={10} columns={[{minWidth: 620}, {minWidth: 350}]}>
+                <LayoutReponsiveFlex direction={"column"} gap={10}>
+                    <TextCleaner/>
+                    <BusinessRewarder/>
+                </LayoutReponsiveFlex>
+                <LayoutResponsiveGrid gap={10} columns={[{}]}>
+                    <EventRewardGiver/>
                 </LayoutResponsiveGrid>
-            </Protector>
-
+            </LayoutResponsiveGrid>
+        </Protector>
     );
 };
 

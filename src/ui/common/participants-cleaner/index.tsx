@@ -1,63 +1,44 @@
-import React, {useCallback, useState} from 'react';
-import ContentTitle from "../../../components/common/static/content-title";
-import './style.css'
-import TextAreaWritable from "../../../components/common/dynamic/text-area-writable";
-import ActionButton from "../../../components/common/static/action-button";
+import React, {useCallback, useMemo, useState} from 'react';
+
 import {
     cleanParticipantsText,
-    ParticipantsCleanerRequest,
     ParticipantsCleanerResponse
 } from "../../../model/common/participants-cleaner";
-import TextAreaReadOnly from "../../../components/common/dynamic/text-area-read-only";
+import ParticipantsCleaner from "../../../components/participants-cleaner";
 
 const TextCleaner = () => {
-    const [rawText, setRawText] = useState<ParticipantsCleanerRequest>({rawText: ""})
     const [cleanedText, setCleanedText] = useState<ParticipantsCleanerResponse>({cleanedText: "", editedLines: "", cleanedCount: 0})
     const [errMsg, setErrMsg] = useState("")
-    const setError = (message: string) => {
-        setErrMsg(message)
-        setTimeout(() => setErrMsg(""), 1000)
+
+    const callbacks = {
+        onSubmit: useCallback(async(rawText: string) => {
+            try {
+                const result = await cleanParticipantsText(rawText);
+                return setCleanedText(result);
+            } catch (e: unknown) {
+                if(e instanceof Error) {
+                    setErrMsg(e.message)
+                    setTimeout(() => setErrMsg(""), 1500)
+                }
+            }
+        }, [])
     }
-    const handleClean = useCallback(() => {
-        return cleanParticipantsText(rawText)
-            .then(response => setCleanedText(response))
-            .catch(reason => setError(reason.message))
-    }, [rawText])
-    function handleRawTextChange(changedText: string) {
-        setRawText({rawText: changedText})
-    }
-    function handleCleanedTextChange(changedText: string) {
-        setCleanedText({...cleanedText, cleanedText: changedText})
-    }
-    const rules =
+
+    const rules = useMemo(() =>
         'Сервис удаляет из ников латинские буквы, спецсимволы, пробелы.<br/>' +
         'Если игрок поставил модификаторы правильно (W, D и.т.д.), они<br/>' +
         'не удалятся. В этом случае, вы должны удостоверится, что <br/>' +
         'модификаторы проставлены корректно. Вы сможете редактировать<br/>' +
-        'очищенный список в окне справа.'
+        'очищенный список в окне справа.',
+        [])
+
     return (
-        <ContentTitle title='Очистка списка участников' controllable={true}>
-            <div className='text-cleaner'>
-                <div className='text-cleaner__raw'>
-                    <p>Список для очистки:</p>
-                    <TextAreaWritable height={300} handler={handleRawTextChange}/>
-                    <ActionButton title={errMsg ? errMsg : 'Очистить текст'} show={true} action={handleClean} tooltip={rules} requiresLoading={true}/>
-                    <p>Участников: {cleanedText.cleanedCount}</p>
-                </div>
-                <div className='text-cleaner__results'>
-                    <div className='text-cleaner__results__cleaned'>
-                        <p>Очищенный текст:</p>
-                        <TextAreaWritable height={400} content={cleanedText.cleanedText} handler={handleCleanedTextChange}/>
-                    </div>
-
-                    {cleanedText.editedLines &&
-                      <div className='text-cleaner__results__edited'>
-                        <p>Измененные строки:</p><TextAreaReadOnly height={400} content={cleanedText.editedLines}/>
-                    </div>}
-                </div>
-            </div>
-        </ContentTitle>
-
+        <ParticipantsCleaner onSubmit={callbacks.onSubmit}
+                             editedLines={cleanedText.editedLines}
+                             tooltip={rules}
+                             participantsCount={cleanedText.cleanedCount}
+                             error={errMsg}
+                             result={cleanedText.cleanedText}/>
     );
 };
 

@@ -1,13 +1,5 @@
-.input__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    white-space: nowrap;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.input__field {
-    height: 20pt;
+.input {
+    height: 30px;
     font-size: 18px;
     transition: 0.5s;
     color: var(--input-text);
@@ -17,16 +9,16 @@
     background: transparent;
 }
 
-.input__field:focus {
+.input:focus {
     border: 2px solid var(--input-border-focus);
     outline: none;
     background: var(--focus);
 }
 
-.input__field::placeholder {
+.input::placeholder {
     color: var(--placeholder);
 }
-.input__field:disabled {
+.input:disabled {
     background: var(--focus);
     -webkit-text-fill-color: var(--input-text);
     -webkit-opacity: 1;

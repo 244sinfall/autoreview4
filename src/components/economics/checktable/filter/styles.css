@@ -1,0 +1,30 @@
+.check-table-filters {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.check-table-filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.check-table-search-and-select {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 750px) {
+    .check-table-filters {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .check-table-search-and-select {
+        flex-direction: column;
+    }
+}

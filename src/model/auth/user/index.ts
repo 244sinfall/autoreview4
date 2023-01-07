@@ -53,8 +53,5 @@ export default class Visitor {
     canAccess(permission: PermissionValue) {
         return this._permission >= permission
     }
-    isLoaded() {
-        return true
-    }
 }
 

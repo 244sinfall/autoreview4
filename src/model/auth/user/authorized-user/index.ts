@@ -22,9 +22,6 @@ export default class AuthorizedUser extends Visitor {
         }
         return this._permission >= permission
     }
-    isLoaded() {
-        return this._permission !== null
-    }
     get email() {
         return this._user.email ?? ""
     }
@@ -32,6 +29,6 @@ export default class AuthorizedUser extends Visitor {
         const document = await getDoc(doc(db, 'permissions', this._user.uid))
         const data = await document.data()
         this._permission = await data?.permission as PermissionValue ?? 0
-        return this._permission
+        return
     }
 }

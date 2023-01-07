@@ -1,15 +1,15 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import ContentTitle from "../../../components/common/static/content-title";
-import {useAuth} from "../../../model/auth/use-auth";
+import ContentTitle from "../../../components/common/content-title";
 import {AdminController, AdminUserData} from "../../../model/auth/controllers/admin-controller";
 import Visitor, {PermissionNames} from "../../../model/auth/user";
 import AdminUserListFilter, {PermissionFilterOptions} from "../../../components/admin/user-list/filter";
 import AdminUserList from "../../../components/admin/user-list";
 import AdminUserInfo from "../../../components/admin/user-list/user";
-import LoadingSpinner from "../../../components/common/static/loading-spinner";
+import LoadingSpinner from "../../../components/common/loading-spinner";
+import {useAppSelector} from "../../../model/hooks";
 
 const UsersList = () => {
-    const {currentUser} = useAuth()
+    const currentUser = useAppSelector(state => state.user.user)
     const [users, setUsers] = useState<AdminUserData[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [filter, setFilter] = useState<PermissionFilterOptions>("Все");
@@ -19,7 +19,7 @@ const UsersList = () => {
             currentUser.email !== user.email && (filter === "Все" || filter === Visitor.getPermissionName(user.permission)),
             [currentUser.email, filter]),
         renderUser: useCallback((user: AdminUserData) =>
-            <AdminUserInfo key={user.email}
+            <AdminUserInfo key={`${user.email}_${user.name}`}
                            user={user}
                            onPermissionChange={(v) => controller.current.changeRole(user.email, v)}/>,
             []),
@@ -35,7 +35,7 @@ const UsersList = () => {
     
     return (
         <LoadingSpinner spin={isLoading}>
-            <ContentTitle title="Управление пользователями" controllable={false}>
+            <ContentTitle title="Управление пользователями" collapsable={false}>
                 <AdminUserListFilter onPermissionChange={callbacks.setFilter} possiblePermissions={["Все", ...PermissionNames]}/>
                 <AdminUserList users={users} shouldRender={callbacks.shouldRender} render={callbacks.renderUser}/>
             </ContentTitle>

@@ -1,0 +1,27 @@
+.check-table {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.check-table-top {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.check-table-error {
+    color: red;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 620px) {
+    .check-table-top {
+        flex-direction: column;
+    }
+    .check-table-top {
+        gap: 5px;
+    }
+}

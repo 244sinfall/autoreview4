@@ -4,11 +4,11 @@ import logo from '../../assets/dm_logo.png'
 import {Types} from "../../model/header/types";
 import {Link, NavLink} from "react-router-dom";
 import {ReactComponent as Sidebar} from '../../assets/sidebar.svg'
-import {useAuth} from "../../model/auth/use-auth";
+import {useAppSelector} from "../../model/hooks";
 
 const Header = (props: { menuElements: Types[] }) => {
     const [sidebarState, setSidebarState] = useState<"closed" | "opened">("closed")
-    const {currentUser} = useAuth()
+    const currentUser = useAppSelector(state => state.user.user)
     const sidebarRef = useRef<HTMLDivElement>(null)
 
     const callbacks = {

@@ -1,36 +1,47 @@
 import {useAppDispatch, useAppSelector} from "../hooks";
-import {useEffect, useState} from "react";
-import {onAuthStateChanged, signOut} from "firebase/auth";
+import {useCallback, useEffect, useState} from "react";
+import {onAuthStateChanged, signOut, User} from "firebase/auth";
 import {auth} from "./global";
 import {removeUser, setUser} from "./user/reducer";
 import AuthorizedUser from "./user/authorized-user";
+import Authorizer, {UserLoginCredentials, UserRegisterCredentials} from "./authorizer";
 
 export const useAuth = () => {
     const currentUser = useAppSelector(state => state.user.user)
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(!!localStorage.getItem("hasFirebaseSession") && !currentUser.authorized)
     const dispatch = useAppDispatch()
-    const logout = async() => {
+    const logout = useCallback(async() => {
         await signOut(auth)
         await dispatch(removeUser())
+        localStorage.removeItem('hasFirebaseSession')
+    }, [dispatch])
+    const createSession = async(credentials: UserLoginCredentials | UserRegisterCredentials, formState: "reg" | "auth") => {
+        const authorizer = new Authorizer(currentUser);
+        const user = "passwordCheck" in credentials && formState === "reg"
+            ? await authorizer.signup(credentials) : await authorizer.login(credentials)
+        const authorizedUser = new AuthorizedUser(user);
+        await authorizedUser.fetchPermission()
+        dispatch(setUser(authorizedUser))
+        localStorage.setItem("hasFirebaseSession", "true")
+        return
     }
+    const restoreSession = useCallback(async(user: User) => {
+        const newUser = new AuthorizedUser(user)
+        await newUser.fetchPermission()
+        dispatch(setUser(newUser))
+        localStorage.setItem("hasFirebaseSession", "true")
+    }, [dispatch])
+
     useEffect(() => {
-        if(!currentUser.authorized) {
+        if(isLoading) {
             const unsub = onAuthStateChanged(auth, user => {
-                if (user) {
-                    setIsLoading(true)
-                    const newUser = new AuthorizedUser(user)
-                    newUser.fetchPermission()
-                        .then(() => {
-                        dispatch(setUser(newUser))
-                        setIsLoading(false)
-                    })
+                if (user && !currentUser.authorized)  {
+                    restoreSession(user).then(() => setIsLoading(false))
                 }
             })
             return () => unsub()
-        } else if(currentUser.isLoaded()){
-            setIsLoading(false)
         }
 
-    }, [currentUser, dispatch])
-    return { isLoading, currentUser, logout }
+    }, [currentUser, dispatch, isLoading, logout, restoreSession])
+    return { isLoading, currentUser, logout, createSession }
 }

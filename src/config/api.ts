@@ -2,25 +2,25 @@ export const APIConfig = {
     address: process.env["REACT_APP_API_ADDRESS"],
     endpoints: {
         charsheets: {
-            generate: process.env["REACT_APP_GEN_CHARSHEET_END_POINT"]
+            generate: '/generate_charsheet_review'
         },
-        cleanLog: process.env["REACT_APP_CLEAN_LOG_END_POINT"],
+        cleanLog: '/clean_log',
         events: {
-            cleanParticipants: process.env["REACT_APP_CLEAR_PARTICIPANTS_END_POINT"],
-            createLottery: process.env["REACT_APP_CREATE_LOTTERY_END_POINT"],
+            cleanParticipants: '/events/clean_participants_text',
+            createLottery: '/events/create_lottery',
         },
         arbiters: {
-            rewardWork: process.env["REACT_APP_REWARDS_WORK_END_POINT"],
+            rewardWork: '/arbiters/rewards_work',
         },
         economics: {
-            getChecks: process.env["REACT_APP_GET_CHECKS_END_POINT"],
+            getChecks: '/economics/get_checks',
         },
         claimedItems: {
-            get: process.env["REACT_APP_GET_CLAIMED_ITEMS_END_POINT"],
-            create: process.env["REACT_APP_CREATE_CLAIMED_ITEM_END_POINT"],
-            delete: process.env["REACT_APP_DELETE_CLAIMED_ITEM_END_POINT"],
-            update: process.env["REACT_APP_UPDATE_CLAIMED_ITEM_END_POINT"],
-            approve: process.env["REACT_APP_APPROVE_CLAIMED_ITEM_END_POINT"]
+            get: '/claimed_items/get_items',
+            create: '/claimed_items/create',
+            delete: '/claimed_items/delete',
+            update: '/claimed_items/update',
+            approve: '/claimed_items/approve'
         }
     }
 } as const

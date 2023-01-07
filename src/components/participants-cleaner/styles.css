@@ -1,0 +1,27 @@
+.text-cleaner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.text-cleaner-block {
+    text-align: center;
+}
+
+.text-cleaner__result-area {
+    height: 400px;
+}
+
+.text-cleaner__raw-area {
+    height: 300px;
+}
+
+.text-cleaner-area {
+    width: 100%;
+}
+
+@media screen and (max-width: 520px) {
+    .text-cleaner {
+        grid-template-columns: 1fr;
+    }
+}

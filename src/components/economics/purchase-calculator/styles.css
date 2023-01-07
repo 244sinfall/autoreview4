@@ -1,0 +1,38 @@
+.economic-purchase-calculator {
+    padding: 0 !important;
+}
+.economic-purchase-calculator__fields {
+    padding: 10px;
+}
+.economical-calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.economical-calculator-button {
+    text-align: center;
+    align-self: center;
+}
+
+.economic-purchase-calculator__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.economical-calculator-clean-button {
+    display: flex;
+    justify-content: center;
+}
+
+.economical-purchase-calculator-result {
+    height: 150px;
+}

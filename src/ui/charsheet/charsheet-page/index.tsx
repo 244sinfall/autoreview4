@@ -10,7 +10,6 @@ const CharsheetPage = () => {
         <Protector accessLevel={PERMISSION.Reviewer}>
             <LayoutResponsiveGrid gap={10} columns={[{maxWidth: 350}, {}]}>
                 <CharsheetReviewRateCounter
-                    rateNames={['Содержательность', 'Грамотность', 'Логичность', 'Каноничность']}
                     rateMin={0} rateMax={10}/>
                 <CharsheetReviewGenerator/>
            </LayoutResponsiveGrid>
