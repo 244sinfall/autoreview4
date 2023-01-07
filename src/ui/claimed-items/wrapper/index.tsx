@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {ClaimedItemInterface, ClaimedItemsTables, ClaimedItemTitles} from "../../../model/claimed-items/types";
 import ClaimedItemCategory from "../../../components/claimed-items/table";
 import ClaimedItemRow from "../../../components/claimed-items/row";
@@ -19,19 +19,24 @@ const ClaimedItemTable = (props: ClaimedItemTableProps) => {
         user: state.user.user
     }))
     const [displayingContent, setDisplayingContent] = useState<ClaimedItemInterface[]>([])
+    const searchDebounce = useRef<NodeJS.Timeout | null>(null)
     useEffect(() => {
         if(!state.search) return setDisplayingContent(state.content)
-        setDisplayingContent(state.content.filter(content => {
-                const searchPhrase = state.search.toLowerCase()
-                return content.name.toLowerCase().includes(searchPhrase)
-                    || content.owner.toLowerCase().includes(searchPhrase)
-                    || content.ownerProofLink.toLowerCase().includes(searchPhrase)
-                    || content.reviewer.toLowerCase().includes(searchPhrase)
-                    || content.acceptor.toLowerCase().includes(searchPhrase)
-                    || content.additionalInfo.toLowerCase().includes(searchPhrase)
-                    || content.link.toLowerCase().includes(searchPhrase)
-            }
-        ))
+        if(searchDebounce.current) clearTimeout(searchDebounce.current)
+        searchDebounce.current = setTimeout(() => {
+            setDisplayingContent(state.content.filter(content => {
+                    const searchPhrase = state.search.toLowerCase()
+                    return content.name.toLowerCase().includes(searchPhrase)
+                        || content.owner.toLowerCase().includes(searchPhrase)
+                        || content.ownerProofLink.toLowerCase().includes(searchPhrase)
+                        || content.reviewer.toLowerCase().includes(searchPhrase)
+                        || content.acceptor.toLowerCase().includes(searchPhrase)
+                        || content.additionalInfo.toLowerCase().includes(searchPhrase)
+                        || content.link.toLowerCase().includes(searchPhrase)
+                }
+            ))
+        }, 300)
+
     }, [state.content, state.search])
     const dispatch = useAppDispatch();
     const renderFunction = useCallback((item: ClaimedItemInterface) => {
