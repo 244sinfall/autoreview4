@@ -6,6 +6,7 @@ import Visitor, {PERMISSION} from "../../../model/auth/user";
 import ActionButton from "../../common/action-button";
 import Field from "../../common/field";
 import './styles.css'
+import apiStringDateToString from "../../../utils/api-string-date-to-string";
 
 export type ClaimedItemEditorProps = {
     onEdit: (editedItem: ClaimedItemInterface) => Promise<void>,
@@ -69,13 +70,13 @@ const ClaimedItemEditor = (props: ClaimedItemEditorProps) => {
               <Field title="Дата утверждения" containerOptions={containerOptions}>
                 <TextInput maxLength={256}
                            disabled={true}
-                           value={props.item.acceptedAt.toLocaleString() ?? "Неизвестно"}/>
+                           value={apiStringDateToString(props.item.acceptedAt)}/>
               </Field>
             </>}
             <Field title="Дата добавления" containerOptions={containerOptions}>
                 <TextInput maxLength={256}
                            disabled={true}
-                           value={props.item.addedAt?.toLocaleString() ?? "Неизвестно"}/>
+                           value={apiStringDateToString(props.item.addedAt)}/>
             </Field>
             <Field title="Доп. инфо" containerOptions={containerOptions}>
                 <TextInput maxLength={256}

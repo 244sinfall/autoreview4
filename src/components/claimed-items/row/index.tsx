@@ -1,7 +1,8 @@
-import React, {useCallback, useRef} from 'react';
+import React, {useRef} from 'react';
 import parse from 'html-react-parser';
 import {parseStringWithLinks} from "../../../utils/parse-string-with-links";
 import {ClaimedItemInterface} from "../../../model/claimed-items/types";
+import apiStringDateToString from "../../../utils/api-string-date-to-string";
 
 type ClaimedItemRowProps = {
     item: ClaimedItemInterface,
@@ -23,14 +24,6 @@ const ClaimedItemRow = (props: ClaimedItemRowProps) => {
 
     const ownerNameWithLink = `<a class='generated-link' href="${props.item.ownerProfile}" target='_blank' rel='norefferer'>${props.item.owner}</a>`
 
-    const displayDate = useCallback((date: string | Date | null) => {
-        if(date === null) return "Неизвестно"
-        if (typeof date === "object") {
-            return date.toLocaleString()
-        }
-        return date === "0001-01-01T00:00:00Z" ? "Неизвестно" : new Date(date).toLocaleString()
-    }, [])
-
     return (
         <tr id={props.item.id+"-row"} className="table-row"
             onMouseDown={callbacks.recordMousePos}
@@ -40,10 +33,10 @@ const ClaimedItemRow = (props: ClaimedItemRowProps) => {
             <td className="table-content" data-label="Доказательство владения:">{parse(parseStringWithLinks(props.item.ownerProofLink))}</td>
             <td className="table-content" data-label="Согласовавший:">{props.item.reviewer}</td>
             <td className="table-content" data-label={"Дата добавления:"}>
-                {displayDate(props.item.addedAt)}</td>
+                {apiStringDateToString(props.item.addedAt)}</td>
             <td className="table-content" data-label={"Утвердивший:"}>{props.item.accepted ? props.item.acceptor : ""}</td>
             <td className="table-content" data-label={"Дата утверждения:"}>
-                {props.item.accepted ? displayDate(props.item.acceptedAt) : ""}</td>
+                {props.item.accepted ? apiStringDateToString(props.item.acceptedAt) : ""}</td>
             <td className="table-content" data-label="Доп. инфо:">{props.item.additionalInfo}</td>
         </tr>
     );
