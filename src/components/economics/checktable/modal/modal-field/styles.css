@@ -1,0 +1,10 @@
+.check-info-modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.check-info-modal-field-button {
+    display: flex;
+    justify-content: center;
+}
