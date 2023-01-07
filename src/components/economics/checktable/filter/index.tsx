@@ -3,7 +3,7 @@ import RadioButtonGroup from "../../../common/radio-button-group";
 import TextInput from "../../../common/text-input";
 import Selector from "../../../common/selector";
 import Field from "../../../common/field";
-import {CheckStatus} from "../../../../model/economics/checks/types";
+import {CheckStatus, CheckStatusCompanion} from "../../../../model/economics/checks/types";
 import './styles.css'
 type CheckTableFiltersProps = {
     statusFilterValue: CheckStatus | "Все",
@@ -18,7 +18,7 @@ const CheckTableFilters = (props: CheckTableFiltersProps) => {
     return (
         <div className="check-table-filters">
             <span className="check-table-filter-section">
-                <RadioButtonGroup options={["Все", ...CheckStatus.list()]}
+                <RadioButtonGroup options={["Все", ...CheckStatusCompanion.list()]}
                               groupName={"check-table-filter-status"} onSelectionChange={props.statusFilterOnChange}
                               value={props.statusFilterValue}/>
                 <span className="check-table-search-and-select">

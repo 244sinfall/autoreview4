@@ -9,7 +9,7 @@ export type ItemQuality = "low" | "usual" | "unusual" | "rare" | "epic"
 
 export type CheckStatus = "Ожидает" | "Закрыт" | "Отказан"
 
-export const CheckStatus = {
+export const CheckStatusCompanion = {
     list: (): CheckStatus[] => ["Ожидает", "Закрыт", "Отказан"],
 }
 export const CheckStatusValue: Record<CheckStatus | "Все", string> = {
@@ -40,7 +40,7 @@ export type CheckResponse = {
     updatedAt: Date
 }
 
-export const CheckTableParams = {
+export const CheckTableParamsCompanion = {
     default: (): CheckTableParams => ({
         limit: 50,
         skip: 0,

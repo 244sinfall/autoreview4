@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {PERMISSION} from "../../../model/auth/user";
 import CheckRow from "../../../components/economics/checktable/table/row";
 import {Check} from "../../../model/economics/checks/check";
-import {CheckResponse, CheckTableParams} from "../../../model/economics/checks/types";
+import {CheckResponse, CheckTableParams, CheckTableParamsCompanion} from "../../../model/economics/checks/types";
 import {CheckProvider} from "../../../model/economics/checks/provider";
 import CheckTableWrapper from "../../../components/economics/checktable";
 import {useAuth} from "../../../model/auth/use-auth";
@@ -13,7 +13,7 @@ const ChecksTable = () => {
     const searchDebounce = useRef<NodeJS.Timeout | null>(null)
     const [apiResponse, setApiResponse] = useState<CheckResponse & {checks: Check[]} | null>(null)
     const [isLoading, setIsLoading] = useState(false)
-    const [params, setParams] = useState<CheckTableParams>(CheckTableParams.default())
+    const [params, setParams] = useState<CheckTableParams>(CheckTableParamsCompanion.default())
     const [selectedCheck, setSelectedCheck] = useState<Check | null>(null)
     const [errMsg, setErrMsg] = useState("")
 

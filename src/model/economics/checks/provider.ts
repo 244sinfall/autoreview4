@@ -1,9 +1,9 @@
-import {CheckResponse, CheckStatusValue, CheckTableParams} from "./types";
+import {CheckResponse, CheckStatusValue, CheckTableParams, CheckTableParamsCompanion} from "./types";
 import {APIConfig} from "../../../config/api";
 import {Check} from "./check";
 
 export class CheckProvider {
-    private params: CheckTableParams = CheckTableParams.default()
+    private params: CheckTableParams = CheckTableParamsCompanion.default()
     private isApiResponseIsError(data: unknown): data is { error: string } {
         return typeof data === "object" && data !== null && "error" in data
     }
@@ -29,7 +29,7 @@ export class CheckProvider {
         let delimiter = "&"
         let query = "?"
         for(let prop in this.params) {
-            if(!CheckTableParams.is(prop)) continue
+            if(!CheckTableParamsCompanion.is(prop)) continue
             if(this.params[prop]) {
                 if(prop === "status" && this.params[prop] === "Все") continue;
                 if(prop === "category" && this.params[prop] === "Все получатели") continue;
