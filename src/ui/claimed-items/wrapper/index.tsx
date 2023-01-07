@@ -21,10 +21,16 @@ const ClaimedItemTable = (props: ClaimedItemTableProps) => {
     const [displayingContent, setDisplayingContent] = useState<ClaimedItemInterface[]>([])
     useEffect(() => {
         if(!state.search) return setDisplayingContent(state.content)
-        setDisplayingContent(state.content.filter(content =>
-            content.name.includes(state.search) || content.owner.includes(state.search)
-            || content.ownerProofLink.includes(state.search) || content.reviewer.includes(state.search)
-            || content.acceptor.includes(state.search) || content.additionalInfo.includes(state.search)
+        setDisplayingContent(state.content.filter(content => {
+                const searchPhrase = state.search.toLowerCase()
+                return content.name.toLowerCase().includes(searchPhrase)
+                    || content.owner.toLowerCase().includes(searchPhrase)
+                    || content.ownerProofLink.toLowerCase().includes(searchPhrase)
+                    || content.reviewer.toLowerCase().includes(searchPhrase)
+                    || content.acceptor.toLowerCase().includes(searchPhrase)
+                    || content.additionalInfo.toLowerCase().includes(searchPhrase)
+                    || content.link.toLowerCase().includes(searchPhrase)
+            }
         ))
     }, [state.content, state.search])
     const dispatch = useAppDispatch();
