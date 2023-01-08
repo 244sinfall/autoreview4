@@ -44,6 +44,9 @@ export default class Visitor {
     get authorized() {
         return false
     }
+    get isLoaded() {
+        return true
+    }
     get permission() {
         return this._permission
     }

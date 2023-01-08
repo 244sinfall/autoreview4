@@ -1,22 +1,23 @@
 import React, {useMemo} from 'react';
-import {useAuth} from "../../model/auth/use-auth";
-import {PermissionValue} from "../../model/auth/user";
+import {PERMISSION, PermissionValue} from "../../model/auth/user";
 import AccountManager from "../auth";
 import ProtectorFrame from "../../components/protector/frame";
 import ProtectorNoAccess from "../../components/protector/no-access/indei";
+import {useAppSelector} from "../../model/hooks";
 
 const Protector = (props: {children: React.ReactNode[] | React.ReactNode, accessLevel: PermissionValue}) => {
-    const {currentUser, isLoading} = useAuth()
+    const currentUser = useAppSelector(state => state.user.user)
     
     const protector = useMemo(() => {
-        if(isLoading || !currentUser.authorized) {
+        if(props.accessLevel === PERMISSION.Player) return
+        if(!currentUser.authorized || !currentUser.isLoaded) {
             return <AccountManager />
 
         } else if(!currentUser.canAccess(props.accessLevel)) {
             return <ProtectorNoAccess/>
         }
         
-    }, [currentUser, isLoading, props.accessLevel])
+    }, [currentUser,props.accessLevel])
     
     return (
         <>

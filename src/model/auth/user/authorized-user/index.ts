@@ -17,10 +17,11 @@ export default class AuthorizedUser extends Visitor {
         return this._user.getIdToken()
     }
     canAccess(permission: PermissionValue) {
-        if(this._permission === null) {
-            this.fetchPermission()
-        }
+        if(this._permission === null) return false
         return this._permission >= permission
+    }
+    get isLoaded() {
+        return this.permission !== null
     }
     get email() {
         return this._user.email ?? ""

@@ -6,6 +6,13 @@ import {removeUser, setUser} from "./user/reducer";
 import AuthorizedUser from "./user/authorized-user";
 import Authorizer, {UserLoginCredentials, UserRegisterCredentials} from "./authorizer";
 
+
+/**
+ * Используется для явного отслеживания статуса авторизации.
+ * Для страниц, где обязательно нужна авторизация для просмотра, стоит обернуть компонент в {Protector}
+ * Использовать useAuth стоит на верхних уровнях контейнера, так как использование хука на разных уровнях приведет
+ * к множественному срабатыванию слушателя авторизации.
+ */
 export const useAuth = () => {
     const currentUser = useAppSelector(state => state.user.user)
     const [isLoading, setIsLoading] = useState(!!localStorage.getItem("hasFirebaseSession") && !currentUser.authorized)
@@ -25,23 +32,24 @@ export const useAuth = () => {
         localStorage.setItem("hasFirebaseSession", "true")
         return
     }
-    const restoreSession = useCallback(async(user: User) => {
-        const newUser = new AuthorizedUser(user)
-        await newUser.fetchPermission()
-        dispatch(setUser(newUser))
-        localStorage.setItem("hasFirebaseSession", "true")
-    }, [dispatch])
-
     useEffect(() => {
+        const restoreSession = async(user: User) => {
+            const newUser = new AuthorizedUser(user)
+            await newUser.fetchPermission()
+            dispatch(setUser(newUser))
+            localStorage.setItem("hasFirebaseSession", "true")
+        }
         if(isLoading) {
             const unsub = onAuthStateChanged(auth, user => {
                 if (user && !currentUser.authorized)  {
                     restoreSession(user).then(() => setIsLoading(false))
+                } else {
+                    setIsLoading(false)
                 }
             })
             return () => unsub()
         }
 
-    }, [currentUser, dispatch, isLoading, logout, restoreSession])
+    }, [currentUser, dispatch, isLoading, logout])
     return { isLoading, currentUser, logout, createSession }
 }
