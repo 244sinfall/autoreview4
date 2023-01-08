@@ -1,21 +1,28 @@
 import React from 'react';
 import Selector from "../../../common/selector";
-import {PermissionName} from "../../../../model/auth/user";
 import './style.css'
-export type PermissionFilterOptions = "Все" | PermissionName
+import {AdminReducerPermissionFilter, AdminReducerPermissionFilterList} from "../../../../model/admin/types";
+import Field from "../../../common/field";
+import TextInput from "../../../common/text-input";
 
 interface AdminUserListFilterProps {
-    possiblePermissions: PermissionFilterOptions[],
-    onPermissionChange: (newPermission: PermissionFilterOptions) => void
+    onPermissionFilter: (newPermission: AdminReducerPermissionFilter) => void
+    onSearch: (newSearch: string) => void
 }
 
 const AdminUserListFilter = (props: AdminUserListFilterProps) => {
     return (
         <div className="user-list-filter">
-            <span className="user-list-filter-choice">Фильтровать по уровню доступа
-                <Selector options={props.possiblePermissions}
-                          onSelectionChange={(v) => props.onPermissionChange(v)}/>
-            </span>
+            <p className="user-list-filter-title">Фильтры:</p>
+            <div className="user-list-filters">
+                <Field title="Уровень доступа">
+                <Selector options={AdminReducerPermissionFilterList}
+                          onSelectionChange={props.onPermissionFilter}/>
+                </Field>
+                <Field title="Поиск">
+                    <TextInput onChange={props.onSearch}/>
+                </Field>
+            </div>
         </div>
     );
 };

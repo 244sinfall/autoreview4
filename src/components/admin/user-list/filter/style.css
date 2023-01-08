@@ -1,9 +1,13 @@
 .user-list-filter {
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
 }
 
-.user-list-filter-choice {
+.user-list-filters {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
 }

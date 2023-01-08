@@ -1,39 +1,25 @@
-import React, {useState} from 'react';
-import {AdminUserData} from "../../../../model/auth/controllers/admin-controller";
-import RadioButtonGroup from "../../../common/radio-button-group";
-import Visitor, {PermissionName, PermissionNames, PermissionValue} from "../../../../model/auth/user";
-import LoadingSpinner from "../../../common/loading-spinner";
+import React from 'react';
+import Visitor from "../../../../model/auth/user";
 import './style.css'
+import {AdminUserData} from "../../../../model/auth/controllers/admin-controller/types";
+import useStrictClickHandler from "../../../common/strict-click-handler";
 
 interface AdminUserDataProps  {
     user: AdminUserData
-    onPermissionChange: (newPermission: PermissionValue) => Promise<void>
+    onClick: () => void
 }
 
-const AdminUserInfo = (props: AdminUserDataProps) => {
-    const [isLoading, setIsLoading] = useState(false);
-    const [value, setValue] = useState<PermissionName>(Visitor.getPermissionName(props.user.permission))
-    const onChange = async (newPermission: PermissionName) => {
-        setIsLoading(true)
-        const newPermissionValue = Visitor.getPermissionValueByName(newPermission)
-        await props.onPermissionChange(newPermissionValue)
-        setValue(newPermission)
-        setIsLoading(false)
-    }
+const AdminUserInfoRow = (props: AdminUserDataProps) => {
+    const mouseCallbacks = useStrictClickHandler(props.onClick)
     return (
-        <div className="user-data">
-            <span className="user-data__credentials">
-                {props.user.name} ({props.user.email})
-            </span>
-            <LoadingSpinner spin={isLoading}>
-                <RadioButtonGroup options={PermissionNames}
-                                  groupName={props.user.email+"-role-selector"}
-                                  value={value}
-                                  onSelectionChange={onChange}
-                />
-            </LoadingSpinner>
-        </div>
+        <tr id={props.user.email + "-row"} className="table-row"
+            onMouseDown={mouseCallbacks.recordMousePos}
+            onMouseUp={mouseCallbacks.compareMousePos}>
+            <td className="table-content" data-label="Ник:">{props.user.name}</td>
+            <td className="table-content" data-label="Почта:">{props.user.email}</td>
+            <td className="table-content" data-label="Доступ:">{Visitor.getPermissionName(props.user.permission)}</td>
+        </tr>
     );
 };
 
-export default React.memo(AdminUserInfo);
+export default React.memo(AdminUserInfoRow);

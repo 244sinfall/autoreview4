@@ -4,6 +4,7 @@ import {userSlice} from "./auth/user/reducer";
 import {charsheetReviewSLice} from "./charsheets/reducer";
 import {themeSlice} from "./theme/slice";
 import {claimedItemsSlice} from "./claimed-items/reducer";
+import adminReducer from './admin/reducer'
 
 
 export const store = configureStore({
@@ -12,7 +13,8 @@ export const store = configureStore({
         event: eventReviewSLice.reducer,
         user: userSlice.reducer,
         theme: themeSlice.reducer,
-        claimedItems: claimedItemsSlice.reducer
+        claimedItems: claimedItemsSlice.reducer,
+        admin: adminReducer
         // comments: commentsReducer,
         // users: usersReducer,
     }, middleware: getDefaultMiddleware => getDefaultMiddleware({

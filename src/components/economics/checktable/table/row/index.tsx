@@ -3,22 +3,14 @@ import parse from 'html-react-parser';
 import moment from "moment";
 import {Check} from "../../../../../model/economics/checks/check";
 import {parseStringWithLinks} from "../../../../../utils/parse-string-with-links";
+import useStrictClickHandler from "../../../../common/strict-click-handler";
 
 const CheckRow = (props: {check: Check, onClick: (check: Check) => void}) => {
-    let mousePos: [number, number]
-    const callbacks = {
-        recordMousePos: (e: React.MouseEvent<HTMLTableRowElement>) => mousePos = [e.clientX, e.clientY],
-        compareMousePos: (e: React.MouseEvent<HTMLTableRowElement>) => {
-            // if(mousePos[0] === e.clientX && mousePos[1] === e.clientY && e.target.tagName.toUpperCase() === "TD") {
-            if(mousePos[0] === e.clientX && mousePos[1] === e.clientY) {
-                props.onClick(props.check)
-            }
-        }
-    }
+    const mouseCallbacks = useStrictClickHandler(() => props.onClick(props.check))
     return (
         <tr id={props.check.check.id + "-row"} className="table-row"
-            onMouseDown={callbacks.recordMousePos}
-            onMouseUp={callbacks.compareMousePos}>
+            onMouseDown={mouseCallbacks.recordMousePos}
+            onMouseUp={mouseCallbacks.compareMousePos}>
             <td className="table-content" data-label="ID:">{props.check.check.id}</td>
             <td className="table-content" data-label="Дата и время:">{moment(props.check.check.date+"+03:00",
                 "DD.MM.YYYY hh:mmZ").toDate().toLocaleString("ru", { dateStyle: "medium", timeStyle: "short" })}</td>
