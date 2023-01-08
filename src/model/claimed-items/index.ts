@@ -1,4 +1,4 @@
-import {APIConfig} from "../../config/api";
+import APIConfig from "../../config/api";
 import ClaimedItemsHTMLParts from "./boilerplate";
 import {
     ClaimedItemInterface, ClaimedItemMinimal,

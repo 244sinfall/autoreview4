@@ -1,5 +1,5 @@
 import {CheckResponse, CheckStatusValue, CheckTableParams, CheckTableParamsCompanion} from "./types";
-import {APIConfig} from "../../../config/api";
+import APIConfig from "../../../config/api";
 import {Check} from "./check";
 
 export class CheckProvider {

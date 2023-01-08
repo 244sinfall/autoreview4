@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ClaimedItemInterface, ClaimedItemsTables, DefaultClaimedItemPages, DefaultClaimedItemState} from "./types";
-import {APIConfig} from "../../config/api";
+import APIConfig from "../../config/api";
 
 export const updateClaimedItemsContent = createAsyncThunk("claimedItems/fetchItems",
     async () => {

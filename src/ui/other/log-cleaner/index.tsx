@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {APIConfig} from "../../../config/api";
+import APIConfig from "../../../config/api";
 import FileLogCleaner from "../../../components/other/log-cleaner";
 
 const LogCleaner = () => {

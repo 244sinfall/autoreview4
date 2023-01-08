@@ -1,4 +1,4 @@
-export const APIConfig = {
+const APIConfig = {
     address: process.env["REACT_APP_API_ADDRESS"],
     endpoints: {
         charsheets: {
@@ -24,3 +24,5 @@ export const APIConfig = {
         }
     }
 } as const
+
+export default APIConfig

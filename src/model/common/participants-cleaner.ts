@@ -1,4 +1,4 @@
-import {APIConfig} from "../../config/api";
+import APIConfig from "../../config/api";
 
 export interface ParticipantsCleanerResponse {
     cleanedText: string,
