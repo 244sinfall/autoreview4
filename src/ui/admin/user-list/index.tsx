@@ -1,12 +1,9 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import ContentTitle from "../../../components/common/content-title";
-import Visitor from "../../../model/auth/user";
 import AdminUserListFilter from "../../../components/admin/user-list/filter";
 import AdminUserList from "../../../components/admin/user-list";
 import AdminUserInfo from "../../../components/admin/user-list/user";
-import {useAppDispatch, useAppSelector} from "../../../model/hooks";
-import {AdminUserData} from "../../../model/auth/controllers/admin-controller/types";
-import AdminController from "../../../model/auth/controllers/admin-controller";
+import {useAppDispatch, useAppSelector} from "../../../services/services/store";
 import {
     fetchAdminUserList,
     setPage,
@@ -16,6 +13,9 @@ import {
 } from "../../../model/admin/reducer";
 import {AdminReducerPermissionFilter} from "../../../model/admin/types";
 import AdminSelectedUserModal from "./modal";
+import {AdminUserData} from "../../../model/user/controllers/admin";
+import {useController} from "../../../model/user/use-controller";
+import {PermissionValueByName} from "../../../model/user";
 
 const UsersList = () => {
     const state = useAppSelector(state => ({
@@ -26,7 +26,7 @@ const UsersList = () => {
         filter: state.admin.filter
     }))
     const dispatch = useAppDispatch();
-    const controller = useRef<AdminController>(new AdminController(state.user));
+    const controller = useController();
     const [displayingUser, setDisplayingUser] = useState<AdminUserData[]>([]);
     const callbacks = {
         renderUser: useCallback((user: AdminUserData) =>
@@ -37,8 +37,10 @@ const UsersList = () => {
     }
 
     useEffect(() => {
-        dispatch(fetchAdminUserList(controller.current))
-    },[dispatch])
+        if(controller.is("Admin")) {
+            dispatch(fetchAdminUserList(controller))
+        }
+    },[controller, dispatch])
     useEffect(() => {
         let users = state.userList
         if(state.filter.search)
@@ -49,7 +51,8 @@ const UsersList = () => {
             })
         if(state.filter.permission !== "Все") {
             const permission: Exclude<AdminReducerPermissionFilter, "Все"> = state.filter.permission
-            users = users.filter(user => user.permission === Visitor.getPermissionValueByName(permission))
+            const permissionValue = PermissionValueByName[permission]
+            users = users.filter(user => user.permission === permissionValue)
         }
         setDisplayingUser(users)
     }, [state.filter.search, state.filter.permission, state.userList])
@@ -64,7 +67,7 @@ const UsersList = () => {
                            page={state.page} 
                            onPaginate={(page) => dispatch(setPage(page))} 
                            usersAmount={displayingUser.length}/>
-            <AdminSelectedUserModal controller={controller.current}/>
+            {controller.is("Admin") && <AdminSelectedUserModal controller={controller}/>}
         </ContentTitle>
     );
 };

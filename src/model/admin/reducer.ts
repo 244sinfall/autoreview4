@@ -1,15 +1,14 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import AdminController from "../auth/controllers/admin-controller";
 import AdminReducerDefaultState, {AdminReducerPermissionFilter} from "./types";
-import {AdminUserData} from "../auth/controllers/admin-controller/types";
-import Visitor, {PermissionName} from "../auth/user";
+import {PermissionName, PermissionValueByName} from "../user";
+import AdminController, {AdminUserData} from "../user/controllers/admin";
 
 export const fetchAdminUserList = createAsyncThunk("admin/fetchUsers", async (controller: AdminController) => {
     return await controller.getAllUsers()
 })
 export const setUserPermission = createAsyncThunk("admin/setUserPermission",
     async (params: {controller: AdminController, user: AdminUserData, newPermission: PermissionName}) => {
-    const permission = Visitor.getPermissionValueByName(params.newPermission)
+    const permission = PermissionValueByName[params.newPermission]
     await params.controller.changeRole(params.user.email, permission)
     return {...params.user, permission: permission}
 })

@@ -2,12 +2,10 @@ import React, {useCallback, useEffect} from 'react';
 import ClaimedItemsWrapper from "../../components/claimed-items";
 import ClaimedItemTable from "./wrapper";
 import { setSearch, updateClaimedItemsContent} from "../../model/claimed-items/reducer";
-import {useAppDispatch, useAppSelector} from "../../model/hooks";
+import {useAppDispatch, useAppSelector} from "../../services/services/store";
 import ClaimedItemModal from "./modal";
 import {ClaimedItemsHTMLGenerator} from "../../model/claimed-items";
-import {PERMISSION} from "../../model/auth/user";
-import {useAuth} from "../../model/auth/use-auth";
-
+import {PERMISSION} from "../../model/user";
 
 const ClaimedItemsPage = () => {
 
@@ -20,9 +18,9 @@ const ClaimedItemsPage = () => {
     const state = useAppSelector(state => ({
         search: state.claimedItems.search,
         content: state.claimedItems.content,
-        error: state.claimedItems.error
+        error: state.claimedItems.error,
+        user: state.user.user
     }))
-    const {currentUser} = useAuth()
     const callbacks = {
         onHTMLGenerate: useCallback(async() => {
             const provider = new ClaimedItemsHTMLGenerator(state.content)
@@ -32,7 +30,7 @@ const ClaimedItemsPage = () => {
 
     return (
         <ClaimedItemsWrapper currentSearch={state.search}
-                             canGenerateHTML={currentUser.canAccess(PERMISSION.Admin)}
+                             canGenerateHTML={state.user.permission >= PERMISSION.Admin}
                              onHTMLGenerate={callbacks.onHTMLGenerate}
                              onSearch={(newSearch) => dispatch(setSearch(newSearch))}
                              error={state.error}>

@@ -1,5 +1,5 @@
-import {AdminUserData} from "../auth/controllers/admin-controller/types";
-import {PermissionName} from "../auth/user";
+import {PermissionName} from "../user";
+import {AdminUserData} from "../user/controllers/admin";
 
 export type AdminReducerPermissionFilter = "Все" | PermissionName
 

@@ -1,9 +1,9 @@
 import React, {useCallback} from 'react';
-import {useAppDispatch, useAppSelector} from "../../../../model/hooks";
+import {useAppDispatch, useAppSelector} from "../../../../services/services/store";
 import AdminSelectedUserModalWrapper from "../../../../components/admin/user-list/modal";
 import {removeSelectedUser, setUserPermission} from "../../../../model/admin/reducer";
-import AdminController from "../../../../model/auth/controllers/admin-controller";
-import {PermissionName} from "../../../../model/auth/user";
+import {PermissionName} from "../../../../model/user";
+import AdminController from "../../../../model/user/controllers/admin";
 
 const AdminSelectedUserModal = (props: { controller: AdminController }) => {
     const state = useAppSelector(state => ({

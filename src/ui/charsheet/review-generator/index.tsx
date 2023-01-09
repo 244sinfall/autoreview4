@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import {useAppDispatch, useAppSelector} from "../../../model/hooks";
+import {useAppDispatch, useAppSelector} from "../../../services/services/store";
 import {setCharName, setReviewerDiscord, setReviewerProfile} from "../../../model/charsheets/reducer";
 import CharsheetReviewTemplate from "../../../model/charsheets";
 import ReviewGenerator from "../../../components/charsheet/review/review-generator";

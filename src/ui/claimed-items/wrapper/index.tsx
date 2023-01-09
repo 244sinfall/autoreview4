@@ -2,9 +2,9 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {ClaimedItemInterface, ClaimedItemsTables, ClaimedItemTitles} from "../../../model/claimed-items/types";
 import ClaimedItemCategory from "../../../components/claimed-items/table";
 import ClaimedItemRow from "../../../components/claimed-items/row";
-import {useAppDispatch, useAppSelector} from "../../../model/hooks";
+import {useAppDispatch, useAppSelector} from "../../../services/services/store";
 import {setAddModal, setEditModal, setPage} from "../../../model/claimed-items/reducer";
-import {PERMISSION} from "../../../model/auth/user";
+import {PERMISSION} from "../../../model/user";
 type ClaimedItemTableProps = {
     quality: keyof ClaimedItemsTables
 }
@@ -41,7 +41,7 @@ const ClaimedItemTable = (props: ClaimedItemTableProps) => {
     const dispatch = useAppDispatch();
     const renderFunction = useCallback((item: ClaimedItemInterface) => {
         return <ClaimedItemRow key={item.id} item={item} onClick={() => {
-            if(state.user.canAccess(PERMISSION.Reviewer)) {
+            if(state.user.permission >= PERMISSION.Reviewer) {
                 dispatch(setEditModal(item))
             }
         }}/>
@@ -50,7 +50,7 @@ const ClaimedItemTable = (props: ClaimedItemTableProps) => {
         <ClaimedItemCategory isShowing={isShowing} page={state.page} onPaginate={(page) =>
                                                                     dispatch(setPage({key: props.quality, page}))}
                              onAdd={() => dispatch(setAddModal(props.quality))}
-                             isReviewer={state.user.canAccess(PERMISSION.Reviewer)}
+                             isReviewer={state.user.permission >= PERMISSION.Reviewer}
                              content={displayingContent}
                              isLoading={state.isLoading}
                              title={ClaimedItemTitles[props.quality]}

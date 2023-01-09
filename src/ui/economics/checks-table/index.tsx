@@ -1,14 +1,19 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {PERMISSION} from "../../../model/auth/user";
+import {PERMISSION} from "../../../model/user";
 import CheckRow from "../../../components/economics/checktable/table/row";
 import {Check} from "../../../model/economics/checks/check";
 import {CheckResponse, CheckTableParams, CheckTableParamsCompanion} from "../../../model/economics/checks/types";
 import {CheckProvider} from "../../../model/economics/checks/provider";
 import CheckTableWrapper from "../../../components/economics/checktable";
-import {useAuth} from "../../../model/auth/use-auth";
+import {useAppSelector} from "../../../services/services/store";
+import useServices from "../../../services/use-services";
+import {NotAuthorizedException} from "../../../model/exceptions";
 
 const ChecksTable = () => {
-    const {currentUser} = useAuth()
+    const state = useAppSelector((state) => ({
+        user: state.user.user
+    }))
+    const services = useServices();
     const provider = useRef(new CheckProvider());
     const searchDebounce = useRef<NodeJS.Timeout | null>(null)
     const [apiResponse, setApiResponse] = useState<CheckResponse & {checks: Check[]} | null>(null)
@@ -41,10 +46,16 @@ const ChecksTable = () => {
     
     const callbacks = {
         onForce: useCallback(async() => {
-            if(!currentUser.canAccess(PERMISSION.GM)) throw new Error("Недостаточно прав")
-            const token = await currentUser.getToken()
-            await updateChecks(token)
-        }, [currentUser, updateChecks]),
+            if(state.user.permission < PERMISSION.GM) throw new Error("Недостаточно прав")
+            try {
+                const token = await services.get("FirebaseUser").getToken()
+                await updateChecks(token)
+            } catch (e: unknown) {
+                if(e instanceof NotAuthorizedException) {
+                    setErrMsg("Вы не авторизованы!")
+                }
+            }
+        }, [services, state.user.permission, updateChecks]),
         onParamsChange: useCallback(<K extends keyof CheckTableParams,V extends CheckTableParams[K]>(key: K, value: V) => {
             if(key === "search") {
                 if(searchDebounce.current) clearTimeout(searchDebounce.current)
@@ -61,18 +72,18 @@ const ChecksTable = () => {
         }, []),
         renderCheck: useCallback((check: Check) => {
             return <CheckRow key={check.check.id} check={check} onClick={() => {
-                if(currentUser.canAccess(PERMISSION.Arbiter)) {
+                if(state.user.permission >= PERMISSION.Arbiter) {
                     setSelectedCheck(check)
                 }
             }} />
-        }, [currentUser])
+        }, [state.user])
     }
 
     return (
         <CheckTableWrapper renderCheck={callbacks.renderCheck}
                            onForce={callbacks.onForce}
                            isLoading={isLoading}
-                           isUserAbleToForce={currentUser.canAccess(PERMISSION.GM)}
+                           isUserAbleToForce={state.user.permission >= PERMISSION.GM}
                            onParamsChange={callbacks.onParamsChange}
                            params={params}
                            error={errMsg}

@@ -10,19 +10,19 @@ import ArbitersPage from "./ui/arbiters/arbiters-page";
 import AdminPage from "./ui/admin/admin-page";
 import EconomicsPage from "./ui/economics/economics-page";
 import ClaimedItemsPage from "./ui/claimed-items";
-import {PERMISSION} from "./model/auth/user";
+import {PERMISSION} from "./model/user";
 import {Types} from "./model/header/types";
-import {useAppDispatch, useAppSelector} from "./model/hooks";
-import {changeTheme} from "./model/theme/slice";
+import {useAppDispatch, useAppSelector} from "./services/services/store";
+import {changeTheme} from "./model/theme";
 import {Theme} from "./model/theme/types";
+import {useAuth} from "./model/auth/use-auth";
 
 
 
 function App() {
-    const dispatch = useAppDispatch();
-
+    useAuth()
+    const dispatch = useAppDispatch()
     const currentTheme = useAppSelector(state => state.theme.selected);
-
     const defaultMenuElements = useMemo(() => {
         const switchTheme = (theme: Theme) => {
             dispatch(changeTheme(theme));

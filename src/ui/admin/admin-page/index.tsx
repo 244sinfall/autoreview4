@@ -1,7 +1,7 @@
 import React from 'react';
 import Protector from "../../protector";
 import UsersList from "../user-list";
-import {PERMISSION} from "../../../model/auth/user";
+import {PERMISSION} from "../../../model/user";
 import {LayoutResponsiveGrid} from "../../../components/common/layouts/responsive-grid";
 
 const AdminPage = () => {

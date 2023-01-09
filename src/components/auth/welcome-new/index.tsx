@@ -9,7 +9,7 @@ import ContentTitle from "../../common/content-title";
 
 type WelcomeNewUserProps = {
     isLoading: boolean,
-    onSubmit: (credentials: UserLoginCredentials | UserRegisterCredentials, formState: "reg" | "auth") => Promise<void>
+    onSubmit: (credentials: UserLoginCredentials | UserRegisterCredentials, formState: "reg" | "auth") => Promise<unknown>
     error?: string
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import ModalTitle from "../../../common/modal-title";
-import {AdminUserData} from "../../../../model/auth/controllers/admin-controller/types";
-import Visitor, {PermissionName, PermissionNames} from "../../../../model/auth/user";
+import {PermissionName, PermissionNameByValue, PermissionNames} from "../../../../model/user";
 import Field from "../../../common/field";
 import RadioButtonGroup from "../../../common/radio-button-group";
 
 import './styles.css'
+import {AdminUserData} from "../../../../model/user/controllers/admin";
 
 type AdminSelectedUserModalWrapperProps = {
     user: AdminUserData & {error?: string},
@@ -21,7 +21,7 @@ const AdminSelectedUserModalWrapper = (props: AdminSelectedUserModalWrapperProps
             <Field title={"Доступ"} containerOptions={{direction: "column"}}>
                 <RadioButtonGroup options={PermissionNames}
                                   groupName={`${props.user.email}-permission-control`}
-                                  value={Visitor.getPermissionName(props.user.permission)}
+                                  value={PermissionNameByValue[props.user.permission]}
                                   onSelectionChange={props.onPermissionChange}/>
             </Field>
         </ModalTitle>

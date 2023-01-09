@@ -1,8 +1,8 @@
 import React from 'react';
-import Visitor from "../../../../model/auth/user";
+import {PermissionNameByValue} from "../../../../model/user";
 import './style.css'
-import {AdminUserData} from "../../../../model/auth/controllers/admin-controller/types";
 import useStrictClickHandler from "../../../common/strict-click-handler";
+import {AdminUserData} from "../../../../model/user/controllers/admin";
 
 interface AdminUserDataProps  {
     user: AdminUserData
@@ -17,7 +17,7 @@ const AdminUserInfoRow = (props: AdminUserDataProps) => {
             onMouseUp={mouseCallbacks.compareMousePos}>
             <td className="table-content" data-label="Ник:">{props.user.name}</td>
             <td className="table-content" data-label="Почта:">{props.user.email}</td>
-            <td className="table-content" data-label="Доступ:">{Visitor.getPermissionName(props.user.permission)}</td>
+            <td className="table-content" data-label="Доступ:">{PermissionNameByValue[props.user.permission]}</td>
         </tr>
     );
 };

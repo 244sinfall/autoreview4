@@ -1,9 +1,9 @@
 import React, {useMemo} from 'react';
 import './style.css'
-import {AdminUserData} from "../../../model/auth/controllers/admin-controller/types";
 import LoadingSpinner from "../../common/loading-spinner";
 import Table from "../../common/table";
 import Pagination from "../../common/pagination";
+import {AdminUserData} from "../../../model/user/controllers/admin";
 interface AdminUserListProps {
     users: AdminUserData[],
     render: (user: AdminUserData) => JSX.Element

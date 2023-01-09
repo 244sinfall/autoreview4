@@ -4,7 +4,7 @@ import logo from '../../assets/dm_logo.png'
 import {Types} from "../../model/header/types";
 import {Link, NavLink} from "react-router-dom";
 import {ReactComponent as Sidebar} from '../../assets/sidebar.svg'
-import {useAppSelector} from "../../model/hooks";
+import {useAppSelector} from "../../services/services/store";
 
 const Header = (props: { menuElements: Types[] }) => {
     const [sidebarState, setSidebarState] = useState<"closed" | "opened">("closed")
@@ -48,7 +48,7 @@ const Header = (props: { menuElements: Types[] }) => {
     const buildHeaderElements = useMemo(() => {
         if(props.menuElements) {
             const availableElements = props.menuElements.filter((element) => {
-                return !element.accessLevel || currentUser.canAccess(element.accessLevel)
+                return !element.accessLevel || currentUser.permission >= element.accessLevel
             })
             return availableElements.map((menuElement) => {
                 const LiComponent = () => <li key={menuElement.menuName} className="header__menu__element">

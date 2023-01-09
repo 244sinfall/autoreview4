@@ -1,7 +1,6 @@
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from "firebase/auth";
 import {auth, db} from "./global";
 import {doc, setDoc} from "firebase/firestore";
-import Visitor from "./user";
 
 
 export type UserLoginCredentials = {
@@ -17,11 +16,6 @@ export type UserRegOnlyCredentials = {
 export type UserRegisterCredentials = UserLoginCredentials & UserRegOnlyCredentials
 
 export default class Authorizer {
-    private _user: Visitor
-    constructor(user: Visitor) {
-        if(user.authorized) throw Error("Пользователь уже авторизован")
-        this._user = user
-    }
     async login(credentials: UserLoginCredentials) {
         if(!credentials.password || !credentials.email || !credentials.email.includes("@")) throw Error("Не все поля заполнены")
         const result = await signInWithEmailAndPassword(auth, credentials.email, credentials.password)

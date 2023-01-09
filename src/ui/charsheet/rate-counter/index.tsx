@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import ContentTitle from "../../../components/common/content-title";
-import {useAppDispatch, useAppSelector} from "../../../model/hooks";
+import {useAppDispatch, useAppSelector} from "../../../services/services/store";
 import {updateRates} from "../../../model/charsheets/reducer";
 import RateCounterRate from "../../../components/charsheet/rate-counter/rate";
 import RateCounterTotalRate from "../../../components/charsheet/rate-counter/total-rate";

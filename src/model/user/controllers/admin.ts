@@ -1,15 +1,17 @@
+import ReviewerController from "./reviewer";
+import {PermissionValue} from "../index";
 import {collection, getDocs, query, setDoc, where} from "firebase/firestore";
-import {db} from "../../global";
-import Visitor, {PERMISSION, PermissionValue} from "../../user";
-import {FirestoreDataException, NoAccessException} from "../../exceptions";
-import {AdminUserData} from "./types";
-
-export default class AdminController {
-    _user: Visitor
-    constructor(user: Visitor) {
-        if(!user.canAccess(PERMISSION.Admin)) throw new NoAccessException("Контроллер доступен только администраторам")
-        this._user = user
-    }
+import {db} from "../../auth/global";
+import {FirestoreDataException} from "../../exceptions";
+/**
+ * Схема хранения данных о пользователе в Cloud Firestore
+ */
+export type AdminUserData = {
+    name: string,
+    permission: PermissionValue,
+    email: string
+}
+export default class AdminController extends ReviewerController{
     async changeRole(forEmail: string, to: PermissionValue) {
         const col = collection(db, 'permissions')
         const q = query(col, where('email', '==', forEmail))

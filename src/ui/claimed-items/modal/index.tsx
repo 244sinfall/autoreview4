@@ -1,5 +1,5 @@
 import React, {useCallback, useRef} from 'react';
-import {useAppDispatch, useAppSelector} from "../../../model/hooks";
+import {useAppDispatch, useAppSelector} from "../../../services/services/store";
 import ClaimedItemAdder from "../../../components/claimed-items/add";
 import {
     removeAddModal,
