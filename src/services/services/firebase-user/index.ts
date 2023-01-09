@@ -3,6 +3,7 @@ import {onAuthStateChanged, User} from "firebase/auth";
 import {auth} from "../../../model/auth/global";
 import {NotAuthorizedException} from "../../../model/exceptions";
 import ServicesProvider from "../../index";
+import {destroySession, restoreSession} from "../../../model/user/reducer";
 
 export default class FirebaseUser extends Service {
     private user: User | null = null
@@ -13,9 +14,12 @@ export default class FirebaseUser extends Service {
             if(user) {
                 this.user = user;
                 localStorage.setItem("hasFirebaseSession", "true")
+                this.services.get("Store").getInstance().dispatch(restoreSession(user))
+
             } else {
                 this.user = null;
                 localStorage.removeItem("hasFirebaseSession")
+                this.services.get("Store").getInstance().dispatch(destroySession())
             }
         })
     }

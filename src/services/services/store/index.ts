@@ -30,7 +30,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 export default class Store extends Service {
     private _store = ConfiguredStore
 
-    get() {
+    getInstance() {
         return this._store
     }
 }

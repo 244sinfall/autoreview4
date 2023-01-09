@@ -4,8 +4,9 @@ import WelcomeExistingUser from "../../components/auth/welcome-existing";
 import {useNavigate} from "react-router-dom";
 import WelcomeNewUser from "../../components/auth/welcome-new";
 import {UserLoginCredentials, UserRegisterCredentials} from "../../model/auth/authorizer";
-import {createSession, destroySession} from "../../model/user/reducer";
+import {destroySession} from "../../model/user/reducer";
 import {useAppDispatch, useAppSelector} from "../../services/services/store";
+import useServices from "../../services/use-services";
 
 
 const AccountManager = () => {
@@ -14,18 +15,24 @@ const AccountManager = () => {
         isLoading: state.user.isLoading
     }))
     const dispatch = useAppDispatch()
+    const authorizer = useServices().get("Authorizer")
     const [errMsg, setErrMsg] = useState("")
     const nav = useNavigate();
     const callbacks = {
-        onSubmit: useCallback(async(credentials: UserLoginCredentials | UserRegisterCredentials, formState: "reg" | "auth") => {
-            try {
-                return dispatch(createSession({cred: credentials, formState}))
-            } catch (e: unknown) {
-                if(e instanceof Error) {
-                    setErrMsg(e.message)
-                }
-            }
-        }, [dispatch])
+        onRegister: useCallback(async(credentials: UserRegisterCredentials) => {
+            return authorizer.signup(credentials)
+                .catch(e => {
+                    if(e instanceof Error)
+                        setErrMsg(e.message)
+                })
+        }, [authorizer]),
+        onLogin: useCallback(async(credentials: UserLoginCredentials) => {
+            return authorizer.login(credentials)
+                .catch(e => {
+                    if(e instanceof Error)
+                        setErrMsg(e.message)
+                })
+        }, [authorizer]),
     }
     return (
         <>
@@ -36,7 +43,10 @@ const AccountManager = () => {
                                      permissionName={state.isLoading ? "Загрузка..." : PermissionNameByValue[state.user.permission]}
                                      onLogout={()=> dispatch(destroySession())}/>
             :
-                <WelcomeNewUser onSubmit={callbacks.onSubmit} error={errMsg} isLoading={state.isLoading}/>
+                <WelcomeNewUser onLogin={callbacks.onLogin}
+                                error={errMsg}
+                                isLoading={state.isLoading}
+                                onRegister={callbacks.onRegister}/>
             }
         </>
     );

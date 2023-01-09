@@ -15,12 +15,10 @@ import {Types} from "./model/header/types";
 import {useAppDispatch, useAppSelector} from "./services/services/store";
 import {changeTheme} from "./model/theme";
 import {Theme} from "./model/theme/types";
-import {useAuth} from "./model/auth/use-auth";
 
 
 
 function App() {
-    useAuth()
     const dispatch = useAppDispatch()
     const currentTheme = useAppSelector(state => state.theme.selected);
     const defaultMenuElements = useMemo(() => {

@@ -9,7 +9,8 @@ import ContentTitle from "../../common/content-title";
 
 type WelcomeNewUserProps = {
     isLoading: boolean,
-    onSubmit: (credentials: UserLoginCredentials | UserRegisterCredentials, formState: "reg" | "auth") => Promise<unknown>
+    onRegister: (credentials: UserRegisterCredentials) => Promise<unknown>
+    onLogin: (credentials: UserLoginCredentials) => Promise<unknown>
     error?: string
 }
 
@@ -20,7 +21,8 @@ const WelcomeNewUser = (props: WelcomeNewUserProps) => {
     
     const callbacks = {
         onSubmit: useCallback(() => {
-            return props.onSubmit(formState === "reg" ? Object.assign(value.current, regValue.current) : value.current, formState)
+            formState === "auth" ? props.onLogin(value.current) :
+                props.onRegister(Object.assign(value.current, regValue.current))
         }, [formState, props])
     }
     

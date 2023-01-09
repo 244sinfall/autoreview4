@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <ServicesProviderContext services={services}>
       <BrowserRouter>
-          <Provider store={services.get("Store").get()}>
+          <Provider store={services.get("Store").getInstance()}>
               <App />
           </Provider>
       </BrowserRouter>
