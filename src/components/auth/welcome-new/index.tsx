@@ -21,7 +21,7 @@ const WelcomeNewUser = (props: WelcomeNewUserProps) => {
     
     const callbacks = {
         onSubmit: useCallback(() => {
-            formState === "auth" ? props.onLogin(value.current) :
+            return formState === "auth" ? props.onLogin(value.current) :
                 props.onRegister(Object.assign(value.current, regValue.current))
         }, [formState, props])
     }

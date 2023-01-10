@@ -14,8 +14,9 @@ type ActionButtonProps = {
 
 const ActionButton = (props: ActionButtonProps) => {
     const [isLoading, setIsLoading] = useState(false);
-    const onAction = useCallback(() => {
+    const onAction = useCallback((e: React.MouseEvent) => {
         if(!props.onClick) return;
+        e.preventDefault()
         const returnValue = props.onClick()
         if(returnValue instanceof Promise) {
             setIsLoading(true)

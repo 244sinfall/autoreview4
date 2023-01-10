@@ -36,16 +36,17 @@ export const restoreSession = createAsyncThunk("user/restoreSession", async(user
     function isPermission (receivedNumber: number) {
         return receivedNumber >= PERMISSION.Player && receivedNumber <= PERMISSION.Admin
     }
-
+    let permission: PermissionValue = 0
     if(data && "permission" in data && isPermission(data.permission))
-        return {name: user.displayName ?? "Пользователь", email: user.email ?? "",
-            permission: data.permission as PermissionValue}
+        permission = data.permission;
+    localStorage.setItem("hasFirebaseSession", "true")
     return {name: user.displayName ?? "Пользователь", email: user.email ?? "",
-        permission: 0 as PermissionValue}
+        permission:permission}
 })
 
 export const destroySession = createAsyncThunk("user/destroySession", async() => {
     await signOut(auth)
+    localStorage.removeItem("hasFirebaseSession")
 })
 
 export const userSlice = createSlice({name: "user", initialState: userInitialState,

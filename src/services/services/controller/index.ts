@@ -1,4 +1,4 @@
-import {PermissionTitle, PermissionTitleByValue} from "../../../model/user";
+import {PermissionTitleByValue} from "../../../model/user";
 import * as Controllers from './controllers'
 import Service from "../service";
 import {UserController} from "./controllers/player";
@@ -25,13 +25,4 @@ export default class Controller extends Service {
         })
     }
 
-    getIf<T extends PermissionTitle>(permissionName: T): InstanceType<typeof Controllers[T]> | null {
-        if(this._controller instanceof Controllers[permissionName]) {
-            return this._controller as InstanceType<typeof Controllers[T]>
-        }
-        return null
-    }
-    isAbleToAccess<T extends PermissionTitle>(permissionName: T): boolean {
-        return this._controller instanceof Controllers[permissionName]
-    }
 }
