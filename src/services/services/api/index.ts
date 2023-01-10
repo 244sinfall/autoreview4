@@ -8,9 +8,9 @@ export default class API extends Service {
     private isAPIError(data: unknown): data is {error: string} {
         return typeof data === "object" && data !== null && "error" in data
     }
-    async createRequest<PayloadType extends BodyInit | void = void,
-                        ResponseType = void>(
-                            endpoint: keyof typeof Config["endpoints"], responseType: ResponseTransform, payload?: PayloadType): Promise<ResponseType> {
+    async createRequest<PayloadType extends BodyInit | void = void>(
+                            endpoint: keyof typeof Config["endpoints"], responseType: ResponseTransform,
+                            payload?: PayloadType): Promise<unknown> {
 
         const init: RequestInit = {}
         init.headers = []
@@ -24,12 +24,13 @@ export default class API extends Service {
         init.headers.push(["Accept", Config.endpoints[endpoint].accept])
         if(payload) init.body = payload
         const response = await fetch(`${Config.address}${Config.endpoints[endpoint].url}`, init)
+        if(!response.ok) throw new APIResponseKnownError(response.statusText)
         const responseData: unknown = await response[responseType]()
         if(responseType === "json") {
             if(this.isAPIError(responseData)) {
                 throw new APIResponseKnownError(responseData.error)
             }
         }
-        return responseData as ResponseType
+         return responseData as ResponseType
     }
 }
