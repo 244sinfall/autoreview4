@@ -3,7 +3,7 @@ import {useAppDispatch, useAppSelector} from "../../../../services/services/stor
 import AdminSelectedUserModalWrapper from "../../../../components/admin/user-list/modal";
 import {removeSelectedUser, setUserPermission} from "../../../../model/admin/reducer";
 import {PermissionName} from "../../../../model/user";
-import AdminController from "../../../../model/user/controllers/admin";
+import AdminController from "../../../../services/services/controller/controllers/admin";
 
 const AdminSelectedUserModal = (props: { controller: AdminController }) => {
     const state = useAppSelector(state => ({

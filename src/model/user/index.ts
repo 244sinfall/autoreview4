@@ -36,4 +36,13 @@ export const PermissionValueByName: Record<PermissionName, PermissionValue> = {
     "Игрок": 0
 }
 
+/**
+ * Схема хранения данных о пользователе в Cloud Firestore
+ */
+export type FirestoreUserData = {
+    name: string,
+    permission: PermissionValue,
+    email: string
+}
+
 export const PermissionNames: PermissionName[] = ["Игрок", "ГМ", "Арбитр", "Рецензент", "Админ"]

@@ -26,6 +26,10 @@ export default class ServicesProvider {
         if(!this.isCompleteServices(bundlingServices))
             throw new FatalServicesInitException("Не удалось инициализировать сервисы", bundlingServices)
         this.services = bundlingServices;
+        let existingServicesKey: IServicesKeys
+        for(existingServicesKey in this.services) {
+            this.services[existingServicesKey].initServicesConnection()
+        }
     }
 
     get<T extends keyof IServices>(service: T): IServices[T] {

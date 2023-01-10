@@ -1,5 +1,5 @@
 import {PermissionName} from "../user";
-import {AdminUserData} from "../user/controllers/admin";
+import {FirestoreUserData} from "../user";
 
 export type AdminReducerPermissionFilter = "Все" | PermissionName
 
@@ -7,8 +7,8 @@ export const AdminReducerPermissionFilterList: AdminReducerPermissionFilter[] = 
     "Арбитр", "ГМ", "Игрок"]
 
 export type AdminReducerState = {
-    users: AdminUserData[]
-    selectedUser: AdminUserData & {error?: string} | null
+    users: FirestoreUserData[]
+    selectedUser: FirestoreUserData & {error?: string} | null
     filter: {
         permission: AdminReducerPermissionFilter
         search: string

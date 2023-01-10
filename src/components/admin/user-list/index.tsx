@@ -3,10 +3,10 @@ import './style.css'
 import LoadingSpinner from "../../common/loading-spinner";
 import Table from "../../common/table";
 import Pagination from "../../common/pagination";
-import {AdminUserData} from "../../../model/user/controllers/admin";
+import {FirestoreUserData} from "../../../model/user/";
 interface AdminUserListProps {
-    users: AdminUserData[],
-    render: (user: AdminUserData) => JSX.Element
+    users: FirestoreUserData[],
+    render: (user: FirestoreUserData) => JSX.Element
     isLoading: boolean
     page: number,
     onPaginate: (newPage: number) => void

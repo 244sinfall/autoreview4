@@ -1,13 +1,13 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import AdminReducerDefaultState, {AdminReducerPermissionFilter} from "./types";
-import {PermissionName, PermissionValueByName} from "../user";
-import AdminController, {AdminUserData} from "../user/controllers/admin";
+import {FirestoreUserData, PermissionName, PermissionValueByName} from "../user";
+import AdminController from "../../services/services/controller/controllers/admin";
 
 export const fetchAdminUserList = createAsyncThunk("admin/fetchUsers", async (controller: AdminController) => {
     return await controller.getAllUsers()
 })
 export const setUserPermission = createAsyncThunk("admin/setUserPermission",
-    async (params: {controller: AdminController, user: AdminUserData, newPermission: PermissionName}) => {
+    async (params: {controller: AdminController, user: FirestoreUserData, newPermission: PermissionName}) => {
     const permission = PermissionValueByName[params.newPermission]
     await params.controller.changeRole(params.user.email, permission)
     return {...params.user, permission: permission}
@@ -17,7 +17,7 @@ const adminSlice = createSlice({
     name: 'admin',
     initialState: AdminReducerDefaultState,
     reducers: {
-        setSelectedUser: (state, action: PayloadAction<AdminUserData>) => {
+        setSelectedUser: (state, action: PayloadAction<FirestoreUserData>) => {
             state.selectedUser = action.payload
         },
         removeSelectedUser: (state) => {
@@ -38,7 +38,7 @@ const adminSlice = createSlice({
             .addCase(fetchAdminUserList.pending, (state) => {
                 state.isLoading = true
             })
-            .addCase(fetchAdminUserList.fulfilled, (state, action: PayloadAction<AdminUserData[]>) => {
+            .addCase(fetchAdminUserList.fulfilled, (state, action: PayloadAction<FirestoreUserData[]>) => {
                 state.users = action.payload
                 state.isLoading = false
             })
@@ -53,7 +53,7 @@ const adminSlice = createSlice({
                     state.selectedUser.error = action.payload.message
                 }
             })
-            .addCase(setUserPermission.fulfilled, (state, action: PayloadAction<AdminUserData>) => {
+            .addCase(setUserPermission.fulfilled, (state, action: PayloadAction<FirestoreUserData>) => {
                 const user = state.users.findIndex(user => user.name === action.payload.name &&
                     user.email === action.payload.email)
                 if(user === -1 && state.selectedUser) {

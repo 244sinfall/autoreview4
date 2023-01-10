@@ -5,10 +5,10 @@ import Field from "../../../common/field";
 import RadioButtonGroup from "../../../common/radio-button-group";
 
 import './styles.css'
-import {AdminUserData} from "../../../../model/user/controllers/admin";
+import {FirestoreUserData} from "../../../../model/user/";
 
 type AdminSelectedUserModalWrapperProps = {
-    user: AdminUserData & {error?: string},
+    user: FirestoreUserData & {error?: string},
     onPermissionChange: (newPermission: PermissionName) => Promise<unknown>
     onClose: () => void
 }

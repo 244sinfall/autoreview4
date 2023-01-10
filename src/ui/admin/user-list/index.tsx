@@ -13,9 +13,9 @@ import {
 } from "../../../model/admin/reducer";
 import {AdminReducerPermissionFilter} from "../../../model/admin/types";
 import AdminSelectedUserModal from "./modal";
-import {AdminUserData} from "../../../model/user/controllers/admin";
-import {useController} from "../../../model/user/use-controller";
+import {FirestoreUserData} from "../../../model/user/";
 import {PermissionValueByName} from "../../../model/user";
+import useUserController from "../../../services/services/controller/use-user-controller";
 
 const UsersList = () => {
     const state = useAppSelector(state => ({
@@ -26,10 +26,10 @@ const UsersList = () => {
         filter: state.admin.filter
     }))
     const dispatch = useAppDispatch();
-    const controller = useController();
-    const [displayingUser, setDisplayingUser] = useState<AdminUserData[]>([]);
+    const controller = useUserController();
+    const [displayingUser, setDisplayingUser] = useState<FirestoreUserData[]>([]);
     const callbacks = {
-        renderUser: useCallback((user: AdminUserData) =>
+        renderUser: useCallback((user: FirestoreUserData) =>
             <AdminUserInfo key={`${user.email}_${user.name}`}
                            user={user}
                            onClick={() => dispatch(setSelectedUser(user))} />,

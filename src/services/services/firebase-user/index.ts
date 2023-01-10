@@ -2,27 +2,11 @@ import Service from "../service";
 import {onAuthStateChanged, User} from "firebase/auth";
 import {auth} from "../../../model/auth/global";
 import {NotAuthorizedException} from "../../../model/exceptions";
-import ServicesProvider from "../../index";
 import {destroySession, restoreSession} from "../../../model/user/reducer";
 
 export default class FirebaseUser extends Service {
     private user: User | null = null
 
-    constructor(protected services: ServicesProvider) {
-        super(services);
-        onAuthStateChanged(auth, user => {
-            if(user) {
-                this.user = user;
-                localStorage.setItem("hasFirebaseSession", "true")
-                this.services.get("Store").getInstance().dispatch(restoreSession(user))
-
-            } else {
-                this.user = null;
-                localStorage.removeItem("hasFirebaseSession")
-                this.services.get("Store").getInstance().dispatch(destroySession())
-            }
-        })
-    }
     private async getUser() {
         if(this.user) return this.user
         return new Promise<User>((resolve, reject) => {
@@ -37,5 +21,19 @@ export default class FirebaseUser extends Service {
     public async getToken() {
         const user = await this.getUser()
         return await user.getIdToken();
+    }
+    public initServicesConnection() {
+        onAuthStateChanged(auth, user => {
+            if(user) {
+                this.user = user;
+                localStorage.setItem("hasFirebaseSession", "true")
+                this.services.get("Store").getInstance().dispatch(restoreSession(user))
+
+            } else {
+                this.user = null;
+                localStorage.removeItem("hasFirebaseSession")
+                this.services.get("Store").getInstance().dispatch(destroySession())
+            }
+        })
     }
 }

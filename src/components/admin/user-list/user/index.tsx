@@ -2,10 +2,10 @@ import React from 'react';
 import {PermissionNameByValue} from "../../../../model/user";
 import './style.css'
 import useStrictClickHandler from "../../../common/strict-click-handler";
-import {AdminUserData} from "../../../../model/user/controllers/admin";
+import {FirestoreUserData} from "../../../../model/user/";
 
 interface AdminUserDataProps  {
-    user: AdminUserData
+    user: FirestoreUserData
     onClick: () => void
 }
 

@@ -1,16 +1,9 @@
 import ReviewerController from "./reviewer";
-import {PermissionValue} from "../index";
+import {FirestoreUserData, PermissionValue} from "../../../../model/user";
 import {collection, getDocs, query, setDoc, where} from "firebase/firestore";
-import {db} from "../../auth/global";
-import {FirestoreDataException} from "../../exceptions";
-/**
- * Схема хранения данных о пользователе в Cloud Firestore
- */
-export type AdminUserData = {
-    name: string,
-    permission: PermissionValue,
-    email: string
-}
+import {db} from "../../../../model/auth/global";
+import {FirestoreDataException} from "../../../../model/exceptions";
+
 export default class AdminController extends ReviewerController{
     async changeRole(forEmail: string, to: PermissionValue) {
         const col = collection(db, 'permissions')
@@ -22,7 +15,7 @@ export default class AdminController extends ReviewerController{
             "Обратитесь к администратору.")
         await setDoc(result.docs[0].ref, {permission: to}, {merge: true})
     }
-    private isValidAdminData(data: unknown): data is AdminUserData[] {
+    private isValidAdminData(data: unknown): data is FirestoreUserData[] {
         return typeof data === "object" && data !== null && Array.isArray(data) &&
             data.every(document => typeof document === "object" && document !== null && "name" in document &&
                 "permission" in document && "email" in document)
