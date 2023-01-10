@@ -4,6 +4,8 @@ export class NoAccessException extends AuthException {}
 
 
 class BackendException extends Error {}
+
+export class APIResponseKnownError extends BackendException {}
 export class FirestoreDataException extends BackendException {}
 
 class FatalException extends Error {}
