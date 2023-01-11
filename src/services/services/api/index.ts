@@ -31,6 +31,6 @@ export default class API extends Service {
                 throw new APIResponseKnownError(responseData.error)
             }
         }
-         return responseData as ResponseType
+         return responseData
     }
 }

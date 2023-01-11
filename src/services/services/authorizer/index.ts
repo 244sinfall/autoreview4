@@ -21,6 +21,5 @@ export default class Authorizer extends Service {
             name: credentials.login,
             permission: 0
         })
-        return
     }
 }
