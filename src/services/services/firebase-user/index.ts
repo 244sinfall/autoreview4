@@ -18,8 +18,12 @@ export default class FirebaseUser extends Service {
     }
 
     public async getToken() {
-        const user = await this.getUser()
-        return await user.getIdToken();
+        try {
+            const user = await this.getUser()
+            return await user.getIdToken();
+        } catch (e) {
+            return ""
+        }
     }
     public initServicesConnection() {
         onAuthStateChanged(auth, user => {

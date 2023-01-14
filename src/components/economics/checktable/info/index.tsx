@@ -3,11 +3,11 @@ import ActionButton from "../../../common/action-button";
 import './styles.css'
 
 type CheckTableInfoProps = {
-    actualDate: Date,
+    actualDate: string,
     checkCount: number
     filteredCheckCount: number
     isUserAbleToForceUpdate: boolean
-    onForce: () => Promise<void>
+    onForce: () => void
 }
 
 const CheckTableInfo = (props: CheckTableInfoProps) => {
@@ -19,7 +19,7 @@ const CheckTableInfo = (props: CheckTableInfoProps) => {
         'Обновлять кэш вручную могут только пользователи с группой доступа "ГМ"', [])
     return (
         <div className="check-table-info">
-            <p>Данные актуальны на: {props.actualDate.toLocaleString("ru")}</p>
+            <p>Данные актуальны на: {props.actualDate}</p>
             <p>Чеков в БД: {props.checkCount}. Чеков с учетом фильтра: {props.filteredCheckCount}</p>
             <span><ActionButton title={"Обновить кэш"}
                                 onClick={props.onForce}

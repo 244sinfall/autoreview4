@@ -3,8 +3,7 @@ import ContentTitle from "../../common/content-title";
 import CheckTable from "./table";
 import CheckTableFilters from "./filter";
 import CheckTableInfo from "./info";
-import {CheckResponse, CheckTableParams} from "../../../model/economics/checks/types";
-import {Check} from "../../../model/economics/checks/check";
+import {CheckResponse, CheckTableParams, ICheck} from "../../../model/economics/checks/types";
 import CheckTableModal from "./modal";
 import './styles.css'
 
@@ -12,16 +11,16 @@ import './styles.css'
 type CheckTableWrapperProps = {
     isLoading: boolean
     modal?: {
-        check: Check
+        check: ICheck
         onClose: () => void
     }
-    response: CheckResponse & {checks: Check[]} | null
+    response: CheckResponse | null
     params: CheckTableParams
     onParamsChange: <K extends keyof CheckTableParams, V extends CheckTableParams[K]>(key: K, newParam: V) => void
     error?: string
     isUserAbleToForce: boolean,
-    onForce: () => Promise<void>
-    renderCheck: (check: Check) => JSX.Element
+    onForce: () => void
+    renderCheck: (check: ICheck) => JSX.Element
 }
 const CheckTableWrapper = (props: CheckTableWrapperProps) => {
     return (
@@ -37,7 +36,7 @@ const CheckTableWrapper = (props: CheckTableWrapperProps) => {
                 {props.error && <p className="check-table-error">{props.error}</p>}
                 <CheckTableInfo checkCount={props.response?.count ?? 0}
                             filteredCheckCount={props.response?.filteredCount ?? 0}
-                            actualDate={props.response?.updatedAt ?? new Date()}
+                            actualDate={props.response?.updatedAt ?? ""}
                             isUserAbleToForceUpdate={props.isUserAbleToForce}
                             onForce={props.onForce}/>
             </div>

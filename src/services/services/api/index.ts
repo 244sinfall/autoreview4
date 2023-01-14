@@ -2,15 +2,12 @@ import Service from "../service";
 import Config from './config'
 import {APIResponseKnownError} from "../../../model/exceptions";
 
-type ResponseTransform = "json" | "blob"
 export default class API extends Service {
     protected config = Config
-    private isAPIError(data: unknown): data is {error: string} {
-        return typeof data === "object" && data !== null && "error" in data
-    }
     async createRequest<PayloadType extends BodyInit | void = void>(
-                            endpoint: keyof typeof Config["endpoints"], responseType: ResponseTransform,
-                            payload?: PayloadType): Promise<unknown> {
+                            endpoint: keyof typeof Config["endpoints"],
+                            params: string = "",
+                            payload?: PayloadType): Promise<Response> {
 
         const init: RequestInit = {}
         init.headers = []
@@ -23,14 +20,8 @@ export default class API extends Service {
         }
         init.headers.push(["Accept", Config.endpoints[endpoint].accept])
         if(payload) init.body = payload
-        const response = await fetch(`${Config.address}${Config.endpoints[endpoint].url}`, init)
+        const response = await fetch(`${Config.address}${Config.endpoints[endpoint].url}${params}`, init)
         if(!response.ok) throw new APIResponseKnownError(response.statusText)
-        const responseData: unknown = await response[responseType]()
-        if(responseType === "json") {
-            if(this.isAPIError(responseData)) {
-                throw new APIResponseKnownError(responseData.error)
-            }
-        }
-         return responseData
+        return response
     }
 }

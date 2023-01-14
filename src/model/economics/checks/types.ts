@@ -37,7 +37,7 @@ export type CheckResponse = {
     count: number,
     filteredCount: number,
     types: string[],
-    updatedAt: Date
+    updatedAt: string
 }
 
 export const CheckTableParamsCompanion = {
@@ -66,4 +66,28 @@ export type CheckTableParams = {
     sortMethod: string,
     sortDirection: string,
     force: boolean
+}
+
+export type ChecksState = {
+    params: CheckTableParams,
+    isLoading: boolean,
+    result: CheckResponse | null
+    selectedCheck: ICheck | null,
+    error: string,
+}
+
+export const ChecksDefaultState: ChecksState = {
+    params: CheckTableParamsCompanion.default(),
+    isLoading: false,
+    result: null,
+    selectedCheck: null,
+    error: ""
+}
+
+export const NextQualityOf: Record<ItemQuality, ItemQuality | null> = {
+    epic: null,
+    rare: "epic",
+    unusual: "rare",
+    usual: "unusual",
+    low: "usual",
 }

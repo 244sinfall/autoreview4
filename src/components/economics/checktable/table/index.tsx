@@ -2,11 +2,11 @@ import React from 'react';
 import LoadingSpinner from "../../../common/loading-spinner";
 import Table from "../../../common/table";
 import Pagination from "../../../common/pagination";
-import {Check} from "../../../../model/economics/checks/check";
+import {ICheck} from "../../../../model/economics/checks/types";
 
 type CheckTableProps = {
-    checks: Check[],
-    renderFunction: (check: Check) => JSX.Element
+    checks: ICheck[],
+    renderFunction: (check: ICheck) => JSX.Element
     isLoading: boolean
     filteredCheckCount: number,
     showAmount: number,
