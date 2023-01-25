@@ -1,7 +1,7 @@
 import ReviewerController from "./reviewer";
 import {FirestoreUserData, PermissionValue} from "../../../../model/user";
 import {collection, getDocs, query, setDoc, where} from "firebase/firestore";
-import {db} from "../../../../model/auth/global";
+import {db} from "../../authorizer/firebase";
 import {FirestoreDataException} from "../../../../model/exceptions";
 
 export default class AdminController extends ReviewerController{

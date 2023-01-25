@@ -1,6 +1,6 @@
 import Service from "../service";
 import {onAuthStateChanged, User} from "firebase/auth";
-import {auth} from "../../../model/auth/global";
+import {auth} from "../authorizer/firebase";
 import {NotAuthorizedException} from "../../../model/exceptions";
 import {destroySession, restoreSession} from "../../../model/user/reducer";
 

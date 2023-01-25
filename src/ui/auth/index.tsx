@@ -3,7 +3,7 @@ import {PERMISSION, PermissionNameByValue} from "../../model/user";
 import WelcomeExistingUser from "../../components/auth/welcome-existing";
 import {useNavigate} from "react-router-dom";
 import WelcomeNewUser from "../../components/auth/welcome-new";
-import {UserLoginCredentials, UserRegisterCredentials} from "../../model/auth/authorizer";
+import {UserLoginCredentials, UserRegisterCredentials} from "../../model/auth/types";
 import {destroySession} from "../../model/user/reducer";
 import {useAppDispatch, useAppSelector} from "../../services/services/store";
 import useServices from "../../services/use-services";

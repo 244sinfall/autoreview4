@@ -1,8 +1,8 @@
 import Service from "../service";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from "firebase/auth";
-import {auth, db} from "../../../model/auth/global";
+import {auth, db} from "./firebase";
 import {doc, setDoc} from "firebase/firestore";
-import {UserLoginCredentials, UserRegisterCredentials} from "../../../model/auth/authorizer";
+import {UserLoginCredentials, UserRegisterCredentials} from "../../../model/auth/types";
 
 export default class Authorizer extends Service {
     async login(credentials: UserLoginCredentials) {

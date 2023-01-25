@@ -1,28 +1,25 @@
-import React, {useCallback, useRef, useState} from 'react';
-import {BusinessActivityAggregator, BusinessRewardInfo} from "../../../model/arbiters/business-activity-aggregator";
+import React, {useCallback} from 'react';
+import {BusinessRewardInfo} from "../../../model/arbiters/business/types";
 import BusinessReward from "../../../components/arbiters/business-reward";
+import {useAppDispatch, useAppSelector} from "../../../services/services/store";
+import {setCommand, setFields} from "../../../model/arbiters/business/reducer";
 
 const BusinessActivityRewardGiver = () => {
-    const [currentCommand, setCurrentCommand] = useState("")
-    const [buttonText, setButtonText] = useState("Создать команду")
-    const aggregator = useRef(new BusinessActivityAggregator())
+    const dispatch = useAppDispatch()
+    const state = useAppSelector(state => state.business)
     const callbacks = {
-        createCommand: useCallback((info: BusinessRewardInfo) => {
-            aggregator.current.setInfo(info)
-            try {
-                setCurrentCommand(aggregator.current.getCommand())
-            } catch (e: unknown) {
-                if(e instanceof Error)  {
-                    setButtonText(e.message)
-                    setTimeout(() => setButtonText("Создать команду"), 2000)
-                }
-            }
-
-        }, []),
+        onChange: useCallback(<K extends keyof BusinessRewardInfo, V extends BusinessRewardInfo[K]>(key: K, value: V) => {
+            dispatch(setFields({...state.info, [key]: value}))
+        }, [dispatch, state.info]),
+        createCommand: useCallback(() => {
+            dispatch(setCommand())
+        }, [dispatch]),
     }
     return (
-        <BusinessReward result={currentCommand}
-                        buttonText={buttonText}
+        <BusinessReward result={state.command}
+                        buttonText={state.error || "Создать комманду"}
+                        info={state.info}
+                        onChange={callbacks.onChange}
                         onSubmit={callbacks.createCommand}/>
     );
 };

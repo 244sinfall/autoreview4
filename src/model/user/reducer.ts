@@ -5,7 +5,7 @@ import {
 } from "@reduxjs/toolkit";
 import {PERMISSION, PermissionValue} from "./index";
 import {signOut, User} from "firebase/auth";
-import {auth, db} from "../auth/global";
+import {auth, db} from "../../services/services/authorizer/firebase";
 import {doc, getDoc} from "firebase/firestore";
 
 export type UserStateUserInfo = {

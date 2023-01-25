@@ -7,6 +7,7 @@ import {themeSlice} from "../../../model/theme";
 import {claimedItemsSlice} from "../../../model/claimed-items/reducer";
 import AdminReducer from "../../../model/admin/reducer";
 import CheckReducer from "../../../model/economics/checks/reducer";
+import ArbiterBusinessRewardReducer from '../../../model/arbiters/business/reducer'
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
 const ConfiguredStore = configureStore({
@@ -17,7 +18,8 @@ const ConfiguredStore = configureStore({
         theme: themeSlice.reducer,
         claimedItems: claimedItemsSlice.reducer,
         admin: AdminReducer,
-        checks:  CheckReducer
+        checks:  CheckReducer,
+        business: ArbiterBusinessRewardReducer
         // comments: commentsReducer,
         // users: usersReducer,
     }

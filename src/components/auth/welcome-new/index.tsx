@@ -4,7 +4,7 @@ import './styles.css'
 import LoadingSpinner from "../../common/loading-spinner";
 import TextInput from "../../common/text-input";
 import Field from "../../common/field";
-import {UserLoginCredentials, UserRegisterCredentials, UserRegOnlyCredentials} from "../../../model/auth/authorizer";
+import {UserLoginCredentials, UserRegisterCredentials, UserRegOnlyCredentials} from "../../../model/auth/types";
 import ContentTitle from "../../common/content-title";
 
 type WelcomeNewUserProps = {

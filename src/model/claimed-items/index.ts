@@ -6,7 +6,7 @@ import {
     ClaimedItemsTables,
     ClaimedItemsTablesOrder
 } from "./types";
-import {auth} from "../auth/global";
+import {auth} from "../../services/services/authorizer/firebase";
 
 export class ClaimedItemsNetworkProvider implements ClaimedItemsOperationsHandler {
     private async receiveToken() {

@@ -6,7 +6,7 @@ export type AdminReducerPermissionFilter = "Все" | PermissionName
 export const AdminReducerPermissionFilterList: AdminReducerPermissionFilter[] = ["Все", "Админ", "Рецензент",
     "Арбитр", "ГМ", "Игрок"]
 
-export type AdminReducerState = {
+type AdminReducerState = {
     users: FirestoreUserData[]
     selectedUser: FirestoreUserData & {error?: string} | null
     filter: {
