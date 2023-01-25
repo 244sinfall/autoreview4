@@ -10,8 +10,8 @@ export class FirestoreDataException extends BackendException {}
 
 class FatalException extends Error {}
 
-export class FatalServicesInitException extends FatalException {
-    constructor(message: string, services: any) {
+export class FatalServicesInitException<T extends object> extends FatalException {
+    constructor(message: string, services: T) {
         super(`${message}\n\nОбъект сервисов: ${services.toString()}`);
     }
 }

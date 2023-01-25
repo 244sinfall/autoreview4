@@ -3,8 +3,8 @@ import {useEffect, useState} from "react";
 import {useAppSelector} from "../store";
 
 export default function useUserController() {
-    const [controller, setController] = useState(useServices().get("UserController").getInstance());
     const service = useServices().get("UserController")
+    const [controller, setController] = useState(service.getInstance());
     const user = useAppSelector(state => state.user.user)
     useEffect(() => {
         const unsub = service.addListener(controller => setController(controller))

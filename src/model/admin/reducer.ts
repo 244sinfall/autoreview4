@@ -2,15 +2,24 @@ import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import AdminReducerDefaultState, {AdminReducerPermissionFilter} from "./types";
 import {FirestoreUserData, PermissionName, PermissionValueByName} from "../user";
 import AdminController from "../../services/services/controller/controllers/admin";
+import {FirestoreDataException} from "../exceptions";
 
 export const fetchAdminUserList = createAsyncThunk("admin/fetchUsers", async (controller: AdminController) => {
     return await controller.getAllUsers()
 })
 export const setUserPermission = createAsyncThunk("admin/setUserPermission",
-    async (params: {controller: AdminController, user: FirestoreUserData, newPermission: PermissionName}) => {
-    const permission = PermissionValueByName[params.newPermission]
-    await params.controller.changeRole(params.user.email, permission)
-    return {...params.user, permission: permission}
+    async (params: {controller: AdminController, user: FirestoreUserData, newPermission: PermissionName}, thunkAPI) => {
+    const permission = PermissionValueByName[params.newPermission];
+    try {
+        await params.controller.changeRole(params.user.email, permission)
+        return {...params.user, permission: permission}
+    } catch (e: unknown) {
+        if(e instanceof FirestoreDataException) {
+            return thunkAPI.rejectWithValue(e);
+        }
+        throw e
+    }
+
 })
 
 const adminSlice = createSlice({

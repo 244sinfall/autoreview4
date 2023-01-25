@@ -5,6 +5,11 @@ import {db} from "../../../../model/auth/global";
 import {FirestoreDataException} from "../../../../model/exceptions";
 
 export default class AdminController extends ReviewerController{
+    /**
+     * @throws FirestoreDataException - на почте более одного пользователя или пользователя с такой почтой нет
+     * @param forEmail емайл, которому изменить пермишн
+     * @param to пермишн, на который изменить
+     */
     async changeRole(forEmail: string, to: PermissionValue) {
         const col = collection(db, 'permissions')
         const q = query(col, where('email', '==', forEmail))
@@ -20,6 +25,10 @@ export default class AdminController extends ReviewerController{
             data.every(document => typeof document === "object" && document !== null && "name" in document &&
                 "permission" in document && "email" in document)
     }
+
+    /**
+     * @throws FirestoreDataException - в базе некорректная структура (тайпскрипт не смог типизировать поступившие данные)
+     */
     async getAllUsers() {
         const response = await getDocs(query(collection(db, 'permissions')))
         const fetched = response.docs;

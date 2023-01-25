@@ -20,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start --host 192.168.1.72",
+    "start": "react-scripts start --host 192.168.0.160",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,6 +43,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "https://dm.rolevik.site:8443",
   "devDependencies": {
     "@redux-devtools/core": "^3.13.1",
     "@testing-library/jest-dom": "^5.16.4",
