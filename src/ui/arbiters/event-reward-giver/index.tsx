@@ -1,52 +1,53 @@
-import React, {useCallback, useRef, useState} from 'react';
-import {EventRewardDistributor, EventRewardDistributorImpl}
-    from "../../../model/arbiters/event-reward-distributor";
+import React, {useCallback, useState} from 'react';
 import EventRewardMacroMaker from "../../../components/arbiters/event-reward-macro-maker";
+import {useAppDispatch, useAppSelector} from "../../../services/services/store";
+import {
+    requestEventRewardDistribution,
+    setDistributionMode,
+    setEventLink, setEventRate, setParticipantsText, setResult
+} from "../../../model/arbiters/event-rewards/reducer";
 
 const EventRewardGiver = () => {
-    const [rewardWorkerResponse, setRewardWorkerResponse] = useState("")
-    const [errMsg, setErrMsg] = useState<string>("")
+    const state = useAppSelector(state => state.eventReward)
+    const dispatch = useAppDispatch()
+
     const [isTextParted, setIsTextParted] = useState(false)
 
-    const distributor = useRef(new EventRewardDistributorImpl())
-
     const callbacks = {
-        executeDistribution: useCallback(async(info: EventRewardDistributor) => {
-            try {
-                distributor.current.setInfo(info)
-                const response = await distributor.current.run()
-                if (isTextParted) setIsTextParted(false)
-                return setRewardWorkerResponse(response)
-            } catch (e: any) {
-                setErrMsg(e.message)
-                setTimeout(() => setErrMsg(""), 1500)
-            }
-        }, [isTextParted]),
+        executeDistribution: useCallback(async() => {
+            await dispatch(requestEventRewardDistribution())
+            setIsTextParted(false)
+        }, [dispatch]),
         splitCommandsToFitMacro: useCallback(() => {
-            setRewardWorkerResponse((prevState) => {
-                let separateCounter = 0
-                return prevState.split("\n").map((str) => {
-                    if (str.startsWith(".")) {
-                        if (separateCounter + str.length <= 254) {
-                            separateCounter += str.length
-                            return str
-                        }
-                        separateCounter = str.length
-                        return "\n" + str
+            const initial = state.result
+            let separateCounter = 0
+            const result = initial.split("\n").map((str) => {
+                if (str.startsWith(".")) {
+                    if (separateCounter + str.length <= 254) {
+                        separateCounter += str.length
+                        return str
                     }
-                    return str
-                }).join("\n")
-            })
+                    separateCounter = str.length
+                    return "\n" + str
+                }
+                return str
+            }).join("\n")
+            dispatch(setResult(result))
             setIsTextParted(true)
-        }, [])
+        }, [dispatch, state.result])
     }
 
     return (
-        <EventRewardMacroMaker onSubmit={callbacks.executeDistribution}
-                               result={rewardWorkerResponse}
-                               buttonMessage={errMsg || "Обработать"}
+        <EventRewardMacroMaker info={state}
+                               onEventLinkChange={link => dispatch(setEventLink(link))}
+                               onModeChange={mode => dispatch(setDistributionMode(mode))}
+                               onRateChange={rate => dispatch(setEventRate(rate))}
+                               onTextChange={text => dispatch(setParticipantsText(text))}
+                               onSubmit={callbacks.executeDistribution}
+                               result={state.result}
+                               buttonMessage={state.error || "Обработать"}
                                onSplit={callbacks.splitCommandsToFitMacro}
-                               shouldSplit={(rewardWorkerResponse && !isTextParted) || false}/>
+                               shouldSplit={(state.result && !isTextParted) || false}/>
     );
 };
 

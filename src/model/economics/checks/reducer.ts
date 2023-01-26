@@ -31,7 +31,7 @@ export const fetchChecks = createAsyncThunk("checks/fetch", async(services: Serv
         query)
     const data = await response.json()
     if(!isApiResponseIsData(data))
-        throw new APIResponseKnownError("Неизвестный формат ответа. Обратитесь к администратору.")
+        throw new APIResponseKnownError(response)
     data.types = ["Все получатели", ...data.types.filter(t => t && t !== "-")]
     data.updatedAt = new Date(data.updatedAt).toLocaleString("ru")
     return data

@@ -4,6 +4,14 @@ import {APIResponseKnownError} from "../../../model/exceptions";
 
 export default class API extends Service {
     protected config = Config
+
+    /**
+     *
+     * @param endpoint Эндпоинт из конфигурации
+     * @param params Query параметры
+     * @param payload Тело запроса
+     * @throws APIResponseKnownError
+     */
     async createRequest<PayloadType extends BodyInit | void = void>(
                             endpoint: keyof typeof Config["endpoints"],
                             params: string = "",
@@ -21,7 +29,7 @@ export default class API extends Service {
         init.headers.push(["Accept", Config.endpoints[endpoint].accept])
         if(payload) init.body = payload
         const response = await fetch(`${Config.address}${Config.endpoints[endpoint].url}${params}`, init)
-        if(!response.ok) throw new APIResponseKnownError(response.statusText)
+        if(!response.ok) throw new APIResponseKnownError(response)
         return response
     }
 }
