@@ -4,10 +4,11 @@ import RewardDistributionDefaultState, {
     RewardDistributionModeValue,
     RewardDistributionResponse
 } from "./types";
-import {createAppAsyncThunk} from "../../../services/services/store";
+// import {createAppAsyncThunk} from "../../../services/services/store";
 import {APIResponseKnownError} from "../../exceptions";
+import {createAppAsyncThunk} from "../../reduxTypes";
 
-export const requestEventRewardDistribution = createAppAsyncThunk<string>("event-rewards/fetch", async(_, thunkAPI) => {
+export const requestEventRewardDistribution = createAppAsyncThunk("event-rewards/fetch", async(_, thunkAPI) => {
     function isValidResponse(data: unknown): data is RewardDistributionResponse {
         return typeof data === "object" && data !== null && "command" in data && "participantsModified" in data
     }
