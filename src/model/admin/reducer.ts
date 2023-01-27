@@ -1,25 +1,29 @@
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import AdminReducerDefaultState, {AdminReducerPermissionFilter} from "./types";
 import {FirestoreUserData, PermissionName, PermissionValueByName} from "../user";
-import AdminController from "../../services/services/controller/controllers/admin";
-import {FirestoreDataException} from "../exceptions";
+import {FirestoreDataException, NoAccessException} from "../exceptions";
+import {createAppAsyncThunk} from "../reduxTypes";
 
-export const fetchAdminUserList = createAsyncThunk("admin/fetchUsers", async (controller: AdminController) => {
+export const fetchAdminUserList = createAppAsyncThunk("admin/fetchUsers", async (_, thunkAPI) => {
+    const controller = thunkAPI.extra.get("UserController").getInstance()
+    if(!controller.is("Admin")) return thunkAPI.rejectWithValue(new NoAccessException("Недостаточно прав"))
     return await controller.getAllUsers()
 })
-export const setUserPermission = createAsyncThunk("admin/setUserPermission",
-    async (params: {controller: AdminController, user: FirestoreUserData, newPermission: PermissionName}, thunkAPI) => {
+export const setUserPermission = createAppAsyncThunk("admin/setUserPermission",
+    async (params: { user: FirestoreUserData, newPermission: PermissionName },
+           thunkAPI) => {
     const permission = PermissionValueByName[params.newPermission];
     try {
-        await params.controller.changeRole(params.user.email, permission)
-        return {...params.user, permission: permission}
+        const controller = thunkAPI.extra.get("UserController").getInstance()
+        if(!controller.is("Admin")) return thunkAPI.rejectWithValue(new NoAccessException("Недостаточно прав"))
+        await controller.changeRole(params.user.email, permission)
+        return { ...params.user, permission: permission }
     } catch (e: unknown) {
         if(e instanceof FirestoreDataException) {
             return thunkAPI.rejectWithValue(e);
         }
         throw e
     }
-
 })
 
 const adminSlice = createSlice({

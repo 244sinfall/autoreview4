@@ -3,9 +3,8 @@ import {useAppDispatch, useAppSelector} from "../../../../services/services/stor
 import AdminSelectedUserModalWrapper from "../../../../components/admin/user-list/modal";
 import {removeSelectedUser, setUserPermission} from "../../../../model/admin/reducer";
 import {PermissionName} from "../../../../model/user";
-import AdminController from "../../../../services/services/controller/controllers/admin";
 
-const AdminSelectedUserModal = (props: { controller: AdminController }) => {
+const AdminSelectedUserModal = () => {
     const state = useAppSelector(state => ({
         selectedUser: state.admin.selectedUser
     }))
@@ -14,11 +13,10 @@ const AdminSelectedUserModal = (props: { controller: AdminController }) => {
         onPermissionChange: useCallback(async(newPermission: PermissionName) => {
             if(state.selectedUser === null) return
             return dispatch(await setUserPermission({
-                controller: props.controller,
                 user: state.selectedUser,
                 newPermission: newPermission,
             }))
-        }, [dispatch, props.controller, state.selectedUser])
+        }, [dispatch, state.selectedUser])
     }
 
     return (

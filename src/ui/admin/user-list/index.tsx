@@ -37,9 +37,7 @@ const UsersList = () => {
     }
 
     useEffect(() => {
-        if(controller.is("Admin")) {
-            dispatch(fetchAdminUserList(controller))
-        }
+        dispatch(fetchAdminUserList())
     },[controller, dispatch])
     useEffect(() => {
         let users = state.userList
@@ -67,7 +65,7 @@ const UsersList = () => {
                            page={state.page} 
                            onPaginate={(page) => dispatch(setPage(page))} 
                            usersAmount={displayingUser.length}/>
-            {controller.is("Admin") && <AdminSelectedUserModal controller={controller}/>}
+            {controller.is("Admin") && <AdminSelectedUserModal />}
         </ContentTitle>
     );
 };
