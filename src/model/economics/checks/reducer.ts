@@ -62,7 +62,6 @@ export const checksSlice = createSlice({
                 state.error = ""
             })
             .addCase(fetchChecks.rejected, (state, action: PayloadAction<unknown>)=> {
-                console.log(action)
                 if(action.payload instanceof Error) {
                     state.error = action.payload.message
                 }
