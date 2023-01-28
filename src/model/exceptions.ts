@@ -19,3 +19,7 @@ export class FatalServicesInitException<T extends object> extends FatalException
         super(`${message}\n\nОбъект сервисов: ${services.toString()}`);
     }
 }
+
+class ServiceException extends Error {}
+
+export class ControllerException extends ServiceException {}

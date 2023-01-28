@@ -1,50 +1,41 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {useAppDispatch, useAppSelector} from "../../../services/services/store";
-import {setCharName, setReviewerDiscord, setReviewerProfile} from "../../../model/charsheets/reducer";
-import CharsheetReviewTemplate from "../../../model/charsheets";
+import {
+    generateCharsheetTemplate,
+    setCharName,
+    setReviewerDiscord,
+    setReviewerProfile
+} from "../../../model/charsheets/reducer";
 import ReviewGenerator from "../../../components/charsheet/review/review-generator";
 
 const CharsheetReviewGenerator = () => {
     const state = useAppSelector((state) => state.charsheet);
     const dispatch = useAppDispatch();
-    const [review, setReview] = useState("")
     const [copied, setCopied] = useState(false)
-    const [errMsg, setErrMsg] = useState("")
-    const setError = (message: string) => {
-        setErrMsg(message)
-        setTimeout(() => setErrMsg(""), 1000)
-    }
     const callbacks = {
         onProfileLinkChange: useCallback((newLink: string) => dispatch(setReviewerProfile(newLink)), [dispatch]),
         onDiscordChange: useCallback((newDiscord: string) => dispatch(setReviewerDiscord(newDiscord)), [dispatch]),
         onCharNameChange: useCallback((newCharName: string) => dispatch(setCharName(newCharName)), [dispatch]),
+        onGenerate: useCallback(async() => {
+            if(state.result) {
+                setCopied(true)
+                setTimeout(() => setCopied(false), 1500)
+                return await navigator.clipboard.writeText(state.result)
+            }
+            await dispatch(generateCharsheetTemplate())
+            setCopied(false)
+        }, [dispatch, state.result])
     }
 
-    const onGenerate = useCallback(async() => {
-        if(review) {
-            setCopied(true)
-            setTimeout(() => setCopied(false), 1500)
-            return navigator.clipboard.writeText(review)
-        }
-        try {
-            const reviewer = new CharsheetReviewTemplate(state)
-            const review = await reviewer.getReview()
-            return setReview(review)
-        } catch (e: unknown) {
-            if(e instanceof Error) return setError(e.message);
-        }
-    }, [review, state])
-
     const buttonMessage = useMemo(() => {
-        if(errMsg) return errMsg
-        if(!review) return "Создать вердикт"
+        if(state.error) return state.error
+        if(!state.result) return "Создать вердикт"
         return copied ? "Вердикт скопирован" : "Скопировать вердикт"
-    }, [copied, errMsg, review])
+    }, [copied, state.error, state.result])
 
     useEffect(() => {
         setCopied(false)
-        setReview("")
-    }, [state])
+    }, [])
 
     const rules = useMemo(() =>
         "Вам нужно будет отредактировать вердикт, приводя<br/>" +
@@ -57,14 +48,14 @@ const CharsheetReviewGenerator = () => {
         [])
 
     return (
-        <ReviewGenerator review={review}
+        <ReviewGenerator review={state.result}
                          tooltip={rules}
                          buttonMessage={buttonMessage}
-                         onButton={onGenerate}
+                         onButton={callbacks.onGenerate}
                          callbacks={callbacks}
-                         charName={state.charName}
-                         discord={state.reviewerDiscord}
-                         profileLink={state.reviewerProfile}/>
+                         charName={state.info.charName}
+                         discord={state.info.reviewerDiscord}
+                         profileLink={state.info.reviewerProfile}/>
     );
 };
 

@@ -4,6 +4,8 @@ import {FirestoreUserData, PermissionName, PermissionValueByName} from "../user"
 import {FirestoreDataException, NoAccessException} from "../exceptions";
 import {createAppAsyncThunk} from "../reduxTypes";
 
+
+
 export const fetchAdminUserList = createAppAsyncThunk("admin/fetchUsers", async (_, thunkAPI) => {
     const controller = thunkAPI.extra.get("UserController").getInstance()
     if(!controller.is("Admin")) return thunkAPI.rejectWithValue(new NoAccessException("Недостаточно прав"))

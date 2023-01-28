@@ -4,7 +4,6 @@ import RewardDistributionDefaultState, {
     RewardDistributionModeValue,
     RewardDistributionResponse
 } from "./types";
-// import {createAppAsyncThunk} from "../../../services/services/store";
 import {APIResponseKnownError} from "../../exceptions";
 import {createAppAsyncThunk} from "../../reduxTypes";
 
