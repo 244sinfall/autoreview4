@@ -10,6 +10,8 @@ export class APIResponseKnownError extends BackendException {
         super();
     }
 }
+
+export class StructureException extends BackendException{}
 export class FirestoreDataException extends BackendException {}
 
 class FatalException extends Error {}

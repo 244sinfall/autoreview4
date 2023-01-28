@@ -57,6 +57,14 @@ export const ClaimedItemQualityTitles: Record<keyof ClaimedItemsTables, string> 
     rare: "Редкий"
 }
 
+export const ClaimedItemQualityKeys: Record<string, keyof ClaimedItemsTables> = {
+    "Эпический": "epic",
+    "Необычный": "green",
+    "Легендарный": "legendary",
+    "Прочее": "other",
+    "Редкий": "rare"
+}
+
 export type ClaimedItemsState = {
     isLoading: boolean,
     error: string,

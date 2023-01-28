@@ -10,7 +10,6 @@ type ClaimedItemTableProps = {
 }
 const ClaimedItemTable = (props: ClaimedItemTableProps) => {
     const [isShowing, setIsShowing] = useState(true)
-
     const state = useAppSelector(state => ({
         content: state.claimedItems.content[props.quality],
         isLoading: state.claimedItems.isLoading,

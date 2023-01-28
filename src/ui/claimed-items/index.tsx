@@ -1,19 +1,18 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback, useEffect, useMemo} from 'react';
 import ClaimedItemsWrapper from "../../components/claimed-items";
 import ClaimedItemTable from "./wrapper";
-import { setSearch, updateClaimedItemsContent} from "../../model/claimed-items/reducer";
+import {claimedItemsAsyncActions, setSearch} from "../../model/claimed-items/reducer";
 import {useAppDispatch, useAppSelector} from "../../services/services/store";
 import ClaimedItemModal from "./modal";
-import {ClaimedItemsHTMLGenerator} from "../../model/claimed-items";
+import {ClaimedItemsHTMLGenerator} from "../../model/claimed-items/generator";
 import {PERMISSION} from "../../model/user";
 
 const ClaimedItemsPage = () => {
-
+    const operationCallbacks = useMemo(() => claimedItemsAsyncActions, [])
     const dispatch = useAppDispatch();
-
     useEffect(() => {
-        dispatch(updateClaimedItemsContent())
-    }, [dispatch])
+        dispatch(operationCallbacks.getClaimedItemsContent())
+    }, [dispatch, operationCallbacks])
 
     const state = useAppSelector(state => ({
         search: state.claimedItems.search,

@@ -1,50 +1,48 @@
-import React, {useCallback, useRef} from 'react';
+import React, {useMemo} from 'react';
 import {useAppDispatch, useAppSelector} from "../../../services/services/store";
 import ClaimedItemAdder from "../../../components/claimed-items/add";
 import {
+    claimedItemsAsyncActions,
     removeAddModal,
-    removeEditModal, setError, updateClaimedItemsContent,
+    removeEditModal
 } from "../../../model/claimed-items/reducer";
-import {ClaimedItemsNetworkProvider} from "../../../model/claimed-items";
 import ClaimedItemEditor from "../../../components/claimed-items/edit";
 
 const ClaimedItemModal = () => {
-    const networkProvider = useRef(new ClaimedItemsNetworkProvider())
+    const operationCallbacks = useMemo(() => claimedItemsAsyncActions, [])
     const state = useAppSelector(state => ({
         add: state.claimedItems.addModal,
         edit: state.claimedItems.editModal,
         user: state.user.user
     }))
     const dispatch = useAppDispatch()
-    const onHandle = useCallback(async(fn: () => Promise<void>) => {
-        try {
-            await fn();
-            await dispatch(updateClaimedItemsContent())
-            if(state.add) dispatch(removeAddModal())
-            if(state.edit) dispatch(removeEditModal())
-        } catch (e) {
-            if(e instanceof Error) {
-                dispatch(setError(e))
-            }
-        }
-    }, [dispatch, state.add, state.edit])
+
     return (
         <>
             {state.add && <ClaimedItemAdder quality={state.add}
                                                        reviewerName={state.user.name}
-                                                       onAdd={item =>
-                                                           onHandle(async() =>
-                                                               networkProvider.current.add(item))}
+                                                       onAdd={async(item) => {
+                                                           await dispatch(operationCallbacks.addClaimedItem(item))
+                                                           await dispatch(operationCallbacks.getClaimedItemsContent())
+                                                           return
+                                                       }}
                                                        onClose={() => dispatch(removeAddModal())}/>}
-            {state.edit && <ClaimedItemEditor onEdit={item =>
-                                                        onHandle(async() =>
-                                                      networkProvider.current.update(item))}
-                                              onApprove={id =>
-                                                  onHandle(async() =>
-                                                      networkProvider.current.accept(id))}
-                                              onDelete={id =>
-                                                  onHandle(async() =>
-                                                      networkProvider.current.del(id))}
+            {state.edit && <ClaimedItemEditor onEdit={async(item) => {
+                                                            await dispatch(operationCallbacks.updateClaimedItem(item))
+                                                            await dispatch(operationCallbacks.getClaimedItemsContent())
+                                                            return
+                                                        }}
+                                                       onApprove={async (id) =>{
+                                                           await dispatch(operationCallbacks.approveClaimedItem(id))
+                                                           await dispatch(operationCallbacks.getClaimedItemsContent())
+                                                           return
+                                                       }}
+                                                      onDelete={async (id) => {
+                                                          await dispatch(operationCallbacks.removeClaimedItem(id))
+                                                          await dispatch(operationCallbacks.getClaimedItemsContent())
+                                                          return
+                                                      }}
+
                                               onClose={() => dispatch(removeEditModal())}
                                               item={state.edit}
                                               user={state.user}/>}

@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 import {
     CheckResponse,
@@ -8,13 +8,13 @@ import {
     CheckTableParamsCompanion,
     ICheck
 } from "./types";
-import ServicesProvider from "../../../services";
 import {APIResponseKnownError} from "../../exceptions";
+import {createAppAsyncThunk} from "../../reduxTypes";
 
-export const fetchChecks = createAsyncThunk("checks/fetch", async(services: ServicesProvider) => {
+export const fetchChecks = createAppAsyncThunk("checks/fetch", async(_, thunkAPI) => {
     let delimiter = "&"
     let query = "?"
-    const state = services.get("Store").getInstance().getState().checks.params
+    const state = thunkAPI.extra.get("Store").getInstance().getState().checks.params
     for(let prop in state) {
         if(!CheckTableParamsCompanion.is(prop)) continue
         if(state[prop]) {
@@ -27,7 +27,7 @@ export const fetchChecks = createAsyncThunk("checks/fetch", async(services: Serv
     function isApiResponseIsData(data: unknown): data is CheckResponse {
         return typeof data === "object" && data != null && "checks" in data
     }
-    const response = await services.get("API").createRequest("checks.get",
+    const response = await thunkAPI.extra.get("API").createRequest("checks.get",
         query)
     const data = await response.json()
     if(!isApiResponseIsData(data))

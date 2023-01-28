@@ -4,7 +4,6 @@ import CheckRow from "../../../components/economics/checktable/table/row";
 import {CheckTableParams, ICheck} from "../../../model/economics/checks/types";
 import CheckTableWrapper from "../../../components/economics/checktable";
 import {useAppDispatch, useAppSelector} from "../../../services/services/store";
-import useServices from "../../../services/use-services";
 import {fetchChecks, removeSelectedCheck, setParams, setSelectedCheck} from "../../../model/economics/checks/reducer";
 
 const ChecksTable = () => {
@@ -13,15 +12,13 @@ const ChecksTable = () => {
         user: state.user.user
     }))
     
-    const services = useServices();
-    
     const dispatch = useAppDispatch()
     
     const searchDebounce = useRef<NodeJS.Timeout | null>(null)
 
     useEffect(() => {
-        dispatch(fetchChecks(services))
-    },[state.checks.params, dispatch, services])
+        dispatch(fetchChecks())
+    },[state.checks.params, dispatch])
     
     const callbacks = {
         onForce: useCallback(() => {

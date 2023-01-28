@@ -1,9 +1,8 @@
 import Service from "../service";
 import {configureStore} from '@reduxjs/toolkit'
-import {eventReviewSLice} from "../../../model/events/event-review";
 import {userSlice} from "../../../model/user/reducer";
 import {themeSlice} from "../../../model/theme";
-import {claimedItemsSlice} from "../../../model/claimed-items/reducer";
+import ClaimedItemsReducer from "../../../model/claimed-items/reducer";
 import CharsheetReviewGeneratorReducer from '../../../model/charsheets/reducer'
 import AdminReducer from "../../../model/admin/reducer";
 import CheckReducer from "../../../model/economics/checks/reducer";
@@ -16,10 +15,9 @@ import ServicesProvider from "../../index";
 const ConfiguredStore = (services: ServicesProvider) => configureStore({
     reducer: {
         charsheet: CharsheetReviewGeneratorReducer,
-        event: eventReviewSLice.reducer,
         user: userSlice.reducer,
         theme: themeSlice.reducer,
-        claimedItems: claimedItemsSlice.reducer,
+        claimedItems: ClaimedItemsReducer,
         admin: AdminReducer,
         checks:  CheckReducer,
         business: ArbiterBusinessRewardReducer,

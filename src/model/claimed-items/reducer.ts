@@ -1,16 +1,97 @@
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {ClaimedItemInterface, ClaimedItemsTables, DefaultClaimedItemPages, DefaultClaimedItemState} from "./types";
-import APIConfig from "../../config/api";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {
+    ClaimedItemInterface,
+    ClaimedItemMinimal,
+    ClaimedItemsTables,
+    DefaultClaimedItemPages,
+    DefaultClaimedItemState
+} from "./types";
+import {createAppAsyncThunk} from "../reduxTypes";
+import {APIResponseKnownError, StructureException} from "../exceptions";
 
-export const updateClaimedItemsContent = createAsyncThunk("claimedItems/fetchItems",
-    async () => {
-        const res = await fetch(`${APIConfig.address}${APIConfig.endpoints.claimedItems.get}`)
-        const json = await res.json()
-        if("error" in json) throw new Error(json.error)
-        if("result" in json) return json.result as ClaimedItemsTables
-        throw new Error("Некорректный ответ от сервера")
-    })
-export const claimedItemsSlice = createSlice({
+const getClaimedItemsContent = createAppAsyncThunk("claimedItems/fetch", async(_, thunkAPI) => {
+    try {
+        function isResponse(data: unknown): data is { result: ClaimedItemsTables } {
+            return typeof data === "object" && data !== null && "result" in data
+        }
+        const response = await thunkAPI.extra.get("API").createRequest("claimedItems.get")
+        const json = await response.json()
+        if(isResponse(json)) return json.result
+        return thunkAPI.rejectWithValue(new StructureException("Некорретная структура данных"))
+    } catch (e: unknown) {
+        if (e instanceof APIResponseKnownError) {
+            return thunkAPI.rejectWithValue(e)
+        }
+        throw e
+    }
+})
+
+const addClaimedItem = createAppAsyncThunk("claimedItems/add", async(item: Partial<ClaimedItemMinimal>, thunkAPI) => {
+    try {
+        const merged = Object.assign({
+            accepted: false,
+            acceptedAt: new Date(),
+            acceptor: "",
+            addedAt: new Date(),
+            additionalInfo: "",
+            id: "",
+            link: "",
+            name: "",
+            owner: "",
+            ownerProfile: "",
+            ownerProof: "",
+            ownerProofLink: "",
+            quality: "",
+            reviewer: "",
+        }, item)
+        await thunkAPI.extra.get("API").createRequest("claimedItems.create", "", JSON.stringify({...merged}))
+        return merged
+    } catch (e: unknown) {
+        if(e instanceof APIResponseKnownError) {
+            return thunkAPI.rejectWithValue(e)
+        }
+        throw e
+    }
+})
+
+const updateClaimedItem = createAppAsyncThunk("claimedItems/update", async(changes: ClaimedItemInterface, thunkAPI) => {
+    try {
+        await thunkAPI.extra.get("API").createRequest("claimedItems.update", `/${changes.id}`, JSON.stringify(changes))
+        return changes
+    } catch (e: unknown) {
+        if(e instanceof APIResponseKnownError) {
+            return thunkAPI.rejectWithValue(e)
+        }
+        throw e
+    }
+})
+
+const approveClaimedItem = createAppAsyncThunk("claimedItems/approve", async(id: string, thunkAPI) => {
+    try {
+        await thunkAPI.extra.get("API").createRequest("claimedItems.approve", `/${id}`)
+        return id
+    } catch (e: unknown) {
+        if(e instanceof APIResponseKnownError) {
+            return thunkAPI.rejectWithValue(e)
+        }
+        throw e
+    }
+})
+
+const removeClaimedItem = createAppAsyncThunk("claimedItems/remove", async(id: string, thunkAPI) => {
+    try {
+        await thunkAPI.extra.get("API").createRequest("claimedItems.delete", `/${id}`)
+        return id
+    } catch (e: unknown) {
+        if(e instanceof APIResponseKnownError) {
+            return thunkAPI.rejectWithValue(e)
+        }
+        throw e
+    }
+})
+
+export const claimedItemsAsyncActions = { getClaimedItemsContent, addClaimedItem, updateClaimedItem, approveClaimedItem, removeClaimedItem }
+const claimedItemsSlice = createSlice({
     name: 'claimedItems',
     initialState: DefaultClaimedItemState,
     reducers: {
@@ -39,21 +120,58 @@ export const claimedItemsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(updateClaimedItemsContent.pending, (state) => {
+            .addCase(getClaimedItemsContent.pending, (state) => {
                 state.isLoading = true
             })
-            .addCase(updateClaimedItemsContent.fulfilled, (state, action: PayloadAction<ClaimedItemsTables>) => {
+            .addCase(getClaimedItemsContent.fulfilled, (state, action: PayloadAction<ClaimedItemsTables>) => {
                 state.content = action.payload
                 state.isLoading = false
                 state.page = DefaultClaimedItemPages
             })
-            .addCase(updateClaimedItemsContent.rejected, (state, action) => {
-                if(action.payload instanceof Error) {
+            .addCase(getClaimedItemsContent.rejected, (state, action) => {
+                if(action.payload instanceof APIResponseKnownError) {
                     state.error = action.payload.message
                 }
                 state.isLoading = false
             })
+            .addCase(addClaimedItem.rejected, (state, action) => {
+                if(action.payload instanceof APIResponseKnownError) {
+                    state.error = action.payload.message
+                }
+                state.isLoading = false
+            })
+            .addCase(addClaimedItem.fulfilled, (state) => {
+                state.addModal = null
+            })
+            .addCase(updateClaimedItem.rejected, (state, action) => {
+                if(action.payload instanceof APIResponseKnownError) {
+                    state.error = action.payload.message
+                }
+            })
+            .addCase(updateClaimedItem.fulfilled, (state) => {
+                state.editModal = null
+            })
+            .addCase(approveClaimedItem.rejected, (state, action) => {
+                if(action.payload instanceof APIResponseKnownError) {
+                    state.error = action.payload.message
+                }
+                state.editModal = null
+            })
+            .addCase(approveClaimedItem.fulfilled, (state) => {
+                state.editModal = null
+            })
+            .addCase(removeClaimedItem.rejected, (state, action) => {
+                if(action.payload instanceof APIResponseKnownError) {
+                    state.error = action.payload.message
+                }
+                state.editModal = null
+            })
+            .addCase(removeClaimedItem.fulfilled, (state) => {
+                state.editModal = null
+            })
     }
 });
 
-export const { setAddModal, removeAddModal, setEditModal, removeEditModal, setError, setPage, setSearch } = claimedItemsSlice.actions;
+export const { setAddModal, removeAddModal, setEditModal, removeEditModal, setPage, setSearch } = claimedItemsSlice.actions;
+
+export default claimedItemsSlice.reducer
