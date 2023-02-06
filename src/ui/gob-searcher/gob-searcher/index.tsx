@@ -22,7 +22,7 @@ const GobSearcher = () => {
     useEffect(() => {
         let displayedItems: GameObject[] = [...state.items];
         if(state.search) {
-            displayedItems = displayedItems.filter(item => String(item.id).includes(state.search) || item.name.includes(state.search))
+            displayedItems = displayedItems.filter(item => String(item.id).includes(state.search) || item.name.toLowerCase().includes(state.search.toLowerCase()))
         }
         if(state.typeFilter !== "Все") {
             displayedItems = displayedItems.filter(item => GameObjectTypeToName[item.type] === state.typeFilter)
