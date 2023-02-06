@@ -1,0 +1,6 @@
+.gob-searcher-filter-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column;
+}

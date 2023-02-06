@@ -8,7 +8,7 @@ import AdminReducer from "../../../model/admin/reducer";
 import CheckReducer from "../../../model/economics/checks/reducer";
 import ArbiterBusinessRewardReducer from '../../../model/arbiters/business/reducer'
 import ArbiterEventRewardDistributionReducer from '../../../model/arbiters/event-rewards/reducer'
-
+import GobSearcherReducer from '../../../model/gob-searcher/reducer'
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import ServicesProvider from "../../index";
 
@@ -21,7 +21,8 @@ const ConfiguredStore = (services: ServicesProvider) => configureStore({
         admin: AdminReducer,
         checks:  CheckReducer,
         business: ArbiterBusinessRewardReducer,
-        eventReward: ArbiterEventRewardDistributionReducer
+        eventReward: ArbiterEventRewardDistributionReducer,
+        gobSearcher: GobSearcherReducer,
         // comments: commentsReducer,
         // users: usersReducer,
     },

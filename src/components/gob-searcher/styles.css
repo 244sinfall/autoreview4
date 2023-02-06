@@ -1,0 +1,12 @@
+.gob-searcher-label {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gob-searcher-pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-right: 20px;
+}

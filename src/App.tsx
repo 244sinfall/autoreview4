@@ -15,6 +15,7 @@ import {Types} from "./model/header/types";
 import {useAppDispatch, useAppSelector} from "./services/services/store";
 import {changeTheme} from "./model/theme";
 import {Theme} from "./model/theme/types";
+import GobSearcherPage from "./ui/gob-searcher/gob-searcher-page";
 
 
 
@@ -31,6 +32,7 @@ function App() {
             {menuName: 'Отчеты', menuRoute: '/events', accessLevel: PERMISSION.Reviewer},
             {menuName: "Таблица именных предметов", menuRoute: '/claimed_items'},
             {menuName: 'Арбитры', menuRoute: '/arbitration', accessLevel: PERMISSION.Arbiter},
+            {menuName: 'Поиск ГО', menuRoute: "/gob", accessLevel: PERMISSION.GM},
             {menuName: 'Экономика', menuRoute: '/economics'},
             {menuName: 'Другое', menuRoute: '/other'},
             {menuName: 'Тема', action: () => setMenuElements(
@@ -59,6 +61,7 @@ function App() {
                 <Route path='/arbitration' element={<ArbitersPage/>}/>
                 <Route path='/economics' element={<EconomicsPage/>}/>
                 <Route path='/admin' element={<AdminPage/>}/>
+                <Route path='/gob' element={<GobSearcherPage/>}/>
                 <Route path='/' element={<MainPage/>}/>
             </Routes>
         </div>
