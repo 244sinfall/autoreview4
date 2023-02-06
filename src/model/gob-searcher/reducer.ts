@@ -1,36 +1,24 @@
 import {createAppAsyncThunk} from "../reduxTypes";
-import {GameObject, GameObjectType, GameObjectTypeFilter} from "./types";
+import {GameObject, GameObjectTypeFilter} from "./types";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import initialState from './types'
 
-export const fetchGameObjects = createAppAsyncThunk("gob-searcher/fetch", async() => {
-    const data = await fetch('gobs.csv');
-    const response = await data.text()
-    const splittedResponse = response.split("\n")
-    const records: GameObject[] = []
-    let count = 0;
-    for(const line of splittedResponse) {
-        if(count !== 0 && count % 5000 === 0) setTimeout(() => {})
-        const record = line.split(",")
-        if(record.length !== 3) {
-            records.push({id: 0, name: "", type: 0 as GameObjectType})
-            continue
-        }
-        const id = parseInt(record[0])
-        if (isNaN(id)) {
-            records.push({id: 0, name: "", type: 0 as GameObjectType})
-            continue
-        }
-        const type = parseInt(record[2])
-        if (isNaN(type) && (type < 0 || type > 2)) {
-            records.push({id: 0, name: "", type: 0 as GameObjectType})
-            continue
-        }
-        const okType = type as GameObjectType
-        records.push({id, name: String(record[1] ?? ""), type: okType})
-        count++
+export const fetchGameObjects = createAppAsyncThunk("gob-searcher/fetch", async(_, thunkAPI) => {
+    function isError(data: unknown): data is { error: string } {
+        return typeof data === "object" && data !== null && "error" in data
     }
-    return records
+    function hasResult(data: unknown): data is { result: GameObject[] } {
+        if(typeof data === "object" && data !== null && "result" in data) {
+            return Array.isArray(data.result) && data.result.length !== 0 &&
+                typeof data.result[0] === "object" && data.result[0] !== null && "id" in data.result[0] && "name" in data.result[0] && "type" in data.result[0]
+        }
+        return false
+    }
+    const data = await thunkAPI.extra.get("API").createRequest("gobs.get")
+    const response = await data.json()
+    if(isError(response)) return thunkAPI.rejectWithValue(new Error(response.error))
+    if(!hasResult(response)) return thunkAPI.rejectWithValue(new Error("Неизвестный формат данных"))
+    return response.result
 })
 
 const GobSearcherSlice = createSlice({

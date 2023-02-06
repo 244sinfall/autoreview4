@@ -67,6 +67,12 @@ const APIConfig = {
             method: "PATCH",
             auth: true,
             accept: "application/json"
+        },
+        "gobs.get": {
+            url: '/gobs',
+            method: "GET",
+            auth: true,
+            accept: "application/json"
         }
     }
 } as const
