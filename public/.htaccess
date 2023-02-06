@@ -1,6 +1,0 @@
-RewriteEngine on
-RewriteCond %{HTTP_REFERER} !^https://(www\.)?dm.rolevik.site [NC]
-RewriteCond %{HTTP_REFERER} !^https://(www\.)?dm.rolevik.site.*$ [NC]
-RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost [NC]
-RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost.*$ [NC]
-RewriteRule \.(csv)$ - [F]
