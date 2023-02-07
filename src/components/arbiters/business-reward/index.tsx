@@ -49,6 +49,7 @@ const BusinessReward = (props: BusinessRewardProps) => {
                                  isFloat={true}/>
                 </Field>
                 <Selector options={Resources.map(res => res.name)}
+                          selected={Resources.filter(res => props.info.resource === res.id)[0].name ?? "Выберите тип ресурса"}
                           onSelectionChange={(resName) =>
                               props.onChange("resource", Resources.find(res => res.name === resName)?.id ?? 0)}/>
             </span>

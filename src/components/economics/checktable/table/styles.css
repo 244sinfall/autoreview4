@@ -1,0 +1,7 @@
+.checks-pagination {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+    margin-right: 20px;
+}

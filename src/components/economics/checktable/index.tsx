@@ -29,10 +29,12 @@ const CheckTableWrapper = (props: CheckTableWrapperProps) => {
                 <CheckTableFilters searchOnChange={newSearch => props.onParamsChange("search", newSearch)}
                                    showAmountOnChange={newShowAmount => props.onParamsChange("limit", newShowAmount)}
                                    showAmount={props.params.limit}
+                                   selectedType={props.params.category}
                                    statusFilterOnChange={newFilter => props.onParamsChange("status", newFilter)}
                                    statusFilterValue={props.params.status}
                                    typeSelectOnChange={newSelect => props.onParamsChange("category", newSelect)}
-                                   typeSelectValues={props.response?.types ?? []}/>
+                                   typeSelectValues={props.response?.types ?? []}
+                                   search={props.params.search}/>
                 {props.error && <p className="check-table-error">{props.error}</p>}
                 <CheckTableInfo checkCount={props.response?.count ?? 0}
                             filteredCheckCount={props.response?.filteredCount ?? 0}

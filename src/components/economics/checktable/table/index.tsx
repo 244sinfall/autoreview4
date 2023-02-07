@@ -3,6 +3,7 @@ import LoadingSpinner from "../../../common/loading-spinner";
 import Table from "../../../common/table";
 import Pagination from "../../../common/pagination";
 import {ICheck} from "../../../../model/economics/checks/types";
+import './styles.css'
 
 type CheckTableProps = {
     checks: ICheck[],
@@ -21,7 +22,8 @@ const CheckTable = (props: CheckTableProps) => {
                     "Описание","Деньги","ГМ","Статус","Вложения"]}
                     content={props.checks}
                     renderFunction={props.renderFunction}/>
-            <Pagination itemsTotal={props.filteredCheckCount}
+            <Pagination className="checks-pagination"
+                        itemsTotal={props.filteredCheckCount}
                         itemsPerPage={props.showAmount}
                         currentPage={props.page}
                         onPageChange={props.onPageChange}/>

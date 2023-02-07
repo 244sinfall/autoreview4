@@ -10,8 +10,10 @@ type CheckTableFiltersProps = {
     statusFilterOnChange: (newValue: CheckStatus | "Все") => void,
     searchOnChange: (newValue: string) => void,
     typeSelectValues: string[],
+    selectedType: string,
     typeSelectOnChange: (newValue: string) => void,
     showAmount: 20 | 50 | 100,
+    search: string,
     showAmountOnChange: (newAmount: 20 | 50 | 100) => void,
 }
 const CheckTableFilters = (props: CheckTableFiltersProps) => {
@@ -22,8 +24,8 @@ const CheckTableFilters = (props: CheckTableFiltersProps) => {
                               groupName={"check-table-filter-status"} onSelectionChange={props.statusFilterOnChange}
                               value={props.statusFilterValue}/>
                 <span className="check-table-search-and-select">
-                    <TextInput placeholder={"Поиск"} maxLength={128} onChange={props.searchOnChange}/>
-                    <Selector options={props.typeSelectValues}
+                    <TextInput placeholder={"Поиск"} maxLength={128} onChange={props.searchOnChange} value={props.search}/>
+                    <Selector options={props.typeSelectValues} selected={props.selectedType}
                           onSelectionChange={props.typeSelectOnChange}/>
                 </span>
             </span>

@@ -19,7 +19,7 @@ const GobSearcherFilter = (props: GobSearcherFilterProps) => {
                 <TextInput value={props.search} onChange={props.onSearch}/>
             </Field>
             <Field title="Фильтр по типу" containerOptions={{justify:"center"}}>
-                <Selector options={GameObjectTypeFilterOptions} onSelectionChange={props.onTypeChange}/>
+                <Selector options={GameObjectTypeFilterOptions} selected={props.type} onSelectionChange={props.onTypeChange}/>
             </Field>
         </div>
     );

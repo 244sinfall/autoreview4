@@ -58,7 +58,9 @@ const UsersList = () => {
         <ContentTitle title="Управление пользователями" collapsable={false}>
             <AdminUserListFilter onPermissionFilter={(permission) => 
                                                 dispatch(setPermissionFilter(permission))}
-                                 onSearch={search => dispatch(setSearchFilter(search))}/>
+                                 onSearch={search => dispatch(setSearchFilter(search))}
+                                 search={state.filter.search}
+                                 filter={state.filter.permission}/>
             <AdminUserList users={displayingUser.slice((state.page-1) * 10, state.page * 10)}
                            render={callbacks.renderUser}
                            isLoading={state.isLoading}

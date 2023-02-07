@@ -8,6 +8,8 @@ import TextInput from "../../../common/text-input";
 interface AdminUserListFilterProps {
     onPermissionFilter: (newPermission: AdminReducerPermissionFilter) => void
     onSearch: (newSearch: string) => void
+    search: string
+    filter: AdminReducerPermissionFilter
 }
 
 const AdminUserListFilter = (props: AdminUserListFilterProps) => {
@@ -17,10 +19,10 @@ const AdminUserListFilter = (props: AdminUserListFilterProps) => {
             <div className="user-list-filters">
                 <Field title="Уровень доступа">
                 <Selector options={AdminReducerPermissionFilterList}
-                          onSelectionChange={props.onPermissionFilter}/>
+                          onSelectionChange={props.onPermissionFilter} selected={props.filter}/>
                 </Field>
                 <Field title="Поиск">
-                    <TextInput onChange={props.onSearch}/>
+                    <TextInput onChange={props.onSearch} value={props.search}/>
                 </Field>
             </div>
         </div>
