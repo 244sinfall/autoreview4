@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@marsidev/react-turnstile": "^0.1.2",
     "@reduxjs/toolkit": "^1.9.1",
     "firebase": "^9.9.4",
     "html-react-parser": "^3.0.4",

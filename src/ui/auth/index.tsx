@@ -17,22 +17,33 @@ const AccountManager = () => {
     const dispatch = useAppDispatch()
     const authorizer = useServices().get("Authorizer")
     const [errMsg, setErrMsg] = useState("")
+    const [isCaptchaDone, setIsCaptchaDone] = useState(false)
     const nav = useNavigate();
+    const validateCaptcha = useCallback(() => {
+        if(isCaptchaDone) return true;
+        setErrMsg("Вы не прошли проверку!")
+        return false;
+    }, [isCaptchaDone])
     const callbacks = {
         onRegister: useCallback(async(credentials: UserRegisterCredentials) => {
+            if(!validateCaptcha()) return
             return authorizer.signup(credentials)
                 .catch(e => {
                     if(e instanceof Error)
                         setErrMsg(e.message)
                 })
-        }, [authorizer]),
+        }, [authorizer, validateCaptcha]),
         onLogin: useCallback(async(credentials: UserLoginCredentials) => {
+            if(!validateCaptcha()) return
             return authorizer.login(credentials)
                 .catch(e => {
                     if(e instanceof Error)
                         setErrMsg(e.message)
                 })
-        }, [authorizer]),
+        }, [authorizer, validateCaptcha]),
+        onCaptcha: useCallback((success: boolean) => {
+            setIsCaptchaDone(success);
+        }, [])
     }
     return (
         <>
@@ -46,7 +57,8 @@ const AccountManager = () => {
                 <WelcomeNewUser onLogin={callbacks.onLogin}
                                 error={errMsg}
                                 isLoading={state.isLoading}
-                                onRegister={callbacks.onRegister}/>
+                                onRegister={callbacks.onRegister}
+                                onCaptcha={callbacks.onCaptcha}/>
             }
         </>
     );

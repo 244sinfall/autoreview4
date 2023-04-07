@@ -6,11 +6,13 @@ import TextInput from "../../common/text-input";
 import Field from "../../common/field";
 import {UserLoginCredentials, UserRegisterCredentials, UserRegOnlyCredentials} from "../../../model/auth/types";
 import ContentTitle from "../../common/content-title";
+import {Turnstile} from "@marsidev/react-turnstile";
 
 type WelcomeNewUserProps = {
     isLoading: boolean,
     onRegister: (credentials: UserRegisterCredentials) => Promise<unknown>
     onLogin: (credentials: UserLoginCredentials) => Promise<unknown>
+    onCaptcha: (success: boolean) => void
     error?: string
 }
 
@@ -25,7 +27,6 @@ const WelcomeNewUser = (props: WelcomeNewUserProps) => {
                 props.onRegister(Object.assign(value.current, regValue.current))
         }, [formState, props])
     }
-    
     return (
         <ContentTitle className="welcome-message" title={formState === "reg" ? "Регистрация" : "Авторизация"} collapsable={false}>
             <LoadingSpinner spin={props.isLoading}>
@@ -59,6 +60,9 @@ const WelcomeNewUser = (props: WelcomeNewUserProps) => {
                         <ActionButton title={formState === "reg" ? "К авторизации" : "К регистрации"}
                                       onClick={() => setFormState(prev => prev === "reg" ? "auth" : "reg")} />
                     </div>
+                    <Turnstile siteKey={"0x4AAAAAAAD0fdup-VPB9kq_"}
+                               onError={() => props.onCaptcha(false)}
+                               onSuccess={() => props.onCaptcha(true)}/>
                 </form>
             </LoadingSpinner>
         </ContentTitle>
