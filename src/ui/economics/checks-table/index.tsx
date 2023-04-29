@@ -53,7 +53,7 @@ const ChecksTable = () => {
                            params={state.checks.params}
                            error={state.checks.error}
                            response={state.checks.result}
-                           modal={state.checks.selectedCheck ? {
+                           modal={state.checks.selectedCheck && state.user.permission >= PERMISSION.Arbiter ? {
                                check: state.checks.selectedCheck,
                                onClose: () => dispatch(removeSelectedCheck())
                            }: undefined}/>
