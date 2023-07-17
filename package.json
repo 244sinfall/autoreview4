@@ -44,7 +44,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://dm.rolevik.site:8443",
   "devDependencies": {
     "@redux-devtools/core": "^3.13.1",
     "@testing-library/jest-dom": "^5.16.4",

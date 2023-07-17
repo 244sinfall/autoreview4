@@ -6,6 +6,7 @@ import BusinessRewarder from "../business-rewarder";
 import {PERMISSION} from "../../../model/user";
 import {LayoutResponsiveGrid} from "../../../components/common/layouts/responsive-grid";
 import {LayoutReponsiveFlex} from "../../../components/common/layouts/responsive-flex";
+import ChecksTable from "../../economics/checks-table";
 
 const ArbitersPage = () => {
     return (
@@ -17,6 +18,7 @@ const ArbitersPage = () => {
                 </LayoutReponsiveFlex>
                 <LayoutResponsiveGrid gap={10} columns={[{}]}>
                     <EventRewardGiver/>
+                    <ChecksTable/>
                 </LayoutResponsiveGrid>
             </LayoutResponsiveGrid>
         </Protector>
