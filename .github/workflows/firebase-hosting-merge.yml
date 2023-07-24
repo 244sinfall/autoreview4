@@ -23,7 +23,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DARKMOON_WEB_API_2 }}'
           channelId: live
           projectId: darkmoon-web-api-2
-      - name: Deploy to dm.rolevik.site
+      - name: Deploy to self host
         uses: easingthemes/ssh-deploy@v3.0.1
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}

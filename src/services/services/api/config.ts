@@ -1,6 +1,12 @@
 const APIConfig = {
     address: process.env["REACT_APP_API_ADDRESS"],
     endpoints: {
+        "users.reset": {
+            url: "/users/reset",
+            method: "POST",
+            auth: true,
+            accept: "application/json"
+        },
         "charReview.generate": {
             url: '/generate_charsheet_review',
             method: "POST",

@@ -17,7 +17,7 @@ const AccountManager = () => {
     const dispatch = useAppDispatch()
     const authorizer = useServices().get("Authorizer")
     const [errMsg, setErrMsg] = useState("")
-    const [isCaptchaDone, setIsCaptchaDone] = useState(false)
+    const [isCaptchaDone, setIsCaptchaDone] = useState(process.env.NODE_ENV === "development")
     const nav = useNavigate();
     const validateCaptcha = useCallback(() => {
         if(isCaptchaDone) return true;
@@ -42,7 +42,7 @@ const AccountManager = () => {
                 })
         }, [authorizer, validateCaptcha]),
         onCaptcha: useCallback((success: boolean) => {
-            setIsCaptchaDone(success);
+            setIsCaptchaDone(process.env.NODE_ENV === "development" ? true : success);
         }, [])
     }
     return (

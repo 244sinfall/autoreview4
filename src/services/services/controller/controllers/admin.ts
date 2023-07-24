@@ -2,7 +2,7 @@ import ReviewerController from "./reviewer";
 import {FirestoreUserData, PermissionValue} from "../../../../model/user";
 import {collection, getDocs, query, setDoc, where} from "firebase/firestore";
 import {db} from "../../authorizer/firebase";
-import {FirestoreDataException} from "../../../../model/exceptions";
+import {APIResponseKnownError, FirestoreDataException} from "../../../../model/exceptions";
 
 export default class AdminController extends ReviewerController{
     /**
@@ -25,7 +25,12 @@ export default class AdminController extends ReviewerController{
             data.every(document => typeof document === "object" && document !== null && "name" in document &&
                 "permission" in document && "email" in document)
     }
-
+    async resetPassword(forEmail: string) {
+        const res = await this.services.get("API").createRequest("users.reset", "", JSON.stringify({email: forEmail}))
+        if(res.status !== 200) {
+            throw new APIResponseKnownError(res)
+        }
+    }
     /**
      * @throws FirestoreDataException - в базе некорректная структура (тайпскрипт не смог типизировать поступившие данные)
      */

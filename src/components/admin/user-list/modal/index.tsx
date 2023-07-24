@@ -6,10 +6,12 @@ import RadioButtonGroup from "../../../common/radio-button-group";
 
 import './styles.css'
 import {FirestoreUserData} from "../../../../model/user/";
+import ActionButton from "../../../common/action-button";
 
 type AdminSelectedUserModalWrapperProps = {
     user: FirestoreUserData & {error?: string},
-    onPermissionChange: (newPermission: PermissionName) => Promise<unknown>
+    onPermissionChange: (newPermission: PermissionName) => Promise<unknown>,
+    onResetPassword: () => Promise<unknown>,
     onClose: () => void
 }
 
@@ -23,6 +25,13 @@ const AdminSelectedUserModalWrapper = (props: AdminSelectedUserModalWrapperProps
                                   groupName={`${props.user.email}-permission-control`}
                                   value={PermissionNameByValue[props.user.permission]}
                                   onSelectionChange={props.onPermissionChange}/>
+            </Field>
+            <Field title="Сбросить пароль">
+                <ActionButton title="Сбросить пароль"
+                              onClick={props.onResetPassword}
+                              type="button"
+                              tooltip="На почту, на которую зарегистрирован аккаунт придет
+                              письмо с ссылкой на восстановление пароля."/>
             </Field>
         </ModalTitle>
     );

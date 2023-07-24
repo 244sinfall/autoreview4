@@ -28,6 +28,16 @@ export const setUserPermission = createAppAsyncThunk("admin/setUserPermission",
     }
 })
 
+export const resetUserPassword = createAppAsyncThunk("admin/resetUserPassword", async(params: { email: string }, thunkAPI) => {
+    try {
+        const controller = thunkAPI.extra.get("UserController").getInstance()
+        if(!controller.is("Admin")) return thunkAPI.rejectWithValue(new NoAccessException("Недостаточно прав"))
+        await controller.resetPassword(params.email)
+    } catch (e: unknown) {
+        return thunkAPI.rejectWithValue(e);
+    }
+})
+
 const adminSlice = createSlice({
     name: 'admin',
     initialState: AdminReducerDefaultState,
@@ -77,6 +87,10 @@ const adminSlice = createSlice({
                 }
                 state.users[user] = action.payload
                 if(state.selectedUser) state.selectedUser = action.payload
+            })
+            .addCase(resetUserPassword.rejected, (state, action) => {
+                if(!state.selectedUser || !(action.payload instanceof Error)) return
+                state.selectedUser.error = action.payload.message;
             })
     }
 });
