@@ -36,7 +36,6 @@ const TextCleaner = () => {
         <ParticipantsCleaner onSubmit={callbacks.onSubmit}
                              editedLines={cleanedText.editedLines}
                              tooltip={rules}
-                             participantsCount={cleanedText.cleanedCount}
                              error={errMsg}
                              result={cleanedText.cleanedText}/>
     );
