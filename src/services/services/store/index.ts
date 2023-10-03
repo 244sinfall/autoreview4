@@ -6,6 +6,7 @@ import ClaimedItemsReducer from "../../../model/claimed-items/reducer";
 import CharsheetReviewGeneratorReducer from '../../../model/charsheets/reducer'
 import AdminReducer from "../../../model/admin/reducer";
 import CheckReducer from "../../../model/economics/checks/reducer";
+import ArbiterItemsReducer from "../../../model/arbiters/items/reducer";
 import ArbiterBusinessRewardReducer from '../../../model/arbiters/business/reducer'
 import ArbiterEventRewardDistributionReducer from '../../../model/arbiters/event-rewards/reducer'
 import GobSearcherReducer from '../../../model/gob-searcher/reducer'
@@ -23,6 +24,7 @@ const ConfiguredStore = (services: ServicesProvider) => configureStore({
         business: ArbiterBusinessRewardReducer,
         eventReward: ArbiterEventRewardDistributionReducer,
         gobSearcher: GobSearcherReducer,
+        arbiterItems: ArbiterItemsReducer,
         // comments: commentsReducer,
         // users: usersReducer,
     },

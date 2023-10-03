@@ -1,0 +1,8545 @@
+[
+  {
+    "id": 23472,
+    "name": "Trapper's Boots",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 138019,
+    "name": "Mythic Keystone",
+    "description": "Placewithin the Font of Power inside the dungeon on Mythic difficulty.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340000,
+    "name": "Голова +1",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340001,
+    "name": "Голова +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340002,
+    "name": "Голова +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340003,
+    "name": "Голова +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340004,
+    "name": "Голова +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340005,
+    "name": "Голова +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340006,
+    "name": "Голова +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340007,
+    "name": "Голова +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340008,
+    "name": "Голова +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340009,
+    "name": "Голова +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340010,
+    "name": "Голова +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340011,
+    "name": "Голова +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340012,
+    "name": "Голова +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340013,
+    "name": "Голова +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340014,
+    "name": "Голова +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340015,
+    "name": "Голова +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340016,
+    "name": "Голова +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340017,
+    "name": "Голова +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340018,
+    "name": "Голова +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340019,
+    "name": "Голова +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340020,
+    "name": "Голова +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340021,
+    "name": "Голова +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340022,
+    "name": "Голова +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340023,
+    "name": "Голова +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340024,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340025,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340026,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340027,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340028,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340029,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340030,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340031,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340032,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340033,
+    "name": "Голова +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340034,
+    "name": "Голова +4",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340035,
+    "name": "Голова +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340036,
+    "name": "Голова +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340037,
+    "name": "Голова +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340038,
+    "name": "Голова +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340039,
+    "name": "Голова +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340040,
+    "name": "Голова +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340041,
+    "name": "Голова +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340042,
+    "name": "Голова +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340043,
+    "name": "Голова +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340044,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340045,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340046,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340047,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340048,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340049,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340050,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340051,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340052,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340053,
+    "name": "Голова +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340054,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340055,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340056,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340057,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340058,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340059,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340060,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340061,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340062,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340063,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340064,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340065,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340066,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340067,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340068,
+    "name": "Голова +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340069,
+    "name": "Плечи +1",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340070,
+    "name": "Плечи +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340071,
+    "name": "Плечи +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340072,
+    "name": "Плечи +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340073,
+    "name": "Плечи +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340074,
+    "name": "Плечи +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340075,
+    "name": "Плечи +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340076,
+    "name": "Плечи +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340077,
+    "name": "Плечи +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340078,
+    "name": "Плечи +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340079,
+    "name": "Плечи +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340080,
+    "name": "Плечи +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340081,
+    "name": "Плечи +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340082,
+    "name": "Плечи +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340083,
+    "name": "Плечи +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340084,
+    "name": "Плечи +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340085,
+    "name": "Плечи +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340086,
+    "name": "Плечи +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340087,
+    "name": "Плечи +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340088,
+    "name": "Плечи +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340089,
+    "name": "Плечи +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340090,
+    "name": "Плечи +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340091,
+    "name": "Плечи +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340092,
+    "name": "Плечи +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340093,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340094,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340095,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340096,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340097,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340098,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340099,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340100,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340101,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340102,
+    "name": "Плечи +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340103,
+    "name": "Плечи +4",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340104,
+    "name": "Плечи +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340105,
+    "name": "Плечи +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340106,
+    "name": "Плечи +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340107,
+    "name": "Плечи +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340108,
+    "name": "Плечи +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340109,
+    "name": "Плечи +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340110,
+    "name": "Плечи +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340111,
+    "name": "Плечи +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340112,
+    "name": "Плечи +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340113,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340114,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340115,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340116,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340117,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340118,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340119,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340120,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340121,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340122,
+    "name": "Плечи +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340123,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340124,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340125,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340126,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340127,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340128,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340129,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340130,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340131,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340132,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340133,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340134,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340135,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340136,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340137,
+    "name": "Плечи +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340138,
+    "name": "Грудь +1",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340139,
+    "name": "Грудь +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340140,
+    "name": "Грудь +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340141,
+    "name": "Грудь +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340142,
+    "name": "Грудь +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340143,
+    "name": "Грудь +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340144,
+    "name": "Грудь +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340145,
+    "name": "Грудь +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340146,
+    "name": "Грудь +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340147,
+    "name": "Грудь +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340148,
+    "name": "Грудь +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340149,
+    "name": "Грудь +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340150,
+    "name": "Грудь +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340151,
+    "name": "Грудь +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340152,
+    "name": "Грудь +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340153,
+    "name": "Грудь +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340154,
+    "name": "Грудь +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340155,
+    "name": "Грудь +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340156,
+    "name": "Грудь +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340157,
+    "name": "Грудь +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340158,
+    "name": "Грудь +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340159,
+    "name": "Грудь +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340160,
+    "name": "Грудь +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340161,
+    "name": "Грудь +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340162,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340163,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340164,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340165,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340166,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340167,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340168,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340169,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340170,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340171,
+    "name": "Грудь +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340172,
+    "name": "Грудь +4",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340173,
+    "name": "Грудь +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340174,
+    "name": "Грудь +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340175,
+    "name": "Грудь +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340176,
+    "name": "Грудь +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340177,
+    "name": "Грудь +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340178,
+    "name": "Грудь +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340179,
+    "name": "Грудь +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340180,
+    "name": "Грудь +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340181,
+    "name": "Грудь +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340182,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340183,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340184,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340185,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340186,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340187,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340188,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340189,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340190,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340191,
+    "name": "Грудь +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340192,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340193,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340194,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340195,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340196,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340197,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340198,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340199,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340200,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340201,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340202,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340203,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340204,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340205,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340206,
+    "name": "Грудь +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340207,
+    "name": "Грудь +5",
+    "itemStatValue1": 5,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340208,
+    "name": "Грудь +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340209,
+    "name": "Грудь +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340210,
+    "name": "Грудь +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340211,
+    "name": "Грудь +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340212,
+    "name": "Грудь +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340213,
+    "name": "Грудь +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340214,
+    "name": "Грудь +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340215,
+    "name": "Грудь +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340216,
+    "name": "Грудь +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340217,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340218,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340219,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340220,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340221,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340222,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340223,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340224,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340225,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340226,
+    "name": "Грудь +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340227,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340228,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340229,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340230,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340231,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340232,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340233,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340234,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340235,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340236,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340237,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340238,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340239,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340240,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340241,
+    "name": "Грудь +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340242,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 5,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340243,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340244,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340245,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340246,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340247,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340248,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340249,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340250,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340251,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340252,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340253,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340254,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340255,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340256,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340257,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 5,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340258,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340259,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340260,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340261,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340262,
+    "name": "Грудь +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 5
+  },
+  {
+    "id": 340263,
+    "name": "Пояс +1",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340264,
+    "name": "Пояс +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340265,
+    "name": "Пояс +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340266,
+    "name": "Пояс +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340267,
+    "name": "Пояс +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340268,
+    "name": "Пояс +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340269,
+    "name": "Пояс +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340270,
+    "name": "Пояс +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340271,
+    "name": "Пояс +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340272,
+    "name": "Пояс +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340273,
+    "name": "Пояс +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340274,
+    "name": "Пояс +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340275,
+    "name": "Пояс +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340276,
+    "name": "Пояс +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340277,
+    "name": "Пояс +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340278,
+    "name": "Пояс +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340279,
+    "name": "Пояс +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340280,
+    "name": "Пояс +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340281,
+    "name": "Пояс +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340282,
+    "name": "Пояс +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340283,
+    "name": "Пояс +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340284,
+    "name": "Пояс +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340285,
+    "name": "Пояс +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340286,
+    "name": "Пояс +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340287,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340288,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340289,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340290,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340291,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340292,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340293,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340294,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340295,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340296,
+    "name": "Пояс +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340297,
+    "name": "Ноги +1",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340298,
+    "name": "Ноги +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340299,
+    "name": "Ноги +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340300,
+    "name": "Ноги +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340301,
+    "name": "Ноги +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340302,
+    "name": "Ноги +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340303,
+    "name": "Ноги +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340304,
+    "name": "Ноги +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340305,
+    "name": "Ноги +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340306,
+    "name": "Ноги +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340307,
+    "name": "Ноги +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340308,
+    "name": "Ноги +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340309,
+    "name": "Ноги +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340310,
+    "name": "Ноги +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340311,
+    "name": "Ноги +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340312,
+    "name": "Ноги +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340313,
+    "name": "Ноги +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340314,
+    "name": "Ноги +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340315,
+    "name": "Ноги +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340316,
+    "name": "Ноги +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340317,
+    "name": "Ноги +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340318,
+    "name": "Ноги +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340319,
+    "name": "Ноги +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340320,
+    "name": "Ноги +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340321,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340322,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340323,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340324,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340325,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340326,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340327,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340328,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340329,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340330,
+    "name": "Ноги +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340331,
+    "name": "Ноги +4",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340332,
+    "name": "Ноги +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340333,
+    "name": "Ноги +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340334,
+    "name": "Ноги +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340335,
+    "name": "Ноги +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340336,
+    "name": "Ноги +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340337,
+    "name": "Ноги +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340338,
+    "name": "Ноги +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340339,
+    "name": "Ноги +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340340,
+    "name": "Ноги +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340341,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340342,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340343,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340344,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340345,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340346,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340347,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340348,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340349,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340350,
+    "name": "Ноги +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340351,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340352,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340353,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340354,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340355,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340356,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340357,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340358,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340359,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340360,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340361,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340362,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340363,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340364,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340365,
+    "name": "Ноги +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340366,
+    "name": "Ноги +5",
+    "itemStatValue1": 5,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340367,
+    "name": "Ноги +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340368,
+    "name": "Ноги +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340369,
+    "name": "Ноги +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340370,
+    "name": "Ноги +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340371,
+    "name": "Ноги +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340372,
+    "name": "Ноги +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340373,
+    "name": "Ноги +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340374,
+    "name": "Ноги +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340375,
+    "name": "Ноги +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340376,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340377,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340378,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340379,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340380,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340381,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340382,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340383,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340384,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340385,
+    "name": "Ноги +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340386,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340387,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340388,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340389,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340390,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340391,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340392,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340393,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340394,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340395,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340396,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340397,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340398,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340399,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340400,
+    "name": "Ноги +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340401,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 5,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340402,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340403,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340404,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340405,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340406,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340407,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340408,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340409,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340410,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340411,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340412,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340413,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340414,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340415,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340416,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 5,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340417,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340418,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340419,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340420,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340421,
+    "name": "Ноги +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 5
+  },
+  {
+    "id": 340422,
+    "name": "Ступни +1",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340423,
+    "name": "Ступни +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340424,
+    "name": "Ступни +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340425,
+    "name": "Ступни +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340426,
+    "name": "Ступни +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340427,
+    "name": "Ступни +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340428,
+    "name": "Ступни +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340429,
+    "name": "Ступни +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340430,
+    "name": "Ступни +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340431,
+    "name": "Ступни +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340432,
+    "name": "Ступни +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340433,
+    "name": "Ступни +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340434,
+    "name": "Ступни +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340435,
+    "name": "Ступни +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340436,
+    "name": "Ступни +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340437,
+    "name": "Ступни +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340438,
+    "name": "Ступни +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340439,
+    "name": "Ступни +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340440,
+    "name": "Ступни +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340441,
+    "name": "Ступни +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340442,
+    "name": "Ступни +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340443,
+    "name": "Ступни +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340444,
+    "name": "Ступни +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340445,
+    "name": "Ступни +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340446,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340447,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340448,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340449,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340450,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340451,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340452,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340453,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340454,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340455,
+    "name": "Ступни +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340456,
+    "name": "Ступни +4",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340457,
+    "name": "Ступни +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340458,
+    "name": "Ступни +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340459,
+    "name": "Ступни +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340460,
+    "name": "Ступни +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340461,
+    "name": "Ступни +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340462,
+    "name": "Ступни +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340463,
+    "name": "Ступни +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340464,
+    "name": "Ступни +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340465,
+    "name": "Ступни +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340466,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340467,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340468,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340469,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340470,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340471,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340472,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340473,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340474,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340475,
+    "name": "Ступни +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340476,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340477,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340478,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340479,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340480,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340481,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340482,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340483,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340484,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340485,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340486,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340487,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340488,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340489,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340490,
+    "name": "Ступни +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340491,
+    "name": "Запястья +1",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340492,
+    "name": "Запястья +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340493,
+    "name": "Запястья +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340494,
+    "name": "Запястья +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340495,
+    "name": "Запястья +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340496,
+    "name": "Запястья +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340497,
+    "name": "Запястья +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340498,
+    "name": "Запястья +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340499,
+    "name": "Запястья +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340500,
+    "name": "Запястья +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340501,
+    "name": "Запястья +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340502,
+    "name": "Запястья +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340503,
+    "name": "Запястья +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340504,
+    "name": "Запястья +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340505,
+    "name": "Запястья +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340506,
+    "name": "Запястья +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340507,
+    "name": "Запястья +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340508,
+    "name": "Запястья +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340509,
+    "name": "Запястья +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340510,
+    "name": "Запястья +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340511,
+    "name": "Запястья +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340512,
+    "name": "Запястья +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340513,
+    "name": "Запястья +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340514,
+    "name": "Запястья +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340515,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340516,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340517,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340518,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340519,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340520,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340521,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340522,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340523,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340524,
+    "name": "Запястья +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340525,
+    "name": "Кисти рук +1",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340526,
+    "name": "Кисти рук +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340527,
+    "name": "Кисти рук +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340528,
+    "name": "Кисти рук +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340529,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340530,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340531,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340532,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340533,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340534,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340535,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340536,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340537,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340538,
+    "name": "Кисти рук +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340539,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340540,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340541,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340542,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340543,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340544,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340545,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340546,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340547,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340548,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340549,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340550,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340551,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340552,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340553,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340554,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340555,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340556,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340557,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340558,
+    "name": "Кисти рук +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340559,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340560,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340561,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340562,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340563,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340564,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340565,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340566,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340567,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340568,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340569,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340570,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340571,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340572,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340573,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340574,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340575,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340576,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340577,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340578,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340579,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340580,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340581,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340582,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340583,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340584,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340585,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340586,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340587,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340588,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340589,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340590,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340591,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340592,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340593,
+    "name": "Кисти рук +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 4
+  },
+  {
+    "id": 340594,
+    "name": "Плащ +1",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340595,
+    "name": "Плащ +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340596,
+    "name": "Плащ +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340597,
+    "name": "Плащ +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340598,
+    "name": "Плащ +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340599,
+    "name": "Плащ +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340600,
+    "name": "Плащ +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340601,
+    "name": "Плащ +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340602,
+    "name": "Плащ +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340603,
+    "name": "Плащ +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340604,
+    "name": "Плащ +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340605,
+    "name": "Плащ +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340606,
+    "name": "Плащ +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340607,
+    "name": "Плащ +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340608,
+    "name": "Плащ +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340609,
+    "name": "Плащ +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340610,
+    "name": "Плащ +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340611,
+    "name": "Плащ +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340612,
+    "name": "Плащ +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340613,
+    "name": "Плащ +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340614,
+    "name": "Плащ +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340615,
+    "name": "Плащ +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340616,
+    "name": "Плащ +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340617,
+    "name": "Плащ +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340618,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340619,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340620,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340621,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340622,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340623,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340624,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340625,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340626,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340627,
+    "name": "Плащ +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340628,
+    "name": "Левая рука +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340629,
+    "name": "Левая рука +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340630,
+    "name": "Левая рука +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340631,
+    "name": "Левая рука +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340632,
+    "name": "Левая рука +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340633,
+    "name": "Левая рука +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340634,
+    "name": "Левая рука +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340635,
+    "name": "Левая рука +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340636,
+    "name": "Левая рука +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340637,
+    "name": "Левая рука +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340638,
+    "name": "Левая рука +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340639,
+    "name": "Левая рука +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340640,
+    "name": "Левая рука +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340641,
+    "name": "Левая рука +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340642,
+    "name": "Левая рука +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340643,
+    "name": "Левая рука +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340644,
+    "name": "Левая рука +4",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340645,
+    "name": "Левая рука +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340646,
+    "name": "Левая рука +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340647,
+    "name": "Левая рука +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340648,
+    "name": "Левая рука +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340649,
+    "name": "Левая рука +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340650,
+    "name": "Левая рука +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340651,
+    "name": "Левая рука +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340652,
+    "name": "Левая рука +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340653,
+    "name": "Левая рука +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340654,
+    "name": "Левая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340655,
+    "name": "Левая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340656,
+    "name": "Левая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340657,
+    "name": "Левая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340658,
+    "name": "Левая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340659,
+    "name": "Левая рука +5",
+    "itemStatValue1": 5,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340660,
+    "name": "Левая рука +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340661,
+    "name": "Левая рука +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340662,
+    "name": "Левая рука +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340663,
+    "name": "Левая рука +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340664,
+    "name": "Левая рука +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340665,
+    "name": "Левая рука +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340666,
+    "name": "Левая рука +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340667,
+    "name": "Левая рука +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340668,
+    "name": "Левая рука +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340669,
+    "name": "Левая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340670,
+    "name": "Левая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340671,
+    "name": "Левая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340672,
+    "name": "Левая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340673,
+    "name": "Левая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340674,
+    "name": "Левая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 5,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340675,
+    "name": "Левая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340676,
+    "name": "Левая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340677,
+    "name": "Левая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340678,
+    "name": "Левая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340679,
+    "name": "Левая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 5,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340680,
+    "name": "Правая рука +2",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340681,
+    "name": "Правая рука +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340682,
+    "name": "Правая рука +2",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340683,
+    "name": "Правая рука +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340684,
+    "name": "Правая рука +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340685,
+    "name": "Правая рука +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340686,
+    "name": "Правая рука +3",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340687,
+    "name": "Правая рука +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340688,
+    "name": "Правая рука +3",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340689,
+    "name": "Правая рука +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340690,
+    "name": "Правая рука +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340691,
+    "name": "Правая рука +3",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340692,
+    "name": "Правая рука +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340693,
+    "name": "Правая рука +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340694,
+    "name": "Правая рука +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340695,
+    "name": "Правая рука +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340696,
+    "name": "Правая рука +4",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340697,
+    "name": "Правая рука +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340698,
+    "name": "Правая рука +4",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340699,
+    "name": "Правая рука +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340700,
+    "name": "Правая рука +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340701,
+    "name": "Правая рука +4",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340702,
+    "name": "Правая рука +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340703,
+    "name": "Правая рука +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340704,
+    "name": "Правая рука +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340705,
+    "name": "Правая рука +4",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340706,
+    "name": "Правая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340707,
+    "name": "Правая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340708,
+    "name": "Правая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340709,
+    "name": "Правая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340710,
+    "name": "Правая рука +4",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340711,
+    "name": "Правая рука +5",
+    "itemStatValue1": 5,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340712,
+    "name": "Правая рука +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340713,
+    "name": "Правая рука +5",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340714,
+    "name": "Правая рука +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340715,
+    "name": "Правая рука +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340716,
+    "name": "Правая рука +5",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340717,
+    "name": "Правая рука +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340718,
+    "name": "Правая рука +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340719,
+    "name": "Правая рука +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340720,
+    "name": "Правая рука +5",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340721,
+    "name": "Правая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340722,
+    "name": "Правая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340723,
+    "name": "Правая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340724,
+    "name": "Правая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340725,
+    "name": "Правая рука +5",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340726,
+    "name": "Правая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 5,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340727,
+    "name": "Правая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340728,
+    "name": "Правая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340729,
+    "name": "Правая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340730,
+    "name": "Правая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340731,
+    "name": "Правая рука +5",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 5,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340732,
+    "name": "Рубашка +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340733,
+    "name": "Рубашка +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340734,
+    "name": "Рубашка +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340735,
+    "name": "Левая рука +6",
+    "itemStatValue1": 6,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340736,
+    "name": "Левая рука +6",
+    "itemStatValue1": 5,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340737,
+    "name": "Левая рука +6",
+    "itemStatValue1": 5,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340738,
+    "name": "Левая рука +6",
+    "itemStatValue1": 4,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340739,
+    "name": "Левая рука +6",
+    "itemStatValue1": 4,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340740,
+    "name": "Левая рука +6",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340741,
+    "name": "Левая рука +6",
+    "itemStatValue1": 3,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340742,
+    "name": "Левая рука +6",
+    "itemStatValue1": 3,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340743,
+    "name": "Левая рука +6",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340744,
+    "name": "Левая рука +6",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340745,
+    "name": "Левая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340746,
+    "name": "Левая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340747,
+    "name": "Левая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340748,
+    "name": "Левая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340749,
+    "name": "Левая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340750,
+    "name": "Левая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 5,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340751,
+    "name": "Левая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 4,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340752,
+    "name": "Левая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340753,
+    "name": "Левая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340754,
+    "name": "Левая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340755,
+    "name": "Левая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 5,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340756,
+    "name": "Левая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 6,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340757,
+    "name": "Левая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 5,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340758,
+    "name": "Левая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340759,
+    "name": "Левая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340760,
+    "name": "Левая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340761,
+    "name": "Левая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 5,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340762,
+    "name": "Левая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 6,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340763,
+    "name": "Правая рука +6",
+    "itemStatValue1": 6,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340764,
+    "name": "Правая рука +6",
+    "itemStatValue1": 5,
+    "itemStatValue2": 1,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340765,
+    "name": "Правая рука +6",
+    "itemStatValue1": 5,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340766,
+    "name": "Правая рука +6",
+    "itemStatValue1": 4,
+    "itemStatValue2": 2,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340767,
+    "name": "Правая рука +6",
+    "itemStatValue1": 4,
+    "itemStatValue2": 1,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340768,
+    "name": "Правая рука +6",
+    "itemStatValue1": 4,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340769,
+    "name": "Правая рука +6",
+    "itemStatValue1": 3,
+    "itemStatValue2": 3,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340770,
+    "name": "Правая рука +6",
+    "itemStatValue1": 3,
+    "itemStatValue2": 2,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340771,
+    "name": "Правая рука +6",
+    "itemStatValue1": 3,
+    "itemStatValue2": 1,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340772,
+    "name": "Правая рука +6",
+    "itemStatValue1": 3,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340773,
+    "name": "Правая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 4,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340774,
+    "name": "Правая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 3,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340775,
+    "name": "Правая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 2,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340776,
+    "name": "Правая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 1,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340777,
+    "name": "Правая рука +6",
+    "itemStatValue1": 2,
+    "itemStatValue2": 0,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340778,
+    "name": "Правая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 5,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340779,
+    "name": "Правая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 4,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340780,
+    "name": "Правая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 3,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340781,
+    "name": "Правая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 2,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340782,
+    "name": "Правая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 1,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340783,
+    "name": "Правая рука +6",
+    "itemStatValue1": 1,
+    "itemStatValue2": 0,
+    "itemStatValue3": 5,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340784,
+    "name": "Правая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 6,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340785,
+    "name": "Правая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 5,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340786,
+    "name": "Правая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 4,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340787,
+    "name": "Правая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 3,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340788,
+    "name": "Правая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 2,
+    "itemStatValue3": 4,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340789,
+    "name": "Правая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 1,
+    "itemStatValue3": 5,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340790,
+    "name": "Правая рука +6",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 6,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340791,
+    "name": "Рубашка +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340792,
+    "name": "Рубашка +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340793,
+    "name": "Рубашка +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340794,
+    "name": "Рубашка +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340795,
+    "name": "Рубашка +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340796,
+    "name": "Рубашка +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340797,
+    "name": "Шея +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340798,
+    "name": "Шея +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340799,
+    "name": "Шея +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340800,
+    "name": "Шея +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340801,
+    "name": "Шея +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340802,
+    "name": "Шея +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340803,
+    "name": "Шея +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340804,
+    "name": "Шея +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340805,
+    "name": "Шея +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340806,
+    "name": "Палец +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340807,
+    "name": "Палец +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340808,
+    "name": "Палец +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340809,
+    "name": "Палец +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340810,
+    "name": "Палец +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340811,
+    "name": "Палец +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340812,
+    "name": "Палец +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340813,
+    "name": "Палец +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340814,
+    "name": "Палец +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 340815,
+    "name": "Аксессуар +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340816,
+    "name": "Аксессуар +1",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340817,
+    "name": "Аксессуар +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340818,
+    "name": "Аксессуар +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340819,
+    "name": "Аксессуар +2",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340820,
+    "name": "Аксессуар +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 340821,
+    "name": "Аксессуар +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 2,
+    "itemStatValue4": 1
+  },
+  {
+    "id": 340822,
+    "name": "Аксессуар +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 1,
+    "itemStatValue4": 2
+  },
+  {
+    "id": 340823,
+    "name": "Аксессуар +3",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 3
+  },
+  {
+    "id": 1000000,
+    "name": "Сок чароягоды",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000001,
+    "name": "Игристый сидр Мананель",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000002,
+    "name": "Чародейское вино",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000003,
+    "name": "Малый кристалл маны",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000004,
+    "name": "Кристалл маны",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000005,
+    "name": "Большой кристалл маны",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000006,
+    "name": "Мана-пыль",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000007,
+    "name": "Манафрукт",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000008,
+    "name": "Дворянская печать",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000009,
+    "name": "Волшебный сундук Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000010,
+    "name": "Волшебный сундук Новолуния",
+    "description": "Поцарапанный и побитый сундук. Втакие ложат разве что вещи, успевшие побывать в чьих-то руках. Но при удачиможно встретить что-то, в чем не стыдно идти на бал.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000011,
+    "name": "Волшебный сундук Новолуния",
+    "description": "Такс-такс, что тут у нас? Наклейкаобещает, что внутри будет необычная вещь. Но не забывайте, где именно выпокупаете.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000012,
+    "name": "Волшебный сундук Новолуния",
+    "description": "Ого! Вот это выбор. В эти красивыесундуки кладут редкие и ценные вещи. Главное читайте надписи, а то вдруг этотсундук сделан в Оргриммаре.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000013,
+    "name": "Волшебный сундук Новолуния",
+    "description": "Покупатели этих сундуков регулярнопопадают в даларанскую передачу \"Пусть покричат\". Кому-то оченьвезет достать бывший меч короля, а кто-то готов удавиться из-занадувательства века и тонны долгов.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000014,
+    "name": "Невероятный сундук Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000015,
+    "name": "Невероятный сундук Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000016,
+    "name": "Невероятный сундук Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000017,
+    "name": "Невероятный сундук Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000018,
+    "name": "Невероятный сундук Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000019,
+    "name": "Долговая расписка",
+    "description": "Подтверждает долг ЯрмаркиНоволуния размером в 50 золотых.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000020,
+    "name": "Гербовая накидка Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000021,
+    "name": "Голова Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000022,
+    "name": "Плечи Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000023,
+    "name": "Грудь Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000024,
+    "name": "Пояс Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000025,
+    "name": "Ноги Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000026,
+    "name": "Ступни Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000027,
+    "name": "Запястья Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000028,
+    "name": "Кисти рук Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000029,
+    "name": "Плащ Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000030,
+    "name": "Левая рука Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000031,
+    "name": "Правая рука Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000032,
+    "name": "Рубашка Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000033,
+    "name": "Купон Новолуния",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000034,
+    "name": "Плечи: 6141",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000035,
+    "name": "Пояс: 5319",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000036,
+    "name": "Кисти рук: 14887",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000037,
+    "name": "Грудь: 14885",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000038,
+    "name": "Грудь: 8824",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000039,
+    "name": "Пояс: 6153",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000040,
+    "name": "Кисти рук: 6157",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000041,
+    "name": "Запястья: 6156",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000042,
+    "name": "Рубашка: 6152",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000043,
+    "name": "Ступни: 8820",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000044,
+    "name": "Плечи: 51273",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000045,
+    "name": "Грудь: 6147",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000046,
+    "name": "Ноги: 5320",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000047,
+    "name": "Накидка: 23954",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000048,
+    "name": "Накидка: 23951",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000049,
+    "name": "Рубашка: 23592",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000050,
+    "name": "Ноги: 8085",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000051,
+    "name": "Кисти рук: 23593",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000052,
+    "name": "Ступни: 15988",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000053,
+    "name": "Кисти рук: 14887",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000054,
+    "name": "Запястья: 14886",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000055,
+    "name": "Голова: 15392",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000056,
+    "name": "Плечи: 14880",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000057,
+    "name": "Накидка: 7683",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000058,
+    "name": "Спелая тыква",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000059,
+    "name": "Руда",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000060,
+    "name": "Древесина",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000061,
+    "name": "Уголь",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000062,
+    "name": "Непонятный мусор",
+    "description": "Мусор? Нет!",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000063,
+    "name": "Лепешка навоза",
+    "description": "С пылу, с жару!",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000064,
+    "name": "Булыжник",
+    "description": "Просто камень",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000065,
+    "name": "Целебные травы",
+    "description": "Приятно пахнет",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000066,
+    "name": "Мешок с добычей",
+    "description": "Внутри что-то есть",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000067,
+    "name": "Правая рука: 71443",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000068,
+    "name": "Накидка: 11668",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000069,
+    "name": "Договор на поставку: Изделия",
+    "description": "На ваше имя на складе числитсяцелый ящик ремесленных изделий! Продайте его по-дешевке ближайшемуперекупщику или найдите того, кто выкупит за более высокую цену",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000070,
+    "name": "Печать мастера",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000071,
+    "name": "Договор на поставку: Травы",
+    "description": "На ваше имя на складе числитсяцелый ящик целебных трав! Продайте его по-дешевке ближайшему перекупщику илинайдите того, кто выкупит за более высокую цену",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000072,
+    "name": "Договор на поставку: Руда",
+    "description": "На ваше имя на складе числитсяцелый ящик руды! Продайте его по-дешевке ближайшему перекупщику или найдитетого, кто выкупит за более высокую цену",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000073,
+    "name": "Договор на поставку: Камень",
+    "description": "На ваше имя на складе числитсяцелый ящик строительного камня! Продайте его по-дешевке ближайшемуперекупщику или найдите того, кто выкупит за более высокую цену",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000074,
+    "name": "Договор на поставку:Продовольствие",
+    "description": "На ваше имя на складе числитсяцелый ящик продовольствия! Продайте его по-дешевке ближайшему перекупщику илинайдите того, кто выкупит за более высокую цену",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000075,
+    "name": "Драгоценности",
+    "description": "На ваше имя на складе числитсяцелый ящик драгоценностей! Продайте его по-дешевке ближайшему перекупщику илинайдите того, кто выкупит за более высокую цену",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000076,
+    "name": "Договор на поставку: Древесина",
+    "description": "На ваше имя на складе числитсяцелый ящик древесины! Продайте его по-дешевке ближайшему перекупщику илинайдите того, кто выкупит за более высокую цену",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000077,
+    "name": "Партия средства от кашля",
+    "description": "Партия подозрительного средства откашля! Продайте его по-дешевке ближайшему перекупщику или найдите того, ктовыкупит за более высокую цену на черном рынке",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000078,
+    "name": "Волшебный подарок Новолуния",
+    "description": "С праздником Зимнего Покрова!Darkmoon-2019",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000079,
+    "name": "Дикий гриб",
+    "description": "Интересный дикий гриб.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000080,
+    "name": "Горсть красных ягод",
+    "description": "Сладкие!",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000081,
+    "name": "Археологическая находка",
+    "description": "Что-то интересное и очень-оченьдревнее.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000082,
+    "name": "Странное сокровище",
+    "description": "Очень подозрительное... лучше отнего скорее избавиться.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000083,
+    "name": "Спелый кабачок",
+    "description": "Зеленый и упругий...",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000084,
+    "name": "Кочан капусты",
+    "description": "Лучше чем ничего.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000085,
+    "name": "Гроздь винограда",
+    "description": "Слегка помят, но в самый раз длявина!",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000086,
+    "name": "Плечи: 57792",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000087,
+    "name": "Голова: 140218",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000088,
+    "name": "Голова: 45944",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000089,
+    "name": "Голова: 68706",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000090,
+    "name": "Голова: 75359",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000091,
+    "name": "Голова: 73020",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000092,
+    "name": "Грудь: 59832",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000093,
+    "name": "Рубашка: 16032",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000094,
+    "name": "Ноги: 65453",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000095,
+    "name": "Ступни: 15451",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000096,
+    "name": "Рубашка: 62444",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000097,
+    "name": "Грудь: 62445",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000098,
+    "name": "Пояс: 62384",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000099,
+    "name": "Ноги: 62385",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000100,
+    "name": "Ступни: 62447",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000101,
+    "name": "Накидка: 117796",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000102,
+    "name": "Правая рука: 120667",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000103,
+    "name": "Правая рука: 120668",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000104,
+    "name": "Правая рука: 120669",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000105,
+    "name": "Правая рука: 120670",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000106,
+    "name": "Левая рука: 139695",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000107,
+    "name": "Правая рука: 139847",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000108,
+    "name": "Голова: 69881",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000109,
+    "name": "Голова: 149084",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000110,
+    "name": "Грудь: 149085",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000111,
+    "name": "Ноги: 62404",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000112,
+    "name": "Ступни: 62424",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000113,
+    "name": "Кисти рук: 145286",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000114,
+    "name": "Грудь: 143589",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000115,
+    "name": "Грудь: 62423",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000116,
+    "name": "Голова: 62368",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000117,
+    "name": "Грудь: 62369",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000118,
+    "name": "Грудь: 62428",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000119,
+    "name": "Ноги: 62372",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000120,
+    "name": "Ступни: 62373",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000121,
+    "name": "Грудь: 44053",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000122,
+    "name": "Пояс: 13729",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000123,
+    "name": "Ноги: 153268",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000124,
+    "name": "Ступни: 33872",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000125,
+    "name": "Голова: 62400",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000126,
+    "name": "Голова: 75499",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000127,
+    "name": "Голова: 150436",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000128,
+    "name": "Голова: 160139",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000129,
+    "name": "Голова: 154255",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000130,
+    "name": "Голова: 146782",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000131,
+    "name": "Плащ: 146757",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000132,
+    "name": "Плечи: 146783",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000133,
+    "name": "Грудь: 146780",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000134,
+    "name": "Кисти рук: 146781",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000135,
+    "name": "Пояс: 146785",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000136,
+    "name": "Пояс: 146778",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000137,
+    "name": "Ноги: 146784",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000138,
+    "name": "Ступни: 146779",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000139,
+    "name": "Голова: 125242",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000140,
+    "name": "Голова: 113054",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000141,
+    "name": "Рубашка: 57188",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000142,
+    "name": "Грудь: 137154",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000143,
+    "name": "Ноги: 137173",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000144,
+    "name": "Запястья: 137172",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000145,
+    "name": "Накидка: 74350",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000146,
+    "name": "Голова: 71773",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000147,
+    "name": "Плечи: 71774",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000148,
+    "name": "Рубашка: 71767",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000149,
+    "name": "Грудь: 71759",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000150,
+    "name": "Пояс: 71769",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000151,
+    "name": "Ноги: 71762",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000152,
+    "name": "Ступни: 71771",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000153,
+    "name": "Запястья: 71764",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000154,
+    "name": "Кисти рук: 71765",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000155,
+    "name": "Голова: 132960",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000156,
+    "name": "Голова: 133523",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000157,
+    "name": "Плечи: 112365",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000158,
+    "name": "Голова: 148060",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000159,
+    "name": "Плечи: 149418",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000160,
+    "name": "Грудь: 148014",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000161,
+    "name": "Запястья: 148259",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000162,
+    "name": "Кисти рук: 148260",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000163,
+    "name": "Пояс: 151515",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000164,
+    "name": "Ноги: 148257",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000165,
+    "name": "Ступни: 148258",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000166,
+    "name": "Голова: 147647",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000167,
+    "name": "Плечи: 147649",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000168,
+    "name": "Грудь: 147645",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000169,
+    "name": "Запястья: 147650",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000170,
+    "name": "Кисти рук: 147646",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000171,
+    "name": "Пояс: 147643",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000172,
+    "name": "Ноги: 147648",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000173,
+    "name": "Ступни: 147644",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000174,
+    "name": "Правая рука: 146638",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000175,
+    "name": "Правая рука: 146642",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000176,
+    "name": "Правая рука: 146641",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000177,
+    "name": "Правая рука: 158286",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000178,
+    "name": "Правая рука: 158284",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000179,
+    "name": "Правая рука: 156805",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000180,
+    "name": "Правая рука: 154130",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000181,
+    "name": "Правая рука: 153762",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000182,
+    "name": "Левая рука: 154132",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000183,
+    "name": "Левая рука: 154133",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000184,
+    "name": "Левая рука: 154134",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000185,
+    "name": "Правая рука: 128405",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000186,
+    "name": "Правая рука: 128404",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000187,
+    "name": "Правая рука: 122328",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000188,
+    "name": "Правая рука: 127744",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000189,
+    "name": "Правая рука: 127741",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000190,
+    "name": "Правая рука: 127742",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000191,
+    "name": "Правая рука: 156798",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000192,
+    "name": "Правая рука: 131001",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000193,
+    "name": "Правая рука: 131002",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000194,
+    "name": "Правая рука: 107332",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000195,
+    "name": "Правая рука: 107337",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000196,
+    "name": "Правая рука: 107348",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000197,
+    "name": "Правая рука: 107349",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000198,
+    "name": "Правая рука: 107353",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000199,
+    "name": "Правая рука: 120676",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000200,
+    "name": "Правая рука: 132070",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000201,
+    "name": "Голова: 75359",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000202,
+    "name": "Накидка: 159612",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000203,
+    "name": "Правая рука: 128401",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000204,
+    "name": "Левая рука: 128432",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000205,
+    "name": "Левая рука: 128436",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000206,
+    "name": "Голова: 138302",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 1000207,
+    "name": "Жетон Менестреля",
+    "description": "Используется для разблокировкифункционала Менестреля.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000043,
+    "name": "Зелье Сила +3",
+    "description": "Используется для дополнения характеристики +3 к Сила",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000044,
+    "name": "Зелье Сила +6",
+    "description": "Используется для дополнения характеристики +6 к Сила",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000045,
+    "name": "Зелье Сила +9",
+    "description": "Используется для дополнения характеристики +9 к Силе",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000046,
+    "name": "Зелье Стойкости +3",
+    "description": "Используется для дополнения характеристики +3 к Стойкости",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000047,
+    "name": "Зелье Стойкость +6",
+    "description": "Используется для дополнения характеристики +6 к Стойкости",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000048,
+    "name": "Зелье Стойкость +9",
+    "description": "Используется для дополнения характеристики +9 к Стойкость",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000049,
+    "name": "Зелье Ловкость +3",
+    "description": "Используется для дополнения характеристики +3 к Ловкость",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000050,
+    "name": "Зелье Ловкость +6",
+    "description": "Используется для дополнения характеристики +6 к Ловкость",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000051,
+    "name": "Зелье Ловкость +9",
+    "description": "Используется для дополнения характеристики +9 к Ловкость",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000052,
+    "name": "Зелье Сноровка +3",
+    "description": "Используется для дополнения характеристики +3 к Сноровка",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000053,
+    "name": "Зелье Сноровка +6",
+    "description": "Используется для дополнения характеристики +6 к Сноровке",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000054,
+    "name": "Зелье Сноровка +9",
+    "description": "Используется для дополнения характеристики +9 к Сноровке",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000055,
+    "name": "Зелье Интеллект +3",
+    "description": "Используется для дополнения характеристики +3 к Интеллект",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000056,
+    "name": "Зелье Интеллект +6",
+    "description": "Используется для дополнения характеристики +6 к Интеллект",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000057,
+    "name": "Зелье Интеллект +9",
+    "description": "Используется для дополнения характеристики +9 к Интеллекту",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000058,
+    "name": "Зелье Воля +3",
+    "description": "Используется для дополнения характеристики +3 к Воле",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000059,
+    "name": "Зелье Воля +6",
+    "description": "Используется для дополнения характеристики +6 к Воле",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000060,
+    "name": "Зелье Воля +9",
+    "description": "Используется для дополнения характеристики +9 к Воле",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000061,
+    "name": "Зелье Критический Шанс +3",
+    "description": "Используется для дополнения характеристики +3 к Критическому Шансу",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000062,
+    "name": "Зелье Критический Шанс +6",
+    "description": "Используется для дополнения характеристики +6 к Критический Шанс",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000063,
+    "name": "Зелье Критический Шанс +9",
+    "description": "Используется для дополнения характеристики +9 к Критический Шанс",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000064,
+    "name": "Зелье Дух +3",
+    "description": "Используется для дополнения характеристики +3 к Духу",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000065,
+    "name": "Зелье Духу +6",
+    "description": "Используется для дополнения характеристики +6 к Духу",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000066,
+    "name": "Зелье Дух +9",
+    "description": "Используется для дополнения характеристики +9 к Духу",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000067,
+    "name": "Зелье Здоровье +3",
+    "description": "Используется для добавления 3 ед.здоровья.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000068,
+    "name": "Зелье Здоровье +6",
+    "description": "Используется для добавления 6 ед.здоровья.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  },
+  {
+    "id": 2000069,
+    "name": "Зелье Здоровье +9",
+    "description": "Используется для добавления 9 ед.здоровья.",
+    "itemStatValue1": 0,
+    "itemStatValue2": 0,
+    "itemStatValue3": 0,
+    "itemStatValue4": 0
+  }
+]

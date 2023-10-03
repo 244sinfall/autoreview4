@@ -7,6 +7,7 @@ import {PERMISSION} from "../../../model/user";
 import {LayoutResponsiveGrid} from "../../../components/common/layouts/responsive-grid";
 import {LayoutReponsiveFlex} from "../../../components/common/layouts/responsive-flex";
 import ChecksTable from "../../economics/checks-table";
+import ArbiterItemsTable from "../items-table";
 
 const ArbitersPage = () => {
     return (
@@ -15,6 +16,7 @@ const ArbitersPage = () => {
                 <LayoutReponsiveFlex direction={"column"} gap={10}>
                     <TextCleaner/>
                     <BusinessRewarder/>
+                    <ArbiterItemsTable/>
                 </LayoutReponsiveFlex>
                 <LayoutResponsiveGrid gap={10} columns={[{}]}>
                     <EventRewardGiver/>

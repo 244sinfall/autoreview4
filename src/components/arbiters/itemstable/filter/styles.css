@@ -1,0 +1,13 @@
+.items-table-filter {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 750px) {
+    .items-table-filter {
+        flex-direction: column;
+    }
+}
