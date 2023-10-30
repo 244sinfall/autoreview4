@@ -5893,8 +5893,8 @@
     "name": "Рубашка +3",
     "itemStatValue1": 0,
     "itemStatValue2": 0,
-    "itemStatValue3": 0,
-    "itemStatValue4": 3
+    "itemStatValue3": 3,
+    "itemStatValue4": 0
   },
   {
     "id": 340735,
